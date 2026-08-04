@@ -215,3 +215,101 @@ CUT TO BLACK.
 
 3 seconds of pure black. No sound.
 ```
+
+---
+
+# 10초 버전 — 확정본
+
+> 2026-08-04. 스틸 5장이 모두 생성 완료된 뒤 그것을 보고 다시 짠 것.
+> **38초 버전보다 이쪽이 낫다.**
+
+## 순서가 바뀐 이유
+
+**탈옥으로 끝난다.**
+추격으로 끝나면 절망이고, 벽 위로 끝나면 약속이 된다.
+
+## 시간 배분
+
+10초에 다섯 컷이면 숨 쉴 데가 없다. 균등하게 나누지 않았다.
+
+| 샷 | 길이 | |
+|---|---|---|
+| 1 흰 벽 | 2.0s | 거의 정지 사진 |
+| 2 제의 홀 | 2.0s | |
+| 3 정화실 | **2.5s** | 제일 길게. 여기가 전부다 |
+| 4 집행자 | 1.5s | 짧게 치고 지나간다 |
+| 5 벽 위 | 2.0s | 홀드 |
+
+## 붉은 망토
+
+생성된 5번 스틸에서 **"빨강은 딱 한 사람에게만"** 규칙이 정확히 작동했다.
+그 인물이 누구인지는 아직 안 정했는데, **이미지가 먼저 그 자리를 만들었다.**
+
+마지막 2초에 움직이는 것은 붉은 망토뿐이다.
+십여 초 동안 회색만 보다가 마지막에 색 하나가 바람에 흔들리면,
+관객이 마지막으로 기억하는 것이 그것이 된다.
+
+```
+A single continuous 10-second cinematic teaser in five locked-off shots joined by
+hard cuts. No dissolves, no fades, no transitions between shots. Anamorphic
+2.39:1 throughout. Photoreal, large-format, one hard light source per shot, deep
+crushed blacks, desaturated, fine film grain. No dialogue, no music. Camera is
+locked off in every shot — no pans, no zooms, no push-ins.
+
+SHOT 1 — 0.0 to 2.0s. EXTERIOR. DESERT. MIDDAY.
+Extreme wide. One vast pale concrete wall runs unbroken across the whole frame
+against a bleached white sky, sand meeting its base. A single human figure at the
+foot of the wall, almost too small to see. Nothing moves but a faint heat shimmer
+along the base of the wall and fine dust drifting across the foreground. Almost a
+still photograph.
+
+HARD CUT.
+
+SHOT 2 — 2.0 to 4.0s. INTERIOR. RITUAL HALL.
+Extreme wide, symmetrical. An immense dark concrete hall, a single circular
+aperture high in the far wall throwing one hard shaft of white light down onto a
+perfect disc on the floor. Hundreds of white-robed figures kneel in concentric
+rings around it, absolutely motionless. One small figure stands alone at the
+centre of the light. Dust motes turn slowly inside the shaft. The centre figure
+slowly raises their head toward the light. Nothing else moves.
+
+HARD CUT.
+
+SHOT 3 — 4.0 to 6.5s. INTERIOR. CONCRETE CHAMBER.
+Wide, symmetrical. Two plain metal chairs facing each other across a bare grey
+floor, ceiling lost in darkness. Left: a thin young woman seen from behind, her
+white wrap open at the back, gold-rimmed ceramic ports down her spine, ribbed
+tubes running up into the blackness. Right: an old man in heavy gold ceremonial
+robes, a gold plate seamed into his temple, identical tubes descending into his
+throat. Her head lowers slowly, chin toward her chest, and stops — and at the
+exact same moment his head tilts back and his chest lifts as he draws a deep,
+satisfied breath. The tubes go slack.
+
+HARD CUT.
+
+SHOT 4 — 6.5 to 8.0s. EXTERIOR. DUNE FIELD. LOW SUN.
+Extreme wide, low angle. Eight armoured figures in black and gold, long spears
+held vertical, umber cloaks dragging, advance directly toward camera across the
+sand in perfect step. Thick backlit dust rolls forward behind them. They take
+two slow strides and the shot cuts. They never arrive.
+
+HARD CUT.
+
+SHOT 5 — 8.0 to 10.0s. EXTERIOR. BASE OF THE WALL. OVERCAST.
+Low angle looking steeply up. The sheer pale concrete wall fills the left of the
+frame, its top corner cutting the sky on a hard diagonal. Along the very top
+edge, five small figures stand spaced apart, facing outward away from camera.
+One of them wears a deep red cloak — the only saturated colour in the entire
+teaser. Cold flat overcast light. The figures do not move. The only motion in the
+frame is the red cloak lifting and falling in the wind.
+
+HOLD ON THIS FRAME UNTIL THE END.
+```
+
+## 타이틀
+
+검은 화면. **피폭** 두 글자. 2초. 소리 없음.
+
+## 미결
+
+- [ ] **붉은 망토는 누구인가.** 이제 이걸 정해야 한다 — 이미지가 이미 자리를 만들었다
