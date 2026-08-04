@@ -41,88 +41,135 @@ three. Same character as references: one consistent identity.
 
 # 아이들 — 정화구를 가진 자들
 
+**여자 셋 · 남자 둘.** 여울(여) · 세하(여) · 미르(여) · 하란(남) · 소안(남)
+
 > 공통: 표백된 뼈흰색 사막 랩(거친 거즈 + 리넨 겹침), 낡은 가죽 끈,
 > 몸에 박힌 세라믹 정화구(淨化口). 기계는 **의료용**이지 무장이 아니다.
 > 등급이 높을수록 정화구가 많고, 금테가 둘러지고, 몸이 망가져 있다.
 
-## 1. 여울 (Yeoul) — 능력 없는 아이 / 관객의 눈
+## 공통 블록 C — 피폭 (아이들 전원에게 붙인다)
+
+> 실제 급성/만성 방사선 장해 소견에 근거한다. **장식이 아니다.**
+> 마지막 두 문장이 이 블록의 핵심이다 — 그게 톤을 잡는다.
+
+```
+Visible radiation damage, medically grounded and never decorative: irregular
+patches of hair loss across the scalp; skin unevenly depigmented in pale
+blotches against darker areas; old keloid scarring, raised and shiny, ringing
+every ceramic port; faint purpura — small dark bruises — scattered over the
+forearms and shins; fingernails ridged, thickened and discoloured; skin thin
+enough that veins read clearly at the temples and the backs of the hands.
+
+They are clean, well-fed and carefully kept. The damage is not neglect.
+It is use.
+```
+
+> 개별 프롬프트에 정도를 조절해 넣는다.
+> **여울은 거의 없고, 세하는 가장 심하다.** 그 낙차가 이 다섯을 설명한다.
+
+---
+
+## 1. 여울 (Yeoul) · 여 — 능력 없는 아이 / 관객의 눈
 
 **앵커:** 목 밑 정화구가 **뚜껑이 덮인 채 한 번도 열린 적 없다.** 흉터가 없는 유일한 아이.
 
+> **여울에게는 피폭 흔적이 거의 없다.** 한 번도 쓰이지 않았기 때문이다.
+> 그리고 **그 건강함이 곧 그녀의 무가치함**이다 — 쓸모가 없어서 폐기 직전이었다.
+> 다섯 중 유일하게 성한 몸이 화면에 있으면, 나머지 넷이 무엇을 잃었는지 보인다.
+
 ```
 A 17-year-old East Asian girl, thin and wiry, roughly self-cut short black
-hair falling unevenly at the jaw, sun-scorched pale skin, a small dark mole
-below the outer corner of her right eye. Wide-set eyes, short philtrum,
-small flat ears. She wears a layered bone-white desert wrap of coarse gauze
-and linen, frayed at the hem, cinched with worn brown leather straps
-crossing the chest. At the base of her throat sits one small pale ceramic
-port ring, sealed with a plain dull cap — unused, unscarred, no gold. No
-prosthetics anywhere on her body. Feet bound in strips of cloth. Guarded
-posture, weight on the back foot, hands loose at her sides.
+hair falling unevenly at the jaw, sun-scorched skin, a small dark mole below
+the outer corner of her right eye. Wide-set eyes, short philtrum, small flat
+ears. Her body is almost undamaged — a full head of hair, even skin tone,
+clear nails — startlingly intact next to the others. She wears a layered
+bone-white desert wrap of coarse gauze and linen, frayed at the hem, cinched
+with worn brown leather straps crossing the chest. At the base of her throat
+sits one small pale ceramic port ring, sealed with a plain dull cap — unused,
+unscarred, no keloid ring around it, no gold. No prosthetics anywhere on her
+body. Feet bound in strips of cloth. Guarded posture, weight on the back foot,
+hands loose at her sides.
 ```
 
-## 2. 하란 (Haran) — 속도. 태운 만큼 늙는다
+## 2. 하란 (Haran) · 남 — 속도. 태운 만큼 늙는다
 
 **앵커:** 19살인데 **관자놀이만 하얗게 셌다.** 팔뚝 피부 밑으로 은색 봉합사가 비친다.
 
 ```
 A 19-year-old East Asian boy who reads a decade older — premature white
-streaking sharply at both temples through black hair, deep fine lines at
-the outer eyes, dry papery skin. Gaunt, long tendons, narrow shoulders,
-a high thin nose and a long philtrum. He wears a stripped-down sleeveless
-bone-white wrap, exposing forearms laced with fine silver filament sutures
-visible just beneath the skin. Two pale ceramic ports set into his shoulder
-blades, rimmed in dull brass, vented like gills and faintly steaming. Legs
-bound in ragged linen over articulated silver ankle braces — medical
-orthotics, not armour. Barefoot. He stands slightly forward on his toes.
+streaking sharply at both temples through black hair, with irregular bald
+patches of hair loss above the left ear and at the crown. Deep fine lines at
+the outer eyes, dry papery skin unevenly depigmented in pale blotches across
+the throat and shoulders. Gaunt, long tendons, narrow shoulders, a high thin
+nose and a long philtrum. Fingernails ridged and yellowed; small dark bruises
+scattered along both shins. He wears a stripped-down sleeveless bone-white
+wrap, exposing forearms laced with fine silver filament sutures visible just
+beneath thin skin. Two pale ceramic ports set into his shoulder blades, each
+ringed with raised shiny keloid scarring, rimmed in dull brass, vented like
+gills and faintly steaming. Legs bound in ragged linen over articulated
+silver ankle braces — medical orthotics, not armour. Barefoot. He stands
+slightly forward on his toes.
 ```
 
-## 3. 미르 (Mir) — 탄력. 쉬는 법을 모른다
+## 3. 미르 (Mir) · 여 — 탄력. 쉬는 법을 모른다
 
 **앵커:** **가만히 서 있는데도 몸이 굳어 있다.** 다리 바깥으로 은색 외골건이 케이블처럼 지난다.
 
+> 다섯 중 몸이 가장 크다. 넓은 어깨, 굵은 목, 민머리, 충격을 받아내는 몸.
+> **그 몸을 여자에게 준다.** 세하는 부서지기 직전이고, 여울은 아무것도 없고,
+> 미르는 벽처럼 서 있다 — 이 낙차가 앙상블을 만든다.
+
 ```
-A 20-year-old East Asian person of powerful build, broad-shouldered and
-thick-necked, standing with unnatural rigidity as if braced against an
-impact that never comes. Shaved head with visible scalp scarring, heavy
-brow ridge, wide-set small eyes, a hard-set square jaw. Bone-white wrap
-open at the chest, revealing a large grey ceramic sternum port ringed in
-oxidized brass. Both legs are reinforced hip to heel with matte silver
-exo-tendons running outside the skin like exposed cabling, anchored at knee
-and ankle by pale ceramic sockets. Hands wrapped in scuffed leather. Feet
-bare and splayed, heavy stance.
+A 20-year-old East Asian woman of powerful build, broad-shouldered and
+thick-necked, standing with unnatural rigidity as if braced against an impact
+that never comes. Shaved head showing scalp mottled with old keloid scarring
+and irregular pale depigmented patches, heavy brow ridge, wide-set small eyes,
+a hard-set square jaw. Fingernails thickened and ridged; dark bruises across
+both forearms. Bone-white wrap open at the chest, revealing a large grey
+ceramic sternum port ringed with raised shiny scar tissue and oxidized brass.
+Both legs are reinforced hip to heel with matte silver exo-tendons running
+outside the skin like exposed cabling, anchored at knee and ankle by pale
+ceramic sockets, the skin around each socket thickened and discoloured. Hands
+wrapped in scuffed leather. Feet bare and splayed, heavy stance.
 ```
 
-## 4. 세하 (Seha) — 흡수 최고 등급. 가장 아꼈고 가장 망가졌다
+## 4. 세하 (Seha) · 여 — 흡수 최고 등급. 가장 아꼈고 가장 망가졌다
 
 **앵커:** **정화구 일곱 개, 전부 금테.** 그중 몇 개는 뚜껑이 금이 가 있다.
 
 ```
-An 18-year-old East Asian girl, delicate and visibly ill — translucent
-pale skin, deep violet hollows beneath the eyes, long black hair thinning
-at the temples and pinned back. Narrow face, large eyes, a faint blue vein
-visible at the left temple. She is the most ornamented and the most
-damaged: seven gold-rimmed ceramic ports set along her spine and
-collarbones, each capped with fine filigree lids, two of them visibly
-cracked. Thin gold chains link port to port across her collarbone. Her
-wrap is the finest of them all — bleached white silk-gauze, layered and
-pinned with small gold clasps. She steadies herself with one hand, head
-slightly bowed, as if the air itself were heavy.
+An 18-year-old East Asian girl, delicate and visibly ill — translucent skin
+thin enough that the veins read blue at her temples and the backs of her
+hands, deep violet hollows beneath the eyes. Long black hair thinned to
+patchiness, gone entirely above both temples, the remainder pinned back to
+cover the loss. Narrow face, large eyes. Dark purpura bruising across both
+forearms; nails ridged, thickened, discoloured. She is the most ornamented
+and the most damaged: seven gold-rimmed ceramic ports set along her spine and
+collarbones, each ringed with thick raised keloid scarring and capped with
+fine filigree lids, two of them visibly cracked. Thin gold chains link port to
+port across her collarbone. Her wrap is the finest of them all — bleached
+white silk-gauze, layered and pinned with small gold clasps. She steadies
+herself with one hand, head slightly bowed, as if the air itself were heavy.
 ```
 
-## 5. 소안 (So-an) — 감지. 눈이 없다
+## 5. 소안 (So-an) · 남 — 감지. 눈이 없다
 
 **앵커:** **회색 천으로 눈을 감았고**, 귀 뒤에 은색 전도판이 붙어 광대뼈까지 선이 지난다.
 
+> 방사선 백내장은 실제 피폭 후유증이다. **소안의 실명은 설정이 아니라 증상이다.**
+
 ```
 A 16-year-old East Asian boy, small and slight, a long band of grey cloth
-bound over his eyes; beneath its edge the skin is pale and scarred. Black
-hair to the jaw, parted by the band. Slim silver conduction plates are
-fitted flat against the skull behind each ear, with a fine wire tracing
-forward along each cheekbone. An oversized bone-white desert wrap, sleeves
-falling past his fingers, gathered at the waist with rope. A single small
-ceramic port at the nape. He carries a bare wooden staff. His head is
-tilted slightly up and to one side, listening. Bare feet.
+bound over his eyes; beneath its edge the skin is pale, scarred and mottled
+with depigmented patches. Black hair to the jaw, parted by the band, thinning
+badly at the crown with a bare patch above the right ear. Slim silver
+conduction plates are fitted flat against the skull behind each ear, the skin
+around them raised and shiny with scarring, with a fine wire tracing forward
+along each cheekbone. Small dark bruises on both forearms; nails ridged and
+discoloured. An oversized bone-white desert wrap, sleeves falling past his
+fingers, gathered at the waist with rope. A single small ceramic port at the
+nape, keloid-ringed. He carries a bare wooden staff. His head is tilted
+slightly up and to one side, listening. Bare feet.
 ```
 
 ---
