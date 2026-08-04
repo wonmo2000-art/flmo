@@ -170,3 +170,87 @@ Utterly still, weight even on both feet.
 
 각 캐릭터당 3장(정면/3-4/측면)을 **한 세션에서** 뽑고, 마음에 드는 세트를 확정한 뒤에는
 그 이미지를 레퍼런스로 물리고 위 문장을 그대로 재사용한다.
+
+---
+
+# 추가 캐릭터 (2026-08-04 3차)
+
+> 아래 둘은 원모가 새로 제시한 레퍼런스에서 나왔다.
+> **스타일 블록이 위와 다르다.** 진영마다 색과 조명이 다르기 때문 → `../visual.md` 참조.
+
+## 8. 리안 (Rian) — 먼저 나온 아이. 붕대 밑에 정화구가 있다
+
+**앵커:** 왼쪽 눈썹의 흉터 / 금 고리 귀걸이 한 쌍 / **붕대 사이로 비치는 손목 정화구**
+
+**설정:** 이전 기수의 탈옥자. 자기가 무엇인지 감추려고 손과 팔뚝을 붕대로 감는다.
+칼은 집행자에게서 빼앗은 의식용 검.
+
+```
+A 19-year-old East Asian woman, small and slight, with messy shoulder-length
+black hair in soft waves, an uneven fringe falling across her forehead. Pale
+skin with a natural flush high on the cheeks, large dark brown eyes, a small
+full mouth, a faint scar through the left eyebrow. Thin gold hoop earrings,
+one in each ear, a fine gold chain at the collarbone. She wears an oversized
+loose cream-white linen tunic, sleeves pushed back, over a long charcoal-black
+wrapped skirt cinched with a wide dark sash. Both forearms and hands are wound
+thickly in pale mint-green and dusty-pink bandages, frayed at the ends —
+beneath the gauze at the wrists, slim silver cybernetic joint seams and the
+edge of a pale ceramic port show where the wrapping has slipped. She holds a
+long ornate sword point-down in front of her with both bandaged hands: an old
+ceremonial blade, gold crossguard, lavender-wrapped grip. She looks straight
+into the lens, calm, level, unsmiling.
+```
+
+**스타일 블록 — 파스텔 (아이들 진영)**
+
+```
+cinematic photoreal, medium-format portrait, heavy diffusion filter, low
+contrast, lifted blacks, soft overcast key with no hard shadow. Pastel grade —
+powder pink, mint, dusty lavender, cream, faint sky blue. Gentle bloom in the
+highlights, fine film grain, painterly and almost bleached. Waist-up framing,
+shallow depth. No text, no logo, no watermark.
+```
+
+> 턴어라운드로 쓰려면 공통 블록 B를 맨 앞에 붙이고,
+> `Waist-up framing, shallow depth` → `Full body, feet visible`로 바꾼다.
+
+---
+
+## 9. 아셰라 (Ashera) — 제의 집전자. 얼굴이 없다
+
+**앵커:** **후드 그림자에 잠긴 얼굴 — 턱과 입만 보인다** / 머리 뒤의 거대한 원반 /
+오른팔만 기계
+
+**설정:** 상류층 제의 계급. 머리 뒤의 원반은 사막 협곡의 태양·눈(眼) 제단과 같은 형상이다.
+사람이 곧 제단이 된 형태.
+
+> **규칙: 상류층은 얼굴을 보이지 않는다. 얼굴이 있는 것은 아이들뿐이다.**
+
+```
+A tall, statuesque woman standing frontally, her face almost entirely lost in
+the deep shadow of a hood — only the lower jaw, mouth and chin catch the light.
+Long black hair falls from beneath the hood across her shoulders. She wears an
+enormous circular halo headdress rising behind her head like a full disc, its
+surface a lacquered cloisonné of cobalt blue, teal, coral orange and cream in
+flowing organic shapes, edged in tarnished bronze. Over her chest and shoulders
+sits an ornate ceremonial cuirass of aged bronze scrollwork set with round
+cabochon stones — cobalt, turquoise, amber — following the curve of the body.
+Her right arm is a heavy blackened cybernetic prosthetic of overlapping ornate
+plates with inset jewels at the joints, ending in a gauntleted metal hand. Her
+left arm is bare, dark-skinned. She wears a long column of cream-white silk
+falling straight to the floor, and a heavy cobalt-blue mantle patterned with
+swirling teal and orange forms sweeping behind her. In her right hand a massive
+ceremonial greatsword held point-down, its guard a mass of bronze scrollwork and
+blue stones. In her left, a long slender sceptre topped with an iridescent orb.
+```
+
+**스타일 블록 — 성화 (상류층 진영)**
+
+```
+cinematic photoreal, medium-format, full-body frontal portrait against a
+seamless pure white backdrop, high-key lighting, very soft and even, almost no
+cast shadow — graphic and flat like a devotional painting. Saturated jewel
+palette — cobalt, teal, coral, cream, tarnished bronze — against white. Crisp
+detail in the metalwork and enamel, fine film grain. Face deliberately obscured
+in hood shadow. No text, no logo, no watermark.
+```
