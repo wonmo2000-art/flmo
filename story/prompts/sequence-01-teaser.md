@@ -133,3 +133,85 @@ They do not reach the camera before the shot ends.
 - [ ] S#2 빛 한가운데 선 인물은 누구인가
 - [ ] 티저를 이대로 갈지, 아니면 마지막에 아이들 얼굴 한 컷을 더할지
       (지금 구성에는 **얼굴이 하나도 없다.** 의도라면 그대로 두는 게 맞다)
+
+---
+
+# 통합 버전 — 한 프롬프트로
+
+시덴스 2.0의 멀티샷 기능으로 컷까지 한 덩어리에 넣은 버전.
+
+> ⚠️ **주의:** 프롬프트가 길어질수록 뒤쪽 샷에서 흔들린다.
+> 특히 **S#3과 S#4의 인물이 같은 사람으로 유지되는지**가 가장 위험한 지점.
+> 거기가 무너지면 시퀀스의 핵심이 날아간다.
+> 흔들리면 위의 분리 프롬프트로 각각 뽑아서 붙일 것 —
+> 이미 생성한 스틸을 첫 프레임으로 물릴 수 있어 일관성도 그쪽이 안전하다.
+
+```
+One continuous cinematic sequence, 38 seconds, five locked-off shots joined by
+hard cuts — no dissolves, no fades, no transitions of any kind between shots.
+Anamorphic 2.39:1 throughout. Photoreal, large-format, one single hard light
+source in every shot, deep crushed blacks, desaturated. Fine film grain. No
+dialogue, no music, no on-screen text except where stated. Camera is locked off
+in every shot unless stated otherwise.
+
+SHOT 1 — 8 seconds. EXTERIOR. DESERT. MIDDAY.
+Extreme wide. One vast white concrete wall runs unbroken across the entire
+frame, sixty metres high, its top edge dead level against a bleached white sky.
+No gate, no window, no marking. Pale sand meets its base undisturbed. At the
+foot of the wall a single human figure, so small as to be almost invisible.
+The only motion: faint heat shimmer along the base of the wall, the tiny figure
+walking very slowly from left to right, fine pale dust drifting across the
+foreground. Harsh vertical sun, almost no shadow. Monochrome — bleached
+concrete, pale sand, white sky.
+
+HARD CUT.
+
+SHOT 2 — 8 seconds. INTERIOR. RITUAL HALL.
+Extreme wide, symmetrical. An immense windowless hall of raw grey concrete, its
+ceiling lost in darkness. High in the far wall a single circular aperture admits
+one hard shaft of white light that lands as a perfect disc on the floor far
+below. Hundreds of figures in plain white robes kneel in concentric rings around
+the disc, heads bowed, completely motionless — no breathing, no shifting. One
+small figure stands alone at the centre of the light. Camera pushes in extremely
+slowly, only a few percent across the whole shot. Dust motes turn inside the
+shaft. The figure at the centre slowly raises their head toward the aperture.
+Everything outside the disc falls into near-black.
+
+HARD CUT.
+
+SHOT 3 — 6 seconds. INTERIOR. CONCRETE CHAMBER.
+Wide, symmetrical, two plain metal chairs facing each other across three metres
+of bare floor in a grey concrete room, ceiling lost in darkness. Left chair: a
+thin young woman sits upright, her bone-white wrap opened at the back, a row of
+small gold-rimmed ceramic ports set down her spine, ribbed grey tubes running
+from them straight up into the blackness overhead. Right chair: an old man in
+heavy oxidized-gold ceremonial robes, a gold filigree plate seamed into his left
+temple, identical tubes descending out of the dark into a jewelled port at his
+throat. Neither looks at the other. One hard overhead light. The tubes pulse
+once, slowly — a visible swelling travelling upward from her spine into the
+black. Her shoulders rise and fall with a single breath. The old man does not
+move at all.
+
+HARD CUT.
+
+SHOT 4 — 6 seconds. SAME CHAMBER, IDENTICAL FRAMING, SAME TWO PEOPLE.
+Nothing in the composition has changed. The young woman's head lowers slowly,
+chin toward her chest, and stops. At the same moment, across the room, the old
+man's head tilts back and his chest lifts as he draws a deep, satisfied breath.
+The tubes settle and go slack.
+
+HARD CUT.
+
+SHOT 5 — 10 seconds. EXTERIOR. DUNE FIELD. LOW SUN.
+Extreme wide, low angle. Eight armoured figures advance directly toward camera
+across the sand — black lacquered armour with fine gold filigree, deep umber
+cloaks dragging heavily, long spears held vertical. They move slowly, perfectly
+even, in step. The line does not break and does not accelerate. Behind them
+thick backlit dust rolls forward, gradually filling the frame. Hard low raking
+sunlight, long black shadows, warm desaturated gold and umber. They do not reach
+the camera before the shot ends.
+
+CUT TO BLACK.
+
+3 seconds of pure black. No sound.
+```
