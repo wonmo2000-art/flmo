@@ -367,3 +367,143 @@ light, cool desaturated grade — black, bone white, cold blue-grey. Vast negati
 space, oppressive scale, the figure dwarfed by sky. Fine film grain, slight
 anamorphic flare. No text, no logo, no watermark.
 ```
+
+---
+
+# 탈옥 이후 버전 (B) — 2026-08-04 5차
+
+> 앞의 것은 **A. 시설 버전** — 맨몸, 의료 기계, 손상이 다 보인다.
+> 여기부터는 **B. 탈옥 이후** — 집행자를 죽이고 벗겨낸 갑옷을 입고 있다.
+
+## 왜 갑옷이 멋있어도 되는가
+
+**저 갑옷은 훔친 것이다.**
+착취의 도구였던 아이들이 **착취자의 갑옷을 입고** 있다.
+몸에 안 맞아 잘라내고 끈을 다시 박았고, 그 밑으로 여전히 망가진 몸이 보인다.
+
+그래서 B는 멋있어도 이야기가 흐려지지 않는다. 오히려 선명해진다.
+
+---
+
+## 공통 블록 D — 실사 강화
+
+> 시덴스는 놔두면 자꾸 예쁘게 만든다. **`Photographed, not illustrated`**와
+> **`no beauty retouching`**이 그걸 막는다. 이 블록이 실사감의 전부다.
+
+```
+Photographed, not illustrated. Shot on large-format digital, 65mm, T2.8.
+Real skin texture — visible pores, fine facial hair, uneven tone, subsurface
+translucency at the ears and nostrils. Real materials — metal with genuine
+wear, scratches, oxidation and fingerprints; cloth with visible weave and dust
+caught in the fibres. Naturally imperfect facial symmetry. No airbrushing, no
+illustration, no painterly rendering, no CGI sheen, no beauty retouching.
+```
+
+## 공통 블록 E — 탈옥 이후 의상
+
+```
+Salvaged enforcer armour, taken from the dead: black lacquered plate chased
+with fine gold filigree, cut down and re-riveted to fit a smaller frame, straps
+mismatched and knotted. Exposed silver cybernetic joints beneath. Worn over the
+same bleached bone-white desert wrap they wore inside — the armour is stolen,
+the white cloth is theirs. Sand in every seam.
+```
+
+> **흰 천은 자기 것이고 갑옷은 남의 것이다.** 다섯이 한 무리로 읽히는 이유가 이것이다.
+
+---
+
+## B-1. 여울 — 갑옷이 가장 적고, 가장 눈에 띈다
+
+> **붉은 망토를 여울에게 준다.** (제안 — 원모 확정 대기)
+> 보호가 가장 적은 아이가 화면에서 가장 잘 보인다.
+> 규칙대로라면 **여울이 죽는 순간 화면에서 색이 사라진다.**
+
+```
+A 17-year-old East Asian girl, thin and wiry, roughly self-cut short black hair,
+a small dark mole below the outer corner of her right eye. Her body is almost
+undamaged — startlingly intact next to the others. She wears a deep red hooded
+cloak, sun-bleached and torn at the hem, over a bone-white desert wrap. A single
+black-and-gold pauldron is strapped to her left shoulder, clearly too large for
+her, the only armour she has. One small pale ceramic port at the base of her
+throat, still capped, still unscarred. No prosthetics. Feet bound in cloth. She
+carries nothing. Hood back, face bare, looking straight into the lens.
+```
+
+## B-2. 하란 — 속도를 위해 다 벗었다
+
+```
+A 19-year-old East Asian boy who reads a decade older — white streaking sharply
+at both temples, bald patches above the left ear and at the crown, dry papery
+skin blotched with pale depigmentation. Gaunt, long tendons. A grey scarf wound
+over his nose and mouth against the dust, pulled down beneath his chin. Bare
+arms, forearms laced with silver filament sutures under thin skin. Two ceramic
+ports in his shoulder blades, now fitted with scavenged brass cowls that vent
+faint steam. A single black-and-gold vambrace on the right forearm. Legs bound
+in ragged linen over articulated silver braces reinforced with cut enforcer
+plate. Barefoot. Weight forward on his toes.
+```
+
+## B-3. 미르 — 멀리서 보면 집행자로 보인다
+
+> 이건 그냥 디자인이 아니라 **플롯이 될 수 있다.**
+
+```
+A 20-year-old East Asian woman of powerful build, broad-shouldered and
+thick-necked, standing with unnatural rigidity. Shaved head, scalp mottled with
+keloid scarring and pale depigmented patches, heavy brow ridge, hard square jaw.
+She wears a full enforcer cuirass of black lacquered plate with gold filigree,
+cut open at the sides and re-riveted with rough leather straps to fit her wider
+frame, over a bone-white wrap. Heavy gauntlets. Her grey ceramic sternum port
+shows through a cut in the breastplate, keloid-ringed. Both legs reinforced hip
+to heel with matte silver exo-tendons running outside the skin, now sheathed in
+scavenged greaves. Feet bare and splayed, heavy stance.
+```
+
+## B-4. 세하 — 금을 입어서 그들처럼 보인다
+
+> 금테 정화구와 훔친 금 망토가 **같은 금**이다.
+> 언뜻 보면 상류층으로 읽힌다. 가장 착취당한 아이가 착취자처럼 보인다.
+
+```
+An 18-year-old East Asian girl, delicate and visibly dying — translucent skin,
+veins blue at the temples, deep violet hollows beneath the eyes, long black hair
+thinned to patchiness and gone above both temples. Too weak to carry armour. She
+wears a heavy black-and-gold hooded mantle taken from a priest, far too large,
+dragging behind her, over her own bleached white silk-gauze wrap. Seven
+gold-rimmed ceramic ports along her spine and collarbones, keloid-scarred, two
+cracked, linked by thin gold chains — the same gold as the stolen mantle, so
+that at a glance she reads as one of the upper class. Head slightly bowed. One
+hand steadying herself.
+```
+
+## B-5. 소안 — 눈먼 아이가 눈 구멍 뚫린 가면을 쓴다
+
+> 원모가 제시한 레퍼런스(세공 가면 + 후드) 그대로.
+> **앙상블에서 가장 좋은 그림.** 볼 수 없는 아이의 얼굴에 눈 구멍이 뚫려 있다.
+
+```
+A 16-year-old East Asian boy, small and slight. Over the grey cloth bound across
+his eyes he wears a close-fitting face mask of dark tarnished metal, chased with
+fine gold filigree in flowing lines, with narrow eye slits cut into it — taken
+from an enforcer, worn to shield the silver conduction plates fitted flat behind
+each ear. Beneath its lower edge, jaw and mouth bare, skin pale and mottled.
+Black hair to the jaw, thinning badly at the crown. A hooded grey mantle over an
+oversized bone-white wrap, sleeves past his fingers. A single keloid-ringed
+ceramic port at the nape. He carries a bare wooden staff. Head tilted slightly
+up and to one side, listening.
+```
+
+---
+
+## 조립법
+
+**A(시설)** = 턴어라운드 B + 캐릭터 A + 피폭 C + **실사 D**
+**B(탈옥 후)** = 턴어라운드 B + 캐릭터 B + 피폭 C + **실사 D**
+
+> 블록 D는 A·B 양쪽 모두에 붙인다. 실사감은 여기서 나온다.
+
+## 미결
+
+- [ ] **붉은 망토 = 여울** 확정 여부
+- [ ] 미르가 집행자로 오인받는 장면을 실제로 쓸 것인가
