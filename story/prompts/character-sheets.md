@@ -254,3 +254,69 @@ palette — cobalt, teal, coral, cream, tarnished bronze — against white. Cris
 detail in the metalwork and enamel, fine film grain. Face deliberately obscured
 in hood shadow. No text, no logo, no watermark.
 ```
+
+---
+
+## 10. 네반 (Nevan) — 최상층. 얼굴을 가리지 않는다
+
+**앵커:** 금빛 눈 / 이마의 금 세공 / 길게 뻗은 귀 / 검은 장갑의 발톱 같은 손가락판
+
+**설정:** 카일란과 아셰라가 섬기는 자리.
+
+수백 년치 정화를 사서 마신 끝에 **다른 방향으로 변이한 상류층.**
+아이들은 피폭으로 힘을 얻었고, 이쪽은 수명과 기이함을 얻었다.
+같은 방사능이 한쪽은 무기로, 한쪽은 신으로 만들었다.
+
+> **얼굴을 드러낸다.** 상류층은 얼굴을 가린다는 규칙의 예외.
+> 가릴 상대가 위에 없기 때문이다.
+
+**색:** 검정과 금뿐. 아셰라의 코발트는 중간 제의 계급의 화려함이고,
+최상층은 색을 쓸 필요가 없을 만큼 위에 있다.
+
+### A. 캐릭터 레퍼런스 — 와이드 프레임, 인물 크게
+
+```
+Cinematic wide frame, 2.39:1 anamorphic. A tall androgynous figure stands on a
+flat pale salt plain that runs unbroken to the horizon, placed in the right
+third of the frame; the upper two-thirds is an immense overcast sky of cold
+blue-grey with soft painterly cloud banks. Medium-wide framing, knees up.
+
+Deep near-black skin with a faint warm sheen. An enormous mane of white-silver
+curls falling past the waist, lifted and streaming to one side in the wind.
+Long, pointed, elongated ears. Pale golden-amber eyes, startlingly light against
+the dark skin, with a level unblinking gaze. Fine gold filigree markings traced
+across the forehead and temples, and a small gold ornament fixed at the
+hairline. Single pearl drop earrings. They wear a floor-length high-collared
+black robe of heavy matte cloth, closed down the chest with slim gold chain
+fastenings set with small dark red stones, gold piping at the shoulder seams,
+and a stiff gold-edged shoulder cape. The right hand is sheathed in a black
+glove with long tapering articulated finger-plates, almost claw-like. Stacked
+gold cuff rings at the left wrist. In the left hand a slender straight sword
+with an ornate gold hilt, held point-down at the side. Turned three-quarters
+toward camera, chin slightly lowered, looking directly into the lens.
+
+cinematic photoreal, anamorphic 2.39:1, large-format, overcast diffuse daylight,
+cool desaturated grade — black, gold, bone white, cold blue-grey. Deep detail in
+fabric and metal, hair rendered strand-fine and wind-lifted. Slight anamorphic
+flare, fine film grain. No text, no logo, no watermark.
+```
+
+### B. 실제 샷용 와이드 — 인물 작게, 하늘이 먹는다
+
+아이맥스 원칙에 맞는 건 이쪽. **은백색 머리가 화면에서 유일하게 밝은 것**이 되도록 짰다.
+
+```
+Extreme wide cinematic shot, 2.39:1 anamorphic. A lone tall figure in a
+floor-length black robe stands far off on a vast flat pale salt plain, small in
+frame, occupying barely a tenth of the image height, positioned on the right
+third line. An enormous mane of white-silver hair streams sideways in the wind —
+the only bright thing in the landscape. A slender sword hangs point-down at
+their side. The horizon sits low; the upper three-quarters of the frame is an
+immense cold blue-grey overcast sky with slow painterly cloud banks. Nothing
+else in the landscape. No other figures.
+
+cinematic photoreal, anamorphic 2.39:1, large-format, flat diffuse overcast
+light, cool desaturated grade — black, bone white, cold blue-grey. Vast negative
+space, oppressive scale, the figure dwarfed by sky. Fine film grain, slight
+anamorphic flare. No text, no logo, no watermark.
+```
