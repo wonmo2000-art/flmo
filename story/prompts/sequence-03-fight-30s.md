@@ -131,3 +131,93 @@ no watermark.
 - [ ] 30초 한 방이 유지되는지, 아니면 비트별로 쪼개야 하는지
 - [ ] 붉은 망토 = 여울인가 미르인가 (여기서는 이미지대로 민머리 = 미르)
 - [ ] 화면비 4:3으로 전체 통일할 것인지 (1A~7A는 2.39:1)
+
+---
+
+# 10초 버전
+
+> 10초에 다섯 비트는 안 들어간다. 비트당 2초면 아무것도 안 보인다.
+> **셋으로 줄였다 — 충돌 → 앞발 → 한 사람.**
+> 마른 남자가 가로지르는 비트는 뺐다. 아까우면 따로 10초로 뽑는다.
+
+## 시간 배분
+
+| 비트 | 길이 | |
+|---|---|---|
+| 1 충돌 | ~3초 | 사슬이 때리고 땅이 갈라짐 |
+| 2 앞발 | ~2.5초 | **가장 큰 것.** 짧게 치고 지나감 |
+| 3 홀드 | ~4.5초 | 혼자 남아 사슬을 쥠. 머리가 내려옴 |
+
+> **가장 큰 사건에 가장 짧은 시간을 준다.**
+> 앞발이 내려오는 건 2.5초면 충분하고,
+> 그 뒤에 먼지가 걷히면서 한 사람만 남아 있는 4.5초가 실제로 무섭다.
+> **스펙터클은 짧게, 그 결과는 길게.**
+
+```
+A single 10-second photoreal cinematic shot in 4:3, three beats joined by hard
+cuts, no dissolves. The camera is locked off on cracked grey earth and never
+pans, tilts, zooms or moves at any point — only its height changes between
+beats. Hard overcast daylight from directly above at 6000K, no cast shadow,
+exposed 1.5 stops under, haze 40% rising to 65% after the ground strike. Cold
+desaturated monochrome — grey earth, grey sky, black hide, black iron — broken
+only by one deep red cloak, which stays fully saturated in every beat.
+
+The setting is a vast plain of cracked grey earth in load-bearing plates. A
+colossal horned beast stands 300 m out, 200 m tall at the shoulder, two ribbed
+horns curving up past the top corners of frame, its head lowered between them,
+its two pale eyes the only bright points in the image. Heavy iron chains run
+from its neck out to both horizons, each link the size of a person.
+
+BEAT 1. Wide, 63 degree field, camera at 0.5 m. A chain as thick as a body whips
+down and slams into the raised crossed forearms of a bald figure in a deep red
+cloak. She absorbs it, drops into a deep crouch, and the earth fractures outward
+beneath her boots in a spreading web of pressure cracks. She is already rising
+as the dust reaches her waist. Four other figures behind her are thrown two
+steps back and stay on their feet. HARD CUT.
+
+BEAT 2, the largest. Extreme wide, 84 degree field, camera at 1.6 m. One forefoot
+of the beast comes down. The ground jumps — plates of earth lift and tilt, a
+wall of dust rolls forward toward camera and fills the lower half of frame, the
+standing figures are knocked off their line, and the chains leap once off the
+ground along their whole length and land again. HARD CUT.
+
+BEAT 3, held longest. Wide, 47 degree field, camera at 0.9 m. The dust thins.
+The bald figure in the red cloak stands alone on the broken ground, both hands
+closed on the chain, feet planted, dragged half a metre and holding. She looks
+up. The beast's lowered head descends into the top of frame above her, its two
+pale eyes coming down toward her, and is still descending when the shot ends.
+
+Motion overlaps and nothing waits its turn: the chain is already moving as the
+shot opens, and the ground jump, the rolling dust and the leaping chains all
+land in the same instant. No frozen poses; every body stays under load through
+every frame. Performance is muscle-level only — forearms driving down into the
+impact, neck locked, breath punched out through the teeth, jaw set, eyes open
+and level on the descending head. No shouting, no held grimaces.
+
+Physical detail: the chains carry enormous mass and strike with real force;
+earth fractures as pressure cracking spreading edge to centre, never a clean
+break; dust lifts in flat sheets that hang rather than billow; every figure has
+grounded contact shadow at boot and knee; the beast's mass reads through the
+depth its forefoot presses into the ground and the slow inertia of its head.
+
+Audio: a chain striking flesh and armour, rock fracturing under pressure, one
+enormous ground impact, hard breathing, and a deep sustained sub-bass pressure
+from the creature that never resolves into a roar. No music, no dialogue.
+
+Photographed, not illustrated — real cracked earth, real forged iron with rust
+and pitting, real coarse cloth heavy with dust, real hide with deep furrows,
+real skin with visible pores. No beauty retouching. Fine film grain, real-time
+throughout with no slow motion.
+
+Exactly five figures and exactly one creature. Same faces in every beat. Exactly
+one red cloak and it stays the only saturated colour in frame. The chains hold
+stable link size frame to frame. Scale anchor: the creature stands 200 m at the
+shoulder and its lowered head alone is wider than all five figures standing side
+by side. The creature's eyes stay two pale points and nothing else on it emits
+light. Impact carried by strain, fracture, chain sound and reaction. End
+mid-descent, unresolved, no settling shot. No text, no logo, no watermark.
+```
+
+## 세팅
+
+**10초 · 4:3 · 4K.** 레퍼런스는 `@태그` 말고 슬롯에 직접 첨부.
