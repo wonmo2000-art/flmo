@@ -1,303 +1,242 @@
-# 1화 키프레임 프롬프트 — 파트별
+# 1화 키프레임 프롬프트 — 새동네
 
-> [`../script/ep01.md`](../script/ep01.md) 357컷 중 **파트별 대표 컷**.
-> 이걸 먼저 뽑고, 나머지 컷은 여기서 파생시킨다.
+> [`../script/ep01.md`](../script/ep01.md) 259컷 중 파트별 대표 컷.
+> **`@태그` 안 쓴다.** 이미지는 레퍼런스 슬롯에 직접 첨부.
 
-## 규칙
+## 공통 톤 — 1화는 따뜻하다
 
-- **`@태그` 안 쓴다.** 이미지는 레퍼런스 슬롯에 직접 첨부
-- **화면비는 컷마다 다르다.** 웹툰은 세로 스크롤이라 9:16이 기본,
-  스케일 컷만 가로로 넓게
-- 짧게 쓴다. 길면 뭉개진다
+지금까지 만든 프롬프트는 전부 차갑고 회색이었다. **1화는 다르다.**
 
-## 공통 톤
+새동네는 흙과 빨래와 닭이 있는 곳이다. 여기서는 색이 있어야 한다.
+그래야 2화에서 흰 벽 안으로 들어갔을 때 **색이 사라지는 게 느껴진다.**
 
 ```
-Photoreal, photographed not illustrated. Hard overcast daylight, no cast
-shadow, exposed one stop under. Cold desaturated monochrome — grey, bone
-white, dust. Fine film grain. No beauty retouching. No text, no logo, no
-watermark.
-```
-
-> 위 블록을 모든 프롬프트 끝에 붙인다. 아래 프롬프트에는 이미 포함되어 있다.
-
----
-
-# B. 마을 — 떠나는 아침
-
-## B-1 · 줄 선 부모들 [16:9]
-
-```
-Dawn in a low mud-brick village at the edge of a desert. A queue of about a
-hundred people waits at a folding table, each adult holding a child by the
-hand. The adults look far older than they are — lined, grey, worn. Every child
-beside them looks healthy and young. A clerk sits at the table with a list.
-
-Photoreal, photographed not illustrated. Flat dawn light, no cast shadow,
-exposed one stop under. Cold desaturated monochrome — grey mud, dust, pale
-sky. Fine film grain. No beauty retouching. No text, no logo, no watermark.
-```
-
-## B-2 · 어머니의 손등 [1:1]
-
-```
-Extreme close on an aging woman's hand resting on a child's collar, seen from
-the child's eye level. The back of the hand is covered in dark age spots and
-thin skin; the veins stand out. Beside it, a young unblemished hand. Coarse
-new cloth between them.
-
-Photoreal, photographed not illustrated. Soft dawn light, shallow focus on the
-hand. Cold desaturated grade. Real skin texture with visible pores. Fine film
-grain. No beauty retouching. No text, no logo, no watermark.
-```
-
----
-
-# C. 화물차
-
-## C-1 · 짐칸 [9:16]
-
-```
-Inside the open cargo bed of an old truck crossing a desert. Thirty young
-people sit along both sides on the floor, aged twelve to twenty, all in
-stiff new homemade clothes that do not fit them properly. Some are crying,
-some are already bored. Dust blows through the open back. Harsh flat daylight.
-
-Photoreal, photographed not illustrated. No cast shadow, exposed one stop
-under. Cold desaturated monochrome — grey, bone white, dust. Fine film grain.
-No beauty retouching. No text, no logo, no watermark.
-```
-
----
-
-# D. 귀수
-
-## D-1 · 지평선 [21:9 — 이 화의 가장 넓은 컷]
-
-```
-Extreme wide. A vast flat desert under dense low overcast, horizon low in
-frame. Very far away, something enormous crosses from left to right — a dark
-mass the size of a mountain, its shape softened almost to nothing by haze.
-Nothing else in the landscape. Nothing reacts to it.
-
-Photoreal, photographed not illustrated. Flat overcast light, no cast shadow,
-exposed one and a half stops under, haze 60% at distance. Cold desaturated
-monochrome. Vast negative space. Fine film grain. No text, no logo, no
-watermark.
-```
-
-## D-2 · 그늘의 운전수들 [16:9]
-
-```
-Two drivers in worn work clothes sit on the sand in the shade of a stopped
-truck, sharing a cigarette. One drinks from a canteen. Neither is looking at
-anything in particular. Behind them, far out on the horizon and completely out
-of focus, an enormous dark shape is passing. They are not watching it.
-
-Photoreal, photographed not illustrated. Flat overcast light, shallow focus on
-the two men. Cold desaturated monochrome. Real cloth with dust in the fibres.
-Fine film grain. No beauty retouching. No text, no logo, no watermark.
-```
-
-> **이 컷이 이 화의 세계관 전체다.** 산만 한 것이 지나가는데 담배를 피우고 있다.
-
-## D-3 · 떨리는 물 [1:1]
-
-```
-Close on a metal canteen standing on the wooden floor of a truck bed. The
-water inside is trembling in concentric rings. Dust on the floorboards. Nothing
-else in frame.
-
-Photoreal, photographed not illustrated. Flat overcast light, shallow focus.
-Cold desaturated grade. Real scratched metal. Fine film grain. No text, no
-logo, no watermark.
-```
-
----
-
-# E. 흰 벽
-
-## E-1 · 벽 [9:16 — 세로로 아주 길게, 이 화의 최대 컷]
-
-```
-Vertical composition. A vast pale concrete wall runs across the frame, sixty
-metres high, its top edge dead level against a bleached sky. No gate, no
-window, no seam, no marking anywhere. Pale sand meets its base undisturbed. At
-the very bottom of the frame, three small trucks and a crowd of tiny figures,
-so small they are barely readable.
-
-Photoreal, photographed not illustrated. Harsh vertical sun, almost no cast
-shadow, exposed one and a half stops hot. Monochrome — bleached concrete, pale
-sand, white sky. Overwhelming vertical scale. Fine film grain. No text, no
-logo, no watermark.
-```
-
-## E-2 · 승강대 [9:16]
-
-```
-Vertical composition, low angle looking steeply up the face of a vast pale
-concrete wall. A steel crane arm reaches out over the top edge, lowering a
-bare metal platform on cables. The platform is halfway down, small against the
-wall. Twenty young people in grey stand on it, gripping the rail. Some are
-looking down and grinning. One is looking up.
-
-Photoreal, photographed not illustrated. Flat overcast light, no cast shadow.
-Monochrome — pale concrete, cold sky, grey cloth. Extreme vertical scale. Fine
-film grain. No beauty retouching. No text, no logo, no watermark.
-```
-
-## E-3 · 계단이 없다 [16:9]
-
-```
-High angle looking down from the top of a vast concrete wall into the compound
-inside. Bare grey concrete courtyards and low blocks, laid out in plain
-rectangles, no decoration. The inner face of the wall is completely smooth all
-the way down — no stairs, no ladders, no ramps, nothing. In the corner of the
-frame, the edge of a steel platform and a young woman's hands on the rail.
-
-Photoreal, photographed not illustrated. Flat overcast light, no cast shadow.
-Monochrome grey concrete. Fine film grain. No text, no logo, no watermark.
-```
-
-> **이 컷이 대사 없이 전부를 말한다.** 안쪽 벽면이 매끄럽다.
-
----
-
-# F. 처리
-
-## F-1 · 옷 통 [1:1]
-
-```
-Close on a large steel bin filled to the brim with discarded clothes — coarse
-handmade garments in undyed linen and rough weave, each one clearly made with
-care, all tangled together. A single hand is releasing one more garment above
-the pile. Bare grey concrete floor beneath.
-
-Photoreal, photographed not illustrated. One hard overhead light, deep shadow
-in the bin. Cold desaturated grade. Real cloth weave and stitching visible.
+Photoreal, photographed not illustrated. Warm late-afternoon daylight, soft.
+Muted earth palette — sun-baked mud, faded cloth, dry straw, rusted tin.
+Real skin texture with visible pores and age spots. No beauty retouching.
 Fine film grain. No text, no logo, no watermark.
 ```
 
-## F-2 · 같은 옷 [16:9]
-
-```
-A line of young people filing out of a doorway into a bare grey concrete
-corridor, all wearing identical plain grey issue clothing, hair wet and pushed
-back, all the same. They are indistinguishable from one another at a glance.
-One of them is turning his head, looking for someone.
-
-Photoreal, photographed not illustrated. One cold overhead strip light, flat
-and even. Monochrome grey. Real damp cloth. Fine film grain. No beauty
-retouching. No text, no logo, no watermark.
-```
-
 ---
 
-# G. 판정
+# A. 새동네
 
-## G-1 · 오백 명 [16:9 — 부감]
+## A-1 · 마을 전경 [16:9]
 
 ```
-High overhead shot looking straight down onto a vast bare concrete yard. Five
-hundred young people in identical grey stand in long straight queues, evenly
-spaced, seen from directly above as five hundred small grey marks. A few
-figures in white move between the lines. The geometry is perfectly regular.
+A tiny settlement of six or seven low mud-brick houses at the edge of a
+desert, seen from a slight rise. Rusted tin roofs. Laundry strung between two
+of them, moving in the wind. Chickens in the dirt yard. A raised wooden
+platform in the centre where a few people sit. Nothing else for miles behind
+it — flat empty ground to a low horizon.
 
-Photoreal, photographed not illustrated. Hard overcast light from directly
-above, almost no cast shadow. Monochrome grey concrete and grey cloth. Fine
+Photoreal, photographed not illustrated. Warm late-afternoon daylight, soft.
+Muted earth palette — sun-baked mud, faded cloth, dry straw, rusted tin. Fine
 film grain. No text, no logo, no watermark.
 ```
 
-## G-2 · 40 [9:16]
+## A-2 · 평상의 넷 [16:9 — 이 화의 기준 컷]
 
 ```
-A man in a plain grey uniform standing in a bare concrete yard, wearing thin
-wire glasses, holding a clipboard against his chest. Middle-aged, neat, utterly
-without expression — not cruel, not kind, simply reading. He is looking slightly
-down at something out of frame. Behind him, out of focus, a long queue of
-figures in grey.
+Four very old people sit side by side on a low raised wooden platform in a
+dirt yard, shelling beans into a shared bowl. A small bent woman with white
+hair tied back and a walking stick across her knees. A thin straight-backed
+old man. An old man with milky blind eyes and perfect posture, eyes closed. A
+slightly less grey old man crouched at the end. All of them are entirely at
+ease. Nobody is looking at anybody.
 
-Photoreal, photographed not illustrated. Flat overcast light, no cast shadow,
-exposed one stop under. Monochrome grey. Real skin texture with visible pores.
-Fine film grain. No beauty retouching. No text, no logo, no watermark.
+Photoreal, photographed not illustrated. Warm late-afternoon daylight, soft.
+Muted earth palette. Real aged skin with visible pores, age spots and thin
+skin over the knuckles. No beauty retouching. Fine film grain. No text, no
+logo, no watermark.
 ```
 
-> **이 영화에서 제일 무서운 얼굴이다.** 화내지 않는 얼굴로 그려야 한다.
+> **이 컷이 1화 전체다.** 세상에서 제일 센 넷이 콩을 까고 있다.
+
+## A-3 · 분이 [9:16]
+
+```
+A very old woman, about a hundred, sitting on a wooden platform. Small and
+bent, white hair tied back tightly, a plain worn jacket. A wooden walking
+stick leans against her knee. She is rubbing one knee with a gnarled hand and
+looking off to the side with an expression of pure everyday irritation.
+
+Photoreal, photographed not illustrated. Warm soft daylight. Real aged skin
+with deep lines, age spots, thin translucent skin over the knuckles. No beauty
+retouching. Fine film grain. No text, no logo, no watermark.
+```
+
+## A-4 · 선생 [1:1]
+
+```
+Close on a very old man sitting upright with his eyes closed, face turned
+slightly as if listening to something far away. Both eyes are clouded
+completely white behind the lids. His back is unnaturally straight for his
+age. Weathered skin, white stubble.
+
+Photoreal, photographed not illustrated. Warm soft daylight, shallow focus.
+Real aged skin texture with visible pores. No beauty retouching. Fine film
+grain. No text, no logo, no watermark.
+```
 
 ---
 
-# H. 개통
+# B. 손님
 
-## H-1 · 001 [1:1 — 클로즈업]
+## B-1 · 마당에 들어서는 여덟 [16:9]
 
 ```
-Extreme close on the side of a young woman's neck, seen from behind and
-slightly to the side. Freshly branded into the skin, the characters 001, the
-flesh around them red and swollen. Just below, a small pale ceramic ring set
-flush into the skin, brand new, the surrounding skin unscarred. Loose grey
-cloth at the shoulder.
+Eight armoured figures walk into a small dirt yard between mud-brick houses.
+Black lacquered plate with exposed silver mechanical joints at elbows and
+knees, long spears held upright. All of them young. Chickens scattering around
+their boots. In the background, four very old people sit on a wooden platform,
+shelling beans, not looking up.
 
-Photoreal, photographed not illustrated. One hard overhead light, deep shadow
-below the jaw. Cold desaturated grade. Real skin texture with visible pores and
-fine hairs. Fine film grain. No beauty retouching. No text, no logo, no
+Photoreal, photographed not illustrated. Warm late-afternoon daylight. Muted
+earth palette against black and silver armour. Real lacquer with dust in the
+crevices. Fine film grain. No text, no logo, no watermark.
+```
+
+> **핵심: 노인들이 고개를 안 든다.** 이 대비가 이 컷의 전부다.
+
+---
+
+# C. 4초
+
+## C-1 · 지팡이 [16:9 · 순간]
+
+```
+An armoured man is folded backwards in mid-air across a dirt yard, his
+breastplate caved inward at the sternum, spear spinning away from his hand.
+Dust blasting outward beneath him. In the foreground, still seated on a low
+wooden platform, a small old woman has one arm extended, the tip of a wooden
+walking stick where his chest was. She has not stood up. Her expression has
+not changed.
+
+Photoreal, photographed not illustrated. Warm daylight, hard motion blur on
+the flying figure, none on the seated woman. Muted earth palette. Fine film
+grain. No text, no logo, no watermark.
+```
+
+> **그녀는 일어나지 않았다.** 이게 이 컷의 유일한 지시다.
+
+## C-2 · 잔상 [16:9]
+
+```
+A dirt yard. Two armoured figures have just struck each other by mistake,
+helmets colliding, both recoiling. Between where they were standing there is
+only a faint smear of motion blur and hanging dust — the shape of someone who
+was there and is not. In the background an old man sits on a wooden platform
+shelling a bean, unhurried, already back in place.
+
+Photoreal, photographed not illustrated. Warm daylight. Heavy motion blur in
+the empty space, everything else sharp. Muted earth palette. Fine film grain.
+No text, no logo, no watermark.
+```
+
+## C-3 · 매듭 [1:1]
+
+```
+Extreme close on a steel spear shaft that has been tied into a single tight
+overhand knot, the metal folded like rope, the shaft still whole on both
+sides. An old man's weathered hand is just releasing it. His eyes are closed.
+
+Photoreal, photographed not illustrated. Warm daylight, shallow focus. Real
+steel with scratches and oxidation, real aged skin. Fine film grain. No text,
+no logo, no watermark.
+```
+
+## C-4 · 하늘 [9:16]
+
+```
+Extreme low angle looking straight up from a dirt yard into a pale afternoon
+sky. Three armoured figures are very high overhead, small, tumbling upward and
+apart, spears separating from them. At the very bottom edge of frame, the rim
+of a metal water pail and an old man's hands still holding it, looking up
+after them.
+
+Photoreal, photographed not illustrated. Warm daylight against pale sky.
+Extreme vertical scale. Fine film grain. No text, no logo, no watermark.
+```
+
+## C-5 · 그다음 [16:9]
+
+```
+A small dirt yard after a fight. Eight armoured figures lie on the ground in
+awkward folded positions, none of them still moving but none of them dead — a
+dented breastplate, a knotted spear, boots pointing the wrong way. A hole in
+the mud wall shaped like a person. Chickens are already walking back in.
+Behind it all, four very old people sit on the platform, one rubbing a knee.
+
+Photoreal, photographed not illustrated. Warm late-afternoon daylight, long
+soft shadows. Muted earth palette. Fine film grain. No text, no logo, no
 watermark.
 ```
 
+> **닭이 벌써 돌아와 있다.** 이 디테일 하나가 이 마을을 설명한다.
+
 ---
 
-# I. 여울
+# D. 화물차
 
-## I-1 · 복도의 여울 [9:16]
-
-```
-A long bare grey concrete corridor with no windows, one cold strip light
-running along the ceiling. Far down the corridor a woman in worn grey work
-clothes kneels on the floor with a cloth, wringing it out. She looks about
-twenty. There is nothing on her clothing — no number, no marking of any kind.
-She has just looked up.
-
-Photoreal, photographed not illustrated. One cold overhead strip light, flat
-and even, deep one-point perspective. Monochrome grey. Real worn cloth. Fine
-film grain. No beauty retouching. No text, no logo, no watermark.
-```
-
-## I-2 · 닫힌 뚜껑 [1:1 — 클로즈업]
+## D-1 · 지나가는 차 [21:9]
 
 ```
-Extreme close on the side of a woman's neck. A small pale ceramic ring is set
-flush into the skin, sealed with a plain dull cap. The skin around it is
-completely smooth — no scarring, no discolouration, no number. It has never
-been opened. Her own fingers are just touching it.
+Extreme wide. A dirt road running across flat empty ground past a tiny
+mud-brick settlement. Three old cargo trucks are driving away from camera,
+raising a long trail of dust. In the open cargo bed of the last one, a crowd
+of young people in stiff new homemade clothes sit packed together. One of them
+has turned to look back.
 
-Photoreal, photographed not illustrated. One cold overhead light, soft. Cold
-desaturated grade. Real skin texture with visible pores. Fine film grain. No
-beauty retouching. No text, no logo, no watermark.
+Photoreal, photographed not illustrated. Warm late-afternoon daylight, long
+low shadows, dust catching the light. Muted earth palette. Fine film grain. No
+text, no logo, no watermark.
 ```
 
-## I-3 · 손가락 [1:1]
+## D-2 · 손 [1:1]
 
 ```
-Close on a woman's hands holding a wet grey cloth in a bare concrete corridor.
-The fingers of one hand are folding down one at a time, counting. Water beads
-at the edge of the cloth. Nothing else in frame.
+Extreme close on a very old woman's hand held open in her lap, palm up, seen
+from her own eye level. Thick knuckles, deep lines, dark age spots, skin thin
+enough that the tendons and veins stand out. The fingers are half closed, as
+if she has just tested whether they still work.
 
-Photoreal, photographed not illustrated. One cold overhead light. Cold
-desaturated grade. Real wet cloth and real skin texture with visible pores.
-Fine film grain. No text, no logo, no watermark.
+Photoreal, photographed not illustrated. Warm soft daylight, shallow focus.
+Real aged skin texture with visible pores. No beauty retouching. Fine film
+grain. No text, no logo, no watermark.
+```
+
+> **백 년 쓴 손이다.** 이 컷과 C-1(같은 손이 사람을 접는 컷)이 짝이다.
+
+## D-3 · 마지막 [21:9]
+
+```
+Extreme wide. Four very old people sit on a low wooden platform in a small
+dirt yard at the edge of a vast empty plain. Late afternoon. The road beyond
+them is empty; only a faint line of dust still hangs in the air far off. A
+hole in the mud wall behind them. Laundry moving slightly. Nobody is talking.
+
+Photoreal, photographed not illustrated. Warm low daylight, long shadows
+stretching across the yard. Muted earth palette. Figures small in a wide
+frame. Fine film grain. No text, no logo, no watermark.
 ```
 
 ---
 
 ## 뽑는 순서
 
-1. **D-2 (그늘의 운전수들)** — 이 화의 세계관이 여기 다 있다. 이게 되면 톤이 잡힌다
-2. **E-1 (벽)** — 최대 컷. 세로 스케일이 나오는지 확인
-3. **E-3 (계단이 없다)** — 대사 없이 말하는 컷
-4. **G-2 (40)** — 표정 없는 얼굴이 제대로 나오는지
+1. **A-2 (평상의 넷)** — 1화의 기준. 이게 나오면 톤이 잡힌다
+2. **C-1 (지팡이)** — 앉은 채로 사람이 날아간다. 이 컷이 되면 액션이 성립
+3. **B-1 (마당에 들어서는 여덟)** — 대비
+4. **D-2 (손)** — C-1과 같은 손
 5. 나머지
 
-## 미결
+## 색 설계
 
-- [ ] **실사 vs 그림.** 웹툰이면 보통 일러스트인데, 이 프로젝트는 지금까지 전부 실사로 왔다.
-      실사 웹툰으로 가면 독특한데, 컷 수가 357개라 물량이 만만치 않다
-- [ ] 세로 스크롤 컷을 몇 대 몇으로 통일할지 (9:16 기본 / 1:1 클로즈업 / 21:9 스케일)
+| | |
+|---|---|
+| **1화 (새동네)** | 따뜻하다. 흙, 빨래, 닭, 오후 햇빛 |
+| **2화 (흰 벽 안)** | 차갑다. 회색 콘크리트, 그림자 없는 조명 |
+
+**1화가 따뜻해야 2화에서 색이 사라지는 게 느껴진다.**
+지금까지 만든 회색 프롬프트는 전부 2화 이후용이다.
