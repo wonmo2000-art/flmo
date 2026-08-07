@@ -31,6 +31,122 @@ Fine film grain. No text, no logo, no watermark.
 
 ---
 
+# 0. 눈 (프롤로그)
+
+> **여기만 팔레트가 다르다.** 흰색이다.
+> 눈은 **깨끗한 게 아니라 비어 있다.** 예쁘게 뽑으면 실패다.
+
+```
+Photoreal, photographed not illustrated. Flat diffused light through a heavy
+overcast at 7500K, no visible sun, no warm tone anywhere. Blown-out whites and
+soft grey shadow only. Blowing snow at 30% reducing everything distant to
+nothing. Real skin texture with wind-chapped colour. No beauty retouching.
+Fine film grain. No text, no logo, no watermark.
+```
+
+## 0-1 · 비탈 [기준 컷]
+
+```
+Extreme wide. A vast unbroken snow slope rising from the bottom of the frame
+to a ridge, with dark rock breaking through the snow along the upper left. Low
+cloud sits on the ridge and erases the summit. Wind is lifting loose snow off
+the surface in long horizontal streams.
+
+Two very small figures are climbing the slope near the centre of the frame,
+seen from the side, dwarfed by the mountain. A tall adult and a much smaller
+one beside them, both in heavy layered fur-and-hide coats crusted pale with
+ice, hoods down, dark hair pulled back. They are holding hands. A single line
+of footprints runs back behind them and fades.
+
+Photoreal, photographed not illustrated. Flat diffused overcast light at 7500K,
+no sun. Blowing snow at 30%. Figures below one tenth of frame height. Fine film
+grain. No text, no logo, no watermark.
+```
+
+> **인물이 프레임 높이의 10분의 1을 넘으면 안 된다.** 산이 주인공이다.
+
+## 0-2 · 손
+
+```
+Extreme close on two joined hands against the white ground — a weathered adult
+hand with cracked chapped knuckles gripping a much smaller one, both half
+wrapped in strips of hide and fur, ice crusted in the fibres. Snow blowing past
+horizontally. Nothing else in the frame but white.
+
+Photoreal, photographed not illustrated. Flat diffused overcast light at 7500K,
+shallow focus. Real skin texture, wind-chapped and reddened. Fine film grain.
+No text, no logo, no watermark.
+```
+
+## 0-3 · 아이
+
+```
+Close on a small figure in a heavy iced fur coat on a snow slope, seen from the
+side, looking back over one shoulder at empty white ground. A long dark braid
+whips sideways in the wind. The nose and cheeks are wind-reddened. No
+expression at all.
+
+Photoreal, photographed not illustrated. Flat diffused overcast light at 7500K,
+shallow focus, the slope behind reduced to white. Real skin texture, chapped
+and raw. No beauty retouching. Fine film grain. No text, no logo, no watermark.
+```
+
+## 0-4 · 능선에서 본 것 [이 화의 전환점]
+
+```
+Extreme wide from a snow ridge looking down and out. The near third of the
+frame is white snow and dark rock. Beyond it the snow line ends abruptly and a
+vast bleached brown dust plain runs flat all the way to a soft horizon, with
+charred bare tree trunks standing at intervals and haze thickening with
+distance. Far out across the plain a single unbroken thin white line crosses
+the whole width of the view.
+
+Two small figures in iced fur coats stand at the ridge with their backs to
+camera, an adult and a much smaller one, holding hands, looking out at it.
+
+Photoreal, photographed not illustrated. Flat diffused overcast light at 7500K
+over the snow, dust haze at 30% over the plain. Two palettes meeting in one
+frame — white above, bleached brown below. Fine film grain. No text, no logo,
+no watermark.
+```
+
+> **1화의 최대 컷.** 눈이 끝나고 먼지가 시작되는 경계를 한 프레임에 담는다.
+> 저 흰 선이 흰 벽이다. 아직 아무도 말 안 해준다.
+
+## 0-5 · 줄
+
+```
+A long queue of people waiting on cracked dust ground at the foot of an
+enormous featureless white wall that fills the top of the frame and runs off
+both edges. Every pair in the line is one adult and one much smaller person,
+all in layered wrapped cloth and worn hide, dust on everything. A figure in
+clean grey uniform stands at the head of the line writing on a slate. Nobody is
+talking. The wall has no door and no window.
+
+Photoreal, photographed not illustrated. Flat overcast-filtered midday at
+5600K, short hard shadows. Bleached earth palette against unbroken white. Dust
+haze at 25% on everything except the wall. Fine film grain. No text, no logo,
+no watermark.
+```
+
+## 0-6 · 펴진 손
+
+```
+Extreme close on a weathered adult hand opening, seen from below, the fingers
+uncurling from a grip that is no longer holding anything. Cracked chapped
+knuckles, strips of hide wrapping half the palm, dust settled over old ice
+damage. Out of focus behind it, an enormous flat white surface fills the whole
+background.
+
+Photoreal, photographed not illustrated. Flat overcast light at 5600K, shallow
+focus. Real skin texture with visible pores and cracked skin. No beauty
+retouching. Fine film grain. No text, no logo, no watermark.
+```
+
+> **이 컷이 이 영화의 전체 주제다.** 아무도 아이를 빼앗지 않았다. 손을 폈을 뿐이다.
+
+---
+
 # A. 조준선
 
 ## A-1 · 조준경 안
@@ -362,13 +478,26 @@ everything except the wall. Fine film grain. No text, no logo, no watermark.
 
 ## 뽑는 순서
 
-1. **B-2 (평상의 넷)** — 1화의 기준. 이게 나오면 톤이 잡힌다
-2. **A-2 (단이)** — 두 번째 기준. 바깥 세계의 질감
-3. **E-1 (지팡이)** — 앉은 채로 사람이 날아간다. 이 컷이 되면 액션이 성립
-4. **I-1 (평상 끝)** — 1화의 착지점
-5. **A-3 (목)** — 최대 복선
-6. **J-1 (벽)** — 2화로 넘기는 문
-7. 나머지
+1. **0-1 (비탈)** — 첫 장면. 이게 나오면 이 영화의 크기가 정해진다
+2. **B-2 (평상의 넷)** — 현재 파트의 기준. 톤이 잡힌다
+3. **0-4 (능선에서 본 것)** — 흰색이 갈색으로 넘어가는 전환점
+4. **A-2 (단이)** — 바깥 세계의 질감
+5. **E-1 (지팡이)** — 앉은 채로 사람이 날아간다. 액션 성립
+6. **0-6 (펴진 손)** — 주제
+7. **I-1 (평상 끝)** — 1화의 착지점
+8. **A-3 (목)** — 최대 복선
+9. **J-1 (벽)** — 2화로 넘기는 문
+10. 나머지
+
+## 색 설계 — 두 번 죽는다
+
+| | 색온도 | |
+|---|---|---|
+| **0. 눈 (90년 전)** | 7500K · 흰색 | 깨끗하다. 그리고 비어 있다 |
+| **A~J (현재, 밖)** | 5600K · 표백된 갈색 | 밝다. 그런데 죽어 있다 |
+| **K (벽 안)** | 4000K · 회색 | 어둡다. 그런데 깨끗하다 |
+
+**0-1의 흰 눈과 J-1의 흰 벽은 같은 흰색이어야 한다.**
 
 ## 질감 규칙
 
