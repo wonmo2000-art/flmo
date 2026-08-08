@@ -210,7 +210,7 @@ AUDIO
 Loud ragged infant crying very close to the microphone, hooves at gallop,
 basket weave flexing, leather cords creaking, wind. When the crying stops,
 everything else continues at exactly the same level — the absence is the event.
-No music. No dialogue.
+Every sound is unpitched and textural — no tones, no drones, no sustained notes, no instruments, no singing. No dialogue.
 
 STYLE
 Photoreal live-action, 4K, large-format cinema detail, physically real
@@ -293,7 +293,7 @@ takes no light from either. Haze at 20% and both circles light it from above.
 AUDIO
 Hooves at gallop, wind, basket weave, the horse breathing. From far behind, a
 faint rising whistle, then one full second of silence, then a deep soft
-concussion that rolls across the dunes and arrives late. The very low tone that
+concussion that rolls across the dunes and arrives late. The low unpitched rumble that
 was coming from the black wall stops entirely at the burst. No music. No
 dialogue.
 
@@ -376,7 +376,7 @@ AUDIO
 Hooves at gallop, basket weave flexing, linen very close to the microphone,
 wind, the horse breathing. Far behind, the last of the concussion still rolling
 away. No infant crying during the brightening. It starts again in the final
-moment. No music. No dialogue.
+moment. Every sound is unpitched and textural — no tones, no drones, no sustained notes, no instruments, no singing. No dialogue.
 
 STYLE
 Photoreal live-action, 4K, large-format cinema detail, physically real
