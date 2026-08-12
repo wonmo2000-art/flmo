@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>피폭 — 티저 샷리스트 (Seedance 2.0)</title>
+<style>
+  :root{
+    --bg:#0d0f11; --panel:#15181b; --panel2:#1b1f23; --line:#2a3036;
+    --ink:#e6e9ec; --dim:#8b959e; --accent:#c8452f; --accent2:#d9a441;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px 80px}
+  header{border-bottom:1px solid var(--line);padding:34px 0 24px;margin-bottom:28px}
+  h1{margin:0;font-size:30px;letter-spacing:-.02em;font-weight:650}
+  h1 .sub{color:var(--accent);font-weight:400}
+  .howto{margin-top:12px;color:var(--dim);font-size:14px}
+  .meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;
+    padding:3px 12px;font-size:12px;color:var(--dim)}
+  details.bible{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    margin-bottom:34px;overflow:hidden}
+  details.bible>summary{cursor:pointer;padding:14px 18px;font-weight:600;font-size:15px;
+    list-style:none;user-select:none}
+  details.bible>summary::-webkit-details-marker{display:none}
+  details.bible>summary::before{content:"▸ ";color:var(--accent)}
+  details.bible[open]>summary::before{content:"▾ "}
+  .bibody{padding:4px 18px 20px;border-top:1px solid var(--line)}
+  .bibody h3{font-size:13px;text-transform:uppercase;letter-spacing:.09em;color:var(--dim);
+    margin:22px 0 8px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-bottom:6px;
+    display:block;overflow-x:auto;white-space:nowrap}
+  th,td{text-align:left;padding:7px 12px 7px 0;border-bottom:1px solid var(--line);
+    vertical-align:top}
+  th{color:var(--dim);font-weight:600;font-size:12px;text-transform:uppercase;
+    letter-spacing:.06em}
+  code{font-family:var(--mono);font-size:12.5px;background:var(--panel2);
+    border:1px solid var(--line);border-radius:4px;padding:1px 6px;color:var(--accent2)}
+  .scene{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    margin-bottom:22px;overflow:hidden}
+  .scenehead{display:flex;align-items:flex-start;gap:13px;padding:16px 18px}
+  .scenehead input[type=checkbox]{appearance:none;width:19px;height:19px;flex:0 0 19px;
+    margin-top:4px;border:1.5px solid #48525b;border-radius:5px;background:transparent;
+    cursor:pointer;position:relative}
+  .scenehead input[type=checkbox]:checked{background:var(--accent);border-color:var(--accent)}
+  .scenehead input[type=checkbox]:checked::after{content:"";position:absolute;left:6px;top:2px;
+    width:4px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(43deg)}
+  .scenetitle{font-size:17px;font-weight:620;letter-spacing:-.01em}
+  .scenetitle .no{color:var(--accent);margin-right:9px}
+  .scenedesc{color:var(--dim);font-size:14px;margin-top:3px}
+  .scene.done .scenetitle,.scene.done .scenedesc{opacity:.42}
+  .promptbox{border-top:1px solid var(--line)}
+  .pbar{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:9px 18px;background:var(--panel2)}
+  .pname{font-family:var(--mono);font-size:12px;color:var(--accent2);letter-spacing:.05em}
+  .pnote{color:var(--dim);font-size:12px;margin-left:10px;font-family:inherit;letter-spacing:0}
+  button.copy{background:transparent;border:1px solid #3d464e;color:var(--ink);
+    border-radius:6px;padding:4px 13px;font-size:12px;cursor:pointer;white-space:nowrap}
+  button.copy:hover{border-color:var(--accent);color:var(--accent)}
+  button.copy.ok{border-color:#4c8f4c;color:#7fc27f}
+  pre{margin:0;padding:16px 18px;font-family:var(--mono);font-size:12.5px;line-height:1.62;
+    white-space:pre-wrap;word-break:break-word;color:#d3d8dd;overflow-x:auto}
+  .note{color:var(--dim);font-size:13px;padding:0 18px 15px;margin-top:-4px}
+  .note b{color:var(--ink);font-weight:600}
+  footer{color:var(--dim);font-size:13px;border-top:1px solid var(--line);
+    margin-top:34px;padding-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>피폭 <span class="sub">— 티저 샷리스트</span></h1>
+  <div class="howto">각 프롬프트는 <b>독립된 1회 생성</b>이다. 통째로 복사해 그대로 넣는다. 앞뒤 샷을 참조하는 문구는 들어 있지 않다.</div>
+  <div class="meta">
+    <span class="chip">Seedance 2.0</span>
+    <span class="chip">2.39:1 아나모픽</span>
+    <span class="chip">샷당 10초</span>
+    <span class="chip">4K · 오디오 ON · 비트레이트 HIGH</span>
+    <span class="chip">대사 없음</span>
+    <span class="chip">전 샷 락오프</span>
+  </div>
+</header>
+
+<details class="bible">
+  <summary>프로젝트 바이블 — 참조용 (프롬프트에 복사하지 않는다)</summary>
+  <div class="bibody">
+
+    <h3>에셋 · @태그</h3>
+    <table>
+      <tr><th>태그</th><th>대상</th><th>종류</th><th>등장</th></tr>
+      <tr><td><code>@wall</code></td><td>흰 벽 — 사막의 60m 콘크리트 면</td><td>로케이션 시트</td><td>1A · 5A</td></tr>
+      <tr><td><code>@hall</code></td><td>제의 홀 — 원형 개구부와 빛 기둥</td><td>로케이션 시트</td><td>2A</td></tr>
+      <tr><td><code>@chamber</code></td><td>정화실 — 의자 둘, 천장에서 내려오는 튜브</td><td>로케이션 시트</td><td>3A</td></tr>
+      <tr><td><code>@dune</code></td><td>사구 지대 — 저각 태양, 역광 먼지</td><td>로케이션 시트</td><td>4A</td></tr>
+      <tr><td><code>@seha</code></td><td>세하 — 금테 정화구 일곱, 등이 열린 흰 랩</td><td>턴어라운드</td><td>3A</td></tr>
+      <tr><td><code>@kailan</code></td><td>카일란 — 금 예복, 관자놀이 금 세공판</td><td>턴어라운드</td><td>3A</td></tr>
+      <tr><td><code>@enforcer</code></td><td>집행자 — 흑칠 갑옷 + 금 세공, 노출 은 관절</td><td>턴어라운드</td><td>4A</td></tr>
+      <tr><td><code>@redcloak</code></td><td>붉은 망토 — 색·재단·천 무게만</td><td>의상 시트</td><td>5A</td></tr>
+    </table>
+
+    <h3>룩 결정</h3>
+    <table>
+      <tr><th>항목</th><th>확정</th></tr>
+      <tr><td>스타일 접두</td><td>없음 — 단편 서사이므로 각 프롬프트가 밀봉 문서. 룩은 섹션별로 분산</td></tr>
+      <tr><td>문법</td><td>거대 단일 볼륨 · 광원 하나 · 인물은 프레임 높이 1/10 이하 · 침묵</td></tr>
+      <tr><td>카메라</td><td>전 샷 락오프. 예외는 2A의 3% 푸시 하나뿐</td></tr>
+      <tr><td>색</td><td>회색이 바탕. 색은 점으로만. <b>빨강은 5A의 한 사람에게만</b></td></tr>
+      <tr><td>얼굴</td><td>티저 전체에 <b>얼굴이 하나도 없다.</b> 의도적</td></tr>
+    </table>
+
+    <h3>씬별 연속성 상태</h3>
+    <table>
+      <tr><th>씬</th><th>시간</th><th>공기</th><th>색온도</th><th>넘겨받는 것</th></tr>
+      <tr><td>1A 흰 벽</td><td>정오</td><td>헤이즈 10%</td><td>5600K</td><td>—</td></tr>
+      <tr><td>2A 제의 홀</td><td>실내</td><td>헤이즈 25%</td><td>6500K</td><td>벽 안쪽</td></tr>
+      <tr><td>3A 정화실</td><td>실내</td><td>헤이즈 15%</td><td>3800K</td><td>의식의 실체</td></tr>
+      <tr><td>4A 집행자</td><td>일몰 직전</td><td>헤이즈 45→60%</td><td>2800K</td><td>값이 치러진 뒤</td></tr>
+      <tr><td>5A 벽 위</td><td>흐림</td><td>헤이즈 20%</td><td>7000K</td><td>붉은 것 하나</td></tr>
+    </table>
+
+    <h3>연령 표현</h3>
+    <p style="color:var(--dim);font-size:13.5px;margin:0">
+      프롬프트에서 나이·연령 단어를 전부 걷어냈다. 인물은 <b>역할·의상·행동</b>으로만 지시한다
+      — "뼈흰색 랩을 입은 마른 인물", "금 예복의 인물". 레포 문서(<code>characters.md</code>)의
+      나이 설정은 그대로 두되, 생성 프롬프트에는 넣지 않는다.
+    </p>
+
+    <h3>순서 — 겉 → 의식 → 진실 → 대가 → 탈출</h3>
+    <p style="color:var(--dim);font-size:13.5px;margin:0">
+      탈옥으로 끝난다. 추격으로 끝나면 절망이고, 벽 위로 끝나면 약속이 된다.
+    </p>
+
+  </div>
+</details>
+
+
+<!-- ============ SCENE 1 ============ -->
+<section class="scene" data-scene="1">
+  <div class="scenehead">
+    <input type="checkbox">
+    <div>
+      <div class="scenetitle"><span class="no">1</span>흰 벽</div>
+      <div class="scenedesc">문도 창도 없는 콘크리트 면. 발치에 사람 하나. 열기와 먼지 말고는 아무것도 움직이지 않는다.</div>
+    </div>
+  </div>
+  <div class="promptbox">
+    <div class="pbar"><span class="pname">1A<span class="pnote">10s · 84° · 락오프</span></span>
+      <button class="copy">복사</button></div>
+<pre>SCENE CONTEXT
+A single vast concrete wall stands in open desert under a vertical midday sun. One lone figure walks along its base, dwarfed almost to invisibility. Nothing else exists in the frame.
+
+ACTIVE REFERENCES
+@wall — Controls environment, materials and surface only; reference framing not inherited.
+
+LOCATION MAP
+Foreground: pale sand running to the bottom frame edge, wind-rippled, undisturbed by tracks. Midground: the base of the wall 400 m from camera, where sand meets concrete on a dead-level line. Background: the wall itself, sixty metres high, filling the middle band of the frame, its top edge dead level against a bleached white sky that occupies the upper third. No gate, no window, no seam, no marking anywhere on the concrete. Camera sits on the sand, perpendicular to the wall face. Light falls from directly overhead.
+
+FIRST FRAME / BLOCKING
+Dead-symmetrical composition; the sand horizon and the wall top both perfectly level and parallel. One walking figure in a layered bone-white desert wrap stands at the foot of the wall, slightly right of frame centre, below 2% of frame height — a mark rather than a person. The figure is in profile, facing right, walking left to right along the wall base. Nothing else is in frame.
+
+FORMAT MODE
+One continuous shot, the camera does not cut on its own.
+
+CUT 1 — extreme wide, 84° FOV, camera at 1.6 m height on the sand 400 m out, fully static
+The figure walks left to right along the base of the wall at 1 km/h, crossing barely its own body width across the whole shot. Heat shimmer rises off the sand in a continuous band along the base of the wall. Fine pale dust drifts across the foreground right to left at 0.5 m/s.
+
+OPTICS
+84° FOV throughout, anamorphic, rectilinear so the wall top reads as a dead-straight line edge to edge. Deep focus, sharp from foreground sand to wall face. Minimal motion blur. No drift.
+
+CAMERA
+Locked on a fixed head at 1.6 m. Zero pan, zero tilt, zero roll, zero zoom, zero push for the entire shot. Camera axis perpendicular to the wall face.
+
+ACTION
+The heat shimmer runs continuously for the whole shot WHILE the figure walks WHILE dust crosses the foreground — three simultaneous continuous motions, none of them starting or stopping. The wall does not change. The light does not change. The shot ends with the figure still walking.
+
+PHYSICS
+Sand grains lift and settle inside the drifting dust. Air distortion in the shimmer band bends the base of the wall very slightly. The figure's feet leave faint impressions that the wind erases behind it.
+
+LIGHTING
+Single source: sun directly overhead at 5600K. Near-zero cast shadow anywhere in frame. Exposure pushed 1.5 stops hot so concrete and sky both sit close to white. Haze 10% at 400 m depth.
+
+STYLE
+Photoreal, 4K, anamorphic 2.39:1, fine film grain, real-time. Photographed, not illustrated — real concrete surface with fine aggregate and form-work texture, real sand grain. Monochrome by material: bleached concrete, pale sand, white sky, no saturated colour anywhere.
+
+POSITIVE LOCKS
+EXACTLY ONE figure in the entire generation. The wall stays unbroken edge to edge with no gate, window or opening. The wall top stays a dead-level straight line. The figure stays below 2% of frame height for the whole shot. The camera stays completely locked. This clip is one fragment of a longer film — end mid-motion with the figure still walking, no settling shot.</pre>
+  </div>
+  <div class="note"><b>사운드:</b> 바람만. 발소리는 거리 때문에 들리지 않는다.</div>
+</section>
+
+
+<!-- ============ SCENE 2 ============ -->
+<section class="scene" data-scene="2">
+  <div class="scenehead">
+    <input type="checkbox">
+    <div>
+      <div class="scenetitle"><span class="no">2</span>제의 홀</div>
+      <div class="scenedesc">빛 기둥 하나, 동심원으로 무릎 꿇은 수백 명. 가운데 선 하나가 고개를 든다.</div>
+    </div>
+  </div>
+  <div class="promptbox">
+    <div class="pbar"><span class="pname">2A<span class="pnote">10s · 107° · 3% 푸시</span></span>
+      <button class="copy">복사</button></div>
+<pre>SCENE CONTEXT
+Hundreds of robed figures kneel in concentric rings on the floor of an immense dark hall. One figure stands alone at the centre inside a disc of light falling from an aperture far above. That figure raises its head toward the light.
+
+ACTIVE REFERENCES
+@hall — Controls environment, materials and mood only; reference framing not inherited.
+
+LOCATION MAP
+Foreground: bare grey concrete floor running to the bottom frame edge. Midground: concentric rings of kneeling figures in plain undyed white robes, heads bowed, covering the floor from 15 m to 60 m from camera. Centre: a disc of white light 8 m across on the floor at 40 m, one standing figure inside it. Background: raw grey concrete walls rising out of frame on both sides, the ceiling lost entirely in darkness above. High in the far wall a single circular aperture 4 m across admits one hard shaft of light angled steeply down onto the disc. Camera sits low on the floor centre-line facing the aperture.
+
+FIRST FRAME / BLOCKING
+Dead-symmetrical, the shaft of light running vertically through the exact centre of frame. The standing figure is at frame centre inside the disc, below 5% of frame height, back to camera. Kneeling figures fill the lower half in even concentric rings, all oriented inward toward the disc, all heads bowed. Everything outside the disc falls to near-black.
+
+FORMAT MODE
+One continuous shot, the camera does not cut on its own.
+
+CUT 1 — extreme wide, 107° FOV, camera at 1.2 m height on the floor centre-line, static with a 3% push
+Dust motes turn slowly inside the shaft of light throughout. The kneeling figures hold completely still. The standing figure at the centre raises its head toward the aperture across the middle of the shot and holds it up. The camera pushes in 3% total across the whole shot, so slowly the move is barely readable.
+
+OPTICS
+107° FOV, anamorphic, rectilinear. Deep focus. The vertical light shaft holds a hard edge against the surrounding dark. No drift mid-shot.
+
+CAMERA
+Locked on a fixed head, one straight push along the centre axis at 0.4 m/s. Zero pan, zero tilt, zero roll.
+
+ACTION
+Dust motes turn continuously inside the shaft WHILE the standing figure raises its head WHILE the kneeling rings stay absolutely still — all three simultaneous and overlapping. No figure in the crowd shifts, sways, or turns. The head-raise is the only human motion in the entire frame. The shot ends with the head still held up toward the light.
+
+PHYSICS
+Dust particles drift and rotate inside the beam on real air currents. Light falls off sharply past the disc edge with no ambient bounce filling the corners. Robes hold their fold under kneeling weight.
+
+LIGHTING
+Single source: a hard white shaft through the aperture at 6500K, angled 70° down. Everything outside the disc sits 6 stops under. Haze 25% so the shaft reads as a solid volume of light. No fill light anywhere.
+
+STYLE
+Photoreal, 4K, anamorphic 2.39:1, fine film grain, real-time. Photographed, not illustrated — raw board-marked concrete, real coarse-weave undyed cloth. Monochrome by material: grey concrete and white cloth, no saturated colour.
+
+POSITIVE LOCKS
+EXACTLY ONE standing figure inside the disc of light. The kneeling crowd holds absolutely still for the entire generation. The composition stays dead-symmetrical with the light shaft vertical through frame centre. All kneeling heads stay bowed and the standing figure stays back to camera, so no face is seen. This clip is one fragment of a longer film — end on the held look, unresolved.</pre>
+  </div>
+  <div class="note"><b>사운드:</b> 방 울림. 아주 먼 웅성거림, 말은 알아들을 수 없다.</div>
+</section>
+
+
+<!-- ============ SCENE 3 ============ -->
+<section class="scene" data-scene="3">
+  <div class="scenehead">
+    <input type="checkbox">
+    <div>
+      <div class="scenetitle"><span class="no">3</span>정화실</div>
+      <div class="scenedesc">의자 둘, 어둠으로 올라가는 튜브. 한쪽이 고개를 내리는 <b>바로 그 순간</b> 다른 쪽이 고개를 든다.</div>
+    </div>
+  </div>
+  <div class="promptbox">
+    <div class="pbar"><span class="pname">3A<span class="pnote">10s · 47° · 락오프 · 이 티저의 심장</span></span>
+      <button class="copy">복사</button></div>
+<pre>SCENE CONTEXT
+In a bare concrete chamber two plain metal chairs face each other three metres apart. In the left chair sits a slight figure in a bone-white wrap opened across the back, ribbed tubes running from ports along the spine up into darkness. In the right chair sits a figure in heavy gold ceremonial robes, identical tubes descending into a port at the throat. A transfer completes. Neither looks at the other.
+
+ACTIVE REFERENCES
+@chamber — Controls environment, materials and mood only; reference framing not inherited.
+@seha — 100% matches the reference; studio sheet background and layout NOT inherited. Occupies the left chair.
+@kailan — 100% matches the reference; studio sheet background and layout NOT inherited. Occupies the right chair.
+
+LOCATION MAP
+Foreground: bare grey concrete floor, hairline-cracked, running to the bottom frame edge. Midground: two plain grey metal chairs facing each other across 3 m of empty floor, both 6 m from camera on the same line, left and right of centre. Background: raw grey concrete walls meeting in a corner behind, the ceiling lost entirely in darkness. Four ribbed grey tubes descend out of that darkness to each chair. Camera sits square to the room on the centre-line at seated chest height. Light falls from a single fixture directly overhead, out of frame.
+
+FIRST FRAME / BLOCKING
+Dead-symmetrical. The left figure sits upright, seen from behind and slightly to the side, the bone-white wrap open across the back, a row of gold-rimmed ceramic ports set down the spine, each ringed with raised shiny scar tissue. Four ribbed tubes run from those ports straight up into black. The right figure sits in heavy oxidised-gold robes, a gold filigree plate seamed into the left temple, four identical tubes descending into a jewelled port at the throat. Between them, three metres of empty floor and nothing else. Neither head is turned toward the other.
+
+FORMAT MODE
+One continuous shot, the camera does not cut on its own.
+
+CUT 1 — wide, 47° FOV, camera at 1.1 m height square to the room, fully static
+The tubes on the left swell once, a visible bulge travelling upward from the spine ports into the darkness above. The left shoulders rise and fall on one slow breath. Then the left head lowers, chin toward chest, and stops — and in the same instant the right head tilts back and the right chest lifts on a deep drawn breath. All eight tubes go slack.
+
+OPTICS
+47° FOV, anamorphic, rectilinear. Focus held on the plane of both chairs, the walls falling soft. No drift.
+
+CAMERA
+Locked on a fixed head at 1.1 m. Zero movement of any kind for the entire shot.
+
+ACTION
+The swell travels up the left tubes WHILE the left shoulders complete one breath — both continuous and overlapping. The left head lowering and the right head tilting back happen in the SAME instant, not in sequence; both bodies keep moving through the whole beat with no frozen poses. The tubes begin slackening on the right chest lift and continue slackening to the end of the shot. Neither figure turns toward the other at any point.
+
+PERFORMANCE
+Left figure: the chin drops on a body that has stopped holding itself up; hands stay loose on the knees; breath shallow and short; the skin stays grey with no returning colour, veins reading blue at the temple. Right figure: as the chest lifts the jaw slackens and the eyelids lower; colour returns into the cheeks; the mouth stays closed. Restraint throughout — nothing pushed past a muscle-level change.
+
+PHYSICS
+The tubes carry real weight, swinging a few centimetres as they slacken and settling. Both chairs bear their sitter's mass with contact shadow at every point of touch — feet, thighs, back. Cloth drapes with real weight over the chair frames.
+
+LIGHTING
+Single source: one hard fixture directly overhead at 3800K, out of frame. Both figures lit steeply from above with deep unfilled shadow under brow and chin. Everything beyond the two chairs falls 5 stops under to black. Haze 15%.
+
+STYLE
+Photoreal, 4K, anamorphic 2.39:1, fine film grain, real-time. Photographed, not illustrated — real skin texture with visible pores and uneven tone, real metal with wear and oxidation, real cloth weave with dust in the fibres. No beauty retouching. Monochrome grey concrete broken only by the oxidised gold of the robes and the bone-white of the wrap.
+
+POSITIVE LOCKS
+EXACTLY TWO figures in the entire generation. Ironclad facial and body feature lock from @seha and @kailan. The two chairs hold their exact positions and 3 m separation for the whole shot. The tubes hold stable identity and count — four to each chair, eight in frame. Both figures keep their heads turned away from each other throughout. The composition stays dead-symmetrical. This clip is one fragment of a longer film — end on the slack tubes, unresolved, no settling shot.</pre>
+  </div>
+  <div class="note"><b>사운드:</b> 여기서 처음으로 기계음 — 낮고 느린 펌프. 오른쪽이 숨을 들이켤 때 <b>그 소리가 멈춘다.</b> 티저 전체에서 유일한 극적 사건이다.</div>
+</section>
+
+
+<!-- ============ SCENE 4 ============ -->
+<section class="scene" data-scene="4">
+  <div class="scenehead">
+    <input type="checkbox">
+    <div>
+      <div class="scenetitle"><span class="no">4</span>집행자</div>
+      <div class="scenedesc">여덟이 역광 먼지 속에서 걸어온다. 끝까지 도착하지 않는다.</div>
+    </div>
+  </div>
+  <div class="promptbox">
+    <div class="pbar"><span class="pname">4A<span class="pnote">10s · 63° · 지면 락오프</span></span>
+      <button class="copy">복사</button></div>
+<pre>SCENE CONTEXT
+Eight armoured figures advance in a single line across a dune field toward camera under a low sun, spears held vertical, a wall of backlit dust rolling forward behind them.
+
+ACTIVE REFERENCES
+@dune — Controls environment, materials and mood only; reference framing not inherited.
+@enforcer — 100% matches the reference; studio sheet background and layout NOT inherited. Governs armour design for all eight figures.
+
+LOCATION MAP
+Foreground: a dune crest running diagonally across the bottom third, its ridges raking long black shadows toward camera. Midground: the flat pan between dunes at 120 m, where the line of eight advances. Background: further dune ridges receding to a low horizon, and above them thick suspended dust lit gold from behind, filling the upper half of the frame. Camera sits low on the near dune crest, facing into the low sun.
+
+FIRST FRAME / BLOCKING
+The line of eight sits across the middle band of the frame at 120 m, evenly spaced 3 m apart, all facing camera, all mid-stride on the same foot. Each figure below 12% of frame height. Dune field and sky take the remaining four fifths of the image. No other figures anywhere in frame.
+
+FORMAT MODE
+One continuous shot, the camera does not cut on its own.
+
+CUT 1 — extreme wide, 63° FOV, camera at 0.4 m height on the dune crest, fully static
+The eight advance directly toward camera at 4 km/h, in step, unhurried, the line holding its spacing exactly. Umber cloaks drag through the sand behind each figure. Spears stay vertical. The dust wall behind them rolls forward and thickens across the shot.
+
+OPTICS
+63° FOV, anamorphic, rectilinear. Deep focus. Slight anamorphic flare where the low sun catches the lens edge. Natural motion blur on the walking legs. No drift.
+
+CAMERA
+Locked on a fixed head at 0.4 m on the sand. Zero pan, zero tilt, zero zoom, zero push.
+
+ACTION
+All eight walk continuously and in step for the whole shot WHILE the dust wall rolls forward WHILE the cloaks drag and lift — three simultaneous continuous motions. The line never breaks formation, never accelerates, and never reaches the camera. No figure stops, turns, or looks aside. The shot ends with them still advancing at distance.
+
+PHYSICS
+Sand displaces under every footfall and slides back down the slope behind. The cloaks carry real weight, dragging a shallow groove behind each figure. Dust hangs and rolls forward with real air mass rather than dissipating. Armour plate catches the low sun with hard specular edges that shift as each figure moves.
+
+LIGHTING
+Single source: sun 5° above the horizon behind the line at 2800K, raking hard from behind and to the side. Long black shadows thrown toward camera across every dune ridge. The figures read close to silhouette with a hot rim on helmet and shoulder. Exposure 1 stop under. Haze 45%, thickening to 60% by the end of the shot.
+
+STYLE
+Photoreal, 4K, anamorphic 2.39:1, fine film grain, real-time. Photographed, not illustrated — real lacquered plate with scratches and dust, real heavy cloth, real sand. Warm desaturated grade carried by material and light: black lacquer, oxidised gold filigree, umber cloth, cold silver joints, pale sand.
+
+POSITIVE LOCKS
+EXACTLY EIGHT figures in the entire generation, evenly spaced and in step. Identical armour design across all eight from @enforcer. The line stays at distance and never arrives at camera. Spears stay vertical throughout. The camera stays completely locked. Threat conveyed through scale, dust and sound. This clip is one fragment of a longer film — end mid-stride, unresolved.</pre>
+  </div>
+  <div class="note"><b>사운드:</b> 발소리 여덟 쌍. 그 외 없음. <b>도착하기 전에 끝나는 것</b>이 이 샷의 전부다 — 다가오는데 닿지 않으면 관객은 계속 기다린다.</div>
+</section>
+
+
+<!-- ============ SCENE 5 ============ -->
+<section class="scene" data-scene="5">
+  <div class="scenehead">
+    <input type="checkbox">
+    <div>
+      <div class="scenetitle"><span class="no">5</span>벽 위</div>
+      <div class="scenedesc">꼭대기에 다섯. 화면에서 움직이는 것은 붉은 망토 하나뿐이다.</div>
+    </div>
+  </div>
+  <div class="promptbox">
+    <div class="pbar"><span class="pname">5A<span class="pnote">10s · 84° · 55° 앙각 락오프 · 라스트</span></span>
+      <button class="copy">복사</button></div>
+<pre>SCENE CONTEXT
+Five figures stand spaced along the top edge of a sheer concrete wall, facing outward away from camera under flat overcast light. One wears a deep red cloak — the only saturated colour in the frame. Wind moves that cloak. Nothing else moves.
+
+ACTIVE REFERENCES
+@wall — Controls environment, materials and surface only; reference framing not inherited.
+@redcloak — Governs the cloak's colour, cut and cloth weight only; reference layout NOT inherited.
+
+LOCATION MAP
+Foreground: the sheer face of the concrete wall filling the left two thirds of frame and running out of the bottom of the image — flat, unmarked, pale grey, with fine form-work texture. Midground: the wall's top corner cutting across the frame as a hard diagonal from upper left down to centre right, with five figures standing along that edge. Background: flat overcast sky filling the right third and everything above the diagonal, featureless pale grey with one soft cloud band. Camera sits on the sand at the wall's base, looking steeply up.
+
+FIRST FRAME / BLOCKING
+Low angle, camera tilted 55° up. The wall's top edge runs as a hard dead-straight diagonal. Five standing figures are spaced 4 m apart along that edge, each below 6% of frame height, all facing outward away from camera. The third figure from the left wears the deep red cloak. The other four read as dark silhouettes. No figure sits near the frame edge.
+
+FORMAT MODE
+One continuous shot, the camera does not cut on its own.
+
+CUT 1 — extreme wide, 84° FOV, camera at 1.0 m height at the wall base tilted up 55°, fully static
+All five figures hold completely still for the whole shot. The red cloak lifts and settles in the wind — the only movement in the frame. A thin cloud band drifts slowly across the sky behind them.
+
+OPTICS
+84° FOV, anamorphic, rectilinear so the wall edge reads as a dead-straight diagonal. Deep focus. No drift.
+
+CAMERA
+Locked on a fixed head, tilted up 55°. Zero pan, zero tilt, zero roll, zero zoom, zero push for the entire shot.
+
+ACTION
+The red cloak lifts and settles continuously in the wind WHILE the four dark figures hold absolutely still WHILE the cloud band drifts behind them — three simultaneous continuous states. No figure shifts weight, turns, or steps. The cloak is the only thing in the image that moves. The shot ends with the cloak still lifting.
+
+PHYSICS
+The cloak carries real cloth weight, lifting from the hem and settling back against the body between gusts. Wind at 5 m/s, gusting. The concrete face shows no give and no vibration.
+
+LIGHTING
+Single source: flat overcast daylight at 7000K, fully diffused, no direction and no cast shadow anywhere. Even exposure with lifted blacks. Haze 20%.
+
+STYLE
+Photoreal, 4K, anamorphic 2.39:1, fine film grain, real-time. Photographed, not illustrated — real concrete surface, real heavy wool cloth catching wind. Cold desaturated grade — pale grey concrete, cold grey sky, dark silhouettes — broken by the single deep red cloak, which stays fully saturated.
+
+POSITIVE LOCKS
+EXACTLY FIVE figures along the wall edge. EXACTLY ONE red cloak, worn by the third figure from the left; the other four stay dark and unsaturated. The red stays the only saturated colour anywhere in frame. The wall edge stays a dead-straight diagonal. All five stay facing away from camera so no face is seen. The camera stays completely locked. This clip is one fragment of a longer film — end with the cloak still moving, unresolved.</pre>
+  </div>
+  <div class="note"><b>사운드:</b> 바람만. 그리고 컷 투 블랙 — 검은 화면에 <b>피폭</b> 두 글자, 2초, 무음.</div>
+</section>
+
+
+<!-- ============ SCENE 6 ============ -->
+<section class="scene" data-scene="7">
+  <div class="scenehead">
+    <input type="checkbox">
+    <div>
+      <div class="scenetitle"><span class="no">6</span>사투 — 사슬</div>
+      <div class="scenedesc">여울에게는 능력이 없다. 그러니 이 아이의 사투는 <b>치는 게 아니라 안 놓는 것</b>이다. 그리고 여기서 이 영화의 <b>첫 얼굴</b>이 나온다.</div>
+    </div>
+  </div>
+  <div class="promptbox">
+    <div class="pbar"><span class="pname">6A<span class="pnote">10s · 63°→18°→29° · 3컷 · 전부 락오프</span></span>
+      <button class="copy">복사</button></div>
+<pre>SCENE CONTEXT
+On a plain of black volcanic rock in heavy fog, a colossal horned beast stands at the far end of a heavy iron chain. One figure in a deep red cloak holds the near end of that chain alone, braced against it. The beast pulls. The figure is dragged and does not let go.
+
+ACTIVE REFERENCES
+@beast-chain — Controls the creature's design, the chain geometry and the environment; reference framing not inherited.
+@redcloak — Governs the cloak's colour, cut and cloth weight only; reference layout NOT inherited.
+
+LOCATION MAP
+Foreground: broken black volcanic rock and loose scree running to the bottom frame edge, wet-dark and uneven. Midground: the lone figure standing on that rock, both hands closed on a heavy iron chain whose links are each the length of a forearm. Background: the colossal beast at 60 m, head lowered, two vast ribbed horns curving down and outward, its body swallowed by fog above and behind. The chain runs in one unbroken line from the figure's hands away into the fog toward the beast. Camera sits low on the rock, square to the chain's axis. Light is flat and directionless through the fog.
+
+FIRST FRAME / BLOCKING
+The figure stands at 8 m from camera, slightly left of frame centre, feet planted wide on the rock, back three-quarters to camera, both hands gripping the chain at chest height. The chain runs from those hands directly away from camera into the fog. The beast's lowered head sits at frame centre at 60 m, its horns arcing out past both frame edges; the head alone is wider than the figure is tall, and the figure's full height reaches only to the height of one horn's base. The chain is slack in the first frame, dipping to touch the rock between them.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera does not cut on its own. CUT 1 snaps fastest; CUT 3 holds longest.
+
+CUT 1 — extreme wide, 63° FOV, camera at 0.5 m height on the rock, fully static
+The chain snaps taut in an instant and the figure is yanked two body-lengths forward across the rock, boots plowing loose scree into the air, body dropped low and angled back against the pull. The red cloak whips forward past the shoulders. The beast's head does not move.
+
+CUT 2 — close, 18° FOV, camera at 1.0 m height, fully static
+Both hands closed on the chain, filling the frame. The links grind and shift under the grip. Knuckles go white, tendons stand up across the backs of the hands, the chain bites a deep line into both palms. The wrists shake with load. The grip slips one link, catches, and holds.
+
+CUT 3 — medium, 29° FOV, camera at 0.9 m height, fully static
+The figure is down on one knee on the rock, chain still in both hands, dragged to a stop. The head comes up and the face turns into the lens for the first time — sweat-wet, streaked with black dust, jaw set hard, eyes level and open. Behind and far above, the beast's lowered head descends slowly into the top of frame, its two pale eyes coming down toward her.
+
+OPTICS
+63° for CUT 1, 18° for CUT 2, 29° for CUT 3. Anamorphic, rectilinear. Deep focus on the wide, shallow on the close with the chain plane sharp. Natural motion blur on the drag. No drift mid-segment.
+
+CAMERA
+Locked on a fixed head for every cut. Zero pan, zero tilt, zero zoom, zero push at any point. Camera height changes only between cuts, never within one.
+
+ACTION
+The chain pulls continuously from CUT 1 to the end — the load never releases WHILE the figure keeps resisting WHILE scree keeps sliding underfoot. Nothing waits its turn: the boots are still plowing as the hands are still slipping. No frozen poses; the body stays under load through every frame of every cut. The grip slips and catches in CUT 2 as one continuous motion, not two beats. In CUT 3 the head-lift and the beast's descent begin in the same instant and continue together to the end of the shot.
+
+PERFORMANCE
+Muscle-level only. CUT 1: the head snaps back with the yank, the shoulders roll forward to absorb it, the breath punches out. CUT 2: the fingers re-close one at a time as the grip slips, the forearms lock. CUT 3: the breath comes hard and shallow through an open mouth; the jaw sets; the eyes do not blink and do not leave the lens; a single muscle jumps at the temple. No shout, no scream, no grimace held past a second. Pore-level skin, sweat beading at the hairline, capillary flush across the cheekbones.
+
+PHYSICS
+The chain carries enormous mass — it whips and settles with real weight, and every link makes contact with the rock it touches. Scree slides and scatters under the dragged boots with contact shadow at every point. The cloak has real cloth weight, lagging behind the body and settling late. The figure's mass is anchored to the ground at knee and boot with grounded contact shadow.
+
+LIGHTING
+Single source: flat overcast daylight diffused through dense fog at 7200K, directionless, no cast shadow anywhere. Exposure 1 stop under with lifted blacks. Fog 55%, thickening with depth so the beast reads as a silhouette losing its edges. The beast's two pale eyes are the only bright points in the image.
+
+STYLE
+Photoreal, 4K, anamorphic 2.39:1, fine film grain, real-time throughout. Photographed, not illustrated — real wet volcanic rock, real forged iron with rust and pitting, real heavy wool catching wind, real skin with visible pores and dust. No beauty retouching. Cold desaturated blue-grey grade broken only by the deep red cloak, which stays fully saturated.
+
+AUDIO
+Chain links grinding under load, dragging over rock. Boots tearing through scree. Hard shallow breathing through an open mouth. A low sub-bass pressure from the beast that never resolves into a roar. No music. No dialogue.
+
+POSITIVE LOCKS
+EXACTLY ONE figure and EXACTLY ONE creature in the entire generation. Ironclad identity lock on the figure across all three cuts — same face, same red cloak, same hands. The chain holds stable identity and link size frame to frame, moving only under the pull. Scale anchor restated: the creature's lowered head alone is wider than the figure is tall. The red cloak stays the only saturated colour anywhere in frame. The creature's eyes stay two pale points and nothing else on it emits light. Impact conveyed through strain, dust, chain sound and reaction. This clip is one fragment of a longer film — end with the beast's head still descending and the grip still holding, unresolved.</pre>
+  </div>
+  <div class="note">
+    <b>억눌러 둔 것:</b> 이 샷에서 여울에게는 <b>아무 능력도 발현되지 않는다.</b> 사슬을 쥔 손이 전부다.
+    <code>characters.md</code>의 미결 "여울에게 정말 능력이 없는가"를 나중에 터뜨릴 거라면, 여기서 눌러놔야 그때 값이 붙는다.
+    <br><br>
+    <b>첫 얼굴:</b> 1A~5A에는 얼굴이 하나도 없다. CUT 3이 이 영화 최초의 얼굴이다 — 그게 "안 놓겠다"는 순간이라서 값이 붙는다.
+    <br><br>
+    <b>배치 주의:</b> 표정·시선·손은 감정 씬에서 가장 자주 틀어진다. 프롬프트를 고치지 말고 <b>여러 번 돌려서 눈이 제대로 카메라를 보는 테이크를 고르는 게</b> 빠르다.
+  </div>
+</section>
+
+
+<!-- ============ SCENE 7 ============ -->
+<section class="scene" data-scene="8">
+  <div class="scenehead">
+    <input type="checkbox">
+    <div>
+      <div class="scenetitle"><span class="no">7</span>교전 — 원테이크</div>
+      <div class="scenedesc">다섯이 귀수와 싸운다. 컷 없음. 카메라는 초당 1.5m로 옆으로만 지나간다 — <b>안에서는 다 빨리 움직이는데 카메라만 태연하다.</b></div>
+    </div>
+  </div>
+  <div class="promptbox">
+    <div class="pbar"><span class="pname">7A<span class="pnote">10s · 63° · 원테이크 · 측면 달리 1.5m/s</span></span>
+      <button class="copy">복사</button></div>
+<pre>SCENE CONTEXT
+Five figures fight a colossal chained beast on a plain of black volcanic rock in heavy fog. Three fight in the near field; two remain distant silhouettes deep in the fog. The camera tracks laterally past the whole engagement in one unbroken move.
+
+ACTIVE REFERENCES
+@squad — Governs wardrobe, silver cybernetic limb design and group look only; reference lineup layout NOT inherited.
+@haran — 100% matches the reference; studio sheet background and layout NOT inherited. Appears crossing frame at speed in the middle of the shot only.
+@beast-chain — Controls the creature’s design, chain geometry and environment; reference framing not inherited.
+@redcloak — Governs the cloak’s colour, cut and cloth weight only; reference layout NOT inherited.
+
+LOCATION MAP
+Foreground: broken black volcanic rock and loose scree, wet-dark, running along the bottom of frame; the camera travels parallel to it. Midground at 10 m: the near field where the fight happens, the ground gouged and dust-blown. Deep midground at 40 m: two standing silhouettes in bone-white wraps, one leaning on a staff, unresolved in the fog. Background at 70 m: the colossal beast, head lowered, two vast ribbed horns arcing out past both frame edges, its body swallowed by fog above. Heavy iron chains run from its neck down across the rock and through the near field. Light is flat and directionless through the fog.
+
+FIRST FRAME / BLOCKING
+The camera opens on a broad-shouldered figure with a shaved head standing planted in the near field at 10 m, left of frame centre, feet wide on the rock, both forearms raised and crossed in front of the face, silver exo-tendons running outside the skin of both legs. A heavy iron chain hangs in a slack arc above and behind her, its far end lost in fog toward the beast. The beast’s lowered head sits at frame right in the far background, its two pale eyes the only bright points in the image. The two distant silhouettes stand small and still at 40 m, left of frame.
+
+FORMAT MODE
+One continuous shot, no cuts of any kind, the camera does not cut on its own.
+
+CUT 1 — wide, 63° FOV, camera at 0.6 m height, single continuous lateral dolly moving right at 1.5 m/s across 15 m of ground, held level throughout
+The chain whips down and slams across the braced forearms of the shaved-head figure; she absorbs it, drops into a deep crouch, and the rock fractures outward beneath her boots. As the camera passes her, a gaunt figure with white-streaked temples enters from frame right running low and fast along the chain line at 30 km/h, crosses the full width of frame as a near-blur with steam trailing from two ports at his shoulder blades, and exits frame left. The camera keeps travelling and brings into frame a figure in a deep red cloak, down on one knee at 14 m, both hands locked on the chain, boots plowing a groove through the scree as she is dragged. Behind all of them the beast’s lowered head swings slowly right to left. In the final moment one forefoot of the beast comes down on the rock and the whole ground jumps.
+
+OPTICS
+63° FOV held for the entire shot, anamorphic, rectilinear. Deep focus from the near field to the beast. Heavy natural motion blur on the running figure, none on the camera. No drift.
+
+CAMERA
+Single lateral dolly, dead level, right at a constant 1.5 m/s, no acceleration and no stop. Zero pan, zero tilt, zero roll, zero zoom, zero push. The camera never favours any one figure — it travels at its own pace and the fight happens across it.
+
+ACTION
+Everything runs simultaneously and continuously; nothing waits its turn. The chain is already whipping as the shot opens WHILE the beast’s head is already swinging WHILE dust is already rolling through the near field. The forearm block, the crouch and the rock fracture are one unbroken motion, not three beats. The running figure crosses while the shaved-head figure is still rising out of her crouch. The red-cloaked figure is being dragged throughout, before she enters frame and after the camera has passed her. The two distant silhouettes never move. No frozen poses; every body stays under load for the full duration. The ground-jump from the beast’s forefoot lands in the last moment and the shot ends inside it.
+
+PERFORMANCE
+Muscle-level only. Shaved-head figure: the forearms take the impact and the elbows drive down, the neck stays locked, breath punches out through the teeth, and she is already rising before the dust settles. Running figure: head down, arms driving, eyes fixed forward, face slack with effort. Red-cloaked figure: shoulders rolled forward against the pull, knuckles white on the chain, jaw set, eyes on the chain and not on the beast. No shouting, no held grimaces.
+
+PHYSICS
+The chain carries enormous mass, whipping and settling with real weight and striking rock with real force. Rock fractures outward from the point of impact as pressure-based cracking, spreading edge to centre, with no clean break. Scree slides and scatters under the dragged boots with grounded contact shadow at every touch point. Dust rolls forward through the near field with real air mass. Cloth lags behind every body and settles late.
+
+LIGHTING
+Single source: flat overcast daylight diffused through dense fog at 7200K, directionless, no cast shadow anywhere. Exposure 1 stop under with lifted blacks. Fog 55%, thickening with depth so the beast reads as a silhouette losing its edges and the distant pair reads as two marks. The beast’s two pale eyes are the only bright points in the frame.
+
+STYLE
+Photoreal, 4K, anamorphic 2.39:1, fine film grain, real-time throughout. Photographed, not illustrated — real wet volcanic rock, real forged iron with rust and pitting, real machined silver limb joints with wear, real coarse bone-white cloth heavy with dust. No beauty retouching. Cold desaturated blue-grey grade broken only by the deep red cloak, which stays fully saturated.
+
+AUDIO
+Chain links grinding and striking rock. Rock cracking under pressure. One set of running footfalls crossing the field fast and away. Hard breathing. A low sub-bass pressure from the beast that never resolves into a roar. No music. No dialogue.
+
+POSITIVE LOCKS
+EXACTLY FIVE figures and EXACTLY ONE creature in the entire generation — three in the near field, two as distant silhouettes that stay small and unresolved. Ironclad identity lock on the three near figures from @squad and @haran. The two distant silhouettes stay in the fog and stay still. Once the running figure exits frame left he stays out of frame. The chain holds stable identity and link size throughout, moving only under load. Scale anchor: the creature’s lowered head alone is wider than the shaved-head figure is tall. The red cloak stays the only saturated colour in frame. The creature’s eyes stay two pale points and nothing else on it emits light. Cinematic silhouette, dust and debris; impact conveyed through strain, rock fracture, chain sound and reaction. This clip is one fragment of a longer film — end inside the ground-jump, mid-motion, unresolved.</pre>
+  </div>
+  <div class="note">
+    <b>추적 인물은 셋까지.</b> 한 생성에서 얼굴을 지킬 수 있는 한계다. 그래서
+    미르·하란·여울이 앞에서 싸우고, 세하와 소안은 40m 뒤 안개 속 실루엣으로 놓았다.
+    <br><br>
+    <b>카메라를 일부러 느리게 둔 이유.</b> 카메라가 같이 흥분하면 원테이크는 산만해지고 아무것도 안 보인다.
+    속도는 사람이 내고 카메라는 그걸 지나간다.
+    <br><br>
+    <b>미결:</b> 라인업 레퍼런스(다섯 명 사막 정면)는 현재 캠스팅과 다르다 — 노인 둘, 활 든 인물.
+    의상과 은색 의수 디자인만 가져왔다. 캐스팅을 그쪽으로 바꿀지 결정 필요.
+  </div>
+</section>
+
+
+<!-- ============ SCENE 8 ============ -->
+<section class="scene" data-scene="9">
+  <div class="scenehead">
+    <input type="checkbox">
+    <div>
+      <div class="scenetitle"><span class="no">8</span>후퇴 — 아이맥스</div>
+      <div class="scenedesc">얼굴 하나에서 시작해 70m를 뒤로 빠지며 귀수가 드러난다. <b>세상은 전부 멈춰 있고 카메라만 움직인다.</b></div>
+    </div>
+  </div>
+  <div class="promptbox">
+    <div class="pbar"><span class="pname">8A<span class="pnote">10s · 18°→84° · IMAX 1.43:1 · 연속 후퇴 8m/s</span></span>
+      <button class="copy">복사</button></div>
+<pre>SCENE CONTEXT
+A single continuous pull-back across a plain of pale cracked earth. The shot opens filling the frame with one face and retreats until that face is a mark on the ground and a colossal chained beast fills the sky above it. Nothing in the world moves. Only the camera does.
+
+ACTIVE REFERENCES
+@mir — 100% matches the reference; studio sheet background and layout NOT inherited. The face and body the shot opens on.
+@squad — Governs wardrobe, silver cybernetic limb design and group look for the four other figures only; reference lineup layout NOT inherited.
+@beast-chain — Controls the creature's design, chain geometry and environment; reference framing not inherited.
+@redcloak — Governs the cloak's colour, cut and cloth weight only; reference layout NOT inherited.
+
+LOCATION MAP
+Foreground: pale cracked earth, dry and plated, running to the bottom frame edge. Midground: a flat open plain with no feature on it except the standing figures. Background: the colossal beast at 300 m, standing square to camera, head lowered, two vast ribbed horns curving up and out past the top corners of frame, heavy iron chains running from its neck down to the ground on both sides and away to either horizon. Above it, a low overcast sky with dense cloud. Camera travels straight backward along the ground axis, dead level, directly away from the beast.
+
+FIRST FRAME / BLOCKING
+The frame is filled entirely by one face — a broad, hard-jawed face with a shaved head, scalp mottled with old scarring and pale patches, wide-set small eyes level and open, looking directly into the lens. The face fills the whole near-square frame edge to edge, nothing else visible behind it. As the camera retreats, four other figures are revealed standing in a spread line on the plain: one in a deep red cloak at the centre, two in bone-white wraps, one gaunt figure with white-streaked temples. All five face camera. The beast is revealed last, behind and above them all.
+
+FORMAT MODE
+One continuous shot, no cuts of any kind, the camera does not cut on its own. IMAX 1.43:1 near-square frame, full height, composed vertically with the sky and the beast taking the upper half by the end.
+
+CUT 1 — continuous pull-back, camera dollies straight backward 70 m at a constant 8 m/s while the field of view widens steadily from 18 degrees to 84 degrees across the full duration, camera held at 1.7 m height and dead level throughout
+The face fills the frame at the start and recedes continuously. The four other figures come into frame one after another as the field widens. The chains enter frame. The beast's forelimbs enter, then its lowered head, then its horns, until it occupies the upper two thirds of the image and the five figures stand below it, the tallest of them under 4% of frame height. The retreat never slows and never stops.
+
+OPTICS
+Field of view widens continuously from 18 degrees to 84 degrees across the shot, spherical large format, rectilinear. Deep focus held throughout — the face is sharp at the start and every figure and the beast are sharp at the end. Minimal motion blur. No drift.
+
+CAMERA
+Single straight dolly backward at a constant 8 m/s, no acceleration, no deceleration, no stop. Dead level at 1.7 m. Zero pan, zero tilt, zero roll. The camera does all the work in this shot; it never hesitates and never favours anything.
+
+ACTION
+Nothing in the world moves. All five figures stand absolutely still for the whole shot — no shifting weight, no turning, no stepping. The beast stands still. The chains hang still. The only changes in the image are the retreat of the camera and the widening of the field. Dust hangs suspended in the air without drifting. The shot ends with the camera still retreating.
+
+PERFORMANCE
+The face at the start holds a flat, level, unblinking look directly into the lens — jaw set, mouth closed, no expression pushed past the set of the jaw. One slow blink across the whole shot and nothing else. Pore-level skin, dust caught in the scarring, sweat dried to salt at the temple.
+
+PHYSICS
+The chains carry enormous mass and hang in true catenary curves under their own weight, motionless. The cracked earth plates are load-bearing and unbroken. Every standing figure has grounded contact shadow at the feet. The beast's mass reads through the depth its forefeet have pressed into the ground.
+
+LIGHTING
+Single source: hard overcast daylight from directly above at 6000K, no direction, no cast shadow. Exposure 1 stop under with lifted blacks. Haze 30%, thickening with distance so the beast's edges soften without disappearing. The beast's two pale eyes are the only bright points in the image.
+
+STYLE
+Photoreal, 4K, IMAX 1.43:1 near-square frame, large-format spherical, fine film grain, real-time throughout with no speed change. Photographed, not illustrated — real skin with visible pores and dust, real forged iron with rust and pitting, real coarse cloth, real cracked earth. No beauty retouching. Cold desaturated grade — pale earth, cold grey sky, black iron — broken only by the deep red cloak, which stays fully saturated.
+
+AUDIO
+A single sustained low-frequency pressure tone that grows as the frame widens. Wind across open ground. One slow breath at the start, close to the lens, that becomes inaudible as the camera retreats. No music. No dialogue.
+
+POSITIVE LOCKS
+EXACTLY FIVE figures and EXACTLY ONE creature in the entire generation. Ironclad facial and body feature lock on the opening face from @mir; that same figure stays in frame for the whole shot as the camera retreats. All five figures stay standing, still and facing camera. The chains hold stable identity and link size frame to frame. Scale anchor: by the end the creature's lowered head alone is wider than all five figures standing side by side. The red cloak stays the only saturated colour in frame. The creature's eyes stay two pale points and nothing else on it emits light. The camera retreat stays constant and never stops. This clip is one fragment of a longer film — end with the camera still pulling back, unresolved.</pre>
+  </div>
+  <div class="note">
+    <b>화면비 충돌 — 결정 필요.</b> 놀란 아이맥스는 <b>1.43:1</b>, 거의 정사각형이다.
+    1A~7A는 전부 <b>2.39:1 시네마스코프</b>로 짜여 있다. 하나는 위아래로 넓고 하나는 좌우로 넓다 —
+    <b>한 영화에 섞을 수 없다.</b> 8A로 가면 앞의 일곱 개를 전부 다시 짜야 한다.
+    <br><br>
+    <b>카메라만 움직인다.</b> 다섯도 귀수도 사슬도 전부 정지. 빠른 요소가 카메라 하나뿐이라
+    10초에 70m를 빠져도 화면이 안 무너진다. 여기에 인물 동작까지 넣으면 둘 다 죽는다.
+    <br><br>
+    <b>인물 교체:</b> 시작 얼굴을 다른 사람으로 바꾸려면 <code>@mir</code> 태그와
+    FIRST FRAME 첫 문장의 얼굴 묘사만 갈아끼운다. 나머지는 그대로 쓴다.
+  </div>
+</section>
+
+
+<!-- ============ SCENE 9 ============ -->
+<section class="scene" data-scene="10">
+  <div class="scenehead">
+    <input type="checkbox">
+    <div>
+      <div class="scenetitle"><span class="no">9</span>머리를 내린다</div>
+      <div class="scenedesc">귀수가 다섯을 향해 머리를 내리고 사슬이 늘어져 땅에 떨어진다. <b>다섯은 하나도 안 움직인다.</b> 이 영화의 경첩.</div>
+    </div>
+  </div>
+  <div class="promptbox">
+    <div class="pbar"><span class="pname">9A<span class="pnote">10s · 84° · IMAX 1.43:1 · 락오프 · 대칭</span></span>
+      <button class="copy">복사</button></div>
+<pre>SCENE CONTEXT
+Five figures stand shoulder to shoulder on a plain of cracked grey earth, facing camera, with a colossal chained beast standing square behind them. The beast lowers its head toward them across the whole shot. They hold their ground. The chains lose tension and fall.
+
+ACTIVE REFERENCES
+@squad — 100% matches the reference for all five figures; studio lineup background and layout NOT inherited.
+@beast-chain — Controls the creature's design, hide texture, horn shape and chain geometry; reference framing not inherited.
+@redcloak — Governs the cloak's colour, cut and cloth weight only; worn by the centre figure.
+
+LOCATION MAP
+Foreground: cracked grey earth in wide dry plates, each about half a metre across, running to the bottom frame edge. Midground at 25 m: the five figures standing in a straight line, evenly spaced, facing camera, each about 8% of frame height. Background at 300 m: the beast, 200 m tall at the shoulder, standing square to camera with forelimbs planted, occupying the upper two thirds of the frame. Its two ribbed horns curve up and out past the top corners. Its head hangs 120 m above the ground between them. Heavy iron chains run from its neck down to both sides and away to the left and right horizons, each link the size of a person, hanging under tension. Above and behind, dense low overcast. Camera sits on the cracked earth, dead centre, square to everything.
+
+FIRST FRAME / BLOCKING
+Dead-symmetrical. The beast's skull sits on the exact vertical centre line of frame; the line of five figures sits on that same centre line beneath it. The five stand shoulder to shoulder with one metre between each, arms at their sides, feet planted, all facing camera. The centre figure has a shaved head and wears a deep red cloak. Two figures stand to the left in dark and bone-white layers, two to the right in bone-white wraps. The beast's head is high in the upper third at the start, its two pale eyes the only bright points in the image.
+
+FORMAT MODE
+One continuous shot, no cuts of any kind, the camera does not cut on its own. IMAX 1.43:1 near-square frame, full height, composed on the vertical centre axis.
+
+CUT 1 — extreme wide, 84 degree FOV, camera at 1.6 m height on the cracked earth, fully static
+The beast's head descends 40 m across the ten seconds, moving continuously and without pause, travelling roughly a third of the way down the frame. It begins high in the upper third and ends with its two pale eyes level with the base of the horns, still coming down. As the head drops, the chains on both sides lose tension: the slack forms once at the neck and travels outward along each chain toward the horizons, and the lowest sections strike the earth in sequence, lifting flat sheets of pale dust that hang in the still air and drift slowly toward camera. The five figures hold their positions exactly.
+
+OPTICS
+84 degree FOV held for the entire shot, spherical large format, rectilinear so the horizon and the chain lines read straight. Deep focus from the cracked plates in the foreground to the beast's skull. Minimal motion blur. No drift.
+
+CAMERA
+Locked on a fixed head at 1.6 m. Zero pan, zero tilt, zero roll, zero zoom, zero push for the entire shot. The camera does not react to the descent.
+
+ACTION
+The head descends continuously for the full ten seconds WHILE the chain slack travels outward WHILE dust lifts and drifts toward camera — three simultaneous continuous motions, none of them starting or stopping. The chains do not fall all at once; links keep striking the ground further and further out to both sides through to the end of the shot. The head is still descending when the shot ends and never reaches the ground.
+
+PERFORMANCE
+All five hold a fixed standing posture for the whole shot: feet planted flat and shoulder-width, weight even on both feet, knees soft, shoulders down, hands open and hanging at their sides, chins level, eyes forward into the lens. They keep this exact posture from the first frame to the last. One of them blinks once. Their clothing moves in the wind; their bodies do not.
+
+PHYSICS
+The chains carry enormous mass — the slack travels along them as a single real wave, and each falling section lands with weight, gouging the cracked earth and throwing flat plates of dust that hang rather than billow. The beast's mass reads through the depth its forefeet have pressed into the ground and through the slow inertia of the descending head. Every figure has grounded contact shadow at the feet.
+
+LIGHTING
+Single source: hard overcast daylight from directly above at 6000K, no direction, no cast shadow. Exposure 1.5 stops under with lifted blacks. Haze 35%, thickening with distance so the beast's hide reads as texture without fine detail. The beast's two pale eyes stay the only bright points in the image.
+
+STYLE
+Photoreal, 4K, IMAX 1.43:1 near-square frame, large-format spherical, fine film grain, real-time throughout with no speed change. Photographed, not illustrated — real cracked earth in load-bearing plates, real forged iron with rust and pitting, real coarse cloth heavy with dust, real hide with deep furrows. No beauty retouching. Cold desaturated monochrome — grey earth, grey sky, black hide, black iron — broken only by the deep red cloak on the centre figure, which stays fully saturated.
+
+AUDIO
+Chain links striking earth in a slow travelling sequence out to both sides, each impact further away than the last. A deep sustained sub-bass pressure from the beast that never resolves into a roar. Wind across open ground. No footsteps, no voices, no music, no dialogue.
+
+POSITIVE LOCKS
+EXACTLY FIVE figures and EXACTLY ONE creature in the entire generation. Ironclad identity lock on all five from @squad for the whole shot. All five keep the same standing posture, in the same positions, facing camera, from first frame to last. EXACTLY ONE red cloak, worn by the centre figure; the other four stay unsaturated. The red stays the only saturated colour anywhere in frame. Composition stays dead-symmetrical on the vertical centre axis. The chains hold stable link size frame to frame. Scale anchor: the beast stands 200 m at the shoulder and its lowered head alone is wider than all five figures standing side by side. The creature's eyes stay two pale points and nothing else on it emits light. The head descends for the full ten seconds and never stops and never lands. This clip is one fragment of a longer film — end mid-descent, no settling shot. No text, no logo, no watermark.</pre>
+  </div>
+  <div class="note">
+    <b>2026-08-04 개정.</b> 이전 판은 10초 동안 아무 일도 안 일어난 것처럼 보일 위험이 컸다.
+    귀수가 250m에 있는데 머리를 "거리의 5분의 1"만 내리면 화면상 몇 픽셀이다. 다섯 가지를 고쳤다.
+    <br><br>
+    <b>1. 강하량 40m 명시.</b> 프레임 높이의 3분의 1쯤 내려온다. 확실히 보인다.<br>
+    <b>2. 도착 지점 지정.</b> "눈이 뿔 밑동 높이에 올 때까지" — 측정 가능한 목표를 주면 그만큼 실행한다.<br>
+    <b>3. 스케일 수치 정합.</b> 어깨높이 200m, 거리 300m, 머리는 지상 120m. 이제 계산이 맞는다.<br>
+    <b>4. 정지를 자세로 바꿈.</b> "움직이지 않는다"는 부정문이라 무시된다. 발은 어깨너비로 심고,
+    무게는 양발 균등, 무릎은 부드럽게, 손은 벌려 늘어뜨리고, 턱은 수평 — <b>자세를 주면 유지한다.</b>
+    그리고 <i>옷은 바람에 움직이되 몸은 움직이지 않는다</i>를 넣었다. 완전 정지는 시체처럼 보인다.<br>
+    <b>5. 먼지가 카메라 쪽으로 흘러온다.</b> 깊이 방향 움직임이 하나 생겨 화면이 죽지 않는다.
+    <br><br>
+    <b>사슬이 순차로 떨어진다.</b> 한꺼번에 떨어지면 이벤트가 되고, 바깥으로 번져 나가면 무게가 된다.
+    <br><br>
+    <b>붉은 망토 재배정 — 결정 필요.</b> 생성 이미지에서 빨강이 <b>미르</b>(민머리)에게 갔다.
+    문서상으로는 <b>여울</b>(능력 없는 아이)에게 주기로 되어 있었다. 뜻이 반대다.
+    <br><br>
+    <b>화면비:</b> 8A·9A는 IMAX 1.43:1. 1A~7A는 2.39:1. 아직 통일 안 됨.
+    </div>
+</section>
+
+
+<!-- ============ ASSET SHEETS ============ -->
+<section class="scene" data-scene="6">
+  <div class="scenehead">
+    <input type="checkbox">
+    <div>
+      <div class="scenetitle"><span class="no">0</span>에셋 시트 — 영상보다 먼저</div>
+      <div class="scenedesc">4K 정지컷으로 뽑아 Elements에 @태그와 <b>같은 이름</b>으로 등록한다. 시트가 흔들리면 프롬프트로는 못 고친다.</div>
+    </div>
+  </div>
+  <div class="promptbox">
+    <div class="pbar"><span class="pname">0A<span class="pnote">@seha · 턴어라운드 16:9</span></span>
+      <button class="copy">복사</button></div>
+<pre>Character turnaround sheet on a flat neutral medium-grey seamless background, 16:9. The same single figure in three panels, evenly spaced and identical in scale: a face close-up panel, a full-body front panel, and a full-body rear panel.
+
+A slight East Asian woman, frail and visibly ill. Translucent skin thin enough that veins read blue at the temples and the backs of the hands, deep violet hollows beneath the eyes. Long black hair thinned to patchiness and gone entirely above both temples, the remainder pinned back. Narrow face, large eyes. Dark purpura bruising across both forearms; fingernails ridged, thickened and discoloured.
+
+Seven gold-rimmed ceramic ports are set along her spine and collarbones, each ringed with thick raised shiny keloid scarring and capped with a fine filigree lid; two lids are visibly cracked. Thin gold chains link port to port across the collarbone. She wears a bleached white silk-gauze wrap, layered and pinned with small gold clasps, cut open across the back so the full row of spine ports is visible in the rear panel. Bare feet.
+
+Consistent design and scale across all panels, even soft studio lighting, photorealistic. Photographed, not illustrated — real skin texture with visible pores and uneven tone, real ceramic and gold with wear. No beauty retouching, no airbrushing. No text, no logo, no watermark.</pre>
+  </div>
+  <div class="promptbox">
+    <div class="pbar"><span class="pname">0B<span class="pnote">@kailan · 턴어라운드 16:9</span></span>
+      <button class="copy">복사</button></div>
+<pre>Character turnaround sheet on a flat neutral medium-grey seamless background, 16:9. The same single figure in three panels, evenly spaced and identical in scale: a face close-up panel, a full-body front panel, and a full-body rear panel.
+
+A gaunt, grey-bearded East Asian man in his sixties, unmistakably dying — yellowed sclera, sunken cheeks, thin neck — yet immaculately kept and groomed. He wears heavy oxidised-gold ceremonial robes over black under-layers, the stiff collar rising behind his head like a sun disc.
+
+Ornate gold cybernetics: a filigreed gold plate replaces his left temple and cheek, seamed directly into the skin; his left hand is built of gold-jointed articulated segments; a jewelled gold intake port sits at the hollow of his throat. He holds a slender ceremonial rod in the living right hand. Expression gentle, exhausted and certain.
+
+Consistent design and scale across all panels, even soft studio lighting, photorealistic. Photographed, not illustrated — real skin texture with visible pores, real gold with oxidation and fingerprints, real heavy silk. No beauty retouching. No text, no logo, no watermark.</pre>
+  </div>
+  <div class="promptbox">
+    <div class="pbar"><span class="pname">0C<span class="pnote">@enforcer · 턴어라운드 16:9</span></span>
+      <button class="copy">복사</button></div>
+<pre>Character turnaround sheet on a flat neutral medium-grey seamless background, 16:9. The same single figure in three panels, evenly spaced and identical in scale: a face close-up panel, a full-body front panel, and a full-body rear panel.
+
+A tall armoured East Asian man, late twenties, face bare and hard, close-cropped black hair, a broken nose, and a faded circular ceramic port scar at the hollow of his throat. Black lacquered armour chased with fine gold filigree across chest and pauldrons, the plates fitted over an exposed underlayer of silver cybernetic joints at elbows, knees and spine. A sand-worn deep-umber cloak hanging to the ankle. He holds a long spear butt-down; a straight sword hangs at the hip.
+
+Consistent design and scale across all panels, even soft studio lighting, photorealistic. Photographed, not illustrated — real lacquer with scratches and dust in the crevices, real machined metal joints with wear, real heavy cloth. No text, no logo, no watermark.</pre>
+  </div>
+  <div class="promptbox">
+    <div class="pbar"><span class="pname">0D<span class="pnote">@chamber · 로케이션 3/4</span></span>
+      <button class="copy">복사</button></div>
+<pre>Location reference plate, 16:9, viewed at a three-quarter angle rather than head-on.
+
+A bare chamber of raw board-marked grey concrete, large and completely without ornament, the ceiling lost entirely in darkness above. Two plain grey metal chairs stand facing each other three metres apart on a hairline-cracked concrete floor. Four ribbed grey tubes descend out of the darkness to each chair, hanging slack. Walls meet in a corner behind. No windows, no doors visible, no signage, no decoration of any kind.
+
+One single hard light fixture directly overhead, out of frame, at 3800K. Everything beyond the two chairs falls away into black. Haze 15%.
+
+Photoreal, 4K, photographed not illustrated — real concrete with aggregate and form-work texture, real worn metal, real rubber tubing. No people in frame. No text, no logo, no watermark.</pre>
+  </div>
+  <div class="note">
+    <b>시트 규칙:</b> 회색 배경(흰색·검은색은 가장자리 정보를 잃는다) · 얼굴 클로즈업 + 전신 앞 + 전신 뒤 · 시트에 얼굴이 둘 나오면 지운다 —
+    다섯 씬 뒤에 남남이 된다 · 4K로 뽑는다, 레퍼런스 해상도가 영상 선명도를 정한다.
+  </div>
+</section>
+
+
+<footer>
+  <b>배치 요령</b> — 프롬프트당 2~4회 돌려서 고른다. 완성 씬은 <b>비트별로</b> 고른다(와이드는 1배치, 리액션은 2배치에서 뽑아 붙임).
+  부분 성공은 전체 재생성 대신 Extend/Edit. 한 번에 변수 하나만 바꾼다. 얼굴이 씬 간에 흔들리면 프롬프트를 늘리지 말고 <b>시트를 다시 만든다</b>.
+  <br><br>
+  <b>렌더 세팅</b> — 21:9 · 10s · 4K · 오디오 ON · 비트레이트 HIGH. 크레딧이 빠듯하면 1080p로 동작·타이밍만 보고, 킵은 4K로 다시 뽑는다.
+</footer>
+
+</div>
+
+<script>
+document.querySelectorAll('.scene').forEach(function(sec){
+  var n = sec.dataset.scene, key = 'shotlist-scene-'+n+'-done',
+      box = sec.querySelector('input[type=checkbox]');
+  if (localStorage.getItem(key) === '1'){ box.checked = true; sec.classList.add('done'); }
+  box.addEventListener('change', function(){
+    sec.classList.toggle('done', box.checked);
+    localStorage.setItem(key, box.checked ? '1' : '0');
+  });
+});
+document.querySelectorAll('button.copy').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var pre = btn.closest('.promptbox').querySelector('pre');
+    navigator.clipboard.writeText(pre.textContent).then(function(){
+      var old = btn.textContent;
+      btn.textContent = '복사됨'; btn.classList.add('ok');
+      setTimeout(function(){ btn.textContent = old; btn.classList.remove('ok'); }, 1400);
+    });
+  });
+});
+</script>
+</body>
+</html>

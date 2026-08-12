@@ -1,0 +1,1205 @@
+<title>S#1 카란 — 샷리스트</title>
+<style>
+:root{
+  --ground:#0F0E12; --panel:#17161C; --edge:#26242D; --ink:#E4E0E8; --dim:#918CA0;
+  --faint:#5C5769; --violet:#A98FD0; --gold:#D8A85C;
+  --serif:"Nanum Myeongjo",AppleMyungjo,Batang,serif;
+  --sans:Pretendard,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--faint);margin:0 0 18px}
+header.mast{padding:76px 0 0}
+.mast h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,8vw,62px);
+  line-height:1.05;margin:0;text-wrap:balance}
+.mast h1 em{font-style:normal;display:block;font-size:.38em;color:var(--dim);margin-top:16px}
+.lede{color:var(--dim);margin:26px 0 0;max-width:56ch}
+.how{margin:26px 0 0;padding:14px 16px;border:1px solid var(--edge);border-radius:3px;
+  font-size:13.5px;color:var(--dim)}
+.how b{color:var(--ink);font-weight:600}
+details{margin:34px 0 0;border:1px solid var(--edge);border-radius:3px;background:var(--panel)}
+summary{padding:13px 16px;cursor:pointer;font-family:var(--mono);font-size:11px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+summary:hover{color:var(--ink)}
+details .in{padding:4px 16px 18px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td{padding:9px 10px 9px 0;border-top:1px solid var(--edge);vertical-align:top;color:var(--dim)}
+td:first-child{width:130px;color:var(--ink);white-space:nowrap}
+code{font-family:var(--mono);font-size:12px;color:var(--violet)}
+h2.secline{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--faint);font-weight:400;margin:74px 0 4px;padding-bottom:12px;
+  border-bottom:1px solid var(--edge)}
+.shot{display:grid;grid-template-columns:26px 1fr;gap:0 14px;padding:34px 0;
+  border-bottom:1px solid var(--edge)}
+.chk{padding-top:5px}
+.chk input{position:absolute;opacity:0;width:0;height:0}
+.chk span{display:block;width:17px;height:17px;border:1px solid var(--edge);border-radius:2px;
+  cursor:pointer;transition:all .15s}
+.chk input:checked+span{background:var(--violet);border-color:var(--violet)}
+.chk input:focus-visible+span{outline:2px solid var(--violet);outline-offset:2px}
+.shot:has(input:checked) .shead h3{color:var(--faint);text-decoration:line-through}
+.shead{margin-bottom:16px}
+.sid{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--gold)}
+.shead h3{font-family:var(--serif);font-weight:400;font-size:25px;margin:6px 0 4px;line-height:1.25}
+.sub{margin:0;color:var(--dim);font-size:14px}
+.pwrap{position:relative;grid-column:2}
+pre{margin:0;background:var(--panel);border:1px solid var(--edge);border-radius:3px;
+  padding:18px 18px 18px;font-family:var(--mono);font-size:11.5px;line-height:1.62;
+  color:var(--ink);white-space:pre-wrap;word-break:break-word;overflow-x:auto}
+.copy{position:absolute;top:9px;right:9px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.1em;color:var(--dim);background:var(--ground);border:1px solid var(--edge);
+  border-radius:2px;padding:5px 11px;cursor:pointer;transition:all .15s}
+.copy:hover{color:var(--ink);border-color:var(--dim)}
+.copy:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+.copy.done{color:var(--violet);border-color:var(--violet)}
+footer{padding:70px 0 90px;color:var(--dim);font-size:14px}
+footer p{max-width:56ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:600px){.shot{grid-template-columns:22px 1fr;gap:0 10px}
+  .pwrap{grid-column:1/-1;margin-top:12px}}
+</style>
+<div class="wrap">
+<header class="mast">
+  <p class="eyebrow">Shotlist · 12 generations · 21:9 · 4K</p>
+  <h1>S#1 카란<em>사구 분지의 천막 정착지 — 12년 전, 여명 직전</em></h1>
+  <p class="lede">보라색 연기가 사구를 넘어오고, 짐승들이 먼저 안다. 한 여자가 아기를 말에 실어
+  보내고 혼자 돌아선다. 그리고 하늘에 불의 고리를 그린다.</p>
+  <div class="how"><b>쓰는 법</b> — 각 프롬프트는 독립 생성이다. 순서대로 뽑되,
+  레퍼런스는 그 컷에 실제로 나오는 것만 붙인다. 체크박스는 브라우저에 저장된다.</div>
+
+  <details open>
+    <summary>레퍼런스 — 프롬프트에 복사하지 않는다</summary>
+    <div class="in"><table><tr><td><code>@sere</code></td><td>세례 — 100% matches the reference; face, long dark hair, layered cream and undyed linen wraps, cross-body leather strap. Studio background and layout NOT inherited.</td></tr>
+<tr><td><code>@elder</code></td><td>노인 — 100% matches the reference; dark brown robe, rope belt, head wrap, coiled rope in hand. Appears ONLY in 2B.</td></tr>
+<tr><td><code>@giants</code></td><td>거인 — 100% matches the reference; controls proportion and surface only. Reference framing NOT inherited. Never more than three in one frame.</td></tr>
+<tr><td><code>@karan</code></td><td>카란 — controls tents, banners, pens, sand and dune geography only; reference framing not inherited.</td></tr>
+<tr><td><code>@moon</code></td><td>달 — controls the low giant moon&#x27;s size and surface only; sits on the horizon line, never overhead.</td></tr></table></div>
+  </details>
+  <details>
+    <summary>연속성 — 컷 사이에 지켜야 할 것</summary>
+    <div class="in"><table><tr><td>색</td><td>여명 직전 8500K 푸른빛 → 발사 순간에만 2000K 불빛이 들어온다. 그 사이 따뜻한 색이 없다.</td></tr>
+<tr><td>연기</td><td>보라색. 소리가 없다. 모래로 쏟아지는 물처럼 흐른다. 20% → 45% → 70%로 단계적으로 짙어진다.</td></tr>
+<tr><td>세례</td><td>1A~4A 맨발·머리 풀림 → 5A부터 등에 활과 화살통 → 6A부터 활을 들고 있다.</td></tr>
+<tr><td>거인</td><td>3A 실루엣만 → 6A 처음으로 전신. 그 사이에 안 보여준다.</td></tr>
+<tr><td>달과 불의 원</td><td>7A의 불의 고리는 화면상 달과 같은 지름이어야 한다. 이 각운이 이 장면의 끝이다.</td></tr></table></div>
+  </details>
+</header>
+
+<h2 class="secline">1 — 정착지와 넘어오는 것</h2>
+<article class="shot" data-n="1">
+  <label class="chk"><input type="checkbox" data-key="karan-1A"><span></span></label>
+  <div class="shead">
+    <span class="sid">1A</span>
+    <h3>여명 직전의 카란</h3>
+    <p class="sub">부감 극와이드. 수백 동의 천막이 원을 그리고, 지평선에 거대한 달.</p>
+  </div>
+  <div class="pwrap">
+    <button class="copy" type="button">복사</button>
+    <pre>SCENE CONTEXT
+A nomad settlement of several hundred tents sits in a basin between enormous
+dunes in the blue minutes before dawn. Nothing has happened yet.
+
+ACTIVE REFERENCES
+@karan — controls tents, banners, animal pens, sand and dune geography only;
+reference framing not inherited.
+@moon — controls the size and surface of the low moon only; it sits on the
+horizon line.
+
+LOCATION MAP
+Foreground: the near dune crest, wind-carved, running diagonally across the
+bottom of frame. Midground: the basin floor, several hundred dark tents laid
+out in concentric rings around one larger central tent, rope banners on poles,
+low fenced pens with camels standing in them, three cooking fires still burning
+small and orange. Background: dune ridges stepping back to a flat horizon, and
+one enormous moon sitting directly on that horizon, wider than the whole
+settlement. Camera is high above the near crest looking down and across.
+
+FIRST FRAME / BLOCKING
+High wide from 60 metres above the near dune crest, tilted down 30 degrees. The
+settlement fills the lower two thirds, the moon fills the right third of the
+sky and touches the horizon line. Nothing moves except banners and smoke.
+
+FORMAT MODE
+One continuous shot. The camera does not cut on its own. It holds longest at
+the open and only begins moving in the final third.
+
+OPTICS
+84° FOV for the entire shot, rectilinear, one lens with no change.
+
+CAMERA
+Aerial, holding still at 60 metres for the first half, then drifting forward
+over the crest at 2 m/s and descending 10 metres. Micro-corrections of 5 to 10
+cm so it reads as flown. Focus holds on the settlement throughout.
+
+ACTION
+Rope banners snap steadily on their poles. Thin smoke rises from three fires
+and bends sideways in the wind. Camels shift in the pens. One figure crosses
+between two tents carrying a bucket and does not look up. The moon does not
+move. Everything in frame is calm and continues being calm for the entire shot.
+
+PHYSICS
+Real cloth weight in the tent walls, which breathe in and out with the wind.
+Sand streams off the near crest in thin ribbons. Smoke behaves as smoke in
+moving air.
+
+LIGHTING
+Pre-dawn ambient at 8500K, no sun, exposed 2 stops under. The moon is the
+brightest thing in frame by a wide margin. Three small 2000K fire points in the
+basin. Haze at 20%.
+
+AUDIO
+Wind across open sand, rope banners snapping, camels shifting, one distant
+animal call. Underneath everything, a low unpitched rumble at the edge of
+hearing, somewhere like distant ground movement. No
+music. No dialogue.
+
+STYLE
+Photoreal live-action, 4K, large-format detail, natural desaturated colour,
+fine grain, real-time.
+
+POSITIVE LOCKS
+The moon stays on the horizon line at the same size for the entire shot.
+Tents stay in concentric rings and hold their positions.
+The settlement stays calm from the first frame to the last.
+This clip is one fragment of a longer film — end mid-drift, no settling shot.</pre>
+  </div>
+</article>
+<article class="shot" data-n="2">
+  <label class="chk"><input type="checkbox" data-key="karan-1B"><span></span></label>
+  <div class="shead">
+    <span class="sid">1B</span>
+    <h3>능선을 넘어오는 것</h3>
+    <p class="sub">보라색 연기가 소리 없이 사구를 넘어 쏟아진다.</p>
+  </div>
+  <div class="pwrap">
+    <button class="copy" type="button">복사</button>
+    <pre>SCENE CONTEXT
+A wall of violet vapour comes over a dune ridge above a sleeping nomad
+settlement and begins pouring down the slope toward it. It makes no sound.
+
+ACTIVE REFERENCES
+@karan — controls tents, banners, pens, sand and dune geography only; reference
+framing not inherited.
+
+LOCATION MAP
+Foreground: the basin floor with the outermost ring of dark tents, banners on
+poles. Midground: the long sand slope rising away from them. Background: the
+dune ridge line against a pre-dawn sky, and beyond it the violet mass cresting.
+Camera sits low in the basin looking up the slope.
+
+FIRST FRAME / BLOCKING
+Low wide, camera 1.5 metres above the sand, 40 metres out from the nearest
+tents, looking up the slope at the ridge 200 metres away. Two tent peaks in the
+lower corners for scale. The ridge is clean and empty for the first moment.
+
+FORMAT MODE
+One continuous shot. The camera does not cut on its own. The empty ridge holds
+longest; the pour is fastest.
+
+OPTICS
+63° FOV for the entire shot, rectilinear, one lens with no change.
+
+CAMERA
+Locked off and completely still for the first half, then a slow 1 m/s push in
+toward the slope. No tilt, no pan.
+
+ACTION
+The ridge line stays empty and still. Then violet vapour rises over it along
+its whole length at once and comes down the face of the dune — not blowing, not
+drifting, but pouring, the way water pours over sand, keeping a defined leading
+edge that runs downhill faster than the body behind it. It is completely
+silent. Sand does not lift in front of it. Banners in the foreground keep
+snapping in a wind that the vapour is clearly not part of.
+
+PHYSICS
+The vapour has weight. It hugs the slope, fills the hollows first and takes the
+high ground last, and its leading edge stays sharp instead of feathering. It
+moves at a steady 4 m/s regardless of the wind direction on the banners.
+
+LIGHTING
+Pre-dawn ambient at 8500K, exposed 2 stops under. The vapour is self-luminous
+at very low level, a dull violet that lifts the sand it passes over by half a
+stop. Haze at 20% rising to 45% as it arrives.
+
+AUDIO
+Wind, banners, sand. The vapour itself makes no sound at all. The very low
+continuous tone underneath everything grows slightly louder. No music. No
+dialogue.
+
+STYLE
+Photoreal live-action, 4K, large-format detail, natural desaturated colour with
+one violet source, fine grain, real-time.
+
+POSITIVE LOCKS
+The vapour stays silent for the entire shot.
+Its leading edge stays sharp and defined and keeps contact with the sand.
+The camera stays locked and then pushes in on one axis only.
+This clip is one fragment of a longer film — end mid-pour, no settling shot.</pre>
+  </div>
+</article>
+<article class="shot" data-n="3">
+  <label class="chk"><input type="checkbox" data-key="karan-2A"><span></span></label>
+  <div class="shead">
+    <span class="sid">2A</span>
+    <h3>짐승들이 먼저 안다</h3>
+    <p class="sub">낙타가 줄을 끊고, 염소 떼가 천막 사이를 뚫고, 새 떼가 터져 오른다.</p>
+  </div>
+  <div class="pwrap">
+    <button class="copy" type="button">복사</button>
+    <pre>SCENE CONTEXT
+The animals in a nomad settlement panic all at once, seconds before any person
+reacts. Violet vapour is arriving at the outer tents behind them.
+
+ACTIVE REFERENCES
+@karan — controls tents, banners, pens, sand and dune geography only; reference
+framing not inherited.
+
+LOCATION MAP
+Foreground: a low fenced pen of tethered camels on churned sand. Midground: a
+lane running between two rows of dark tents, banners on poles. Background: the
+outer ring of tents with violet vapour already at their bases and rising up
+their walls. Camera is in the lane at chest height.
+
+FIRST FRAME / BLOCKING
+Medium wide, camera 1.4 metres high in the lane, 8 metres from the camel pen at
+frame left. Twelve camels stand tethered and still. The lane runs away from
+camera toward the outer tents where the violet edge is just visible. No people
+in frame.
+
+FORMAT MODE
+One continuous shot. The camera does not cut on its own. The stillness at the
+open is brief; everything after it is fast.
+
+OPTICS
+63° FOV for the entire shot, rectilinear, one lens with no change.
+
+CAMERA
+Handheld at 1.4 metres with 3 cm tremor, backing away down the lane at 6 km/h
+as the animals come toward it, then swinging up 40 degrees at the end. Focus
+rides the nearest animals.
+
+ACTION
+Every camel lifts its head at the same instant. They pull back on their tethers
+together, the ropes go taut, and three of them snap — the animals come out of
+the pen sideways, knocking the fence rail down. WHILE that is happening a herd
+of goats bursts through the lane from behind camera and runs the length of it
+between the tents, pouring around the camera. WHILE the goats are still passing,
+a mass of birds comes off the tent peaks and off the ground all at once and
+goes straight up out of frame. All three are overlapping and continuous. Not one
+person appears.
+
+PERFORMANCE
+The animals do not look at the vapour. They look away from it and move away from
+it, which is what makes it read.
+
+PHYSICS
+Real animal weight and real herd behaviour — the goats break around obstacles
+rather than through them, camels move with their heads high and their gait
+wrong. Sand kicks up in sheets. The fence rail falls with real mass. Rope goes
+taut, stretches, then parts.
+
+LIGHTING
+Pre-dawn ambient at 8500K, exposed 2 stops under, with a dull violet lift on
+the outer tents in the background. Haze at 45%.
+
+AUDIO
+Rope creaking then snapping, hooves on sand, camels calling, goats, a wall of
+wings leaving all at once, a fence rail hitting the ground. The violet vapour
+still makes no sound. Underneath it, the low unpitched rumble. Every sound is unpitched and textural
+— no tones, no drones, no instruments. No dialogue.
+
+STYLE
+Photoreal live-action, 4K, large-format detail, natural desaturated colour, fine
+grain, real-time.
+
+POSITIVE LOCKS
+No people appear in this shot.
+All three animal actions overlap and none of them waits its turn.
+The vapour stays silent and stays in the background.
+This clip is one fragment of a longer film — end mid-stampede, no settling
+shot.</pre>
+  </div>
+</article>
+<article class="shot" data-n="4">
+  <label class="chk"><input type="checkbox" data-key="karan-2B"><span></span></label>
+  <div class="shead">
+    <span class="sid">2B</span>
+    <h3>옷만 남는다</h3>
+    <p class="sub">양탄자를 걷던 노인이 연기에 잠긴다. 비명이 없다.</p>
+  </div>
+  <div class="pwrap">
+    <button class="copy" type="button">복사</button>
+    <pre>SCENE CONTEXT
+An elder rolling a rug outside a tent is overtaken by silent violet vapour. When
+it has passed, only the clothes are lying on the sand.
+
+ACTIVE REFERENCES
+@elder — 100% matches the reference; dark brown robe, rope belt, head wrap,
+weathered face. Studio background and layout NOT inherited. Appears in the first
+half of this shot only.
+@karan — controls tents, drying rack, sand and props only; reference framing not
+inherited.
+
+LOCATION MAP
+Foreground: a woven rug half rolled on the sand and a wooden drying rack hung
+with cloth. Midground: the side wall of a dark tent, guy ropes staked out.
+Background: the lane between tents, filling with violet. Camera is low and close
+on the rug.
+
+FIRST FRAME / BLOCKING
+Low medium, camera 0.6 metres above the sand, 3 metres from the rug, looking
+slightly up. The elder is bent over the rug with both hands on it, back to the
+lane. The drying rack stands 2 metres behind at frame right. Violet is visible
+in the depth of the lane but has not arrived.
+
+FORMAT MODE
+One continuous shot. The camera does not cut on its own. It holds absolutely
+still for the entire shot.
+
+OPTICS
+47° FOV for the entire shot, rectilinear, one lens with no change.
+
+CAMERA
+Locked off on a low tripod. It does not move, tilt, pan or push at any point.
+
+ACTION
+The elder keeps rolling the rug, working steadily, and lifts one hand to
+straighten the head wrap. The violet arrives from the lane and crosses the frame
+from right to left at a steady walking pace, taking the drying rack first, then
+the tent wall, then the elder. There is no reaction, no turn, no cry — the
+figure is simply inside it and then the vapour has moved on past frame left. The
+rug is still half rolled. Under the drying rack, the dark brown robe, the rope
+belt and the head wrap are lying on the sand in the shape they fell in. The
+sand around them is undisturbed.
+
+PHYSICS
+The vapour keeps a sharp leading edge and hugs the ground. The cloth on the
+drying rack lifts as it passes and settles again. The fallen robe has real
+weight and real folds, and it does not smoke, burn, or move.
+
+LIGHTING
+Pre-dawn ambient at 8500K, exposed 2 stops under, with a dull violet self-glow
+that lifts the sand half a stop as it crosses and takes the light with it when
+it leaves. Haze at 45%.
+
+AUDIO
+Wind, cloth on the drying rack, the dry sound of a rug being rolled — and then
+nothing at all where a voice should be. The vapour is silent. The low unpitched rumble
+continues. No music. No dialogue.
+
+STYLE
+Photoreal live-action, 4K, large-format detail, natural desaturated colour with
+one violet source, fine grain, real-time. Impact conveyed entirely through
+absence, sound and the empty clothing.
+
+POSITIVE LOCKS
+The camera stays locked and still for the entire shot.
+The vapour crosses at a steady walking pace and stays silent.
+After it passes, the clothing lies on undisturbed sand.
+This clip is one fragment of a longer film — end holding on the empty robe, no
+settling shot.</pre>
+  </div>
+</article>
+
+<h2 class="secline">2 — 그것이 보인다</h2>
+<article class="shot" data-n="5">
+  <label class="chk"><input type="checkbox" data-key="karan-3A"><span></span></label>
+  <div class="shead">
+    <span class="sid">3A</span>
+    <h3>천막 위의 실루엣</h3>
+    <p class="sub">가장 큰 천막의 다섯 배. 다리가 너무 길고 너무 느리다.</p>
+  </div>
+  <div class="pwrap">
+    <button class="copy" type="button">복사</button>
+    <pre>SCENE CONTEXT
+Something enormous walks through the violet vapour above the roofline of a
+nomad settlement. Only its silhouette is legible.
+
+ACTIVE REFERENCES
+@giants — 100% matches the reference for proportion and surface; reference
+framing NOT inherited. Never more than three in frame.
+@karan — controls tent peaks, poles and banners only; reference framing not
+inherited.
+
+LOCATION MAP
+Foreground: two tent poles rising steeply into frame from the bottom corners,
+dark and out of focus, framing the centre. Midground: a field of tent peaks and
+guy ropes, half drowned in violet. Background: the vapour, thick and even, with
+tall pale shapes standing in it. Camera is on the ground looking steeply up
+between the poles.
+
+FIRST FRAME / BLOCKING
+Low angle, camera 0.5 metres above the sand, tilted up 45 degrees, framed
+between two foreground tent poles that occupy the left and right thirds. Three
+tall pale figures stand in the vapour beyond the tent peaks — the nearest at 80
+metres, the second at 140 metres, the third at 220 metres. The nearest one
+stands five times the height of the largest tent; a person&#x27;s head would not
+reach the top of its shin.
+
+FORMAT MODE
+One continuous shot. The camera does not cut on its own. It holds longest of any
+shot in the scene.
+
+OPTICS
+63° FOV for the entire shot, rectilinear, one lens with no change.
+
+CAMERA
+Locked off, low, tilted up. It does not move at any point.
+
+ACTION
+The nearest figure takes two steps across the frame in the whole shot. Each leg
+lifts, swings and sets down far more slowly than a body that size would need to,
+and the sand does not shake when the foot lands. The other two do not move at
+all. The vapour drifts continuously in front of and behind all three so their
+edges keep dissolving and reforming. Banners in the midground keep snapping the
+whole time.
+
+PHYSICS
+The figures displace the vapour as they pass through it. The ground does not
+respond to their weight in any way — no shake, no impact, no sand thrown. That
+mismatch is the point and holds for the entire shot.
+
+LIGHTING
+Pre-dawn ambient at 8500K, exposed 2 stops under. The vapour is a dull
+self-luminous violet and the figures read paler than it, lit from within the
+vapour rather than from the sky. Haze at 70%.
+
+AUDIO
+A low unpitched rumble is loudest here and clearly coming from the tall figures,
+swelling and fading slowly like moving earth. Wind and banners underneath. No
+footsteps. Every sound is unpitched and textural — no tones, no drones, no
+instruments, no singing. No dialogue.
+
+STYLE
+Photoreal live-action, 4K, large-format detail, natural desaturated colour with
+one violet source, fine grain, real-time.
+
+POSITIVE LOCKS
+EXACTLY THREE tall figures in the entire generation.
+The nearest stands five times the height of the largest tent; a person&#x27;s head
+would not reach the top of its shin.
+The ground stays completely still under them for the entire shot.
+They stay silhouetted and half dissolved in vapour — no clean full reveal.
+This clip is one fragment of a longer film — end mid-step, no settling shot.</pre>
+  </div>
+</article>
+
+<h2 class="secline">3 — 세례</h2>
+<article class="shot" data-n="6">
+  <label class="chk"><input type="checkbox" data-key="karan-4A"><span></span></label>
+  <div class="shead">
+    <span class="sid">4A</span>
+    <h3>달린다</h3>
+    <p class="sub">세례가 포대기를 안고 천막 사이를 달린다. 맨발이 모래에 빠진다.</p>
+  </div>
+  <div class="pwrap">
+    <button class="copy" type="button">복사</button>
+    <pre>SCENE CONTEXT
+A woman runs through the lanes of a nomad settlement carrying a wrapped infant,
+away from the violet vapour behind her.
+
+ACTIVE REFERENCES
+@sere — 100% matches the reference; face, long dark hair now loose and moving,
+layered cream and undyed linen wraps. Studio background and layout NOT
+inherited. She is the only person in this generation.
+@karan — controls tents, guy ropes, banners and sand only; reference framing not
+inherited.
+
+LOCATION MAP
+Foreground: sand churned by running feet, guy ropes staked low and crossing the
+path. Midground: a narrow lane between dark tent walls that breathe in the wind.
+Background: behind her, the lane filling with violet; ahead of her, the lane
+opening onto the base of a dune. Camera is low and running ahead of her.
+
+FIRST FRAME / BLOCKING
+Low medium, camera 0.9 metres above the sand, 3 metres ahead of her and backing
+up. She is centre frame, barefoot, running toward camera with a wrapped bundle
+held high against her chest in both arms. The violet is 25 metres behind her in
+the lane and closing. Her hair is loose and moving.
+
+FORMAT MODE
+One continuous shot. The camera does not cut on its own. It runs at one speed
+from first frame to last.
+
+OPTICS
+63° FOV for the entire shot, rectilinear, one lens with no change. High shutter
+angle so sand grains, cloth edges and her hands stay crisply resolved.
+
+CAMERA
+Handheld, 0.9 metres high, backing away ahead of her at 13 km/h with 4 cm
+tremor, dropping to 0.4 metres for two seconds mid-shot to catch the feet, then
+rising back. Focus rides the bundle.
+
+ACTION
+She runs with her weight forward and both arms locked around the bundle, so her
+balance is wrong and she has to fight for every step. Her bare feet sink to the
+ankle in the loose sand and she loses ground on each push. She turns her
+shoulder to clear a tent guy rope without slowing. She does not look back, not
+once, at any point in the shot. WHILE she runs, the violet keeps coming down the
+lane behind her at a steady pace and the tent walls keep breathing in the wind.
+
+PERFORMANCE
+Her jaw is set and her breathing is loud and ragged. Her eyes are fixed forward
+on the dune. Her hands keep adjusting their grip on the bundle without her
+looking down. There is no screaming and no crying.
+
+PHYSICS
+Real weight of a carried infant against her chest, which changes how she runs.
+Sand collapses under every barefoot step and throws back behind her. Loose hair
+and linen wraps trail behind the direction of travel. Guy ropes flex when her
+shoulder brushes them.
+
+LIGHTING
+Pre-dawn ambient at 8500K, exposed 2 stops under. A dull violet self-glow behind
+her lifts her back and shoulders half a stop while her face stays in the cooler
+ambient. Haze at 45%.
+
+AUDIO
+Bare feet in deep sand, ragged breathing, linen moving, a single infant cry
+close to the microphone, tent cloth in the wind. The vapour is silent. The very
+low tone continues behind everything. No music. No dialogue.
+
+STYLE
+Photoreal live-action, 4K, large-format detail, natural desaturated colour, fine
+grain, real-time.
+
+POSITIVE LOCKS
+EXACTLY ONE person in the entire generation, identical face, hair and wraps from
+first frame to last.
+She keeps both arms around the bundle at all times and stays barefoot.
+She faces forward for the entire shot.
+This clip is one fragment of a longer film — end mid-stride, no settling shot.</pre>
+  </div>
+</article>
+<article class="shot" data-n="7">
+  <label class="chk"><input type="checkbox" data-key="karan-4B"><span></span></label>
+  <div class="shead">
+    <span class="sid">4B</span>
+    <h3>손목의 고리</h3>
+    <p class="sub">포대기 밖으로 나온 아기의 왼 손목. 금빛 고리 모양 반점.</p>
+  </div>
+  <div class="pwrap">
+    <button class="copy" type="button">복사</button>
+    <pre>SCENE CONTEXT
+An infant&#x27;s hand works free of its wrapping and a mark on the wrist becomes
+visible for the first time.
+
+ACTIVE REFERENCES
+@sere — 100% matches the reference; only her forearms, hands and the cream linen
+of her wraps are in frame. Studio background and layout NOT inherited.
+
+LOCATION MAP
+Foreground: cream and undyed linen swaddling, close enough to read the weave.
+Midground: an adult forearm in the same linen, supporting it. Background:
+completely out of focus, dark tent shapes and a dull violet lift moving behind.
+Camera is very close, moving with the run.
+
+FIRST FRAME / BLOCKING
+Extreme close, camera 0.3 metres from the swaddling, framing from the infant&#x27;s
+shoulder to the edge of the adult&#x27;s hand. The whole frame is moving up and down
+with a running stride.
+
+FORMAT MODE
+One continuous shot. The camera does not cut on its own.
+
+OPTICS
+18° FOV for the entire shot, rectilinear, one lens with no change. Shallow depth
+of field with the background completely dissolved.
+
+CAMERA
+Handheld extreme close, 0.3 metres, moving with the run at 13 km/h with 5 cm
+vertical bounce. Focus locked on the infant&#x27;s wrist.
+
+ACTION
+A small hand pushes out of the top of the swaddling and opens. On the inside of
+the left wrist there is a mark shaped like a closed ring, the colour of old
+gold, slightly raised, with clean edges — it reads as part of the skin rather
+than painted on it. The adult hand comes across and folds the linen back over
+it, and the frame keeps bouncing with the stride.
+
+PHYSICS
+Real infant skin with real translucency and fine hair. Real linen weave and real
+cloth weight. The bounce is the running gait, not camera shake.
+
+LIGHTING
+Pre-dawn ambient at 8500K, exposed 2 stops under, with a dull violet lift
+passing across the background out of focus. The mark itself is very slightly
+brighter than the skin around it and does not emit light. Haze at 45%.
+
+AUDIO
+Linen moving very close to the microphone, one infant cry, ragged adult
+breathing, feet in sand. No music. No dialogue.
+
+STYLE
+Photoreal live-action, 4K, large-format detail, natural desaturated colour, fine
+grain, real-time.
+
+POSITIVE LOCKS
+EXACTLY ONE ring-shaped mark, on the inside of the left wrist.
+The mark stays the same size, shape and colour for the entire shot.
+The background stays fully out of focus.
+This clip is one fragment of a longer film — end as the linen closes over it, no
+settling shot.</pre>
+  </div>
+</article>
+<article class="shot" data-n="8">
+  <label class="chk"><input type="checkbox" data-key="karan-4C"><span></span></label>
+  <div class="shead">
+    <span class="sid">4C</span>
+    <h3>안개가 멈춘다</h3>
+    <p class="sub">사구를 오르는 순간, 등 뒤 안개가 벽처럼 선다. 따라오지 않는다.</p>
+  </div>
+  <div class="pwrap">
+    <button class="copy" type="button">복사</button>
+    <pre>SCENE CONTEXT
+A woman carrying a wrapped infant climbs out of a settlement onto a dune face,
+and the violet vapour behind her stops at the edge of the tents instead of
+following.
+
+ACTIVE REFERENCES
+@sere — 100% matches the reference; face, long loose dark hair, layered cream
+and undyed linen wraps. Studio background and layout NOT inherited. She is the
+only person in this generation.
+@karan — controls the outermost tents and sand only; reference framing not
+inherited.
+
+LOCATION MAP
+Foreground: the lower dune face, loose sand giving way under weight. Midground:
+the last row of tents at the settlement edge. Background: an unbroken wall of
+violet standing vertically behind those tents, from the sand to well above the
+tent peaks. Camera is up the dune ahead of her, looking back down past her.
+
+FIRST FRAME / BLOCKING
+Wide, camera 2 metres above the dune face and 12 metres up-slope from her,
+looking down. She is in the lower third climbing toward camera with the bundle
+against her chest. The last tents are 20 metres behind her. The violet is
+already at those tents and still advancing.
+
+FORMAT MODE
+One continuous shot. The camera does not cut on its own. The climb is fast; the
+moment the vapour stops holds longest.
+
+OPTICS
+63° FOV for the entire shot, rectilinear, one lens with no change.
+
+CAMERA
+Rising slowly up the slope at 1.5 m/s, 2 metres high, with 2 cm tremor, keeping
+her in the lower third so the wall behind her fills most of the frame.
+
+ACTION
+She climbs, feet sliding back in the loose sand, gaining a half step for each
+full one. The violet keeps advancing behind her and reaches the outer tents.
+Then its whole leading edge stops at once along its entire width, rises into a
+vertical face, and stands there. It does not spread, thin out, or drift forward.
+It stays in contact with the ground and holds its shape, moving only internally,
+the way water stands against glass. She keeps climbing and does not look back.
+
+PERFORMANCE
+Her breathing is loud. Her grip on the bundle tightens as the slope steepens.
+Her eyes stay up the slope.
+
+PHYSICS
+Sand collapses under every step and runs back down behind her. The vertical
+vapour wall keeps a defined face and does not feather at its top edge. Tent
+cloth in front of it still moves in the wind, so the air is clearly still
+moving even though the wall is not.
+
+LIGHTING
+Pre-dawn ambient at 8500K, exposed 2 stops under. The violet wall is the
+brightest thing in the lower frame and lifts the sand in front of it by a stop.
+Her face stays in cooler ambient. Haze at 70% behind the wall, 30% in front.
+
+AUDIO
+Bare feet in collapsing sand, ragged breathing, linen, wind over the crest. At
+the moment the wall stops, the wind sound continues but everything else drops
+away for two seconds. The low unpitched rumble holds a single sustained note. No music.
+No dialogue.
+
+STYLE
+Photoreal live-action, 4K, large-format detail, natural desaturated colour with
+one violet source, fine grain, real-time.
+
+POSITIVE LOCKS
+EXACTLY ONE person in the entire generation.
+The vapour stops along its whole width at once and holds a vertical face for the
+rest of the shot.
+Tent cloth in front of the wall keeps moving in the wind.
+She faces up the slope for the entire shot.
+This clip is one fragment of a longer film — end on the standing wall, no
+settling shot.</pre>
+  </div>
+</article>
+
+<h2 class="secline">4 — 보내는 쪽</h2>
+<article class="shot" data-n="9">
+  <label class="chk"><input type="checkbox" data-key="karan-5A"><span></span></label>
+  <div class="shead">
+    <span class="sid">5A</span>
+    <h3>보지 마</h3>
+    <p class="sub">말 안장의 등바구니에 아기를 넣고 끈을 조인다. 이 장면의 유일한 대사.</p>
+  </div>
+  <div class="pwrap">
+    <button class="copy" type="button">복사</button>
+    <pre>SCENE CONTEXT
+Beyond the dune crest a woman loads a wrapped infant into a basket slung at a
+horse&#x27;s saddle and speaks to it once before sending it away.
+
+ACTIVE REFERENCES
+@sere — 100% matches the reference; face, long loose dark hair, layered cream
+and undyed linen wraps. Studio background and layout NOT inherited. She is the
+only person in this generation.
+@moon — controls the size and surface of the low moon only; it sits on the
+horizon line behind her.
+
+LOCATION MAP
+Foreground: the flank of a dark horse, a worn saddle, and a deep woven basket
+slung against its side with leather draw cords. Midground: the far side of the
+dune crest, wind-smoothed sand. Background: the horizon with the enormous moon
+sitting on it, and a faint violet glow coming from beyond the crest behind
+camera. Camera is at the horse&#x27;s flank at her working height.
+
+FIRST FRAME / BLOCKING
+Medium close, camera 1.2 metres high and 1.5 metres from the basket, at 45
+degrees to the horse. She stands at the horse&#x27;s flank with the bundle already
+half lowered into the basket, both hands on it. The horse&#x27;s head is out of frame
+at the top. The moon fills the upper right behind her shoulder.
+
+FORMAT MODE
+One continuous shot. The camera does not cut on its own. The line lands after
+the camera has settled and holds longest.
+
+OPTICS
+47° FOV for the entire shot, rectilinear, one lens with no change.
+
+CAMERA
+Handheld, 1.2 metres high, 2 cm tremor, settling into stillness before she
+speaks and staying still through the line. Focus on her hands, then racking to
+her face for the line.
+
+ACTION
+She lowers the bundle fully into the basket and packs linen around it with both
+hands, quickly and carefully. She takes the two leather draw cords and pulls
+them tight — her hands are shaking hard enough to be visible and she has to try
+the knot twice. She stops. She leans down close to the basket. She speaks. Then
+she straightens.
+
+PERFORMANCE
+Her breathing is short and audible before the line and she has to steady it to
+get the words out. Her jaw is tight. She does not cry — her eyes stay wide and
+dry and fixed on the basket. Her hands keep shaking through the whole shot, and
+the second attempt at the knot is what tells the audience everything.
+
+She says, close to the basket, breathless and whispered, with a break between
+the two halves: &quot;보지 마. ...아직은, 보지 마.&quot;
+
+PHYSICS
+The horse shifts its weight continuously and the basket swings with it, which is
+why the knot is hard. Real leather cord under real tension. Real infant weight
+settling into woven basketry.
+
+LIGHTING
+Pre-dawn ambient at 8500K, exposed 2 stops under, with the enormous moon behind
+her acting as a soft backlight that separates her hair and shoulders. A faint
+violet lift on her back from beyond the crest. Haze at 30%.
+
+AUDIO
+The horse breathing and shifting, hooves resettling in sand, leather cord
+creaking under tension, woven basket flexing, her short breathing. One infant
+cry inside the basket. Her voice in Korean, whispered and breathless. The low
+unpitched rumble is faint and far away here. Every other sound is unpitched and
+textural — no tones, no drones, no instruments, no singing.
+
+STYLE
+Photoreal live-action, 4K, large-format detail, natural desaturated colour, fine
+grain, real-time.
+
+POSITIVE LOCKS
+EXACTLY ONE person and EXACTLY ONE horse in the entire generation.
+Her hands stay visibly shaking for the entire shot.
+The line is spoken in Korean, whispered, only after the camera has settled.
+The moon stays on the horizon line at the same size.
+This clip is one fragment of a longer film — end as she straightens, no settling
+shot.</pre>
+  </div>
+</article>
+<article class="shot" data-n="10">
+  <label class="chk"><input type="checkbox" data-key="karan-5B"><span></span></label>
+  <div class="shead">
+    <span class="sid">5B</span>
+    <h3>금빛 살촉</h3>
+    <p class="sub">안장의 활과 화살통을 낚아채 등에 두른다. 화살통 속이 희미하게 빛난다.</p>
+  </div>
+  <div class="pwrap">
+    <button class="copy" type="button">복사</button>
+    <pre>SCENE CONTEXT
+A woman pulls a bow and quiver off a saddle and slings them across her back,
+then strikes the horse away.
+
+ACTIVE REFERENCES
+@sere — 100% matches the reference; face, long loose dark hair, layered cream
+and undyed linen wraps, cross-body leather strap. Studio background and layout
+NOT inherited. She is the only person in this generation.
+
+LOCATION MAP
+Foreground: the saddle, a horn-and-wood composite bow hanging from it, a leather
+quiver beside it. Midground: the horse&#x27;s flank and the slung basket. Background:
+open dune and the low horizon, with a faint violet glow at frame edge. Camera is
+close at the saddle.
+
+FIRST FRAME / BLOCKING
+Medium close, camera 1.3 metres high, 1.2 metres from the saddle. Her hand is
+already reaching. The bow hangs with its recurved tips catching the ambient
+light. The quiver hangs beside it, mouth toward camera.
+
+FORMAT MODE
+One continuous shot. The camera does not cut on its own. The insert into the
+quiver holds; everything else is fast.
+
+OPTICS
+47° FOV for the entire shot, rectilinear, one lens with no change. Shallow depth
+of field on the quiver mouth.
+
+CAMERA
+Handheld, 1.3 metres, 3 cm tremor, following her hands, then dropping in close
+on the quiver mouth for a beat, then pulling back out as she turns.
+
+ACTION
+She takes the bow off the saddle in one motion and puts her head and one arm
+through the string so it sits across her back. She grabs the quiver and slings
+it beside it. As the quiver swings, the arrowheads inside knock together — they
+are the colour of old gold and each one carries a faint internal glow that
+brightens for a moment on contact and fades again. She pulls the strap tight
+across her chest. She brings one hand down hard on the horse&#x27;s hindquarters and
+it goes, and she is left standing.
+
+PERFORMANCE
+Every movement is practised and fast, done by someone who has slung this gear a
+thousand times. Her face does not change while she does it.
+
+PHYSICS
+Real horn-and-wood bow with real limb stiffness and real weight. Leather quiver
+with real swing and real mass. The horse leaves with real acceleration and
+throws sand. Her wraps and hair react to the strike and the departure.
+
+LIGHTING
+Pre-dawn ambient at 8500K, exposed 2 stops under. The glow inside the quiver is
+a warm 2000K point source, the only warm colour anywhere in the frame, and it
+lights the inside of the quiver mouth and nothing else. Haze at 30%.
+
+AUDIO
+Leather on leather, the bowstring humming as it passes over her shoulder,
+arrowheads knocking together with a short dry metal contact, a flat open-handed
+strike on horsehide, hooves accelerating away, an infant crying in the receding
+basket. No music. No dialogue.
+
+STYLE
+Photoreal live-action, 4K, large-format detail, natural desaturated colour with
+one warm point source, fine grain, real-time.
+
+POSITIVE LOCKS
+EXACTLY ONE bow and EXACTLY ONE quiver in the entire generation.
+The arrowhead glow stays confined inside the quiver and lights nothing beyond
+its mouth.
+She keeps her face unchanged for the entire shot.
+This clip is one fragment of a longer film — end as she is left standing with
+the sound still receding, no settling shot.</pre>
+  </div>
+</article>
+
+<h2 class="secline">5 — 남는 쪽</h2>
+<article class="shot" data-n="11">
+  <label class="chk"><input type="checkbox" data-key="karan-6A"><span></span></label>
+  <div class="shead">
+    <span class="sid">6A</span>
+    <h3>걸어 나온다</h3>
+    <p class="sub">돌아선다. 활을 뽑는다. 멈춰 있던 안개가 다시 밀려오고 그 속에서 거인들이 나온다.</p>
+  </div>
+  <div class="pwrap">
+    <button class="copy" type="button">복사</button>
+    <pre>SCENE CONTEXT
+A woman turns back toward the settlement, draws her bow off her back, and the
+violet wall that had stopped begins moving again — figures walk out of it.
+
+ACTIVE REFERENCES
+@sere — 100% matches the reference; face, long loose dark hair, layered cream and
+undyed linen wraps, bow and quiver across her back. Studio background and layout
+NOT inherited. She is the only person in this generation.
+@giants — 100% matches the reference for proportion and surface; reference
+framing NOT inherited. Never more than three in frame.
+
+LOCATION MAP
+Foreground: the dune crest and her, seen from behind and to the side. Midground:
+the slope falling away toward the settlement. Background: the standing violet
+wall across the whole width of frame, and shapes resolving inside it. Camera is
+on the crest behind her shoulder.
+
+FIRST FRAME / BLOCKING
+Wide from behind, camera 1.7 metres high and 4 metres behind her right shoulder.
+She occupies the left third and is small against the wall. The wall fills the
+entire background from the sand to above the top of frame. She is turned away
+from camera, facing it.
+
+FORMAT MODE
+One continuous shot. The camera does not cut on its own. The turn is fast; the
+wall beginning to move holds longest.
+
+OPTICS
+63° FOV for the entire shot, rectilinear, one lens with no change.
+
+CAMERA
+Handheld, 1.7 metres, 3 cm tremor, arcing slowly around her right side at 1 m/s
+so she moves from the left third toward centre frame while the wall stays filling
+the background.
+
+ACTION
+She reaches back over her shoulder and brings the bow off her back into her left
+hand, and takes one arrow from the quiver with her right without looking. WHILE
+she does that, the standing wall begins moving forward again along its whole
+width at once. Three tall pale figures come out through its face — not emerging
+from behind it but walking out of it, the vapour closing behind them. The nearest
+is five times the height of the tents below; a person&#x27;s head would not reach the
+top of its shin. They walk at the same slow rate throughout and the sand does not
+shake under them. She does not move back a single step.
+
+PERFORMANCE
+Her shoulders drop and settle as she takes the bow, which is the posture of
+someone getting to work rather than someone bracing. Her feet set at shoulder
+width and stay there.
+
+PHYSICS
+Real bow weight coming off her back. The vapour wall keeps a defined vertical
+face and closes behind each figure that passes through it. Her hair and wraps
+move in the wind the whole time. The ground stays completely still under the
+walking figures.
+
+LIGHTING
+Pre-dawn ambient at 8500K, exposed 2 stops under. The violet wall is
+self-luminous and puts a rim on her back and shoulders while her front stays in
+cool ambient. Haze at 70% behind, 30% in front.
+
+AUDIO
+Wind over the crest, a bowstring settling, an arrow drawn from leather, her
+breathing. The low unpitched rumble rises sharply the moment the wall starts moving and
+stays loud. The vapour itself is silent. No music. No dialogue.
+
+STYLE
+Photoreal live-action, 4K, large-format detail, natural desaturated colour with
+one violet source, fine grain, real-time.
+
+POSITIVE LOCKS
+EXACTLY ONE person and EXACTLY THREE tall figures in the entire generation.
+The nearest tall figure stands five times the height of the tents below.
+The ground stays still under them for the entire shot.
+She holds her ground with her feet set for the entire shot.
+This clip is one fragment of a longer film — end mid-walk, no settling shot.</pre>
+  </div>
+</article>
+<article class="shot" data-n="12">
+  <label class="chk"><input type="checkbox" data-key="karan-6B"><span></span></label>
+  <div class="shead">
+    <span class="sid">6B</span>
+    <h3>아는 눈</h3>
+    <p class="sub">시위를 당긴다. 살촉이 불꽃을 머금는다. 얼굴은 바위 같은데 눈동자에만 슬픔.</p>
+  </div>
+  <div class="pwrap">
+    <button class="copy" type="button">복사</button>
+    <pre>SCENE CONTEXT
+A woman draws a bow with an arrow that catches fire on the string. She knows what
+loosing it will cost.
+
+ACTIVE REFERENCES
+@sere — 100% matches the reference; face, long loose dark hair, layered cream and
+undyed linen wraps. Studio background and layout NOT inherited. She is the only
+person in this generation.
+
+LOCATION MAP
+Foreground: her face, hands and the drawn bow. Midground: nothing. Background: an
+even violet field, completely out of focus. Camera is close on her draw side.
+
+FIRST FRAME / BLOCKING
+Medium close, camera 1.6 metres high, 1.2 metres from her, on her draw side at 30
+degrees so both the string hand at her cheek and the arrowhead are in frame. The
+background is a soft violet field with no readable detail.
+
+FORMAT MODE
+One continuous shot. The camera does not cut on its own. This is the longest hold
+in the scene.
+
+OPTICS
+29° FOV for the entire shot, rectilinear, one lens with no change. Shallow depth
+of field, focus on her eyes.
+
+CAMERA
+Locked on a slow 0.3 m/s push in toward her face. No handheld tremor. It does not
+tilt or pan.
+
+ACTION
+She draws to full extension and the string hand comes to her cheek and stops. The
+old-gold arrowhead takes fire — a small clean flame that starts at the point and
+holds steady, feeding on nothing, not spreading down the shaft. It lights the
+underside of her jaw and her draw hand. Her draw does not tremble. She holds. Her
+eyes stay open and level and do not blink for the length of the hold.
+
+PERFORMANCE
+Her face does not move at all — no frown, no set jaw, no tightening anywhere. The
+only thing that changes is her eyes, which fill and stay full without a tear
+falling and without her expression following. One long breath moves her chest and
+her aim does not move with it. Restraint throughout; the face stays composed and
+the eyes carry all of it.
+
+PHYSICS
+Real bow limb bend at full draw and real string tension. Real flame behaviour on
+the arrowhead — it leans with the wind and rights itself, and its light falls off
+correctly across her face.
+
+LIGHTING
+Pre-dawn ambient at 8500K, exposed 2 stops under, plus one small 2000K flame at
+0.4 metres from her face — the only warm light in the whole scene. It underlights
+her jaw, her cheekbone and her draw hand and leaves her eyes in cooler light. The
+violet field behind stays 2 stops down. Haze at 30%.
+
+AUDIO
+The creak of a bow at full draw, one small flame close to the microphone, wind, a
+single long controlled breath. The low unpitched rumble is loud and constant. No music.
+No dialogue.
+
+STYLE
+Photoreal live-action, 4K, large-format detail, natural desaturated colour with
+one warm flame source, fine grain, real-time.
+
+POSITIVE LOCKS
+EXACTLY ONE flame, at the arrowhead only, holding the same size for the entire
+shot.
+Her expression stays composed for the entire shot and the change happens only in
+her eyes.
+Her draw stays steady at full extension.
+This clip is one fragment of a longer film — end still at full draw, no settling
+shot.</pre>
+  </div>
+</article>
+<article class="shot" data-n="13">
+  <label class="chk"><input type="checkbox" data-key="karan-7A"><span></span></label>
+  <div class="shead">
+    <span class="sid">7A</span>
+    <h3>하늘의 고리</h3>
+    <p class="sub">고개를 든다. 활이 시선을 따라 올라간다. 발사 — 상공에서 불의 원이 그려진다.</p>
+  </div>
+  <div class="pwrap">
+    <button class="copy" type="button">복사</button>
+    <pre>SCENE CONTEXT
+A woman lifts her aim from the ground to the sky and looses a burning arrow. It
+climbs and bursts, drawing a ring of fire across the dawn.
+
+ACTIVE REFERENCES
+@sere — 100% matches the reference; face, long loose dark hair, layered cream and
+undyed linen wraps. Studio background and layout NOT inherited. She is the only
+person in this generation.
+@moon — controls the size and surface of the low moon only; it stays on the
+horizon line.
+
+LOCATION MAP
+Foreground: her, on the dune crest, seen from below and to the side. Midground:
+the crest line and open sky. Background: the pre-dawn sky, the enormous moon on
+the horizon at frame right, and a violet field low on the left. Camera is below
+her on the slope looking up.
+
+FIRST FRAME / BLOCKING
+Low wide, camera 0.6 metres above the sand and 6 metres down-slope, tilted up 25
+degrees. She is at frame left in the lower third at full draw, aiming level and
+out of frame left. Most of the frame is sky. The moon sits on the horizon at
+frame right, its full disc visible.
+
+FORMAT MODE
+One continuous shot. The camera does not cut on its own. The lift is slow; the
+loose is instant; the ring holds longest.
+
+OPTICS
+84° FOV for the entire shot, rectilinear, one lens with no change.
+
+CAMERA
+Locked low, tilting up 40 degrees to follow the arrow at the moment of release,
+then holding on the sky. No push, no pan, one axis only.
+
+ACTION
+She raises her head and looks up at the sky first, and holds there. She lets out
+one long breath. The bow follows her eyes upward until the burning arrowhead is
+pointing almost straight up. She looses. The arrow climbs, drawing a clean fire
+trail behind it, and the camera tilts up with it. At altitude it bursts — the
+fire opens outward into a single continuous ring, wide and even, and hangs there
+burning against the dawn. The ring reads at the same width as the moon on the
+horizon. Embers drift down from it, slowly.
+
+PERFORMANCE
+Her face stays composed as she looks up. The long breath out is the only
+performance beat before the loose and it is unhurried.
+
+PHYSICS
+Real bow release with the string returning and the limbs settling. The arrow
+follows a real ballistic climb, slowing as it rises. The fire trail behaves as
+combustion in moving air and bends with the wind. The ring expands from a point,
+finds its diameter, and then holds shape while burning down from the inside edge.
+Embers fall with real air resistance.
+
+LIGHTING
+Pre-dawn ambient at 8500K, exposed 2 stops under, until the burst — then a single
+2000K source in the sky lifts the whole dune face by a stop and a half and throws
+her shadow long down the slope behind her. The moon stays the brightest thing on
+the horizon. Haze at 30% and the ring lights it from above.
+
+AUDIO
+One long breath out, a bow release, the string settling, the arrow leaving. Then
+a rising whistle climbing away, silence for one full second at the top, then a
+deep soft concussion that rolls outward across the dunes. Wind. The low unpitched rumble
+stops entirely at the burst. No music. No dialogue.
+
+STYLE
+Photoreal live-action, 4K, large-format detail, natural desaturated colour with
+one warm source appearing in the final third, fine grain, real-time.
+
+POSITIVE LOCKS
+EXACTLY ONE arrow and EXACTLY ONE ring of fire in the entire generation.
+The ring is a single continuous closed circle and reads at the same width as the
+moon on the horizon.
+The moon stays on the horizon line at the same size for the entire shot.
+The camera moves on one axis only.
+This clip is one fragment of a longer film — end with the ring still burning and
+embers still falling, no settling shot.</pre>
+  </div>
+</article>
+
+<footer>
+  <p class="eyebrow">이 장면의 규칙</p>
+  <p><b>연기는 소리가 없다.</b> 이 장면의 모든 공포가 거기서 나온다. 짐승 소리, 바람 소리,
+  천 소리는 계속 나는데 다가오는 것만 조용하다.</p>
+  <p><b>비명이 없다.</b> 노인은 소리 없이 사라지고 옷만 남는다. 보여주지 않는 게 더 세다.</p>
+  <p><b>땅이 안 흔들린다.</b> 거인이 그만한 크기로 걷는데 모래가 반응하지 않는다.
+  그 어긋남이 저것이 무엇인지 말한다.</p>
+  <p><b>따뜻한 색은 두 번만 나온다.</b> 화살통 안의 금빛, 그리고 마지막 불의 고리.
+  그 사이는 전부 8500K 푸른빛이다.</p>
+  <p><b>불의 고리는 달과 같은 지름이어야 한다.</b> 이 각운이 이 장면의 끝이다.</p>
+</footer>
+</div>
+<script>
+(function(){
+  document.querySelectorAll('.chk input').forEach(function(b){
+    var k='shotlist-'+b.dataset.key;
+    if(localStorage.getItem(k)==='1') b.checked=true;
+    b.addEventListener('change',function(){
+      b.checked?localStorage.setItem(k,'1'):localStorage.removeItem(k);
+    });
+  });
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var t=btn.parentElement.querySelector('pre').textContent;
+      navigator.clipboard.writeText(t).then(function(){
+        btn.textContent='복사됨'; btn.classList.add('done');
+        setTimeout(function(){btn.textContent='복사'; btn.classList.remove('done');},1400);
+      });
+    });
+  });
+})();
+</script>
