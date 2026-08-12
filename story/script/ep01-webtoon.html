@@ -150,15 +150,20 @@ footer .eyebrow{margin-bottom:16px}
 .toc li[data-pal="night"]{--accent:var(--night)}
 .sec[data-pal="night"]{--accent:var(--night)}
 
+/* ---- lamp (창고 · 등불) ---- */
+:root{ --lamp:#8A5A2B }
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --lamp:#D9A76A } }
+:root[data-theme="dark"]{ --lamp:#D9A76A }
+.toc li[data-pal="lamp"]{--accent:var(--lamp)}
+.sec[data-pal="lamp"]{--accent:var(--lamp)}
+
 </style>
 
 <div class="wrap">
   <header class="mast">
     <p class="eyebrow">웹툰 세로 스크롤 콘티 · 2590</p>
     <h1>피폭<em>1화 — 새동네</em></h1>
-    <p class="blurb">지도에 없는 마을에 열한 명이 산다. 평균 나이 백셋.
-    어느 오후 DX-11 일곱 대가 마을을 비우러 들어왔고, 아무도 일어나지 않았다.
-    그날 밤 하늘에서 아이가 하나 떨어진다.</p>
+    <p class="blurb">지도에 없는 마을에 열한 명이 산다. 평균 나이 백셋. 어느 오후 DX-11 일곱 대가 마을을 비우러 들어왔고, 아무도 일어나지 않았다. 그날 밤 하늘에서 아이가 하나 떨어진다.</p>
 
     <div class="stat">
       <div><b>716</b><span>컷</span></div>
@@ -166,10 +171,9 @@ footer .eyebrow{margin-bottom:16px}
       <div><b>4</b><span>초</span></div>
     </div>
 
-    <div class="drain"><i></i><i></i><i></i><i></i></div>
+    <div class="drain"><i style="flex:0.9;background:var(--snow)"></i><i style="flex:8;background:var(--dust)"></i><i style="flex:0.6;background:var(--grey)"></i><i style="flex:1.1;background:var(--night)"></i></div>
     <div class="drain-cap"><span>흰 눈</span><span>표백된 갈색</span><span>회색</span><span>밤</span></div>
-    <p class="blurb">색이 세 번 죽는다. 프롤로그의 흰 눈과 J의 흰 벽은 같은 흰색이고,
-    마지막 두 파트에서 처음으로 <b>위</b>를 본다.</p>
+    <p class="blurb">색이 세 번 죽는다. 프롤로그의 흰 눈과 J의 흰 벽은 같은 흰색이고, 마지막 두 파트에서 처음으로 <b>위</b>를 본다.</p>
 
     <ul class="toc"><li data-pal="snow"><a href="#s-0"><span class="tk">0</span><span class="tt">눈 (프롤로그)</span><span class="tn">50</span></a></li>
 <li data-pal="dust"><a href="#s-A"><span class="tk">A</span><span class="tt">조준선</span><span class="tn">40</span></a></li>
@@ -2937,12 +2941,9 @@ footer .eyebrow{margin-bottom:16px}
 
   <footer>
     <p class="eyebrow">연출 원칙</p>
-    <p>압도적이라는 건 오래 싸우는 게 아니라 안 싸우는 것이다. 분이는 일어나지 않고,
-    덕구는 콩을 계속 까고, 선생은 눈을 안 뜨고, 막내는 물동이를 쓴다.</p>
-    <p>그리고 끝나고 나서 무릎이 아프다고 투덜댄다. 전투의 여파가 액션이 아니라
-    관절통인 게 이 장면의 전부다.</p>
-    <p>1화 내내 분이는 한 번도 일어나지 않는다. 아이가 하나 떨어지고 나서야 일어선다.
-    그리고 아프다고 말한다.</p>
+    <p>압도적이라는 건 오래 싸우는 게 아니라 안 싸우는 것이다. 분이는 일어나지 않고, 덕구는 콩을 계속 까고, 선생은 눈을 안 뜨고, 막내는 물동이를 쓴다.</p>
+    <p>그리고 끝나고 나서 무릎이 아프다고 투덜댄다. 전투의 여파가 액션이 아니라 관절통인 게 이 장면의 전부다.</p>
+    <p>1화 내내 분이는 한 번도 일어나지 않는다. 아이가 하나 떨어지고 나서야 일어선다. 그리고 아프다고 말한다.</p>
     <p><b>[여백]</b>은 빈 컷이 아니라 스크롤 시간이다. 위에서 줄일 수 있지만,
     원래 길이가 이 화의 호흡이다.</p>
   </footer>

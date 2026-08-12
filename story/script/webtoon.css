@@ -143,3 +143,10 @@ footer .eyebrow{margin-bottom:16px}
 .drain i:nth-child(4){background:var(--night);flex:1.1}
 .toc li[data-pal="night"]{--accent:var(--night)}
 .sec[data-pal="night"]{--accent:var(--night)}
+
+/* ---- lamp (창고 · 등불) ---- */
+:root{ --lamp:#8A5A2B }
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --lamp:#D9A76A } }
+:root[data-theme="dark"]{ --lamp:#D9A76A }
+.toc li[data-pal="lamp"]{--accent:var(--lamp)}
+.sec[data-pal="lamp"]{--accent:var(--lamp)}
