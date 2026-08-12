@@ -18,7 +18,17 @@
 
 ### 작업 브랜치
 
-`claude/hibakusha-film-project-5j5vr5`
+`claude/hibakusha-film-chapter-one-ssvbt2` (이전: `claude/hibakusha-film-project-5j5vr5`)
+
+### 세션이 새로 시작됐다면 — **이것부터 읽는다**
+
+컨테이너는 매번 새로 뜬다. 이전 대화 기록은 남지 않는다.
+**저장소에 쓰인 것만 남는다.** 그래서 순서는 이렇다:
+
+1. [`story/README.md`](story/README.md) — **지금 어디까지 왔나. 이 문서 하나면 된다**
+2. [`story/outline.md`](story/outline.md) — 연표 · 계급 · 3막 · 남은 질문
+3. [`story/script/ep01.md`](story/script/ep01.md) — 1화 원고 (본체)
+4. [`story/inbox.md`](story/inbox.md) — 원모가 던진 날것 아이디어
 
 ## 폴더 구조
 

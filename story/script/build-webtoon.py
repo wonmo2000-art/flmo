@@ -1,12 +1,24 @@
+#!/usr/bin/env python3
+"""ep01.md 콘티를 웹툰처럼 읽는 HTML로 굽는다.
+
+    python3 story/script/build-webtoon.py
+
+읽는 것: story/script/ep01.md, story/script/webtoon.css
+쓰는 것: story/script/ep01-webtoon.html
+"""
 import re, html, pathlib
 
-src = pathlib.Path('/home/user/flmo/story/script/ep01.md').read_text()
-lines = src.split('\n')
+HERE = pathlib.Path(__file__).resolve().parent
+SRC  = HERE / 'ep01.md'
+CSS  = HERE / 'webtoon.css'
+OUT  = HERE / 'ep01-webtoon.html'
+
+lines = SRC.read_text().split('\n')
 
 # --- split: front matter / body / appendix ---
-start = next(i for i,l in enumerate(lines) if l.startswith('# 0.'))
-end   = next(i for i,l in enumerate(lines) if l.startswith('# 연출 메모'))
-front, body, appx = lines[:start], lines[start:end], lines[end:]
+start = next(i for i, l in enumerate(lines) if l.startswith('# 0.'))
+end   = next(i for i, l in enumerate(lines) if l.startswith('# 연출 메모'))
+body  = lines[start:end]
 
 PANEL = re.compile(r'^\*\*([^*]+)\*\*\s*(\[[^\]]*\])?\s*(.*)$')
 SPEAK = re.compile(r'^([가-힣A-Za-z0-9 ]{1,10})[:：]\s*(.+)$')
@@ -18,7 +30,8 @@ def esc(s):
     s = re.sub(r'\*(.+?)\*', r'<i>\1</i>', s)
     return s
 
-PALETTE = {'0':'snow','K':'grey'}
+# 0=흰 눈 · A~J=표백된 갈색 · K=벽 안 회색 · L~M=밤
+PALETTE = {'0': 'snow', 'K': 'grey', 'L': 'night', 'M': 'night'}
 def pal(key):
     return PALETTE.get(key, 'dust')
 
@@ -26,7 +39,9 @@ sections, cur, panel = [], None, None
 
 def flush_panel():
     global panel
-    if panel: cur['panels'].append(panel); panel = None
+    if panel:
+        cur['panels'].append(panel)
+        panel = None
 
 for raw in body:
     l = raw.rstrip()
@@ -37,20 +52,28 @@ for raw in body:
         cur = {'key': key, 'title': title, 'pal': pal(key), 'panels': []}
         sections.append(cur)
         continue
-    if cur is None: continue
+    if cur is None:
+        continue
     if l.startswith('> '):
         note = l[2:].strip()
-        if panel: panel.setdefault('notes', []).append(note)
-        else: cur.setdefault('notes', []).append(note)
+        if panel:
+            panel.setdefault('notes', []).append(note)
+        else:
+            cur.setdefault('notes', []).append(note)
         continue
     if l.strip() == '---':
-        flush_panel(); cur['panels'].append({'beat': True}); continue
+        flush_panel()
+        cur['panels'].append({'beat': True})
+        continue
     m = PANEL.match(l)
     if m:
         flush_panel()
-        num, kind, rest = m.group(1).strip(), (m.group(2) or '').strip('[] '), m.group(3).strip()
+        num  = m.group(1).strip()
+        kind = (m.group(2) or '').strip('[] ')
+        rest = m.group(3).strip()
         panel = {'num': num, 'kind': kind, 'body': []}
-        if rest: panel['body'].append(rest)
+        if rest:
+            panel['body'].append(rest)
         continue
     if not l.strip():
         continue
@@ -66,7 +89,7 @@ def render_panel(p):
         return '<hr class="beat">'
     kind = p['kind']
     if kind.startswith('여백'):
-        mod = kind.replace('여백','').strip(' ·')
+        mod = kind.replace('여백', '').strip(' ·')
         h = GAP.get(mod, 96)
         return (f'<div class="rest" style="--h:{h}px" aria-label="여백">'
                 f'<span class="rest-n">{esc(p["num"])}</span></div>')
@@ -82,7 +105,7 @@ def render_panel(p):
         if s and not b.startswith('*'):
             out.append(f'<p class="line"><span class="who">{esc(s.group(1))}</span>'
                        f'<span class="say">{esc(s.group(2))}</span></p>'); continue
-        if b.startswith('*(') or b.startswith('*'):
+        if b.startswith('*'):
             out.append(f'<p class="aside">{esc(b.strip("*"))}</p>'); continue
         out.append(f'<p class="desc">{esc(b)}</p>')
     for n in p.get('notes', []):
@@ -93,32 +116,99 @@ def render_panel(p):
 parts = []
 for s in sections:
     parts.append(f'<section class="sec" data-pal="{s["pal"]}">')
-    parts.append(f'<header class="sechead"><span class="seckey">{esc(s["key"])}</span>'
+    parts.append(f'<header class="sechead"><span class="seckey" id="s-{s["key"]}">{esc(s["key"])}</span>'
                  f'<h2>{esc(s["title"])}</h2></header>')
     for n in s.get('notes', []):
         parts.append(f'<p class="note secnote">{esc(n)}</p>')
     for p in s['panels']:
         parts.append(render_panel(p))
     parts.append('</section>')
+out_body = '\n'.join(parts)
 
-counts = []
-for s in sections:
-    n = len([p for p in s['panels'] if not p.get('beat')])
-    counts.append((s['key'], s['title'].split('.',1)[-1].strip(), n, s['pal']))
+counts = [(s['key'], s['title'].split('.', 1)[-1].strip(),
+           len([p for p in s['panels'] if not p.get('beat')]), s['pal'])
+          for s in sections]
 total = sum(c[2] for c in counts)
 
 toc = '\n'.join(
     f'<li data-pal="{p}"><a href="#s-{k}"><span class="tk">{k}</span>'
     f'<span class="tt">{html.escape(t)}</span><span class="tn">{n}</span></a></li>'
-    for k,t,n,p in counts)
+    for k, t, n, p in counts)
 
-# add ids
-out_body = '\n'.join(parts)
-for k,_,_,_ in counts:
-    out_body = out_body.replace(f'<span class="seckey">{k}</span>',
-                                f'<span class="seckey" id="s-{k}">{k}</span>', 1)
+PAGE = f"""<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>피폭 · 1화 — 새동네</title>
+<style>
+{CSS.read_text()}
+</style>
 
-pathlib.Path('/tmp/claude-0/-home-user-flmo/a858f579-45c6-52eb-aa64-e02fe4560b57/scratchpad/_body.html').write_text(out_body)
-pathlib.Path('/tmp/claude-0/-home-user-flmo/a858f579-45c6-52eb-aa64-e02fe4560b57/scratchpad/_toc.html').write_text(toc)
-print("sections:", len(sections), "panels:", total)
-for c in counts: print(f"  {c[0]:>2}  {c[1][:22]:<24} {c[2]:>4}  {c[3]}")
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">웹툰 세로 스크롤 콘티 · 2590</p>
+    <h1>피폭<em>1화 — 새동네</em></h1>
+    <p class="blurb">지도에 없는 마을에 열한 명이 산다. 평균 나이 백셋.
+    어느 오후 DX-11 일곱 대가 마을을 비우러 들어왔고, 아무도 일어나지 않았다.
+    그날 밤 하늘에서 아이가 하나 떨어진다.</p>
+
+    <div class="stat">
+      <div><b>{total}</b><span>컷</span></div>
+      <div><b>{len(sections)}</b><span>파트</span></div>
+      <div><b>4</b><span>초</span></div>
+    </div>
+
+    <div class="drain"><i></i><i></i><i></i><i></i></div>
+    <div class="drain-cap"><span>흰 눈</span><span>표백된 갈색</span><span>회색</span><span>밤</span></div>
+    <p class="blurb">색이 세 번 죽는다. 프롤로그의 흰 눈과 J의 흰 벽은 같은 흰색이고,
+    마지막 두 파트에서 처음으로 <b>위</b>를 본다.</p>
+
+    <ul class="toc">{toc}</ul>
+  </header>
+</div>
+
+<div class="ctrl">
+  <div class="ctrl-in">
+    <b>읽기</b>
+    <button id="b-notes" aria-pressed="true">연출 메모</button>
+    <button id="b-tight" aria-pressed="false">여백 줄이기</button>
+  </div>
+</div>
+
+<div class="wrap">
+{out_body}
+
+  <footer>
+    <p class="eyebrow">연출 원칙</p>
+    <p>압도적이라는 건 오래 싸우는 게 아니라 안 싸우는 것이다. 분이는 일어나지 않고,
+    덕구는 콩을 계속 까고, 선생은 눈을 안 뜨고, 막내는 물동이를 쓴다.</p>
+    <p>그리고 끝나고 나서 무릎이 아프다고 투덜댄다. 전투의 여파가 액션이 아니라
+    관절통인 게 이 장면의 전부다.</p>
+    <p>1화 내내 분이는 한 번도 일어나지 않는다. 아이가 하나 떨어지고 나서야 일어선다.
+    그리고 아프다고 말한다.</p>
+    <p><b>[여백]</b>은 빈 컷이 아니라 스크롤 시간이다. 위에서 줄일 수 있지만,
+    원래 길이가 이 화의 호흡이다.</p>
+  </footer>
+</div>
+
+<script>
+(function(){{
+  var b1=document.getElementById('b-notes'), b2=document.getElementById('b-tight');
+  b1.addEventListener('click',function(){{
+    var on=b1.getAttribute('aria-pressed')==='true';
+    b1.setAttribute('aria-pressed',String(!on));
+    document.body.classList.toggle('hide-notes',on);
+  }});
+  b2.addEventListener('click',function(){{
+    var on=b2.getAttribute('aria-pressed')==='true';
+    b2.setAttribute('aria-pressed',String(!on));
+    document.body.classList.toggle('tight',!on);
+  }});
+}})();
+</script>
+"""
+
+OUT.write_text(PAGE)
+print(f"→ {OUT.name}  ·  {len(sections)}파트  {total}컷")
+for k, t, n, p in counts:
+    print(f"  {k:>2}  {t[:22]:<24} {n:>4}  {p}")
