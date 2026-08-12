@@ -20,7 +20,9 @@ start = next(i for i, l in enumerate(lines) if l.startswith('# 0.'))
 end   = next(i for i, l in enumerate(lines) if l.startswith('# 연출 메모'))
 body  = lines[start:end]
 
-PANEL = re.compile(r'^\*\*([^*]+)\*\*\s*(\[[^\]]*\])?\s*(.*)$')
+# 컷 번호만 컷으로 잡는다 (P1 · A24 · M51 …).
+# `**여자와 아이.**` 같은 굵은 서술은 컷이 아니라 본문이다.
+PANEL = re.compile(r'^\*\*([A-Z]{1,2}\d{1,3})\*\*\s*(\[[^\]]*\])?\s*(.*)$')
 SPEAK = re.compile(r'^([가-힣A-Za-z0-9 ]{1,10})[:：]\s*(.+)$')
 CUE   = re.compile(r'^(나|효)\)\s*(.+)$')
 
@@ -105,8 +107,8 @@ def render_panel(p):
         if s and not b.startswith('*'):
             out.append(f'<p class="line"><span class="who">{esc(s.group(1))}</span>'
                        f'<span class="say">{esc(s.group(2))}</span></p>'); continue
-        if b.startswith('*'):
-            out.append(f'<p class="aside">{esc(b.strip("*"))}</p>'); continue
+        if b.startswith('*(') and b.endswith(')*'):
+            out.append(f'<p class="aside">{esc(b[1:-1])}</p>'); continue
         out.append(f'<p class="desc">{esc(b)}</p>')
     for n in p.get('notes', []):
         out.append(f'<p class="note">{esc(n)}</p>')
