@@ -1,7 +1,7 @@
 # 「피폭」 — 지금 어디까지 왔나
 
 > 파일이 많아졌다. **이 문서 하나만 보면 된다.**
-> 마지막 정리: 2026-08-12 (1화 재구성 · 2화 초고 · GPT 프롬프트 덱)
+> 마지막 정리: 2026-08-12 (1화 재구성 · 2화 초고 · GPT 이미지 덱 · Seedance 영상 샷리스트)
 
 ---
 
@@ -126,7 +126,10 @@
 
 | | |
 |---|---|
-| [`prompts/flow-veo3.md`](prompts/flow-veo3.md) | **Flow(Veo 3) · 8초 단위.** 프롤로그 48초 + 액션 4컷 |
+| [`prompts/ep01-seedance.md`](prompts/ep01-seedance.md) | **★ Seedance 2.0 · 1화 전체 · 10초 생성 26개.** 에셋 시트 4 + 씬 22 |
+| [`prompts/shotlist/ep01-seedance.html`](prompts/shotlist/ep01-seedance.html) | 위를 **복사 버튼으로 쓰는 감독실 페이지.** 씬별 진행 체크 |
+| [`prompts/build-seedance-page.py`](prompts/build-seedance-page.py) | 위 HTML을 굽는다 |
+| [`prompts/flow-veo3.md`](prompts/flow-veo3.md) | Flow(Veo 3) · 8초 단위 (구버전) |
 | [`prompts/sequence-*.md`](prompts/) | Seedance 시퀀스 (구버전) |
 | [`prompts/shotlist/`](prompts/shotlist/) | 티저 샷리스트 HTML |
 | [`prompts/AUDIO-RULE.md`](prompts/AUDIO-RULE.md) | **음정 있는 소리 금지.** 프롬프트 쓸 때 먼저 읽는다 |
@@ -205,6 +208,8 @@ DX 일곱을 접을 때도 앉아 있었고, 대장이 일어나라고 해도 �
 - [ ] **3화** — DX-12가 온다. 접힌다. 그런데 노인 하나가 다음 날 못 일어난다.
       세하의 정화구 일곱 중 둘에 금이 간다. **오래가 뭘 할 수 있는지 밝혀진다**
 - [ ] **2화 이미지 프롬프트** — 1화처럼 GPT용으로. 판정실 · 개통실 · 40의 창 · 창고 안
+- [ ] **2화 영상 프롬프트** — 1화처럼 Seedance 10초로
+- [ ] **에셋 시트 먼저 뽑기** — `ep01-seedance.md`의 A-1~A-4. **여기가 되어야 나머지가 된다**
 
 ## 아직 안 정한 것
 

@@ -1,0 +1,2547 @@
+# 1화 영상 프롬프트 — Seedance 2.0 · 10초
+
+> **렌더 기본값: 21:9 · 10초 · 4K · 오디오 ON · 비트레이트 HIGH**
+> 프롬프트 하나 = 생성 하나. 전부 **자기 완결형**이라 앞뒤 맥락 없이 단독으로 붙여 넣는다.
+> 원고: [`../script/ep01.md`](../script/ep01.md) · 컷 번호는 제목 옆 〔 〕 안에 적었다.
+
+---
+
+# 프로젝트 바이블 — 프롬프트에 복사하지 않는다
+
+## 1. 이번 개정: 사이보그를 더 넣는다 — **한쪽에만**
+
+원모 요청. 다만 **아무 데나 넣으면 이 작품의 그림이 무너진다.**
+이 영화의 시각 논리는 하나뿐이다:
+
+> **매끈한 쪽이 항상 더 많고 더 빛난다. 그리고 진다.**
+
+그래서 기계는 **지는 쪽에만** 얹는다.
+
+| | 기계 | 이번에 강화한 것 |
+|---|---|---|
+| **DX-11** | 전부 기계 | 관절 틈의 **케이블 다발**, 노출된 액추에이터, 얼굴 자리 회색 판, 서보 소리 |
+| **집행자 대장** | 반은 기계 | **크롬 턱·목 보정대**, 기계 왼손, 쇄골의 포트 줄. **그런데 숨을 쉰다** |
+| **벽 안** | 건물이 기계 | 천장 매니퓰레이터, 케이블 트렁크, 세라믹 정화구, 수술 암 |
+| **세하 / 단이** | 몸에 박혀 있다 | 척추의 세라믹 포트, 목의 뚜껑 셋 |
+| **여울** | **하나. 닫혀 있다** | 흉터가 없다. 이 세계에서 유일하게 **안 쓰인 몸** |
+| **새동네 노인 넷** | **없다. 하나도** | 천만 감았다. **금속이 한 조각도 없다** |
+
+> **노인들한테 기계를 붙이는 순간 이 영화의 논리가 죽는다.**
+> 세상에서 제일 센 넷이 제일 초라하게 입고 있는 것 — 그게 이 작품의 그림이다.
+
+## 2. 오디오 규칙 — 어기면 영상이 통째로 막힌다
+
+[`AUDIO-RULE.md`](AUDIO-RULE.md) 참조. **음정 있는 지속음은 저작권 필터에 걸린다.**
+악기 이름, note/tone/drone/chord/hum/resonance 금지.
+그래서 모든 AUDIO 블록 끝에 이 문장이 붙어 있다:
+
+```
+Every sound is unpitched and textural — no tones, no drones, no sustained notes,
+no instruments, no singing.
+```
+
+## 3. 색 — 파트마다 고정
+
+| | 색온도 | |
+|---|---|---|
+| **눈 (프롤로그)** | 7500K | 흰색. 깨끗한 게 아니라 **비어 있다** |
+| **밖 (새동네)** | 5600K | 표백된 갈색. **밝은데 죽어 있다** |
+| **벽 안** | 4000K | 회색. **어두운데 깨끗하다** |
+| **밤** | 3200K | 남색. 처음으로 **위**를 본다 |
+
+## 4. 에셋 시트 — @태그
+
+**재등장하는 것만 시트를 만든다.** 한 번 나오는 건 프롬프트 안에서 처리한다.
+
+| @태그 | 무엇 | 시트 |
+|---|---|---|
+| `@bun` | 분이 · 굽은 등 · 지팡이 | 얼굴 CU + 전신 앞/뒤 |
+| `@deok` | 덕구 · 마르고 등이 곧다 | 얼굴 CU + 전신 앞/뒤 |
+| `@teacher` | 선생 · 흰 눈 · 등이 아주 곧다 | 얼굴 CU + 전신 앞/뒤 |
+| `@maknae` | 막내 · 셋보다 머리가 덜 셌다 | 얼굴 CU + 전신 앞/뒤 |
+| `@dani` | 단이 · 22 · 흑칠 어깨판 하나 · 소총 | 얼굴 CU + 전신 앞/뒤 |
+| `@seha` | 세하 · 새 옷 · 등이 곧다 | 얼굴 CU + 전신 앞/뒤 |
+| `@yeoul` | 여울 · 회색 작업복 · 표시 없음 | 얼굴 CU + 전신 앞/뒤 |
+| `@captain` | 집행자 대장 · 반기계 | 얼굴 CU + 전신 앞/뒤 |
+| `@dx11` | DX-11 · 얼굴 없음 | 전신 앞/옆/뒤 + 관절 CU |
+| `@masks` | 가면 아홉 — **한 장에 여럿** | 군중용 다인 시트 |
+| `@village` | 새동네 마당 | 3/4 앵글 |
+| `@corridor` | 벽 안 복도 | 3/4 앵글 |
+| `@wall` | 흰 벽 외부 | 3/4 앵글 |
+
+> **군중은 다인 시트로.** 1인 시트를 군중 장면에 붙이면 복제 인간 부대가 나온다.
+> `@masks`와 화물차 짐칸의 신입들은 반드시 여러 명이 그려진 한 장으로 만든다.
+
+## 5. 촬영 순서 제안
+
+**S8~S13 (DX-11 도착 → 4초 → 마당)을 먼저 뽑는다.**
+여기가 제일 어렵고, 여기가 되면 나머지는 다 된다.
+그다음 S1~S3(프롤로그) → S20~S25(벽·밤·낙하) → 나머지.
+
+---
+
+# 에셋 시트 프롬프트
+
+## A-1 · 노인 넷 턴어라운드 〔공통〕
+
+```
+A 16:9 character turnaround sheet on a flat neutral medium-grey seamless
+background. Four panels in one row: face close-up, full body front, full body
+rear, and a hands-only panel.
+
+The subject is very old and small, spine curved forward, white hair pulled back
+tight. Layered undyed cloth wrapped and belted at the waist, every layer faded
+to the same dry ochre as dirt, hems frayed, one shoulder patched with a
+different cloth. Bare feet in worn leather sandals. A worn wooden cane, the grip
+polished dark from decades of handling.
+
+No metal anywhere on the body. No armour, no plate, no implant, no port, no
+ornament. Cloth, wood and leather only — that absence is the design.
+
+The hands panel shows thick swollen knuckles, deep age spots, split nails,
+tendons standing under thin skin.
+
+Consistent design and scale across all panels, even soft studio lighting,
+photorealistic, 4K.
+```
+
+> 같은 프롬프트로 넷을 뽑되 한 줄씩만 바꾼다.
+> **덕구** — `lean, spine straight, no cane, hands calm.`
+> **선생** — `spine very straight, eyes clouded milk-white and unfocused, chin slightly raised.`
+> **막내** — `hair only half grey, a tin water jar held at the hip.`
+
+## A-2 · DX-11 턴어라운드 〔D18〕
+
+```
+A 16:9 machine turnaround sheet on a flat neutral medium-grey seamless
+background. Four panels in one row: full body front, strict side profile, full
+body rear, and a close-up of the shoulder and elbow joint.
+
+A humanoid combat machine the height of a tall person. Matte black lacquered
+segmented plate over the chest, thighs and forearms, the lacquer dulled and
+scratched. Between every plate the mechanism is exposed: polished silver ball
+joints, ribbed actuator cylinders, and tight looms of grey cable running through
+the gaps like tendons. Hydraulic lines follow the femur. The spine is a visible
+column of stacked silver vertebrae.
+
+Where a face would be there is one blank grey plate, slightly convex, with no
+eyes, no mouth, no lens, no light, no marking of any kind.
+
+It carries a plain steel spear held upright.
+
+The joint close-up panel shows the cable loom and actuator clearly.
+
+Consistent design and scale across all panels, even soft studio lighting,
+photorealistic, 4K.
+```
+
+## A-3 · 집행자 대장 턴어라운드 〔D20〕
+
+```
+A 16:9 character turnaround sheet on a flat neutral medium-grey seamless
+background. Three panels in one row: face close-up, full body front, full body
+rear.
+
+An adult man of solid build in black lacquered plate armour that is scuffed,
+field-repaired and clearly worn in — riveted patches, mismatched buckles, dust
+ground into every seam. The armour is the same family as a machine's but it
+fits a body that sweats.
+
+Half of him is machined: a chromed brace runs from under the jaw down the side
+of the neck and disappears into the collar; a row of four small dark ceramic
+ports sits along the collarbone; the entire left hand and forearm are exposed
+silver mechanism, cable-strung, the fingers segmented.
+
+The rest is unmistakably human. A long old scar across the throat, chapped lips,
+stubble with dust in it, capillaries visible in the whites of the eyes, chest
+rising and falling.
+
+Consistent design and scale across all panels, even soft studio lighting,
+photorealistic, 4K.
+```
+
+## A-4 · 가면 아홉 — 다인 시트 〔A26〕
+
+```
+A 16:9 group reference sheet on a flat neutral medium-grey seamless background.
+Nine distinct figures standing in one row, full body, evenly spaced.
+
+Every figure is wrapped head to foot in layered pale undyed cloth so that no
+skin shows anywhere, and every one wears a smooth featureless white ceramic mask
+with no eye holes and no mouth. The masks are identical but the bodies are not:
+different heights, different builds, different stances, different ways the cloth
+is wound and belted, some with rope harnesses, some with hide over one shoulder.
+
+Two gaunt long-limbed animals sit at the ends of the row, and they wear smooth
+white masks fitted over their muzzles as well. The animals are patchy and
+scarred but held with dignity, not grotesque.
+
+Nine separate people with nine separate silhouettes. Consistent design and scale
+across the row, even soft studio lighting, photorealistic, 4K.
+```
+
+---
+
+# S1 · 눈산
+
+## 1A · 능선을 오른다 〔P3~P12〕
+
+```
+SCENE CONTEXT
+A vast snow slope under heavy overcast. Two wrapped figures climb it, holding
+hands. The mountain is the subject; they are the scale.
+
+ACTIVE REFERENCES
+None. One-off location, built in prompt.
+
+LOCATION MAP
+Foreground: unbroken windblown snow crust, low ridges of drift running left to
+right. Midground: the slope rising to a ridge at the top third, dark wet rock
+breaking through along the left. Background: low cloud sitting on the ridge,
+erasing the summit entirely. Camera is downslope and far off, level with the
+climbers. Flat light comes from everywhere at once, no visible sun. Their path
+runs from lower centre toward the upper left ridge.
+
+FIRST FRAME / BLOCKING
+Extreme wide. Two figures at centre frame, in profile, seen from the side, each
+below one tenth of frame height, the taller on the left holding the smaller
+one's hand on the right. Both wear heavy layered fur-and-hide coats crusted pale
+with ice, hoods down, dark hair pulled back, the smaller one's hair in a braid
+that lifts sideways in the wind. A single line of footprints runs back behind
+them to the lower right and fades. Empty snow fills two thirds of the frame.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 1 holds longest; CUT 3 is the shortest.
+
+CUT 1 — Extreme wide, 84° FOV, camera at eye height 60 m downslope, static.
+They climb steadily, leaning into the grade, the wind pushing loose snow across
+in long horizontal streams between camera and subject.
+CUT 2 — Wide, 63° FOV, camera 12 m off at knee height, static. The smaller
+figure's boot breaks the crust and slips; the taller one's arm snaps taut and
+does not let go; the smaller one plants a hand, gets up, and they walk on
+without either of them pausing to look at the other.
+CUT 3 — Tight insert on the two gloved hands gripped together, 18° FOV, static,
+0.4 seconds.
+
+OPTICS
+84° / 63° / 18°, rectilinear, prime-lens character, natural motion blur on
+blowing snow. No drift mid-segment.
+
+CAMERA
+Locked off on all three cuts. No push, no pan. The distance does the work.
+
+ACTION
+Wind moves continuously through every cut — snow lifting off the crust, coat
+hems and the braid whipping sideways, hoods shuddering. The slip in CUT 2 and
+the recovery happen inside one continuous movement, no pause, no frozen pose.
+
+PHYSICS
+Boots compress the crust and break through to mid-shin at each step, leaving
+sharp-edged prints that immediately begin filling with drift. Coat weight swings
+behind the body. The grip transfers real load — the taller figure's shoulder
+drops when the arm goes taut.
+
+LIGHTING
+Flat diffused light through heavy overcast at 7500K, no visible sun, no warm
+tone anywhere. Blown-out whites and soft grey shadow only, exposed 1 stop over.
+Blowing snow haze at 30%, distant objects reduced to nothing.
+
+AUDIO
+Steady wind across an open slope, the hiss of dry snow moving over crust, boots
+compressing and breaking through, cloth snapping. No speech. Every sound is
+unpitched and textural — no tones, no drones, no sustained notes, no
+instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout. Almost the entire
+frame is the white of the snow.
+
+POSITIVE LOCKS
+Exactly two figures in the entire generation. Figures stay below one tenth of
+frame height in CUT 1 and CUT 2. Faces stay indistinct at distance. The hands
+stay joined through every cut. Objects hold stable identity frame to frame. This
+clip is one fragment of a longer film — end mid-motion, unresolved, no settling
+shot.
+```
+
+## 1B · 아래가 보인다 〔P25~P31〕
+
+```
+SCENE CONTEXT
+The two climbers reach the ridge and stop. Below the snow line a dead brown
+plain runs to the horizon, and a single white line crosses it. Four words are
+spoken.
+
+ACTIVE REFERENCES
+None. One-off location, built in prompt.
+
+LOCATION MAP
+Foreground: the crest of the ridge, wind-scoured snow over dark rock. Midground:
+the far side of the mountain dropping away, snow ending in a hard line.
+Background: a dry brown plain stretching to the horizon, scattered burnt tree
+trunks standing at intervals, dust suspended over all of it, and crossing the
+plain at the far distance one clean white horizontal line. Camera starts behind
+the two figures and stays behind them.
+
+FIRST FRAME / BLOCKING
+Wide from behind and slightly below. The taller figure stands at frame centre
+left, the smaller at centre right, both seen from the back, both stopped, both
+looking out and down. They occupy the lower third; the plain and sky fill the
+rest. Their joined hands are visible at the centre of frame between them.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 2 holds longest.
+
+CUT 1 — Wide from behind, 63° FOV, camera at chest height 4 m back, static.
+They walk into frame from the bottom edge, reach the crest, and stop. Both
+heads settle as the view opens.
+CUT 2 — Extreme wide over their shoulders, 84° FOV, camera at head height 3 m
+back, a very slow 0.15 m/s push forward. The plain and the distant white line
+fill the frame; the two silhouettes sit at the bottom edge, small.
+CUT 3 — Medium two-shot from the front and slightly low, 47° FOV, static. The
+smaller figure's face, wind-burnt at the nose, eyes moving along the horizon,
+then turning up toward the taller one. The taller one keeps looking straight
+ahead and does not turn.
+
+OPTICS
+63° / 84° / 47°, rectilinear, prime-lens character. No drift mid-segment.
+
+CAMERA
+Static, static, then locked. The single slow push in CUT 2 is the only camera
+movement in the shot.
+
+ACTION
+Wind continues without pause through all three cuts, tugging coat hems and the
+braid. Speech begins only after the camera has settled in CUT 3. The smaller
+figure speaks, then waits; the taller one answers late, still without turning.
+Neither lets go.
+
+PERFORMANCE
+The smaller one's eyes track left to right along the distant white line, then
+flick up. Breath visible, short, fast from the climb. The taller one holds a
+fixed forward stare, jaw set, one slow blink; the grip on the joined hand
+tightens very slightly on the answer — the only tell.
+
+PHYSICS
+Coat weight settles when they stop. The joined arms hang with real slack.
+
+LIGHTING
+Flat diffused overcast at 7500K on the snow side, no sun. The plain below reads
+one stop darker and browner through 30% suspended dust. Exposed 1 stop over on
+the snow.
+
+AUDIO
+Wind at the crest, cloth snapping, two sets of breathing, one short and fast.
+Dialogue in Korean, spoken only after the camera settles.
+SMALLER FIGURE (flat, curious, breath short): "저거 뭐예요."
+A pause of two full seconds.
+TALLER FIGURE (quiet, even, no warmth, no cruelty): "학교."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+Exactly two figures in the entire generation. The distant white line stays a
+thin unbroken horizontal with no visible door, window, gate or seam. Hands stay
+joined through every cut. Ironclad facial feature consistency across cuts. This
+clip is one fragment of a longer film — end mid-motion, unresolved, no settling
+shot.
+```
+
+## 1C · 손이 펴진다 〔P41~P50〕
+
+```
+SCENE CONTEXT
+At the base of an enormous blank white wall, a queue of adult-and-smaller pairs
+waits in dust. A number is inked onto a tablet. Then one hand opens.
+
+ACTIVE REFERENCES
+@wall — Controls environment, materials and scale only; reference framing not
+inherited.
+
+LOCATION MAP
+Foreground: cracked dry ground, boot-churned dust. Midground: a queue running
+from the lower right of frame into the distance, every position in it one taller
+figure and one smaller figure standing close together. Background: a smooth
+white wall filling the right half of frame and continuing past the top and both
+edges, and behind the queue an empty plain to the horizon. Camera stands beside
+the queue, at its level. Flat light from directly overhead.
+
+FIRST FRAME / BLOCKING
+Wide. The queue runs diagonally from lower right toward upper left and does not
+end within frame. The white wall rises on the right, blank. At the head of the
+queue, 6 m from camera, a figure in a plain grey uniform stands at a waist-high
+stand holding a thin metal tablet. Every waiting pair is joined at the hands.
+Nobody talks.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 4 holds longest.
+
+CUT 1 — Wide, 84° FOV, camera at chest height beside the queue, static. The
+queue shuffles forward one place. Dust lifts and settles.
+CUT 2 — Tight insert, 12° FOV, static, 0.5 seconds. The grey-uniformed figure's
+hand pressing a steel stylus onto the tablet surface; wet black ink standing
+proud on metal.
+CUT 3 — Extreme close, 18° FOV, static. The tablet fills frame. Three inked
+characters: 003. The ink is still wet and beads at the stroke ends.
+CUT 4 — Close on two joined hands at waist height, 29° FOV, camera 1 m away at
+hand height, static. A larger weathered hand holding a smaller one. The larger
+hand's fingers straighten and lift away, one at a time, and stay open. The
+smaller hand stays exactly where it was, still curled around nothing.
+
+OPTICS
+84° / 12° / 18° / 29°, rectilinear, prime-lens character, shallow depth of field
+on the inserts. No drift mid-segment.
+
+CAMERA
+Locked off on all four cuts. No movement anywhere in this shot.
+
+ACTION
+The queue keeps shuffling in the background of CUT 4, out of focus, continuous
+— the world does not stop for the hand. The release in CUT 4 is slow and
+deliberate, finger by finger, and the hand does not withdraw from frame; it
+stays open in place.
+
+PERFORMANCE
+No faces are shown in CUT 4. The entire emotional beat is carried by the speed
+of the fingers straightening and by the smaller hand failing to react.
+
+PHYSICS
+Dust lifts from every shuffled step and drifts right to left. Ink beads and
+holds surface tension on metal. The released hand keeps a faint white pressure
+mark across the palm where the grip was.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust at 25%. The wall is the brightest thing in
+frame and reads clean white; everything else is bleached ochre and faded cloth.
+
+AUDIO
+Many feet shuffling on grit, cloth, low murmuring too quiet to resolve, a stylus
+dragging on metal, wind across a flat plain. No speech in frame. Every sound is
+unpitched and textural — no tones, no drones, no sustained notes, no
+instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+The wall stays perfectly smooth with no door, window, gate, seam or marking. The
+inked characters read exactly 003 and stay stable frame to frame. Objects hold
+stable identity, moving only when hands move them. Close-up prop lock on the
+tablet. This clip is one fragment of a longer film — end mid-motion, unresolved,
+no settling shot.
+```
+
+---
+
+# S2 · 조준선
+
+## 2A · 조준경 안 〔A2~A21〕
+
+```
+SCENE CONTEXT
+Seen entirely through a rifle scope at long range: a tiny village on a flat
+plain, four very old people shelling beans on a platform bed. The etched sight line settles on one back, then the scope closes.
+
+ACTIVE REFERENCES
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+
+LOCATION MAP
+The whole frame is the circular field of an old optical scope, black vignette
+around it, two fine etched black lines meeting slightly off centre, dust and one fine scratch
+on the glass. Inside the circle at long range: six or seven low mud-brick houses
+with rusted tin roofs, faded washing on a line, a few chickens, a wooden
+platform bed in the open yard. Empty plain and scattered burnt tree trunks
+behind. Camera is the scope, 800 m out and slightly elevated.
+
+FIRST FRAME / BLOCKING
+The circular scope field fills frame. The village sits small inside it, soft and
+swimming in heat shimmer. The platform bed with four seated figures is at the
+left edge of the circle. The etched lines meet right of centre over empty ground.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 2 holds longest.
+
+CUT 1 — The scope field, 8° FOV, static, focus racking from soft to sharp. The
+village resolves out of shimmer.
+CUT 2 — The scope field, 8° FOV, a slow steady pan left at 0.05 m/s equivalent,
+drifting across washing, a chicken, the well, and settling on the platform bed.
+Four very old people sit in a row shelling beans into a shared bowl, hands
+working continuously, none of them looking up. The meeting point of the etched lines travels with the pan and comes to rest on the middle of one curved back.
+CUT 3 — The scope field, 8° FOV, static, a 1–2 cm handheld tremor appearing for
+the first time. The meeting point drifts off the back and does not return to it.
+CUT 4 — Black. The scope shutter closing, 0.3 seconds.
+
+OPTICS
+8° FOV throughout, extreme telephoto compression, dust suspended in the long
+compressed air column between camera and subject, heat shimmer wall across the
+lower half of the circle. Slight edge distortion and chromatic fringing at the
+circle rim. Rectilinear.
+
+CAMERA
+Rock steady in CUT 1 and CUT 2 as if rested on something solid. The 1–2 cm
+tremor in CUT 3 is the only movement change and it is not corrected.
+
+ACTION
+The four seated figures shell beans continuously and independently through the
+entire pan and hold — hands moving at four different rhythms, no frozen poses,
+nobody reacting to being watched. Washing moves on the line. A chicken crosses
+the frame at its own pace.
+
+PHYSICS
+Heat shimmer distorts the ground plane continuously. Dust drifts across the
+compressed air column.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust haze at 40% between camera and village.
+
+AUDIO
+Wind close to the microphone, cloth against a shoulder, two sets of breathing
+close by, a stock creaking under weight. The village itself is too far to be
+heard. Dialogue in Korean, both voices close and quiet, both off screen.
+VOICE ONE (tight, pitched high with nerves): "몇입니까."
+VOICE TWO (older, flat, unhurried): "넷."
+A pause.
+VOICE ONE: "쏘실 겁니까."
+A long pause, two seconds, breath audible.
+VOICE TWO (quieter): "...아니."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout. The image is soft,
+compressed and distant for the whole clip.
+
+POSITIVE LOCKS
+Exactly four seated figures on the platform bed and they stay four. The circular
+scope vignette is present in every cut except the final black. The two etched
+lines stay thin, black and purely optical — clear glass with no digital overlay,
+no numerals, no boxes and no readout of any kind.
+The four keep their hands moving continuously. This clip is one
+fragment of a longer film — end mid-motion, unresolved, no settling shot.
+```
+
+## 2B · 단이와 가면들 〔A22~A39〕
+
+```
+SCENE CONTEXT
+On a bare ridge, a marksman lowers a rifle. Nine masked figures wait behind with
+masked animals. One asks why. He answers and turns away.
+
+ACTIVE REFERENCES
+@dani — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+@masks — 100% matches the reference; nine separate individuals, studio sheet
+background and layout NOT inherited.
+
+LOCATION MAP
+Foreground: bare dust and gravel on a ridge crest. Midground: the marksman
+standing, then turning. Background: nine wrapped figures standing in a loose
+line 6 m behind him, two gaunt long-limbed animals on rope leads at their feet,
+and behind all of them a flat white sky and an empty plain. Camera is on the
+ridge with them at chest height. Light is flat and overhead.
+
+FIRST FRAME / BLOCKING
+Medium wide. @dani at frame left, three-quarters to camera, an old bolt-action
+rifle coming down off the shoulder in his hands. 6 m behind him and filling the
+right two thirds, the nine masked figures stand in an uneven line, all facing
+forward. The animals sit at their feet, masked. Nobody is closer to camera than
+@dani.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 3 holds longest.
+
+CUT 1 — Medium wide, 47° FOV, camera at chest height 5 m out, static. The rifle
+barrel lowers and stops. He slings it over one shoulder.
+CUT 2 — Medium, 29° FOV, camera at chest height 3 m out over @dani's left
+shoulder, static. One masked figure in the line tilts its head a few degrees.
+CUT 3 — Medium close on @dani, 29° FOV, camera at chest height, static. He pulls
+the dust scarf at his throat up, speaks, then turns his back to the line and
+starts walking away from camera.
+
+OPTICS
+47° / 29° / 29°, rectilinear, prime-lens character. Shot and reverse framed on
+the same side of the line the whole time. No drift mid-segment.
+
+CAMERA
+Locked off on all three cuts. Camera stays on one side of the axis between
+@dani and the masked line for the entire generation.
+
+ACTION
+The masked figures make small continuous adjustments through every cut — cloth
+shifting in wind, weight moving foot to foot, one animal turning its masked head
+— nobody frozen. @dani's hands work the rifle sling by feel while he talks.
+Speech starts only after the camera has settled in each cut.
+
+PERFORMANCE
+@dani is tired, not tough. Dust dried in the creases at the corners of his eyes,
+a slow blink, a swallow before he answers. He does not look at the masked
+figures when he speaks. The masked figures have no faces at all, so the head
+tilt is the entire performance and it must be small and slow.
+
+WARDROBE
+@dani wears layered undyed wrapped cloth, sun-bleached and patched, a dust scarf
+at the throat, forearms bound in cloth strips, and one black-lacquered armour
+plate strapped to a single shoulder — clearly taken from something else and the
+wrong size for him.
+
+PHYSICS
+The rifle has real weight; the sling bites into the shoulder cloth. Dust lifts
+from his boots when he turns. Rope leads go slack and taut as the animals shift.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust at 25%. The white masks are the brightest
+value in frame.
+
+AUDIO
+Wind over open ground, cloth wound tight moving against itself, rope creaking,
+an animal shifting on gravel, a rifle sling sliding on plate. Dialogue in
+Korean, spoken after the camera settles.
+MASKED FIGURE (calm, muffled behind ceramic): "왜."
+DANI (flat, no self-pity): "저 넷 중에. 셋은 못 맞혀."
+MASKED FIGURE: "하나는요."
+A pause of two seconds.
+DANI (quieter, matter of fact): "맞히면 내가 죽어."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+Exactly nine masked figures and they stay nine, each with a distinct height and
+stance. The masks stay smooth and featureless with no eye holes and no mouth.
+Exactly one shoulder plate on @dani and it stays on the same shoulder. Ironclad
+facial feature lock on @dani from the reference. Objects hold stable identity
+frame to frame. This clip is one fragment of a longer film — end mid-motion,
+unresolved, no settling shot.
+```
+
+---
+
+# S3 · 새동네
+
+## 3A · 마당 · 지붕이 샌다 〔B1~B20〕
+
+```
+SCENE CONTEXT
+A dirt yard in a tiny settlement at midday. One very old person lies on a
+platform bed watching a leak; another shells beans across the yard. They argue
+about nothing.
+
+ACTIVE REFERENCES
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+@bun — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+@deok — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+
+LOCATION MAP
+Foreground: a low wooden platform bed under the eave of a mud-brick house, a tin
+bucket beside it half full of water. Midground: bare swept dirt yard, cracked
+and pale, a few chickens. Background: three more low mud-brick houses with
+rusted corrugated tin roofs, a washing line of faded cloth, and past them an
+empty plain with scattered burnt tree trunks to the horizon. @deok sits on a
+mat 8 m across the yard with a shallow bowl. Camera is in the yard at seated
+height. Light comes from straight overhead.
+
+FIRST FRAME / BLOCKING
+Wide establishing. @bun lies on the platform bed at frame left, on her back,
+head turned toward the eave above her, mouth slightly open, just woken. @deok
+sits at frame right in the far midground, side-on, shelling beans steadily. The
+tin bucket sits between them in the lower centre foreground. Water drips from a
+rusted seam in the tin roof into the bucket at a steady interval.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 1 holds longest; the last cut is the shortest.
+
+CUT 1 — Wide establishing, 84° FOV, camera at seated height 5 m out, static.
+The drip lands. @bun opens her eyes, watches the ceiling, and calls across the
+yard without sitting up. @deok answers without looking up and does not stop
+shelling.
+CUT 2 — Medium on @deok, 47° FOV, camera at seated height 3 m out, static.
+He keeps shelling through two more exchanges, answering each one with the same
+two syllables and the same intonation, hands never pausing.
+CUT 3 — Medium on @bun, 47° FOV, camera at bed height 2 m out, static. She
+raises the wooden cane one-handed from where she lies and points it flat across
+the yard at him like an accusation, holds it, then lets it drop back onto the
+bed and rolls her head away.
+
+OPTICS
+84° / 47° / 47°, rectilinear, prime-lens character. Camera stays on one side of
+the yard for the whole generation. No drift mid-segment.
+
+CAMERA
+Locked off on all three cuts. Nothing moves but the people.
+
+ACTION
+The drip continues at a steady interval through every cut, in and out of frame.
+@deok's hands never stop, not once, not even when the cane is pointed at him.
+Chickens cross the yard on their own schedule. Washing moves slightly on the
+line. Each answer comes the instant the question lands — nobody waits for a cue.
+
+PERFORMANCE
+This is comedy played completely straight. Neither of them raises their voice or
+looks at the other. @bun's irritation lives entirely in how fast the cane comes
+up and how flatly it drops. @deok's whole performance is the refusal to stop
+working. Both are past a hundred: slow blinks, dry lips, breath audible at rest.
+
+WARDROBE
+Both wear layered undyed cloth, wrapped and belted, faded to the colour of the
+ground, hems frayed, patches in mismatched cloth. No metal anywhere on either of
+them — no armour, no plate, no implant, no ornament. Cloth, wood and leather
+only.
+
+PHYSICS
+Each drip strikes standing water and rings the surface. The cane has real weight
+in a weak arm — it wobbles at the top of the lift and lands with a thud. Bean
+pods split with a dry snap and the beans rattle in the bowl. Contact shadows
+grounded at the bed, the bucket and every foot.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust at 25%. Bleached palette throughout — dry
+ochre earth, faded cloth, oxidised rust, pale grey sky, nothing saturated.
+
+AUDIO
+Water dripping into a half-full bucket at a steady interval, bean pods splitting
+and beans rattling into a wooden bowl, chickens on grit, wind across a flat
+plain, cloth. Dialogue in Korean, spoken after the camera settles.
+BUN (croaky, just woken, unbothered): "...덕구야."
+A pause. Then louder, with no more effort behind it: "덕구야!!"
+DEOK (flat, two syllables, without looking up): "어어."
+BUN: "지붕 샌다."
+DEOK (identical intonation): "어어."
+BUN: "지붕 샌다고."
+DEOK (identical again): "어어."
+BUN (sighing it, not shouting): "야 이 귀머거리야."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+Exactly two people in the entire generation. No metal on either body — cloth,
+wood and leather only. @deok's hands keep shelling through every cut including
+the one where the cane is pointed at him. The bucket stays in the same place at
+the same water level. Ironclad facial feature lock from @tags. This clip is one
+fragment of a longer film — end mid-motion, unresolved, no settling shot.
+```
+
+## 3B · 콩 · 손이 안 움직이더라 〔C29~C43〕
+
+```
+SCENE CONTEXT
+Four very old people sit in a row shelling beans in silence. One of them says
+her hands would not work this morning. The others do not make it a moment.
+
+ACTIVE REFERENCES
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+@bun / @deok / @teacher / @maknae — each 100% matches its reference; studio
+sheet backgrounds and layouts NOT inherited.
+
+LOCATION MAP
+Foreground: the near edge of a low wooden platform bed, a shared shallow bowl
+and a heap of unshelled pods. Midground: the four seated side by side along the
+bed, a mud-brick wall behind them. Background: the open yard, a washing line, an
+empty plain to the horizon. Camera sits in front of the bed at seated height,
+square on. Light from directly overhead.
+
+FIRST FRAME / BLOCKING
+Wide, square on. Four figures in a row on the platform bed, left to right:
+@maknae, @bun, @deok, @teacher. All four have hands in motion over the shared
+bowl at frame centre. @teacher sits at the right end with his eyes closed and
+his spine perfectly straight. Nobody is looking at anybody. Two thirds of the
+frame is the row and the wall behind it.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 1 holds longest.
+
+CUT 1 — Wide, 63° FOV, camera at seated height 3 m out, static. Four pairs of
+hands working at four different rhythms. Nobody speaks for a long beat. Then
+@bun speaks without turning her head, and @deok answers without turning his.
+CUT 2 — Tight insert on @bun's hands, 18° FOV, static, 0.5 seconds. Thick
+swollen knuckles, deep age spots, a pod splitting between the thumbs. One
+finger is fractionally slower than the others.
+CUT 3 — Medium two-shot of @bun and @deok, 29° FOV, camera at seated height,
+static. The exchange finishes. @bun looks down at the bowl, not at him, and
+keeps shelling.
+
+OPTICS
+63° / 18° / 29°, rectilinear, prime-lens character, shallow depth of field on
+the insert. No drift mid-segment.
+
+CAMERA
+Locked off on all three cuts.
+
+ACTION
+All four sets of hands work continuously through the entire generation, at four
+distinct rhythms, and nobody stops for the dialogue — not on the question, not
+on the answer. @teacher's eyes stay closed throughout. The reply lands the
+instant the line ends.
+
+PERFORMANCE
+@bun says the frightening thing in exactly the tone she would use about the
+weather. @deok answers without weighing it. The beat lands on her, at the end:
+her hands keep moving, and she blinks twice, slowly, and does not raise her
+head. That is the whole performance — no tremor in the voice, no music, no look
+between them.
+
+WARDROBE
+All four in layered undyed wrapped cloth, faded to the colour of the ground,
+frayed and patched. No metal anywhere on any of the four bodies — no armour, no
+plate, no implant, no port, no ornament. Cloth, wood and leather only.
+
+PHYSICS
+Pods split with a dry snap; beans strike the wooden bowl and roll. Empty husks
+build up on the bed. Contact shadows grounded at every hand and every seat.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust at 25%. Bleached palette, nothing saturated.
+
+AUDIO
+Four overlapping rhythms of pods splitting and beans landing in a wooden bowl,
+wind across a flat plain, chickens somewhere off to the side, cloth, four sets
+of slow breathing. Dialogue in Korean, spoken after the camera settles.
+BUN (conversational, no weight on it): "야."
+DEOK: "어."
+BUN: "나 오늘 아침에 일어났는데. 손이 안 움직이더라."
+A pause of two seconds, both still working.
+DEOK (not unkind, just practical): "지금 움직이잖아."
+BUN: "지금은 움직이지."
+DEOK: "그럼 됐어."
+A pause.
+BUN (quietly, to the bowl): "...그러네."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+Exactly four people in the entire generation, in the stated left-to-right order,
+and the order holds across cuts. No metal on any of the four bodies. All four
+keep shelling continuously through every line of dialogue. @teacher's eyes stay
+closed for the whole generation. Close-up prop lock on the shared bowl.
+Ironclad facial feature lock from @tags. This clip is one fragment of a longer
+film — end mid-motion, unresolved, no settling shot.
+```
+
+---
+
+# S4 · 손님 — DX-11
+
+## 4A · 일곱이 걸어온다 〔D18~D23〕
+
+```
+SCENE CONTEXT
+Seven identical faceless machines walk a dirt track toward a settlement,
+kicking up dust, with one human behind them. Four very old people do not stand
+up.
+
+ACTIVE REFERENCES
+@dx11 — 100% matches the reference; studio sheet background and layout NOT
+inherited. Seven identical units.
+@captain — 100% matches the reference; studio sheet background and layout NOT
+inherited. Appears ONLY in CUT 2.
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+
+LOCATION MAP
+Foreground: the dirt track running toward camera, loose grit and dust.
+Midground: the seven machines in formation, the human 4 m behind them.
+Background: the settlement's low mud-brick houses, a washing line, an empty
+plain. Camera is on the track ahead of them, low. Light from directly overhead.
+
+FIRST FRAME / BLOCKING
+Low wide, camera at 30 cm off the ground on the track. Seven machines in two
+ranks fill the centre of frame, walking toward camera, 20 m out and closing.
+Dust rolls at their ankles. Behind them at 4 m, one human figure walks alone,
+smaller in frame. The settlement sits low and small on the right edge.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 1 holds longest; CUT 3 is shortest.
+
+CUT 1 — Low wide, 84° FOV, camera at 30 cm height on the track, static, the
+formation walking straight at lens. All seven are in exactly the same phase of
+exactly the same stride — identical step length, identical arm swing, identical
+angle of the blank faceplate. They pass close on either side of camera without
+altering pace.
+CUT 2 — Medium tracking, 47° FOV, camera at chest height moving backwards at
+4 km/h, holding the human 3 m ahead. He walks with a thin metal tablet in his
+right hand; the left hand at his side is exposed silver mechanism, the fingers
+segmented, cables visible at the wrist. His chest rises and falls. Dust cakes
+the repaired plate of his armour.
+CUT 3 — Tight insert, 12° FOV, static, 0.4 seconds, on one machine's knee at
+mid-stride: the silver ball joint rotating, a ribbed actuator cylinder
+compressing, a loom of grey cable stretching and slackening in the gap between
+plates.
+
+OPTICS
+84° / 47° / 12°, rectilinear, prime-lens character, motion blur on the passing
+formation. No drift mid-segment.
+
+CAMERA
+Static ground-level in CUT 1, letting the formation blow past the lens.
+Backward track at 4 km/h in CUT 2. Locked in CUT 3.
+
+ACTION
+The formation's footfalls land in perfect unison and continue without variation
+through every cut. Dust is thrown forward at each heel strike and hangs. The
+human's stride is out of step with theirs — deliberately, visibly — and he does
+not look up from the tablet.
+
+PHYSICS
+Real mass on every footfall: grit jumps, the ground compacts, contact shadows
+grounded at each foot. Actuators take load and give it back. The cable looms
+stretch and slacken with the joint. Armour plate shifts on the human's body as
+he walks; the machines' plate does not shift at all.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust at 30%, thicker at ankle height. The black
+lacquer is the darkest value in an otherwise pale frame; the exposed silver
+joints catch the only speculars in the shot.
+
+AUDIO
+Seven sets of feet landing in unison on grit, dry servo clicks at every joint
+reversal, the rasp of actuators taking load, plate shifting against plate, one
+human set of footfalls out of step, one set of breathing, wind. No speech. Every
+sound is unpitched and textural — no tones, no drones, no sustained notes, no
+instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+EXACTLY SEVEN machines in the entire generation and exactly one human. The
+faceplate stays a blank grey plate with no eyes, no mouth, no lens, no light and
+no marking. All seven stay in identical stride phase in CUT 1. The human's left
+hand and forearm stay exposed mechanism and the right hand stays flesh.
+Objects hold stable identity frame to frame. This clip is one fragment of a
+longer film — end mid-motion, unresolved, no settling shot.
+```
+
+## 4B · 폐기 구역 십일 〔D24~D51〕
+
+```
+SCENE CONTEXT
+In a dirt yard, a half-machined man reads an order off a tablet to four very old
+people on a platform bed. None of them stand up or stop working.
+
+ACTIVE REFERENCES
+@captain — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+@bun / @deok / @teacher / @maknae — each 100% matches its reference; studio
+sheet backgrounds and layouts NOT inherited.
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+
+LOCATION MAP
+Foreground: the platform bed with the four seated in a row, shared bowl at
+centre. Midground: bare dirt yard, @captain standing 3 m out facing them.
+Background: mud-brick wall, washing line, two faceless machines standing
+motionless at the yard's edge, out of focus. Camera holds one side of the line
+between @captain and the bed for the whole generation. Light from overhead.
+
+FIRST FRAME / BLOCKING
+Wide establishing. The four seated on the bed fill the right of frame, all with
+hands working. @captain stands at frame left, 3 m from them, side-on to camera,
+opening a thin metal tablet. His chromed jaw brace catches the flat light. Two
+machines stand blurred at the far left edge, identical, motionless.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 1 holds longest.
+
+CUT 1 — Wide establishing, 63° FOV, camera at seated height 5 m out, static.
+@captain reads from the tablet. @bun answers from where she sits without
+looking up. Four pairs of hands keep working.
+CUT 2 — Medium on @captain, 29° FOV, camera at chest height over @bun's right
+shoulder, static. He looks up from the tablet and scans the yard — the washing,
+the chickens, the water jar — and something changes in his face when he
+understands people live here.
+CUT 3 — Medium on the bed from @captain's side, 29° FOV, camera at seated
+height, static. He delivers the order. @maknae's hands stop. @bun's and
+@deok's do not. @teacher's eyes stay closed.
+
+OPTICS
+63° / 29° / 29°, rectilinear, prime-lens character. Camera never crosses the
+axis between @captain and the bed. No drift mid-segment.
+
+CAMERA
+Locked off on all three cuts, shot and reverse from the same side.
+
+ACTION
+Beans keep splitting through the entire scene except in @maknae's hands after
+the last line. The two machines at the yard edge stay absolutely motionless the
+whole time — no idle sway, no head turn — which is how the audience learns they
+are not people. Every reply lands the instant the previous line ends.
+
+PERFORMANCE
+@captain starts bored and procedural, reading. In CUT 2 the boredom breaks: his
+eyes track object to object, his jaw sets, he swallows once. He is not
+frightened, he is recalculating. @bun answers everything with the same two flat
+syllables and never once looks up. The break in the scene is @maknae's hands
+stopping — one pair out of four.
+
+WARDROBE
+@captain in scuffed field-repaired black lacquered plate, dust in every seam, a
+chromed brace from jaw to collar, four small dark ceramic ports along the
+collarbone, the entire left forearm and hand exposed silver mechanism. The four
+on the bed in layered undyed wrapped cloth with no metal anywhere on them at
+all.
+
+PHYSICS
+Contact shadows grounded at his boots, at the bed legs, at every hand. Dust
+lifts where he shifts his weight. The tablet has real weight in one hand.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust at 25%. His chrome brace and silver hand
+carry the only speculars in the frame; nothing on the four opposite him reflects
+anything.
+
+AUDIO
+Beans splitting and landing in a wooden bowl, wind, chickens, a stylus tapping
+metal, plate shifting on a moving body, one machine's joint clicking once at the
+yard edge. Dialogue in Korean, spoken after the camera settles.
+CAPTAIN (flat, procedural, reading): "폐기 구역 십일. 여기 맞나."
+BUN (without looking up): "여기 새동네야."
+CAPTAIN: "...그런 지명 없는데."
+BUN: "우리가 지었어."
+A pause of three seconds while he looks around the yard.
+CAPTAIN (slower now): "여기 사람이 삽니까."
+BUN: "어어."
+CAPTAIN: "비우세요. 다음 분기부터 물량이 늘어납니다."
+BUN: "무슨 물량."
+A long pause.
+CAPTAIN (quieter, not enjoying it): "...폐기물."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+Exactly five people and exactly two machines in the entire generation. No metal
+on any of the four seated bodies. The two machines stay completely motionless
+for the whole generation. @maknae's hands stop only on the final line; the other
+two keep working. @teacher's eyes stay closed throughout. Ironclad facial
+feature lock from @tags. This clip is one fragment of a longer film — end
+mid-motion, unresolved, no settling shot.
+```
+
+---
+
+# S5 · 4초
+
+## 5A · 지팡이 〔D69~E11〕
+
+```
+SCENE CONTEXT
+A machine lifts one of the old people off the ground by the collar. A seated
+figure extends a wooden cane. The machine leaves the frame folded backwards.
+
+ACTIVE REFERENCES
+@dx11 — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+@bun — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+@maknae — 100% matches the reference; studio sheet background and layout NOT
+inherited. Appears ONLY in CUT 1.
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+
+LOCATION MAP
+Foreground: the platform bed at frame right with @bun seated on it. Midground:
+bare dirt yard, one machine standing over @maknae. Background: a mud-brick wall
+5 m behind the machine, a washing line, empty plain. Camera is low in the yard,
+side-on to the line between @bun and the machine. Light from directly overhead.
+
+FIRST FRAME / BLOCKING
+Wide, camera at 40 cm height. @bun seated on the platform bed at frame right,
+side-on, a shallow bowl in her lap, both feet on the bed. The machine stands at
+frame centre, 2 m from her, one hand closed on @maknae's collar and @maknae's
+heels off the ground. The mud wall runs across the background behind the
+machine.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 1 is slow and holds; CUT 3 snaps; CUT 4 is the
+shortest.
+
+CUT 1 — Wide, 84° FOV, camera at 40 cm height 4 m out, static. @bun sets the
+bowl down on the bed without hurrying, takes up the wooden cane, and says two
+syllables. She does not stand. She does not turn her body. She stays seated.
+CUT 2 — Tight insert, 18° FOV, static, 0.4 seconds. The worn tip of the wooden
+cane making contact with the black lacquered plate at the centre of the
+machine's chest. Slowed to 20% for this contact instant only.
+CUT 3 — HARD CUT to wide, 84° FOV, camera at 40 cm height, static, real time.
+The machine leaves the ground folded backwards at the waist far past any range
+of motion and travels 5 m across the yard into the mud wall. Dust and grit blow
+outward along the floor. @maknae drops to his feet where he was standing. @bun
+is still seated in exactly the same position, arm extended, cane out.
+CUT 4 — Medium on the wall, 47° FOV, static, 0.5 seconds. A body-shaped hole in
+the mud brick with the machine folded into it. One silver-jointed arm has
+separated and lies on the ground apart from it. No blood anywhere — a slow bead
+of grey fluid runs from the severed shoulder and stops.
+
+OPTICS
+84° / 18° / 84° / 47°, rectilinear, prime-lens character, motion blur only on
+the machine's travel. No drift mid-segment.
+
+CAMERA
+Locked off for the entire generation. The camera never moves and never rises —
+it stays at 40 cm, below @bun's eyeline, for all four cuts.
+
+ACTION
+The lift, the setting down of the bowl and the cane coming up all overlap — the
+machine keeps holding @maknae up the whole time @bun is unhurriedly putting her
+beans down, both continuous, neither waiting for the other. The strike itself is
+never shown as a strike: CUT 2 is contact, CUT 3 is aftermath. @bun's body does
+not follow through. Nothing about her posture changes between CUT 1 and CUT 3
+except the extended arm.
+
+PERFORMANCE
+@bun is bored and slightly inconvenienced. She sighs the two syllables the way
+someone does when they have to get up to close a window. Her eyes stay half
+lidded. She does not watch the machine fly.
+
+WARDROBE
+@bun in layered undyed wrapped cloth faded to the colour of the ground. No metal
+anywhere on her body — no armour, no plate, no implant, no ornament. A worn
+wooden cane, grip polished dark.
+
+PHYSICS
+The machine has real mass — the ground it leaves is scuffed, the air it moves
+carries dust, the wall it hits sheds a shower of dry mud and the fracture runs
+edge to centre from the point of contact. The separated arm bounces once and
+settles. The cane bends not at all. @maknae's feet take his weight with a
+stumble.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust at 25%, rising to 45% in the aftermath cut.
+The exposed silver joints and the severed shoulder mechanism carry the only
+speculars in frame.
+
+AUDIO
+Beans set down on wood, a wooden cane lifting, one dull heavy concussion, mud
+brick cracking and falling, grit blowing along the ground, a machine joint
+clicking twice as it settles, wind. Dialogue in Korean.
+BUN (bored, half a sigh, seated): "아이고."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain. Real time except the single 20% contact
+instant in CUT 2, which snaps back immediately.
+
+POSITIVE LOCKS
+@bun stays seated on the platform bed for the entire generation, both feet on
+the bed, and her posture is identical in CUT 1 and CUT 3. EXACTLY ONE machine in
+the entire generation. The faceplate stays blank grey with no eyes, no mouth, no
+lens and no light. No blood and no visible injury anywhere — grey fluid only,
+impact conveyed through dust, sound and reaction. One named destroyed object:
+the mud wall. No metal on @bun's body. This clip is one fragment of a longer
+film — end mid-motion, unresolved, no settling shot.
+```
+
+## 5B · 잔상과 매듭 〔E12~E29〕
+
+```
+SCENE CONTEXT
+Two machines charge a seated figure who does not look up. A third raises a spear
+behind another seated figure whose eyes are closed. Neither of the old people
+stands.
+
+ACTIVE REFERENCES
+@dx11 — 100% matches the reference; studio sheet background and layout NOT
+inherited. Three units.
+@deok — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+@teacher — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+
+LOCATION MAP
+Foreground: the platform bed running left to right across the lower frame,
+@deok seated at the left end and @teacher at the right end, 2 m apart.
+Midground: open dirt yard in front of the bed. Background: mud-brick wall,
+washing line. Camera is in front of the bed at seated height. Light overhead.
+
+FIRST FRAME / BLOCKING
+Wide, square on to the bed. @deok at frame left on the bed, side-on, hands
+working over a bowl. @teacher at frame right on the bed, facing forward, spine
+straight, eyes closed, hands at rest on his knees. Two machines are already
+mid-charge at @deok from the left of frame, 3 m out. A third machine stands
+behind @teacher's right shoulder, spear rising.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 2 snaps; CUT 5 holds longest.
+
+CUT 1 — Wide, 63° FOV, camera at seated height 3 m out, static. Both charges
+develop at once — the two closing on @deok and the spear rising behind
+@teacher, in the same frame, simultaneous. @deok keeps shelling. @teacher does
+not open his eyes.
+CUT 2 — HARD CUT, wide, 63° FOV, static, real time. The space where @deok was
+sitting is empty; only a smear of dust and a spilled arc of beans hangs in the
+air where he was. The two machines strike each other where he had been, hard,
+and both of their knees fold the wrong way on impact. They stay standing on
+reversed joints.
+CUT 3 — Medium on @deok, 47° FOV, camera at seated height, static. He is back
+on the bed at the far end, already shelling again, husks still settling around
+him. He flexes the fingers of one hand once.
+CUT 4 — Medium on @teacher, 29° FOV, camera at seated height over the machine's
+side, static. The spear comes down. @teacher raises one hand without opening his
+eyes and without turning his head, catches the shaft, and closes his fingers.
+CUT 5 — Tight insert, 18° FOV, static. The steel spear shaft tied in a single
+tight overhand knot, the metal deformed smoothly with no crack and no splinter.
+The machine's blank grey faceplate tilts a few degrees to look at it.
+
+OPTICS
+63° / 63° / 47° / 29° / 18°, rectilinear, prime-lens character. The empty-frame
+cut carries directional motion blur along @deok's exit path only. No drift
+mid-segment.
+
+CAMERA
+Locked off for the entire generation. No push, no pan, no rise.
+
+ACTION
+The two threats develop simultaneously in CUT 1 and are stated as concurrent —
+both continuous, overlapping, neither waiting. @deok's disappearance is never
+shown as a movement: he is there, then the frame is empty, then he is seated
+elsewhere. @teacher's hand goes up in one unhurried movement with no
+anticipation and no wind-up.
+
+PERFORMANCE
+@deok is mildly annoyed about his hands being cold, not about being attacked.
+@teacher's face does not change at any point — closed eyes, level chin, no
+tension in the jaw, one small nod at the end as if ticking something off. The
+machines have no faces, so the only reaction available to them is the slow head
+tilt in CUT 5, and it must be small.
+
+WARDROBE
+Both old people in layered undyed wrapped cloth faded to the colour of the
+ground. No metal anywhere on either body — no armour, no plate, no implant, no
+port, no ornament.
+
+PHYSICS
+Beans and husks keep real trajectories and land. The reversed knees hold weight
+on inverted geometry, actuator cables stretched taut at the fold. The steel
+shaft deforms plastically into the knot, surface scuffing where it bends, no
+fracture. Contact shadows grounded at every foot, the bed legs and the fallen
+husks.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust at 30%. Exposed silver joints and the steel
+shaft carry the only speculars.
+
+AUDIO
+Bean pods splitting continuously, feet driving on grit, one flat concussive
+impact of plate on plate, actuators straining against reversed joints, steel
+deforming under load, husks landing on wood, wind. Dialogue in Korean.
+DEOK (mildly, to nobody, still shelling): "아 손 시려."
+TEACHER (calm, level, eyes closed): "다음."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+EXACTLY THREE machines in the entire generation. @teacher's eyes stay closed
+from first frame to last. Neither old person stands up or leaves the platform
+bed. @deok's hands are shelling in CUT 1 and shelling again in CUT 3. The
+faceplates stay blank grey with no eyes, no mouth, no lens and no light. No
+blood and no visible injury — impact conveyed through dust, sound and reaction.
+Close-up prop lock on the knotted spear. No metal on either old body. This clip
+is one fragment of a longer film — end mid-motion, unresolved, no settling shot.
+```
+
+## 5C · 물동이 〔E30~E48〕
+
+```
+SCENE CONTEXT
+Three machines close on the one who does not want to fight. He picks up a water
+jar. They leave the frame upward.
+
+ACTIVE REFERENCES
+@dx11 — 100% matches the reference; studio sheet background and layout NOT
+inherited. Three units.
+@maknae — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+
+LOCATION MAP
+Foreground: bare dirt yard, a heavy tin water jar standing at @maknae's feet.
+Midground: @maknae with three machines closing in a loose ring around him.
+Background: mud-brick houses, washing line, and 12 m behind him a rough
+stone-rimmed well. Camera is low in the yard. Light from directly overhead.
+
+FIRST FRAME / BLOCKING
+Wide, camera at 50 cm height. @maknae stands at frame centre, hands slightly
+raised and open, palms out, shoulders down. Three machines stand around him at
+2 m, one at his left, one at his right, one behind, spears levelling. The tin
+water jar stands beside his right foot. The well is small in the background at
+frame right.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 1 holds; CUT 3 is the widest and the longest hold
+of the second half.
+
+CUT 1 — Wide, 63° FOV, camera at 50 cm height 4 m out, static. @maknae talks
+with his hands open, explaining, apologetic. The three spears level at him
+simultaneously. His shoulders drop.
+CUT 2 — Medium low, 47° FOV, camera at 40 cm height, static. He bends, takes the
+tin jar by its rim with one hand, and swings it in one flat unhurried arc.
+CUT 3 — HARD CUT to extreme wide, 107° FOV, camera at 30 cm height tilted up,
+static. All three machines are already far above the rooflines, still rising,
+tumbling, black against a flat white sky, shrinking. @maknae stands at the
+bottom of frame holding the jar, looking up, tiny.
+CUT 4 — Medium on @maknae and the two others on the platform bed at the edge of
+frame, 47° FOV, camera at chest height, static. All of them are looking up at
+the sky, tracking the same point. @maknae's shoulders come down. He says
+something apologetic to somebody off frame.
+CUT 5 — Wide on the well, 47° FOV, static, 0.5 seconds. A spreading iridescent
+film of grey oil on the dark water inside the stone rim, breaking the reflection
+of the pale sky.
+
+OPTICS
+63° / 47° / 107° / 47° / 47°, rectilinear, prime-lens character. The 107° cut
+exaggerates the sky and shrinks the yard. No drift mid-segment.
+
+CAMERA
+Locked off for the entire generation.
+
+ACTION
+The three spears level at the same instant, not in sequence — stated as
+concurrent. The swing is one continuous flat arc with no wind-up and no follow
+through; @maknae's feet do not move. In CUT 3 the machines are already at
+altitude when the cut lands — the ascent itself is never shown.
+
+PERFORMANCE
+@maknae is embarrassed, not brave. He apologises with his hands before the
+swing and apologises again after it. In CUT 4 he winces at his own strength and
+his shoulders round. The two on the bed watch the sky with the mild interest of
+people tracking a bird.
+
+WARDROBE
+@maknae in layered undyed wrapped cloth faded to the colour of the ground, hair
+only half grey. No metal anywhere on his body — no armour, no plate, no implant,
+no ornament. The jar is dented tin with a rolled rim.
+
+PHYSICS
+The jar is heavy and slops water on the swing; the water leaves the rim in a
+sheet and falls with real weight. The machines carry real mass into their arc.
+Dust blows outward along the ground from the swing. Oil spreads on water with
+surface tension and iridescence. Contact shadows grounded at every foot.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust at 30%. The sky in CUT 3 is a flat white
+field one stop hotter than the ground.
+
+AUDIO
+Feet on grit, spear shafts levelling, a heavy tin jar lifting and water slopping
+inside it, one flat dull concussion, air moving, three distant impacts far off
+frame, then one heavy splash into deep water. Wind. Dialogue in Korean.
+MAKNAE (apologetic, hands open, before the swing): "저기. 저 정말 안 싸우는데."
+Then, after the swing, smaller: "죄송합니다."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+EXACTLY THREE machines in the entire generation. @maknae's feet stay planted
+through the swing. The faceplates stay blank grey with no eyes, no mouth, no
+lens and no light. No blood and no visible injury — grey oil only, impact
+conveyed through dust, sound and reaction. No metal on @maknae's body. The well
+water surface stays flat and dark with no mirrored reflection of any face. This
+clip is one fragment of a longer film — end mid-motion, unresolved, no settling
+shot.
+```
+
+## 5D · 4초 뒤 〔E49~E60〕
+
+```
+SCENE CONTEXT
+The yard after. Seven machines lie in impossible shapes. Four very old people
+are shelling beans. Far off on a ridge, a marksman lowers his scope with shaking
+hands.
+
+ACTIVE REFERENCES
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+@bun / @deok / @teacher / @maknae — each 100% matches its reference; studio
+sheet backgrounds and layouts NOT inherited. Appear ONLY in CUT 1 and CUT 2.
+@dani — 100% matches the reference; studio sheet background and layout NOT
+inherited. Appears ONLY in CUT 4.
+
+LOCATION MAP
+CUT 1–2: the dirt yard, dust still suspended, seven wrecked machines scattered
+across it, the platform bed at centre with four figures on it, mud wall behind
+with a body-shaped hole. CUT 3–4: a bare ridge 800 m away, @dani prone behind a
+rifle, masked figures standing behind him out of focus. Light overhead in both.
+
+FIRST FRAME / BLOCKING
+Wide establishing of the yard, camera at chest height 6 m out. The platform bed
+sits at frame centre with four seated figures shelling beans, none of them
+looking at anything. Around them: one machine folded backwards into the mud wall
+at frame left, two standing with knees reversed at frame right, one with its
+spear knotted lying flat in the foreground, three soaking at the well in the
+background. Dust hangs at 45%. Chickens are already walking back in.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 1 holds longest.
+
+CUT 1 — Wide establishing, 84° FOV, camera at chest height 6 m out, static. The
+four keep shelling. Nobody looks at the wreckage. A chicken steps over a
+severed silver forearm without interest.
+CUT 2 — Tight insert, 18° FOV, static, 0.5 seconds. A machine's open shoulder
+socket: cable looms cut clean, an actuator cylinder stripped, grey fluid pooled
+and already skinning over. No blood, no tissue, nothing organic.
+CUT 3 — SMASH CUT to the circular field of a rifle scope, 8° FOV, static, with
+a 1–2 cm handheld tremor. Inside the circle: nothing resolvable. Only a wall of
+suspended dust where the yard was.
+CUT 4 — Medium on @dani, 47° FOV, camera at ground height 2 m out, static. He
+takes his eye off the scope. His hands are visibly shaking. He looks at them.
+
+OPTICS
+84° / 18° / 8° / 47°, rectilinear, prime-lens character, tele compression and
+dust suspended in the long air column in CUT 3. No drift mid-segment.
+
+CAMERA
+Locked off in CUT 1, 2 and 4. The handheld tremor in CUT 3 belongs to the rifle,
+not the camera, and it is the first unsteady frame in the sequence.
+
+ACTION
+The four keep working continuously through both of their cuts — nobody
+inspects, nobody comments, nobody looks at a machine. Dust settles slowly and
+continuously. In CUT 4 @dani's hands keep shaking through the whole cut; he does
+not steady them.
+
+PERFORMANCE
+The old people are entirely uninterested — this is the performance. @dani is the
+opposite: pupils wide, breathing shallow and audible, a swallow, eyes flicking
+from his hands back toward the village and away again. He is not frightened of
+being killed. He is frightened because he did not see it.
+
+WARDROBE
+The four in layered undyed wrapped cloth with no metal on them anywhere. @dani
+in wrapped cloth with one mismatched black-lacquered shoulder plate and a dust
+scarf at the throat.
+
+PHYSICS
+Dust falls out of the air at a real rate across the cut. Grey fluid pools and
+skins. The reversed knees hold their load. Contact shadows grounded everywhere.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust at 45% in the yard, 40% in the scope column.
+
+AUDIO
+Bean pods splitting steadily, dust settling, chickens on grit, a joint clicking
+once as something settles, wind. Then in the scope cuts: close breathing, cloth,
+a rifle stock creaking. Dialogue in Korean, spoken in CUT 4 after the camera
+settles.
+MASKED FIGURE (off screen, unsettled): "...뭐가 지나갔습니까."
+A pause of two seconds.
+DANI (quiet, not performing it): "못 봤어."
+MASKED FIGURE: "예?"
+DANI (looking at his own hands): "나도 못 봤다고."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+EXACTLY SEVEN wrecked machines in the yard and they stay seven. No blood and no
+visible injury anywhere — grey fluid only. No metal on any of the four old
+bodies. The four keep shelling continuously and never look at the wreckage. The two etched
+lines in the glass stay thin, black and purely optical — no digital overlay, no
+numerals and no readout. @dani's hands keep shaking for the whole of CUT 4. This clip is one
+fragment of a longer film — end mid-motion, unresolved, no settling shot.
+```
+
+---
+
+# S6 · 90년 전
+
+## 6A · 복도 〔F9~F21〕
+
+```
+SCENE CONTEXT
+A windowless grey corridor. A small figure in a grey open-backed gown discovers
+it can move faster than it can believe, and laughs.
+
+ACTIVE REFERENCES
+@corridor — Controls environment, materials and mood only; reference framing not
+inherited.
+
+LOCATION MAP
+Foreground: polished grey concrete floor. Midground: a long corridor running
+straight away from camera, 30 m to the far end, low ceiling, flat light panels
+recessed overhead at regular intervals, cable trunks running along the join of
+wall and ceiling. Background: the far end of the corridor and a closed door.
+Camera is in the corridor at the near end, at waist height, on the centre line.
+
+FIRST FRAME / BLOCKING
+Wide down the corridor, camera at 90 cm height on the centre line. One small
+figure stands 6 m from camera at the centre of the corridor, barefoot, in a
+plain grey gown that is open all the way down the back. One hand is raised to
+the back of the neck, touching a small freshly branded mark there. The corridor
+is otherwise completely empty and completely clean.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 1 is slow; CUT 3 holds longest.
+
+CUT 1 — Wide down the corridor, 63° FOV, camera at 90 cm height, static. The
+figure walks toward camera, one hand on the back of the neck, and stops
+mid-step. The eyes widen.
+CUT 2 — HARD CUT, wide down the corridor, 63° FOV, static, real time. The frame
+is empty where the figure was; two faint overlapping afterimages hang in the air
+along the centre line and fade. At the far end 30 m away the figure is standing
+still, looking back at its own hands, startled.
+CUT 3 — Wide, 84° FOV, camera at 90 cm height, static. The figure crosses the
+corridor end to end twice, runs three steps up the left wall, plants a foot on
+the ceiling between two light panels and drops down on the other side, leaving
+faint afterimages on each pass. It comes to rest at the centre of the corridor,
+hair completely disordered, breathing hard, and laughs.
+
+OPTICS
+63° / 63° / 84°, rectilinear, prime-lens character, directional motion blur only
+along the paths of travel. No drift mid-segment.
+
+CAMERA
+Locked off for the entire generation. The camera never moves, which is what
+makes the speed read.
+
+ACTION
+Movement is never shown as a run — it is shown as absence, afterimage and
+arrival. Named moves in CUT 3, in order: a straight sprint to the far end, a
+return, three steps up the left wall, one foot planted on the ceiling, a drop to
+the right-hand floor, a skid to a stop at centre. The sequence ends on the face,
+laughing, not on the landing.
+
+PERFORMANCE
+The discovery is pure delight — no fear at all. Chest heaving, mouth wide open,
+a real uncontrolled laugh with the head tipped back, one hand still half raised.
+Then the laugh keeps going. This is the only genuinely happy moment in the film
+and it must read as happiness without irony.
+
+WARDROBE
+A plain undyed grey gown, open down the entire back, tied at the neck and waist.
+Bare feet. Nothing else. A small dark branded mark on the back of the neck.
+
+PHYSICS
+Bare feet slap and squeak on polished concrete. Air displacement lifts the loose
+back of the gown on every pass. The ceiling plant transfers real load — a light
+panel flickers once from the impact. Contact shadows grounded at every footfall.
+Momentum carries into the skid.
+
+LIGHTING
+Cool flat interior light at 4000K from recessed ceiling panels, almost no
+shadow, low contrast, grey on grey, exposed at key. No warm tone anywhere. The
+whole frame is desaturated to almost nothing.
+
+AUDIO
+Bare feet on concrete at impossible spacing, cloth snapping in displaced air,
+one light panel ticking after the ceiling impact, hard breathing, and a real
+open laugh. No speech other than the laugh. Every other sound is unpitched and
+textural — no tones, no drones, no sustained notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+Exactly one figure in the entire generation. The corridor stays completely empty
+of any other person. The gown stays open down the back in every cut. The branded
+mark on the neck stays in the same place at the same size. Afterimages stay
+faint and semi-transparent, never solid duplicates. Ends on the laughing face.
+This clip is one fragment of a longer film — end mid-motion, unresolved, no
+settling shot.
+```
+
+## 6B · 불량 · 바닥이 열린다 〔F22~F37〕
+
+```
+SCENE CONTEXT
+Someone in a grey uniform writes one word on a tablet. Then a floor opens onto
+open sky, and a hand pushes.
+
+ACTIVE REFERENCES
+@corridor — Controls environment, materials and mood only; reference framing not
+inherited. Appears ONLY in CUT 1 and CUT 2.
+
+LOCATION MAP
+CUT 1–2: the same windowless grey corridor, cable trunks along the ceiling
+join. CUT 3–5: a bare grey chamber with no furniture, a rectangular section of
+the floor split open at the centre. Below the opening: open air, then a layer of
+cloud, then a brown plain so far down it has almost no detail. Camera looks
+steeply down. Light is flat interior above, hazy daylight rising from the
+opening.
+
+FIRST FRAME / BLOCKING
+Medium on a figure in a plain grey uniform standing at the edge of the corridor,
+seen from the chest up, holding a thin metal tablet, looking off-frame left at
+something we do not see. The face is unremarkable and completely calm.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 3 holds longest; CUT 5 is the shortest.
+
+CUT 1 — Medium, 47° FOV, camera at chest height 2 m out, static. The uniformed
+figure watches something off frame. Does not smile. Lifts the tablet and writes.
+CUT 2 — Extreme close on the tablet, 18° FOV, static. Wet black ink on metal:
+three inked characters beside the number 003 — 불량.
+CUT 3 — HARD CUT to a steep high angle, 84° FOV, camera 3 m above the open floor
+looking almost straight down, static. The rectangular hatch is fully open. Below
+it: sky, then a cloud layer, then a distant brown plain. A small barefoot figure
+in a grey open-backed gown stands right at the edge, seen from above and behind,
+looking down. The drop fills most of the frame.
+CUT 4 — Medium from behind at floor level, 47° FOV, camera at 40 cm height,
+static. The figure turns its head back over one shoulder. A gloved adult hand
+enters frame and settles flat between the shoulder blades.
+CUT 5 — HARD CUT to the same steep high angle, 84° FOV, static, 0.6 seconds. The
+edge is empty. The hatch is open onto sky and cloud and nothing else.
+
+OPTICS
+47° / 18° / 84° / 47° / 84°, rectilinear, prime-lens character, shallow depth of
+field on the tablet insert. No drift mid-segment.
+
+CAMERA
+Locked off on every cut. The camera never follows anything downward.
+
+ACTION
+The fall itself is never shown. CUT 4 ends with the hand making contact; CUT 5
+opens on an empty edge. The gown's loose back moves continuously in the updraft
+coming through the hatch from the first frame of CUT 3 onward.
+
+PERFORMANCE
+The uniformed figure is neither cruel nor troubled. Writing the word is
+administrative — the eyes stay on the tablet, the hand is steady, there is no
+pause before the stroke. The small figure at the edge shows only confusion, not
+terror: the head turn in CUT 4 is a question, not a plea, and the mouth stays
+closed.
+
+PHYSICS
+A strong updraft comes through the open hatch — the loose back of the gown and
+the figure's hair lift continuously toward the ceiling. Ink beads on metal and
+holds surface tension. The hand makes real contact with cloth and compresses it.
+
+LIGHTING
+Cool flat interior light at 4000K, almost no shadow, grey on grey, exposed at
+key. From the open hatch a hazy daylight rises at 6000K, two stops hotter,
+lighting the figure from directly below and throwing the ceiling into flat grey.
+That contrast is the entire lighting design of the shot.
+
+AUDIO
+Interior room tone with no wind, a stylus dragging on metal — then, from the
+moment the hatch is open, a continuous heavy rush of air through the opening,
+cloth snapping hard in the updraft, bare feet shifting on metal, one set of
+light fast breathing that speeds up. No speech at all. Every sound is unpitched and
+textural — no tones, no drones, no sustained notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+Exactly two people in the entire generation. The inked characters stay stable
+and legible. No blood and no visible injury anywhere; the fall is conveyed by
+the empty edge, the open sky and sound alone. The gown stays open down the back.
+Close-up prop lock on the tablet. The camera stays above the hatch and never
+descends. This clip is one fragment of a longer film — end mid-motion,
+unresolved, no settling shot.
+```
+
+---
+
+# S7 · 그다음
+
+## 7A · 귀찮아 〔G12~G53〕
+
+```
+SCENE CONTEXT
+The half-machined man crawls out of a hole in a mud wall, still alive, and asks
+what they are. A seated figure answers with two words and goes back to work.
+
+ACTIVE REFERENCES
+@captain — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+@bun — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+
+LOCATION MAP
+Foreground: the platform bed at frame right, @bun seated on it with a bowl.
+Midground: the dirt yard, dust still hanging. Background: the mud-brick wall at
+frame left with a body-shaped hole punched through it, wrecked machines
+scattered, the wreck of one still folded in the wall. Camera holds one side of
+the line between them for the whole generation. Light from overhead.
+
+FIRST FRAME / BLOCKING
+Wide. @bun seated on the platform bed at frame right, side-on, shelling beans.
+At frame left, 6 m away, @captain is on his hands and knees at the base of the
+wall, half out of the rubble, armour buckled across the ribs, dragging one leg.
+His chest is heaving. The two of them are the only things moving in the yard.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 3 holds longest.
+
+CUT 1 — Wide, 63° FOV, camera at seated height 5 m out, static. He gets a knee
+under himself and stops there, breathing hard, staring at her. She keeps
+shelling and does not look up.
+CUT 2 — Medium on @captain, 29° FOV, camera at chest height over @bun's
+shoulder, static. He asks. Dust caked in the sweat on his face. The chromed jaw
+brace is scratched to bare metal along one edge. His mechanical left hand is
+planted in the dirt taking his weight; the fingers have dug in.
+CUT 3 — Medium on @bun, 29° FOV, camera at seated height from @captain's side,
+static. She stops shelling. For the first time in the whole sequence she looks
+directly at somebody. She answers, holds the look, then picks up another pod and
+starts again.
+CUT 4 — Wide, 63° FOV, camera at seated height, static. He is upright now,
+limping away toward frame left, and stops with his back to her to ask one more
+thing. She answers without looking up.
+
+OPTICS
+63° / 29° / 29° / 63°, rectilinear, prime-lens character. The camera never
+crosses the axis between them. No drift mid-segment.
+
+CAMERA
+Locked off on all four cuts, shot and reverse from the same side of the line.
+
+ACTION
+Dust continues to settle through the whole generation. @bun's hands work
+continuously except during her one line in CUT 3, where they stop — that stop is
+the only time in the entire episode her hands stop, and it must be visible. Each
+reply lands the instant the question ends.
+
+PERFORMANCE
+@captain is not defiant, he is dismantled — he is a professional who has just
+watched his understanding of the world fail. Pupils wide, breath ragged, one
+hand shaking where it takes his weight. @bun does not gloat and does not soften.
+When she looks at him in CUT 3 there is nothing warm in it and nothing cruel
+either. The last two syllables are thrown away completely, delivered to the bowl.
+
+WARDROBE
+@captain in buckled black lacquered plate, dust and grit ground into every seam,
+the chromed jaw brace scored, four dark ceramic ports along the collarbone, the
+left forearm exposed silver mechanism with dirt packed into the joints. @bun in
+layered undyed wrapped cloth with no metal on her body anywhere.
+
+PHYSICS
+Mud brick crumbles as he pulls free. His mechanical hand digs furrows in the
+dirt taking his weight. The bad leg drags and leaves a line. Pods split with a
+dry snap. Contact shadows grounded at every contact point.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust at 40% and slowly falling. His chrome and
+his silver hand carry the only speculars in frame; nothing on her reflects
+anything at all.
+
+AUDIO
+Dry mud crumbling, plate scraping on brick, a bad leg dragging in grit, ragged
+human breathing, servos in one hand straining, bean pods splitting, wind.
+Dialogue in Korean, spoken after the camera settles.
+CAPTAIN (winded, disbelieving, breath breaking the line up): "...뭐야. 당신들 뭐야."
+A pause. Her hands stop.
+BUN (flat, direct, looking at him): "십일기."
+CAPTAIN: "...십일기는 없습니다. 십일기는 전부 처리됐습니다."
+A pause of three seconds.
+BUN (two syllables, unbothered): "어어."
+Then, later, with his back to her:
+CAPTAIN: "왜 안 죽였습니까."
+BUN (throwing it away, to the bowl): "귀찮아."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+Exactly two people moving in the entire generation. No blood and no visible
+injury on @captain — damage reads as buckled plate, dust and a dragging leg
+only. @bun stays seated on the platform bed throughout. Her hands stop exactly
+once, on her line in CUT 3, and resume immediately after. No metal on her body.
+Ironclad facial feature lock from @tags. This clip is one fragment of a longer
+film — end mid-motion, unresolved, no settling shot.
+```
+
+---
+
+# S8 · 화물차와 흰 벽
+
+## 8A · 지나간다 〔H9~H24〕
+
+```
+SCENE CONTEXT
+Three flatbed trucks pass a settlement, loaded with new intake in clean clothes.
+One of them waves. Nobody waves back.
+
+ACTIVE REFERENCES
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+@bun / @deok / @teacher / @maknae — each 100% matches its reference; studio
+sheet backgrounds and layouts NOT inherited. Appear ONLY in CUT 3 and CUT 4.
+
+LOCATION MAP
+Foreground: the dirt road running left to right across frame. Midground: three
+flatbed trucks travelling right to left at 30 km/h, open cargo beds crowded with
+figures in clean new clothes. Background: the settlement's low mud-brick houses
+set back 40 m from the road, the platform bed visible in the yard with four
+seated figures on it. Camera is beside the road. Light from overhead.
+
+FIRST FRAME / BLOCKING
+Wide, camera at chest height 8 m back from the road. The first truck is entering
+frame from the right. The settlement sits behind and left, small. Dust already
+rising off the wheels.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 4 holds longest.
+
+CUT 1 — Wide, 84° FOV, camera at chest height 8 m from the road, static. The
+three trucks pass right to left at 30 km/h, cargo beds packed, dust rolling off
+the wheels and drifting toward camera.
+CUT 2 — Medium tracking, 47° FOV, camera moving with the second truck at
+30 km/h, holding on its cargo bed. Figures packed shoulder to shoulder on
+benches, all in identical clean new clothing that does not fit yet, sunburnt
+hands and faces against fresh cloth. Some are talking and excited. One at the
+tailgate turns, sees the yard, and lifts a hand in a wave.
+CUT 3 — Wide from the yard looking out at the road, 63° FOV, camera at seated
+height behind the platform bed, static. Four backs in a row on the bed, the
+trucks passing beyond them. Not one of the four raises a hand. Their hands keep
+working.
+CUT 4 — Medium on @bun and @deok from the front, 29° FOV, camera at seated
+height, static. They watch the trucks go. Nobody speaks for a long beat. Then a
+short exchange, both still looking at the road.
+
+OPTICS
+84° / 47° / 63° / 29°, rectilinear, prime-lens character, motion blur on the
+passing trucks. No drift mid-segment.
+
+CAMERA
+Static, then one lateral track matching the truck at 30 km/h, then static,
+static.
+
+ACTION
+The trucks never stop and never slow. The wave in CUT 2 and the four unmoving
+backs in CUT 3 are the same moment from two sides. All four sets of hands keep
+shelling through CUT 3 and CUT 4 without pause, including through the wave.
+
+PERFORMANCE
+The figures on the truck are cheerful — this is the horror of the shot and it
+must be played completely sincerely, no dread, no foreboding. The four in the
+yard are not cold, they are simply not going to do it: eyes tracking the trucks,
+faces flat, one slow blink. In CUT 4 @bun's answer is one word and it lands like
+a stone.
+
+WARDROBE
+The intake in identical plain new clothing, clean, stiff, wrong on them. The
+four in layered undyed wrapped cloth faded to the colour of the ground, no metal
+on any of them.
+
+PHYSICS
+Dust rolls off the wheels and drifts across camera. The cargo beds bounce on
+ruts and the figures sway together with the suspension. Contact shadows grounded
+under every wheel and every seat.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust at 30%, thicker in the trucks' wake.
+
+AUDIO
+Three engines under load, tyres on packed dirt and grit, a loose tailgate
+rattling, many voices talking at once too jumbled to resolve, wind, bean pods
+splitting. Dialogue in Korean, spoken in CUT 4 after the camera settles.
+DEOK (flat, looking at the road): "...몇 기더라."
+TEACHER (off screen, calm): "스무 기."
+A pause of two seconds.
+DEOK: "벌써."
+BUN (the same word, quieter): "벌써."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+Exactly three trucks in the entire generation. The intake on the trucks are a
+crowd of visibly different individuals, not repeated faces. Not one of the four
+in the yard raises a hand at any point. Their hands keep working through every
+cut. No metal on any of the four bodies. This clip is one fragment of a longer
+film — end mid-motion, unresolved, no settling shot.
+```
+
+## 8B · 흰 벽 〔J35~J41〕
+
+```
+SCENE CONTEXT
+The trucks stop. An enormous blank white wall crosses the desert from horizon to
+horizon. The intake climb down and look up at it.
+
+ACTIVE REFERENCES
+@wall — Controls environment, materials and scale only; reference framing not
+inherited.
+@seha — 100% matches the reference; studio sheet background and layout NOT
+inherited. Appears ONLY in CUT 3.
+
+LOCATION MAP
+Foreground: open sand and cracked ground, three parked flatbed trucks at the
+lower edge of frame. Midground: a crowd of figures in clean new clothing
+standing at the base of the wall, all facing away from camera and looking up.
+Background: the wall itself, 60 m tall, perfectly smooth, running edge to edge
+and continuing past both sides of frame, with an empty pale sky above it.
+Camera is behind and below the crowd. Light from directly overhead.
+
+FIRST FRAME / BLOCKING
+Extreme wide, camera at 60 cm height 40 m back from the wall. The wall occupies
+the upper two thirds of frame and runs unbroken from edge to edge. The trucks
+and the crowd are a thin band along the bottom, each figure under one fiftieth
+of frame height. Nothing else exists in the frame.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 1 holds longest.
+
+CUT 1 — Extreme wide, 107° FOV, camera at 60 cm height 40 m back, a very slow
+0.2 m/s push toward the wall. The scale relationship does not resolve — the
+closer the camera gets, the less the wall looks like an object.
+CUT 2 — Low wide from within the crowd, 84° FOV, camera at 50 cm height looking
+steeply up, static. Backs of heads and shoulders across the bottom third, the
+white face of the wall filling everything above. Several hands lift to shade
+eyes. Voices overlap.
+CUT 3 — Medium on @seha from the front, 29° FOV, camera at chest height, static.
+She is the only one not talking. Her eyes track upward slowly, all the way, and
+keep going past where the others stopped looking. Her mouth stays closed.
+
+OPTICS
+107° / 84° / 29°, rectilinear, prime-lens character. The extreme wide is the
+widest frame in the episode and nothing else in the sequence uses it. No drift
+mid-segment.
+
+CAMERA
+One very slow push in CUT 1 at 0.2 m/s; static thereafter.
+
+ACTION
+The crowd mills continuously — bags shifting, people turning to each other,
+somebody pointing along the wall in both directions looking for an end. Nobody
+finds one. Dust drifts across the base of the wall the whole time.
+
+PERFORMANCE
+Most of the crowd is excited and loud, craning, laughing, competitive. @seha is
+still. Her performance is entirely in the eye-line: it travels up and does not
+stop where everyone else's stops, and at the top it does not come back down.
+
+WARDROBE
+The intake in identical plain new clothing, clean and stiff against sunburnt
+hands and dusty faces.
+
+PHYSICS
+Wind moves along the base of the wall carrying sand in low sheets. The wall
+surface is completely uniform — no weathering streaks, no staining, no joints.
+Contact shadows grounded at every foot and every wheel.
+
+LIGHTING
+Flat overcast midday at 5600K from directly overhead, short hard shadows,
+exposed 1 stop under. Airborne dust at 35%. The wall reads clean white and one
+stop hotter than everything else in frame; it is the only object in the film
+that is not dirty.
+
+AUDIO
+Wind moving along a vast flat surface, sand hissing over cracked ground, many
+overlapping voices, engines ticking as they cool, boots on grit. Dialogue in
+Korean, overlapping crowd lines, not directed at anyone.
+VOICE (awed, breath caught): "와..."
+ANOTHER VOICE: "문 어디 있어?"
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+The wall stays perfectly smooth for the entire generation with no door, no
+window, no gate, no seam, no marking and no weathering. The wall runs past both
+edges of frame in every cut and no end is ever visible. The crowd are visibly
+different individuals, not repeated faces. Figures stay under one fiftieth of
+frame height in CUT 1. @seha's mouth stays closed. This clip is one fragment of
+a longer film — end mid-motion, unresolved, no settling shot.
+```
+
+## 8C · 승강대 〔J42~J56〕
+
+```
+SCENE CONTEXT
+A crane arm swings out over the top of the wall and lowers a steel platform.
+Twenty at a time are lifted over. One of them sees the inside.
+
+ACTIVE REFERENCES
+@wall — Controls environment, materials and scale only; reference framing not
+inherited.
+@seha — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+
+LOCATION MAP
+Foreground: sand at the base of the wall, the crowd waiting. Midground: a rusted
+open steel platform descending on four cables. Background: the white wall rising
+past the top of frame, and at its crest an industrial crane arm silhouetted
+against pale sky. Camera starts low at the base and ends high on the platform.
+Light from directly overhead.
+
+FIRST FRAME / BLOCKING
+Low wide looking steeply up. The wall fills the frame vertically. At the top
+edge, small, the crane arm has swung out over the lip. The steel platform hangs
+from it on four cables 30 m up and descending. Below, in the bottom eighth of
+frame, the crowd stands in the wall's shadow with faces tilted up.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 3 holds longest.
+
+CUT 1 — Low wide, 84° FOV, camera at 40 cm height looking steeply up, static.
+The platform descends and touches down on sand, the cables going slack and the
+frame settling into the ground.
+CUT 2 — Medium, 47° FOV, camera at chest height, static. The crowd files onto
+the platform, twenty of them, shoulder to shoulder. Some are grinning. A figure
+in white gestures them on without speaking.
+CUT 3 — Wide, 63° FOV, camera mounted on the platform at chest height rising
+with it at 1.5 m/s, static relative to the platform. The sand drops away below.
+The trucks shrink. The wall face slides past continuously 2 m from the platform
+edge, blank and featureless the whole way up. Some of the intake lean out and
+look down and laugh.
+CUT 4 — Medium close on @seha, 29° FOV, camera on the platform at chest height,
+static relative to the platform. The platform clears the top of the wall. Light
+changes on her face as the inside opens up below. She looks down. Her eyes move
+across something we do not see, and stop. She says four words so quietly that
+nobody around her reacts.
+
+OPTICS
+84° / 47° / 63° / 29°, rectilinear, prime-lens character. No drift mid-segment.
+
+CAMERA
+Static on the ground for CUT 1 and 2, then locked to the rising platform for
+CUT 3 and 4 so that the wall moves and the camera does not.
+
+ACTION
+The ascent is continuous through CUT 3 and CUT 4 — the platform never stops.
+Everyone on it keeps adjusting for the sway. The reveal of the inside is
+withheld completely: we see only the light on her face change and her eyes move.
+
+PERFORMANCE
+The intake around her are having the best day of their lives — leaning out,
+pointing, laughing. @seha holds the rail with both hands and does not look at
+any of them. When the top clears, her eyebrows draw very slightly together, her
+lips part, and she says the line to herself. No shock, no gasp. Recognition.
+
+PHYSICS
+The platform sways on its cables with real inertia and everyone on it
+compensates continuously. Cables creak under load. Sand falls off the frame as
+it lifts. Wind increases audibly with height and pulls at loose clothing.
+
+LIGHTING
+Flat overcast midday at 5600K throughout, short hard shadows, exposed 1 stop
+under. In CUT 4 a cooler 4000K fill rises from below the platform onto her face
+as the inside opens — the first grey light in the episode, and it is two stops
+darker than the sky.
+
+AUDIO
+A heavy crane winch under load, steel cable running, a rusted platform frame
+creaking and flexing, boots on steel plate, wind rising with altitude, many
+excited voices. Dialogue in Korean, spoken after the platform settles into its
+climb.
+FIGURE IN WHITE (flat, procedural): "스무 명씩."
+A VOICE (delighted, off screen): "와 높다!"
+SEHA (to herself, almost inaudible, no fear in it): "...계단이 없네."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+The wall face stays perfectly smooth and featureless for the entire ascent — no
+door, no window, no ladder, no seam, no marking. The inside of the wall is never
+shown; the reveal stays entirely off frame and lives only in the light on
+@seha's face. The intake are visibly different individuals, not repeated faces.
+Ironclad facial feature lock on @seha. This clip is one fragment of a longer
+film — end mid-motion, unresolved, no settling shot.
+```
+
+---
+
+# S9 · 여울
+
+## 9A · 나는 번호 없어 〔K1~K16〕
+
+```
+SCENE CONTEXT
+Inside the wall: a grey corridor with no windows. A line of new intake files
+past someone washing the floor. One of them stops to greet her.
+
+ACTIVE REFERENCES
+@corridor — Controls environment, materials and mood only; reference framing not
+inherited.
+@yeoul — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+@seha — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+
+LOCATION MAP
+Foreground: wet grey concrete floor, a dented metal bucket. Midground: @yeoul
+kneeling with a cloth, the line of intake filing past her along the far wall.
+Background: the corridor running 25 m to a closed door, recessed flat light
+panels overhead, thick cable trunks running the length of the wall-ceiling
+join, a row of sealed ceramic hatches set into the wall at chest height. Camera
+is in the corridor at kneeling height.
+
+FIRST FRAME / BLOCKING
+Wide down the corridor, camera at 70 cm height. @yeoul kneels at frame left,
+side-on, wringing a cloth into a bucket, in worn grey coveralls with no
+insignia, no number and no badge anywhere on them. The line of intake in clean
+new clothing files past 2 m behind her along the right-hand wall, moving
+continuously. Not one of them looks at her.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 4 holds longest.
+
+CUT 1 — Wide, 63° FOV, camera at 70 cm height, static. The line files past.
+@yeoul works. Nobody looks down at her. The corridor is completely colourless.
+CUT 2 — Medium on @seha, 47° FOV, camera at chest height on the near side of the
+line, static. She steps out of the line, stops, and bows her head slightly.
+CUT 3 — Medium on @yeoul from @seha's side, 29° FOV, camera at kneeling height,
+static. She looks up. She looks about twenty. She smiles — the first smile
+anyone in this building has given anyone.
+CUT 4 — Medium two-shot, 47° FOV, camera at chest height, static, holding both.
+The exchange runs to its end. @yeoul taps her own throat twice with two
+fingers. There is a small closed ceramic disc set flush into the skin there,
+smooth, unopened, with no scar tissue around it at all. Then she wrings the
+cloth out over the bucket and water runs.
+
+OPTICS
+63° / 47° / 29° / 47°, rectilinear, prime-lens character. Camera stays on one
+side of the line between them. No drift mid-segment.
+
+CAMERA
+Locked off on all four cuts.
+
+ACTION
+The line keeps moving continuously behind them through every cut — it never
+stops for the conversation, and @seha has to speak across the flow of people.
+@yeoul keeps working with her hands between lines. Each reply lands the instant
+the previous line ends.
+
+PERFORMANCE
+@seha is polite and slightly formal, a stranger being well brought up. @yeoul is
+warm and completely unbothered, and there is 190 years behind how uninterested
+she is in her own answer. The tap on the throat is casual, the way someone
+points at an old scar they have stopped noticing. Her eyes stay on @seha the
+whole time.
+
+WARDROBE
+@yeoul in worn grey coveralls, elbows thin from wear, sleeves pushed up, no
+insignia, no number, no marking of any kind anywhere on the garment or the body,
+and one small closed ceramic disc at the throat with unbroken skin around it.
+@seha in stiff clean new clothing.
+
+PHYSICS
+Water runs off the cloth in a real stream and strikes the bucket surface. The
+wet floor holds a matte sheen with no mirrored image in it. Contact shadows
+grounded at knees, bucket and every passing foot.
+
+LIGHTING
+Cool flat interior light at 4000K from recessed ceiling panels, almost no
+shadow, low contrast, grey on grey, exposed 1 stop under. There is no colour
+anywhere in the frame and no visible shadow under anyone — after the dust and
+ochre outside, the cleanliness is the shock.
+
+AUDIO
+Many feet on concrete moving in one direction, cloth being wrung, water running
+into a metal bucket, a ventilation rush behind the walls, cable trunks ticking
+as something cycles. Dialogue in Korean, spoken after the camera settles.
+SEHA (polite, formal): "안녕하세요. 저기... 선생님도 몇 번이세요?"
+YEOUL (light, amused, no edge at all): "나는 번호 없어."
+SEHA: "네?"
+YEOUL (tapping her throat twice): "안 열렸거든."
+SEHA: "그럼... 뭐라고 불러요?"
+A pause. She wrings the cloth out.
+YEOUL: "여울."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+Exactly two people are tracked; the passing line stays a moving background of
+visibly different individuals. @yeoul's coveralls and body carry no number, no
+insignia and no badge anywhere. The ceramic disc at her throat stays closed and
+the skin around it stays unbroken with no scar. The wet floor stays matte with
+no mirrored reflection. Ironclad facial feature lock from @tags. This clip is
+one fragment of a longer film — end mid-motion, unresolved, no settling shot.
+```
+
+---
+
+# S10 · 밤
+
+## 10A · 굿 〔L1~L22〕
+
+```
+SCENE CONTEXT
+Night outside the settlement. Masked figures circle a fire while the old people
+watch from the platform bed. On the horizon there is a thin band of violet.
+
+ACTIVE REFERENCES
+@masks — 100% matches the reference; nine separate individuals, studio sheet
+background and layout NOT inherited.
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+@bun / @teacher / @maknae — each 100% matches its reference; studio sheet
+backgrounds and layouts NOT inherited. Appear ONLY in CUT 3.
+
+LOCATION MAP
+Foreground: bare dark ground. Midground: one low fire on open ground 30 m
+outside the settlement, nine wrapped masked figures standing around it, two
+masked animals sitting at the edge of the firelight. Background: the settlement
+in silhouette on the left, and beyond everything a flat black horizon with a
+very faint band of violet haze lying along it. Camera is between the settlement
+and the fire, at seated height.
+
+FIRST FRAME / BLOCKING
+Wide. The fire at frame right, low and small. Nine masked figures ringed around
+it, evenly spaced, all facing inward. The masked animals sit at the lower right.
+At frame left, 20 m away and much darker, the silhouette of a platform bed with
+seated figures on it. Between them, empty dark ground.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 4 holds longest.
+
+CUT 1 — Wide, 63° FOV, camera at seated height 15 m from the fire, static.
+Firelight moves on nine white masks. One figure begins to turn in place, arms
+out, and keeps turning; the others hold position and sway.
+CUT 2 — Medium, 47° FOV, camera at 60 cm height at the fire's edge, static. The
+turning figure passes through frame; cloth swings out with the rotation. The
+masks catch the fire and throw no expression at all.
+CUT 3 — Wide from behind the platform bed, 63° FOV, camera at seated height,
+static. Three seated silhouettes in the foreground, the fire and the ritual small
+beyond them. Nobody on the bed moves toward it and nobody moves to stop it.
+CUT 4 — Extreme wide, 84° FOV, camera at seated height, static, holding the
+horizon. The fire is small at the left edge. Along the far horizon, low and
+thin, lies a faint band of violet haze — no shape, no source, no motion, only a
+shift in colour where the ground meets the sky.
+
+OPTICS
+63° / 47° / 63° / 84°, rectilinear, prime-lens character. No drift mid-segment.
+
+CAMERA
+Locked off for the entire generation.
+
+ACTION
+The ritual runs continuously through all four cuts — turning, swaying, cloth
+moving — and it is never given a reaction shot that makes it work. The seated
+figures watch it the way people watch weather. The violet band does not move,
+brighten, pulse or approach at any point.
+
+PERFORMANCE
+The masked figures have no faces, so the performance is entirely in the bodies:
+the turn is committed, tireless and slightly desperate. The three on the bed are
+unimpressed and unmocking. @teacher's line is delivered without turning his head
+and without opening his eyes.
+
+WARDROBE
+The masked figures wrapped head to foot in pale cloth with smooth featureless
+white masks; the animals masked as well. The three on the bed in layered undyed
+wrapped cloth with no metal anywhere on any of them.
+
+PHYSICS
+Firelight falls off fast with distance and does not reach the platform bed.
+Sparks lift and die. Cloth swings out under real rotation. Contact shadows
+grounded at the fire's edge.
+
+LIGHTING
+Night at 3200K. Warm firelight from one low source falling off fast, deep blue
+ambient from the sky at 8500K, no moon, no other light source, exposed 1 stop
+under. The white masks catch the fire and are the brightest thing in frame.
+Everything is desaturated except the faint violet at the horizon.
+
+AUDIO
+A slow flat drum struck with a soft mallet at a steady interval, dry rattles
+shaken in the hand, feet turning on dirt, cloth swinging, fire crackling, an
+animal shifting on gravel, wind across open ground. Dialogue in Korean, spoken
+in CUT 3 after the camera settles.
+MAKNAE (genuinely asking): "저거 효과 있어요?"
+TEACHER (immediate, flat, eyes closed): "없어."
+MAKNAE: "근데 왜 해요."
+A pause of three seconds.
+TEACHER: "무서우니까."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+Exactly nine masked figures and they stay nine, each with a distinct height and
+stance. The masks stay smooth and featureless with no eye holes and no mouth.
+The violet band stays faint, low, static and formless — a colour shift only,
+with no shape, no creature, no light source and no movement. No metal on any of
+the three seated bodies. Exactly one fire. This clip is one fragment of a longer
+film — end mid-motion, unresolved, no settling shot.
+```
+
+## 10B · 떨어진다 〔M14~M20〕
+
+```
+SCENE CONTEXT
+Night. Someone says it is coming, and it is not a truck. A point of light in the
+sky grows and strikes the ground outside the settlement.
+
+ACTIVE REFERENCES
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+@teacher — 100% matches the reference; studio sheet background and layout NOT
+inherited. Appears ONLY in CUT 1.
+
+LOCATION MAP
+Foreground: the platform bed in the dark yard, figures dozing on it. Midground:
+the open ground beyond the settlement. Background: a full night sky, dense with
+stars, taking up most of the frame in the sky cuts. Camera is in the yard at
+seated height, then tilted up.
+
+FIRST FRAME / BLOCKING
+Medium in near darkness. @teacher sits upright on the platform bed at frame
+centre, spine straight, in the same position he has held all episode. Two other
+shapes are slumped asleep beside him. Then his eyes open — the first time in the
+whole episode — and the clouded milk-white irises catch the starlight.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 2 holds longest by a wide margin; CUT 4 is the
+shortest.
+
+CUT 1 — Medium, 29° FOV, camera at seated height 2 m out, static. @teacher's
+eyes open. He raises his chin very slightly. He speaks two short lines without
+turning his head.
+CUT 2 — Extreme wide of the night sky, 107° FOV, camera at seated height tilted
+up, a very slow 0.05 m/s vertical drift. Stars fill the frame edge to edge. The
+lower eighth is the black silhouette of rooflines. Nothing happens for a long
+hold. Then, near the top of frame, one very small point appears.
+CUT 3 — Extreme wide, same framing, 107° FOV, static. The point grows and
+travels down through frame, gaining size and speed, a dark shape now, silent
+until it is close and then tearing at the air.
+CUT 4 — Wide on the open ground beyond the settlement, 84° FOV, camera at 40 cm
+height, static, 0.6 seconds. The impact — a hard dull concussion, a crater
+punched into dry ground, a ring of dust and grit thrown outward and upward. The
+shape inside the crater is not resolvable in the dark.
+
+OPTICS
+29° / 107° / 107° / 84°, rectilinear, prime-lens character. The two sky cuts use
+the widest FOV in the episode. No drift mid-segment.
+
+CAMERA
+Locked off except for the very slow vertical drift in CUT 2, which exists only
+to make the audience scan the sky.
+
+ACTION
+CUT 2 is deliberately long and almost empty — the hold is the point. The descent
+in CUT 3 is continuous and accelerating. The impact is never followed by a
+reaction shot inside this generation.
+
+PERFORMANCE
+@teacher's eyes opening is the whole performance and it must be understated: no
+alarm, no widening, just the lids lifting and the chin coming up half a
+centimetre. He is listening, not looking.
+
+PHYSICS
+The falling shape accelerates under real gravity, tumbling slightly. The impact
+throws dust and grit outward and upward in a ring that then falls back; the
+crater rim is sharp and the ground around it is fractured edge to centre. Sound
+arrives fractionally after the visual.
+
+LIGHTING
+Night at 3200K, deep blue-black, no moon, starlight only, exposed 1 stop under.
+In CUT 4 the only illumination on the crater is starlight and the last of a dying
+fire far off frame; the shape at the bottom stays unreadable.
+
+AUDIO
+Wind across open ground, cloth, two people breathing in sleep. Then, in CUT 3, a
+rising tearing rush of air arriving late and hard. Then one heavy dull
+concussion and a long fall of grit. Then wind again. Dialogue in Korean, spoken
+in CUT 1 after the camera settles.
+BUN (off screen, half asleep): "...뭐."
+TEACHER (flat, certain, eyes just opened): "온다."
+BUN (off screen): "또 차야?"
+TEACHER: "아니."
+A pause of two seconds.
+TEACHER: "위에서."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+Exactly one falling object in the entire generation. The falling shape stays
+unlit and unresolvable — no glow, no fire, no trail, no light of any kind on it.
+Whatever is in the crater stays unreadable in the dark. No blood and no visible
+injury anywhere; the impact is conveyed through dust, sound and the crater. One
+named destroyed object: the ground. This clip is one fragment of a longer film —
+end mid-motion, unresolved, no settling shot.
+```
+
+## 10C · 일어선다 〔M21~M57〕 — **1화 마지막**
+
+```
+SCENE CONTEXT
+A lantern reaches the crater. There is a small figure in a grey open-backed gown
+at the bottom, alive, with no number on the neck. The one who never stands up
+stands up.
+
+ACTIVE REFERENCES
+@bun — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+@maknae — 100% matches the reference; studio sheet background and layout NOT
+inherited.
+@dani — 100% matches the reference; studio sheet background and layout NOT
+inherited. Appears ONLY in CUT 1.
+@village — Controls environment, materials and mood only; reference framing not
+inherited.
+
+LOCATION MAP
+Foreground: the rim of a fresh crater in dry cracked ground, dust still settling
+on it. Midground: @maknae crouched at the rim with a hand lantern, @bun standing
+beside him on the cane. Background: the settlement in silhouette 30 m off, and
+far behind that a dying fire with masked shapes standing motionless around it,
+not approaching. Camera is at the crater rim, low.
+
+FIRST FRAME / BLOCKING
+Wide, camera at 50 cm height at the crater rim. @maknae crouches at frame right
+holding a lantern out over the hole. @bun stands at frame centre leaning on the
+cane, seen from the side. @dani stands 3 m behind them at frame left with the
+rifle slung, not moving. In the crater below, in the lantern's throw, a small
+barefoot figure lies in a filthy plain grey gown that is open down the back.
+
+FORMAT MODE
+Sequence of cuts, no timecodes — cuts only at the specified points, the camera
+does not cut on its own. CUT 4 holds longest and the generation ends inside it.
+
+CUT 1 — Wide, 63° FOV, camera at 50 cm height, static. The lantern swings out
+over the crater and the light finds the figure. Nobody speaks. Dust drifts
+through the beam.
+CUT 2 — High angle down into the crater, 47° FOV, camera 2 m above the rim,
+static. The figure lies still. Then one finger moves. Then the chest lifts.
+CUT 3 — Tight insert, 18° FOV, static. The back of the figure's neck under the
+lantern: one small closed ceramic disc set flush into the skin, smooth,
+unopened, with no scar tissue around it — and beside it bare skin where a number
+would be. Nothing is branded there.
+CUT 4 — Low wide on @bun, 84° FOV, camera at 30 cm height 2 m out looking up,
+static. She plants the cane, takes her weight onto it, and comes upright out of
+a crouch in one long effort — knees, then hips, then shoulders — the whole thing
+visible in her hands and her jaw. She gets all the way up. She stays up. She
+says one word.
+
+OPTICS
+63° / 47° / 18° / 84°, rectilinear, prime-lens character, shallow depth of field
+on the neck insert. No drift mid-segment.
+
+CAMERA
+Locked off on every cut. The low angle in CUT 4 is the only low angle given to
+her in the entire episode.
+
+ACTION
+Dust keeps settling through the lantern beam continuously in every cut. The
+masked figures in the far background stay exactly where they are and never come
+closer — they are watching and they are not going to help. @bun's rise in CUT 4
+is one continuous unassisted movement with no cut inside it.
+
+PERFORMANCE
+@maknae is careful and quiet, holding the lantern steady with both hands. The
+figure in the crater does not cry, does not flinch, does not react to the light
+— only the finger and the breath. @bun's rise costs her: the tendons stand out
+on the hand gripping the cane, the jaw sets, the breath goes out through the
+nose. And when she is up she does not hide it. The final word is said flatly and
+without self-pity, and she stays standing after she says it.
+
+WARDROBE
+@bun and @maknae in layered undyed wrapped cloth faded to the colour of the
+ground, no metal anywhere on either body. The figure in the crater in a plain
+grey gown open down the entire back, filthy, barefoot.
+
+PHYSICS
+The lantern throws a single hard directional light that moves when the hand
+moves. Dust falls continuously through the beam. The cane takes real load and
+its tip sinks into the dirt. Her knees audibly resist. Contact shadows grounded
+at the cane tip, at every foot and along the crater rim.
+
+LIGHTING
+Night at 3200K. One hand lantern from frame right is the only practical source,
+hard and directional and falling off within 3 m. Deep blue ambient from the sky
+at 8500K. Beyond the lantern's throw everything is black. Exposed 1 stop under.
+
+AUDIO
+Grit falling into the crater, a lantern handle creaking as it swings, cloth,
+careful footsteps on broken ground, one shallow set of breathing from the
+crater, a drum still going faintly far off. Then, in CUT 4: a wooden cane
+planting in dirt, joints cracking under load, breath forced out through the
+nose. Dialogue in Korean, spoken after the camera settles.
+MAKNAE (quiet, close to the crater): "죽었나."
+TEACHER (off screen, immediate): "아니."
+A pause. Then, smaller: "...살아 있는데요."
+BUN (looking at the neck): "목에 번호."
+MAKNAE: "...없는데요."
+A long pause of three seconds.
+Then, as she comes up, off the effort:
+DEOK (off screen): "야. 무릎 아프다며."
+BUN (flat, standing, no self-pity): "아파."
+Every other sound is unpitched and textural — no tones, no drones, no sustained
+notes, no instruments, no singing.
+
+STYLE
+Photoreal, 8K, anamorphic, fine grain, real time throughout.
+
+POSITIVE LOCKS
+The ceramic disc on the fallen figure's neck stays closed with unbroken skin
+around it, and the skin beside it stays completely bare with no number, no
+brand, no marking. No blood and no visible injury on the fallen figure — stillness
+and dust only. No metal anywhere on @bun's or @maknae's bodies. @bun's rise
+happens in one continuous take inside CUT 4 with no cut and no assistance, and
+she remains standing through the end of the generation. The masked figures in
+the background stay distant and motionless. This clip is the final fragment of
+the episode — end on her standing, mid-breath, unresolved.
+```
