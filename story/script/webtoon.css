@@ -150,3 +150,10 @@ footer .eyebrow{margin-bottom:16px}
 :root[data-theme="dark"]{ --lamp:#D9A76A }
 .toc li[data-pal="lamp"]{--accent:var(--lamp)}
 .sec[data-pal="lamp"]{--accent:var(--lamp)}
+
+/* ---- karan (카란 · 붉은 달의 밤) ---- */
+:root{ --karan:#A03A2E }
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --karan:#E0745F } }
+:root[data-theme="dark"]{ --karan:#E0745F }
+.toc li[data-pal="karan"]{--accent:var(--karan)}
+.sec[data-pal="karan"]{--accent:var(--karan)}

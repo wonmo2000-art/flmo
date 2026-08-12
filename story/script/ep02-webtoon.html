@@ -157,35 +157,46 @@ footer .eyebrow{margin-bottom:16px}
 .toc li[data-pal="lamp"]{--accent:var(--lamp)}
 .sec[data-pal="lamp"]{--accent:var(--lamp)}
 
+/* ---- karan (카란 · 붉은 달의 밤) ---- */
+:root{ --karan:#A03A2E }
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --karan:#E0745F } }
+:root[data-theme="dark"]{ --karan:#E0745F }
+.toc li[data-pal="karan"]{--accent:var(--karan)}
+.sec[data-pal="karan"]{--accent:var(--karan)}
+
 </style>
 
 <div class="wrap">
   <header class="mast">
     <p class="eyebrow">웹툰 세로 스크롤 콘티 · 2590</p>
     <h1>피폭<em>2화 — 이름</em></h1>
-    <p class="blurb">아이들이 번호를 받는 날. 세하는 001이 되고, 떨어진 아이는 자기를 사백열둘이라고 부른다. 그리고 상층은 어제 일어난 일을 서판에 「안개」라고 적는다.</p>
+    <p class="blurb">아이들이 번호를 받는 날. 세하는 001이 되고, 떨어진 아이는 자기를 사백열둘이라고 부른다. 그날 밤 서쪽에서 마을 하나가 통째로 없어지고, 새벽에 말 한 마리가 혼자 걸어 들어온다.</p>
 
     <div class="stat">
-      <div><b>737</b><span>컷</span></div>
-      <div><b>11</b><span>파트</span></div>
+      <div><b>759</b><span>컷</span></div>
+      <div><b>15</b><span>파트</span></div>
       <div><b>0</b><span>전투</span></div>
     </div>
 
-    <div class="drain"><i style="flex:1;background:var(--night)"></i><i style="flex:4;background:var(--dust)"></i><i style="flex:5;background:var(--grey)"></i><i style="flex:2;background:var(--lamp)"></i></div>
-    <div class="drain-cap"><span>새벽</span><span>표백된 갈색</span><span>회색</span><span>등불</span></div>
-    <p class="blurb">2화는 회색이 더 많다. <b>창이 곧 계급이다</b> — 아이들 구역에는 창이 없고, 40의 방에는 있다.</p>
+    <div class="drain"><i style="flex:1;background:var(--night)"></i><i style="flex:3;background:var(--dust)"></i><i style="flex:3;background:var(--grey)"></i><i style="flex:4;background:var(--karan)"></i><i style="flex:2;background:var(--lamp)"></i></div>
+    <div class="drain-cap"><span>새벽</span><span>표백된 갈색</span><span>회색</span><span>카란</span><span>등불</span></div>
+    <p class="blurb">따뜻한 색은 세 번만 나온다 — <b>붉은 달 · 화살통 안의 금빛 · 하늘의 불 고리.</b> 그 사이는 전부 차갑다.</p>
 
-    <ul class="toc"><li data-pal="night"><a href="#s-0"><span class="tk">0</span><span class="tt">창고 (콜드 오픈)</span><span class="tn">22</span></a></li>
-<li data-pal="dust"><a href="#s-A"><span class="tk">A</span><span class="tt">사백열둘</span><span class="tn">66</span></a></li>
-<li data-pal="grey"><a href="#s-B"><span class="tk">B</span><span class="tt">판정</span><span class="tn">86</span></a></li>
-<li data-pal="grey"><a href="#s-C"><span class="tk">C</span><span class="tt">개통</span><span class="tn">69</span></a></li>
-<li data-pal="grey"><a href="#s-D"><span class="tk">D</span><span class="tt">보고서</span><span class="tn">82</span></a></li>
-<li data-pal="dust"><a href="#s-E"><span class="tk">E</span><span class="tt">콩</span><span class="tn">63</span></a></li>
-<li data-pal="dust"><a href="#s-F"><span class="tk">F</span><span class="tt">첫 수업</span><span class="tn">70</span></a></li>
-<li data-pal="grey"><a href="#s-G"><span class="tk">G</span><span class="tt">이이삼</span><span class="tn">60</span></a></li>
-<li data-pal="dust"><a href="#s-H"><span class="tk">H</span><span class="tt">신전</span><span class="tn">54</span></a></li>
-<li data-pal="lamp"><a href="#s-I"><span class="tk">I</span><span class="tt">창고 안</span><span class="tn">61</span></a></li>
-<li data-pal="lamp"><a href="#s-J"><span class="tk">J</span><span class="tt">이름</span><span class="tn">104</span></a></li></ul>
+    <ul class="toc"><li data-pal="night"><a href="#s-0"><span class="tk">0</span><span class="tt">창고 (콜드 오픈)</span><span class="tn">21</span></a></li>
+<li data-pal="dust"><a href="#s-A"><span class="tk">A</span><span class="tt">사백열둘</span><span class="tn">57</span></a></li>
+<li data-pal="grey"><a href="#s-B"><span class="tk">B</span><span class="tt">아치</span><span class="tn">70</span></a></li>
+<li data-pal="grey"><a href="#s-C"><span class="tk">C</span><span class="tt">여섯 개의 팔</span><span class="tn">59</span></a></li>
+<li data-pal="grey"><a href="#s-D"><span class="tk">D</span><span class="tt">서판</span><span class="tn">76</span></a></li>
+<li data-pal="dust"><a href="#s-E"><span class="tk">E</span><span class="tt">콩</span><span class="tn">50</span></a></li>
+<li data-pal="dust"><a href="#s-F"><span class="tk">F</span><span class="tt">첫 수업</span><span class="tn">54</span></a></li>
+<li data-pal="dust"><a href="#s-G"><span class="tk">G</span><span class="tt">신전</span><span class="tn">54</span></a></li>
+<li data-pal="karan"><a href="#s-H"><span class="tk">H</span><span class="tt">카란</span><span class="tn">20</span></a></li>
+<li data-pal="karan"><a href="#s-I"><span class="tk">I</span><span class="tt">넘어온다</span><span class="tn">37</span></a></li>
+<li data-pal="karan"><a href="#s-J"><span class="tk">J</span><span class="tt">가슴</span><span class="tn">15</span></a></li>
+<li data-pal="karan"><a href="#s-K"><span class="tk">K</span><span class="tt">보내는 쪽</span><span class="tn">44</span></a></li>
+<li data-pal="karan"><a href="#s-L"><span class="tk">L</span><span class="tt">고리</span><span class="tn">49</span></a></li>
+<li data-pal="lamp"><a href="#s-M"><span class="tk">M</span><span class="tt">창고 안</span><span class="tn">49</span></a></li>
+<li data-pal="lamp"><a href="#s-N"><span class="tk">N</span><span class="tt">이름</span><span class="tn">104</span></a></li></ul>
   </header>
 </div>
 
@@ -200,8 +211,7 @@ footer .eyebrow{margin-bottom:16px}
 <div class="wrap">
 <section class="sec" data-pal="night">
 <header class="sechead"><span class="seckey" id="s-0">0</span><h2>0. 창고 (콜드 오픈)</h2></header>
-<p class="note secnote"><b>1화 마지막 컷에서 몇 시간 뒤.</b> 아직 어둡다.</p>
-<p class="note secnote"><b>안을 안 보여준다.</b> I파트에서 연다.</p>
+<p class="note secnote"><b>1화 마지막 컷에서 몇 시간 뒤.</b> 아직 어둡다. <b>안을 안 보여준다.</b></p>
 <article class="panel"><div class="pnum">P1</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">어둠. 아주 옅게 남색이 돈다.</p>
@@ -262,28 +272,22 @@ footer .eyebrow{margin-bottom:16px}
 <article class="panel"><div class="pnum">P17</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">문이 다시 닫힌다.</p>
-<p class="note"><b>안을 안 보여준다.</b> 독자는 I파트까지 모른다.</p>
-<p class="note">그리고 I파트에서 보면, <b>이 문을 90년 만에 처음 연 것</b>이라는 게 밝혀진다.</p>
+<p class="note"><b>90년 만에 처음 연 문이다.</b> 독자는 M에서 안다.</p>
 </div></article>
 <hr class="beat">
 <article class="panel"><div class="pnum">P18</div><div class="pbody">
 <span class="kind">세로 · 길게</span>
-<p class="desc">하늘이 밝아진다.</p>
-<p class="desc">남색이 회색이 되고, 회색이 갈색이 된다.</p>
+<p class="desc">하늘이 밝아진다. 남색이 회색이 되고, 회색이 갈색이 된다.</p>
 </div></article>
 <article class="panel"><div class="pnum">P19</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">마당. 평상.</p>
+<p class="desc">마당. 평상. 노인 셋이 자고 있다.</p>
 </div></article>
 <article class="panel"><div class="pnum">P20</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">노인 셋이 자고 있다.</p>
-</div></article>
-<article class="panel"><div class="pnum">P21</div><div class="pbody">
-<span class="kind">소형</span>
 <p class="desc">단이는 안 자고 앉아 있다.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">P22</span></div>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">P21</span></div>
 <hr class="beat">
 </section>
 <section class="sec" data-pal="dust">
@@ -327,249 +331,218 @@ footer .eyebrow{margin-bottom:16px}
 <span class="kind">소형</span>
 <p class="line"><span class="who">막내</span><span class="say">어르신! 깼어요!</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">A12</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">A13</div><div class="pbody">
+<article class="panel"><div class="pnum">A12</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">아이가 일어나 앉는다.</p>
 <p class="aside">(비틀거리지 않는다. 아픈 데를 안 찾는다. 그냥 앉는다)</p>
 </div></article>
-<article class="panel"><div class="pnum">A14</div><div class="pbody">
+<article class="panel"><div class="pnum">A13</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">막내</span><span class="say">아 누워 있어. 누워 있어.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A15</div><div class="pbody">
+<article class="panel"><div class="pnum">A14</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">아이</span><span class="say">...</span></p>
+<p class="desc">아이가 막내를 본다. 아무 표정이 없다.</p>
 </div></article>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">A15</span></div>
+<hr class="beat">
 <article class="panel"><div class="pnum">A16</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">아이가 막내를 본다.</p>
+<span class="kind">전면</span>
+<p class="desc">문가. 분이가 지팡이를 짚고 서 있다. 뒤에 덕구, 선생, 단이.</p>
 </div></article>
 <article class="panel"><div class="pnum">A17</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">아무 표정이 없다.</p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">A18</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">A19</div><div class="pbody">
-<span class="kind">전면</span>
-<p class="desc">문가. 분이가 지팡이를 짚고 서 있다.</p>
-<p class="desc">뒤에 덕구, 선생, 단이.</p>
-</div></article>
-<article class="panel"><div class="pnum">A20</div><div class="pbody">
-<span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">어디 아파.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A21</div><div class="pbody">
+<article class="panel"><div class="pnum">A18</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">아니요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A22</div><div class="pbody">
+<article class="panel"><div class="pnum">A19</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">어디서 왔어.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A23</div><div class="pbody">
+<article class="panel"><div class="pnum">A20</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">위요.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">A24</span></div>
-<article class="panel"><div class="pnum">A25</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">몇 살이야.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">A26</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">아이</span><span class="say">열둘이요.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">A27</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">A21</span></div>
+<article class="panel"><div class="pnum">A22</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">이름 뭐야.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">A28</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">A23</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">A29</div><div class="pbody">
+<article class="panel"><div class="pnum">A24</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">아이</span><span class="say">사백열둘입니다.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">A30</span></div>
-<article class="panel"><div class="pnum">A31</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">A25</span></div>
+<article class="panel"><div class="pnum">A26</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">뭐?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A32</div><div class="pbody">
+<article class="panel"><div class="pnum">A27</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">사백열둘이요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A33</div><div class="pbody">
+<article class="panel"><div class="pnum">A28</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">덕구</span><span class="say">그게 뭐야.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A34</div><div class="pbody">
+<article class="panel"><div class="pnum">A29</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">접니다.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">A35</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">A30</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">A36</div><div class="pbody">
+<article class="panel"><div class="pnum">A31</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">그건 이름이 아니야.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A37</div><div class="pbody">
+<article class="panel"><div class="pnum">A32</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">...</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A38</div><div class="pbody">
+<article class="panel"><div class="pnum">A33</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">그럼 뭔데요.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">A39</span></div>
-<article class="panel"><div class="pnum">A40</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">A34</span></div>
+<article class="panel"><div class="pnum">A35</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">아무도 대답 못 한다.</p>
 <p class="note"><b>1화에서 여울이 말했다.</b> <i>&quot;나는 번호 없어.&quot;</i></p>
 <p class="note"><b>여기서는 번호밖에 없는 아이가 나온다.</b> 같은 문제의 반대쪽이다.</p>
 </div></article>
 <hr class="beat">
-<article class="panel"><div class="pnum">A41</div><div class="pbody">
+<article class="panel"><div class="pnum">A36</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">단이가 앞으로 나온다.</p>
 </div></article>
-<article class="panel"><div class="pnum">A42</div><div class="pbody">
+<article class="panel"><div class="pnum">A37</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">단이</span><span class="say">야.</span></p>
+<p class="line"><span class="who">단이</span><span class="say">야. 너 떨어진 거 알아?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A43</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">단이</span><span class="say">너 떨어진 거 알아?</span></p>
-</div></article>
-<article class="panel"><div class="pnum">A44</div><div class="pbody">
+<article class="panel"><div class="pnum">A38</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">알아요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A45</div><div class="pbody">
+<article class="panel"><div class="pnum">A39</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">...무섭지 않았어?</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">A46</span></div>
-<article class="panel"><div class="pnum">A47</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">A40</span></div>
+<article class="panel"><div class="pnum">A41</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">아이</span><span class="say">실패하면 떨어뜨리는 거 다들 알아요.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">A48</span></div>
-<article class="panel"><div class="pnum">A49</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">단이</span><span class="say">...</span></p>
-</div></article>
-<article class="panel"><div class="pnum">A50</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">A42</span></div>
+<article class="panel"><div class="pnum">A43</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">단이가 아무 말도 못 한다.</p>
 </div></article>
 <hr class="beat">
-<article class="panel"><div class="pnum">A51</div><div class="pbody">
+<article class="panel"><div class="pnum">A44</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">분이가 아이 뒤로 돌아간다.</p>
+<p class="desc">분이가 아이 뒤로 돌아가 옷깃을 조금 내린다.</p>
 </div></article>
-<article class="panel"><div class="pnum">A52</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">옷깃을 조금 내린다.</p>
-</div></article>
-<article class="panel"><div class="pnum">A53</div><div class="pbody">
+<article class="panel"><div class="pnum">A45</div><div class="pbody">
 <span class="kind">소형 · 클로즈업</span>
 <p class="desc">목덜미.</p>
 <p class="desc"><b>뚜껑 하나. 닫혀 있다. 흉터가 없다.</b></p>
 </div></article>
-<article class="panel"><div class="pnum">A54</div><div class="pbody">
+<article class="panel"><div class="pnum">A46</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">그리고 그 옆. <b>번호가 없다.</b></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">A55</span></div>
-<article class="panel"><div class="pnum">A56</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">A47</span></div>
+<article class="panel"><div class="pnum">A48</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">야.</span></p>
+<p class="line"><span class="who">분이</span><span class="say">야. 너 사백열둘 아니야.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A57</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">너 사백열둘 아니야.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">A58</div><div class="pbody">
+<article class="panel"><div class="pnum">A49</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">맞는데요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A59</div><div class="pbody">
+<article class="panel"><div class="pnum">A50</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">새겨져 있어야 되잖아.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">A60</span></div>
-<article class="panel"><div class="pnum">A61</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">A51</span></div>
+<article class="panel"><div class="pnum">A52</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">...개통을 못 해서요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A62</div><div class="pbody">
+<article class="panel"><div class="pnum">A53</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">개통 못 하면 안 새겨요.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">A63</span></div>
-<article class="panel"><div class="pnum">A64</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">A54</span></div>
+<article class="panel"><div class="pnum">A55</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">분이</span><span class="say">그럼 사백열둘은 어디서 났어.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">A65</div><div class="pbody">
+<article class="panel"><div class="pnum">A56</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">줄 설 때 불러줬어요.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">A66</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">A57</span></div>
 <hr class="beat">
 </section>
 <section class="sec" data-pal="grey">
-<header class="sechead"><span class="seckey" id="s-B">B</span><h2>B. 판정</h2></header>
+<header class="sechead"><span class="seckey" id="s-B">B</span><h2>B. 아치</h2></header>
+<p class="note secnote"><b>판정 방식이 바뀌었다.</b> 사람 손이 등뼈를 짚지 않는다. <b>걸어서 통과한다.</b></p>
 <article class="panel"><div class="pnum">B1</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc"><b>색이 바뀐다.</b> 갈색이 사라지고 회색만 남는다.</p>
 </div></article>
 <article class="panel"><div class="pnum">B2</div><div class="pbody">
 <span class="kind">세로</span>
-<p class="desc">벽 안. 창이 없는 큰 방. 천장이 낮고 넓다.</p>
-<p class="desc">그림자가 없다.</p>
+<p class="desc">벽 안. 창이 없는 큰 방. 천장이 낮고 넓다. 그림자가 없다.</p>
 </div></article>
 <article class="panel"><div class="pnum">B3</div><div class="pbody">
-<span class="kind">전면</span>
-<p class="desc"><b>오백 명이 줄을 서 있다.</b></p>
-<p class="desc">전부 새 옷이다. 줄이 방을 네 번 접어서 돌아간다.</p>
+<span class="kind">소형</span>
+<p class="desc">천장을 따라 케이블 트렁크가 방 끝까지 이어진다.</p>
 </div></article>
 <article class="panel"><div class="pnum">B4</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">아무도 안 떠든다.</p>
+<span class="kind">전면</span>
+<p class="desc"><b>오백 명이 줄을 서 있다.</b> 줄이 방을 네 번 접어서 돌아간다.</p>
 </div></article>
 <article class="panel"><div class="pnum">B5</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">그런데 얼굴들이 <b>밝다.</b></p>
+<p class="desc">아무도 안 떠든다. 그런데 얼굴들이 <b>밝다.</b></p>
 </div></article>
 <div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">B6</span></div>
 <hr class="beat">
 <article class="panel"><div class="pnum">B7</div><div class="pbody">
 <span class="kind">전면</span>
-<p class="desc">줄 앞. 회색 제복 셋이 앉아 있다. 긴 탁자. 서판.</p>
+<p class="desc">줄 앞. 바닥에서 천장까지 이어진 <b>금속 아치</b>가 하나 서 있다.</p>
+<p class="desc">안쪽 둘레에 렌즈와 발신부가 촘촘히 박혀 있다.</p>
 </div></article>
 <article class="panel"><div class="pnum">B8</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">아이 하나가 앞으로 나온다.</p>
+<p class="desc">아치 옆 탁자에 회색 제복 셋.</p>
 </div></article>
 <article class="panel"><div class="pnum">B9</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">웃옷을 벗는다.</p>
+<span class="kind">소형 · 클로즈업</span>
+<p class="desc">제복 하나의 얼굴. <b>왼쪽 눈이 무광 검정 렌즈다.</b></p>
+<p class="aside">(사람인데 한쪽만 기계다. 이 건물에서는 그게 보통이다)</p>
 </div></article>
+<hr class="beat">
 <article class="panel"><div class="pnum">B10</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">돌아선다. 등을 보인다.</p>
+<p class="desc">아이 하나가 웃옷을 벗고 아치로 걸어 들어간다.</p>
 </div></article>
 <article class="panel"><div class="pnum">B11</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">제복이 등뼈를 손끝으로 짚어 내려간다.</p>
+<p class="desc">아치 안쪽 둘레의 렌즈가 순서대로 지나간다.</p>
+<p class="sfx">티. 티. 티.</p>
 </div></article>
 <article class="panel"><div class="pnum">B12</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">서판에 적는다.</p>
+<p class="desc">반대편으로 나온다.</p>
 </div></article>
 <article class="panel"><div class="pnum">B13</div><div class="pbody">
 <span class="kind">소형</span>
@@ -579,272 +552,222 @@ footer .eyebrow{margin-bottom:16px}
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">감사합니다!</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">B15</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">B16</div><div class="pbody">
+<article class="panel"><div class="pnum">B15</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">다음. <b>하란.</b></p>
 </div></article>
-<article class="panel"><div class="pnum">B17</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">등을 보인다. 어깨가 마르고 갈비뼈가 보인다.</p>
-</div></article>
-<article class="panel"><div class="pnum">B18</div><div class="pbody">
+<article class="panel"><div class="pnum">B16</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">제복</span><span class="say">십사.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B19</div><div class="pbody">
+<article class="panel"><div class="pnum">B17</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">하란이 주먹을 쥔다.</p>
 <p class="line"><span class="who">하란</span><span class="say">아 십사!</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B20</div><div class="pbody">
+<article class="panel"><div class="pnum">B18</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">하란</span><span class="say">야 나 십사래!</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B21</div><div class="pbody">
+<article class="panel"><div class="pnum">B19</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">소안</span><span class="say">좋은 거예요?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B22</div><div class="pbody">
+<article class="panel"><div class="pnum">B20</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">하란</span><span class="say">좋지! 우리 동네 걔가 십칠이었어!</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B23</div><div class="pbody">
+<article class="panel"><div class="pnum">B21</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">소안</span><span class="say">그 사람 연락 안 온다면서요.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">B24</span></div>
-<article class="panel"><div class="pnum">B25</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">B22</span></div>
+<article class="panel"><div class="pnum">B23</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">하란</span><span class="say">...</span></p>
-</div></article>
-<article class="panel"><div class="pnum">B26</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">하란</span><span class="say">야 그건 그거고.</span></p>
+<p class="line"><span class="who">하란</span><span class="say">...야 그건 그거고.</span></p>
 </div></article>
 <hr class="beat">
-<article class="panel"><div class="pnum">B27</div><div class="pbody">
+<article class="panel"><div class="pnum">B24</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">다음. <b>소안.</b></p>
+<p class="desc">다음. <b>소안.</b> 제복: 사십.</p>
 </div></article>
-<article class="panel"><div class="pnum">B28</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">열둘. 등이 작다.</p>
-</div></article>
-<article class="panel"><div class="pnum">B29</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">제복이 오래 짚는다.</p>
-</div></article>
-<article class="panel"><div class="pnum">B30</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">제복</span><span class="say">사십.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">B31</div><div class="pbody">
+<article class="panel"><div class="pnum">B25</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">소안</span><span class="say">예.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B32</div><div class="pbody">
+<article class="panel"><div class="pnum">B26</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">하란</span><span class="say">야 괜찮아. 너 어리잖아.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B33</div><div class="pbody">
+<article class="panel"><div class="pnum">B27</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">소안</span><span class="say">괜찮은데요.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">B34</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">B35</div><div class="pbody">
+<article class="panel"><div class="pnum">B28</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">다음. <b>미르.</b></p>
+<p class="desc">다음. <b>미르.</b> 등이 곧다. 안 떤다.</p>
 </div></article>
-<article class="panel"><div class="pnum">B36</div><div class="pbody">
-<span class="kind">전면</span>
-<p class="desc">어깨가 넓다. 등이 곧다. 안 떤다.</p>
-</div></article>
-<article class="panel"><div class="pnum">B37</div><div class="pbody">
+<article class="panel"><div class="pnum">B29</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">제복</span><span class="say">십일.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B38</div><div class="pbody">
+<article class="panel"><div class="pnum">B30</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">하란</span><span class="say">야!! 십일!!</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B39</div><div class="pbody">
+<article class="panel"><div class="pnum">B31</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">미르는 아무 반응이 없다.</p>
+<p class="desc">미르는 아무 반응이 없다. 옷을 다시 입는다.</p>
 </div></article>
-<article class="panel"><div class="pnum">B40</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">옷을 다시 입는다.</p>
-</div></article>
-<article class="panel"><div class="pnum">B41</div><div class="pbody">
+<article class="panel"><div class="pnum">B32</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">하란</span><span class="say">너 왜 안 좋아해.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">B42</span></div>
-<article class="panel"><div class="pnum">B43</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">B33</span></div>
+<article class="panel"><div class="pnum">B34</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">미르</span><span class="say">뭐가 좋은데.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">B44</span></div>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">B35</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">B45</div><div class="pbody">
+<article class="panel"><div class="pnum">B36</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">다음. <b>세하.</b></p>
 </div></article>
-<article class="panel"><div class="pnum">B46</div><div class="pbody">
+<article class="panel"><div class="pnum">B37</div><div class="pbody">
 <span class="kind">세로</span>
-<p class="desc">앞으로 나온다. 얇고 조용하다.</p>
+<p class="desc">아치로 걸어 들어간다.</p>
 </div></article>
-<article class="panel"><div class="pnum">B47</div><div class="pbody">
+<article class="panel"><div class="pnum">B38</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">웃옷을 벗는다.</p>
+<p class="desc">렌즈가 순서대로 지나간다.</p>
+<p class="sfx">티. 티. 티.</p>
 </div></article>
-<article class="panel"><div class="pnum">B48</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">돌아선다.</p>
-</div></article>
-<article class="panel"><div class="pnum">B49</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">제복의 손이 등뼈를 짚는다.</p>
-</div></article>
-<article class="panel"><div class="pnum">B50</div><div class="pbody">
+<article class="panel"><div class="pnum">B39</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">멈춘다.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">B51</span></div>
-<article class="panel"><div class="pnum">B52</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">B40</span></div>
+<article class="panel"><div class="pnum">B41</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">다시 짚는다.</p>
+<p class="desc">다시 지나간다. 이번엔 느리게.</p>
+<p class="sfx">티─. 티─.</p>
 </div></article>
-<article class="panel"><div class="pnum">B53</div><div class="pbody">
+<article class="panel"><div class="pnum">B42</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">또 멈춘다.</p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">B54</span></div>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">B43</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">B55</div><div class="pbody">
+<article class="panel"><div class="pnum">B44</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">제복이 고개를 든다.</p>
 </div></article>
-<article class="panel"><div class="pnum">B56</div><div class="pbody">
+<article class="panel"><div class="pnum">B45</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">옆의 제복을 부른다.</p>
+<p class="desc">검은 렌즈 눈이 아치 쪽으로 돌아간다.</p>
 </div></article>
-<article class="panel"><div class="pnum">B57</div><div class="pbody">
+<article class="panel"><div class="pnum">B46</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">둘이 같이 짚는다.</p>
+<p class="desc">다른 제복 둘이 탁자를 돌아 나온다.</p>
 </div></article>
-<article class="panel"><div class="pnum">B58</div><div class="pbody">
+<article class="panel"><div class="pnum">B47</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">셋이 짚는다.</p>
+<p class="desc">셋이 아치 앞에 선다.</p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">B59</span></div>
-<article class="panel"><div class="pnum">B60</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">B48</span></div>
+<article class="panel"><div class="pnum">B49</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">줄이 조용해진다.</p>
 </div></article>
-<article class="panel"><div class="pnum">B61</div><div class="pbody">
+<article class="panel"><div class="pnum">B50</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">하란</span><span class="say">...뭐야.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B62</div><div class="pbody">
+<article class="panel"><div class="pnum">B51</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">미르가 그쪽을 본다.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">B63</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">B64</div><div class="pbody">
+<article class="panel"><div class="pnum">B52</div><div class="pbody">
 <span class="kind">전면</span>
-<p class="desc">제복이 서판에 적는다.</p>
+<p class="desc">아치 안쪽 둘레가 <b>한 번에 전부 켜진다.</b></p>
 </div></article>
-<article class="panel"><div class="pnum">B65</div><div class="pbody">
+<article class="panel"><div class="pnum">B53</div><div class="pbody">
+<span class="kind">세로</span>
+<p class="desc">세하가 그 안에 서 있다. 빛이 등뼈를 따라 지나간다.</p>
+</div></article>
+<article class="panel"><div class="pnum">B54</div><div class="pbody">
 <span class="kind">소형 · 클로즈업</span>
-<p class="desc">잉크.</p>
+<p class="desc">등. 척추를 따라 <b>점 일곱 개</b>가 차례로 밝아진다.</p>
 </div></article>
-<article class="panel"><div class="pnum">B66</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">B55</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">B56</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">제복이 서판에 손가락을 댄다.</p>
+</div></article>
+<article class="panel"><div class="pnum">B57</div><div class="pbody">
 <span class="kind">전면 · 클로즈업</span>
 <p class="desc"><b>001</b></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">B67</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">B68</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">B58</span></div>
+<article class="panel"><div class="pnum">B59</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">방 전체가 술렁인다.</p>
 </div></article>
-<article class="panel"><div class="pnum">B69</div><div class="pbody">
+<article class="panel"><div class="pnum">B60</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">하란</span><span class="say">야 미친.</span></p>
+<p class="line"><span class="who">하란</span><span class="say">야 미친. 야 저거 일이래. 일.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B70</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">하란</span><span class="say">야 저거 일이래. 일.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">B71</div><div class="pbody">
+<article class="panel"><div class="pnum">B61</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">소안</span><span class="say">일이 최고예요?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B72</div><div class="pbody">
+<article class="panel"><div class="pnum">B62</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">하란</span><span class="say">최고지!</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">B73</span></div>
-<article class="panel"><div class="pnum">B74</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">B63</span></div>
+<article class="panel"><div class="pnum">B64</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">미르는 안 웃는다.</p>
 </div></article>
-<article class="panel"><div class="pnum">B75</div><div class="pbody">
+<article class="panel"><div class="pnum">B65</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">세하도 안 웃는다.</p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">B76</span></div>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">B66</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">B77</div><div class="pbody">
+<article class="panel"><div class="pnum">B67</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">제복이 세하의 등을 다시 짚는다.</p>
+<p class="line"><span class="who">제복</span><span class="say">일곱.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B78</div><div class="pbody">
+<article class="panel"><div class="pnum">B68</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">이번엔 세면서 짚는다.</p>
+<p class="line"><span class="who">다른 제복</span><span class="say">일곱이요?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B79</div><div class="pbody">
+<article class="panel"><div class="pnum">B69</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">하나.</p>
+<p class="line"><span class="who">제복</span><span class="say">일곱.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">B80</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">둘.</p>
-</div></article>
-<article class="panel"><div class="pnum">B81</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">셋.</p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">B82</span></div>
-<article class="panel"><div class="pnum">B83</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">넷. 다섯. 여섯.</p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">B84</span></div>
-<article class="panel"><div class="pnum">B85</div><div class="pbody">
-<span class="kind">전면</span>
-<p class="line"><span class="who">제복</span><span class="say"><b>일곱.</b></span></p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">B86</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">B70</span></div>
 <hr class="beat">
 </section>
 <section class="sec" data-pal="grey">
-<header class="sechead"><span class="seckey" id="s-C">C</span><h2>C. 개통</h2></header>
+<header class="sechead"><span class="seckey" id="s-C">C</span><h2>C. 여섯 개의 팔</h2></header>
 <p class="note secnote"><b>1화 F6~F7과 같은 대사가 나온다.</b> <i>&quot;아파요&quot; / &quot;곧 괜찮아져.&quot;</i></p>
-<p class="note secnote">90년 전 분이한테 한 말과 <b>토씨 하나 안 다르다.</b></p>
+<p class="note secnote">90년 전 분이한테 한 말과 <b>토씨 하나 안 다르다.</b> 다만 말하는 게 사람이 아니다.</p>
 <article class="panel"><div class="pnum">C1</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">좁은 방. 의자 둘이 마주 보고 있다.</p>
-<p class="desc">그 사이에 낮은 수레. 위에 도구.</p>
 </div></article>
 <article class="panel"><div class="pnum">C2</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">천장에서 관이 내려와 있다. 지금은 비어 있다.</p>
+<span class="kind">세로</span>
+<p class="desc">천장에서 <b>관절 팔 여섯 개</b>가 접힌 채 매달려 있다.</p>
+<p class="desc">끝마다 다른 도구가 물려 있다. 은색이고 깨끗하다.</p>
 </div></article>
 <article class="panel"><div class="pnum">C3</div><div class="pbody">
 <span class="kind">소형</span>
@@ -902,175 +825,142 @@ footer .eyebrow{margin-bottom:16px}
 <hr class="beat">
 <article class="panel"><div class="pnum">C19</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">회색 제복이 들어온다.</p>
+<p class="desc">천장의 팔 여섯 개가 펴진다.</p>
+<p class="sfx">치익</p>
 </div></article>
 <article class="panel"><div class="pnum">C20</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">세하의 등 뒤에 선다.</p>
+<p class="desc">세하의 등 뒤로 내려온다.</p>
 </div></article>
 <article class="panel"><div class="pnum">C21</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">제복</span><span class="say">숨 쉬어.</span></p>
+<p class="desc">회색 제복 하나가 방 구석에 서서 서판만 본다.</p>
+<p class="aside">(사람은 시술을 안 한다. 지켜보기만 한다)</p>
 </div></article>
 <article class="panel"><div class="pnum">C22</div><div class="pbody">
 <span class="kind">소형</span>
+<p class="line"><span class="who">제복</span><span class="say">숨 쉬어.</span></p>
+</div></article>
+<article class="panel"><div class="pnum">C23</div><div class="pbody">
+<span class="kind">소형</span>
 <p class="desc">세하가 숨을 쉰다.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">C23</span></div>
-<article class="panel"><div class="pnum">C24</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">C24</span></div>
+<article class="panel"><div class="pnum">C25</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="sfx">사악</p>
 </div></article>
-<article class="panel"><div class="pnum">C25</div><div class="pbody">
+<article class="panel"><div class="pnum">C26</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">세하의 손가락이 의자 가장자리를 쥔다.</p>
 </div></article>
-<article class="panel"><div class="pnum">C26</div><div class="pbody">
+<article class="panel"><div class="pnum">C27</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">세하</span><span class="say">아파요.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">C27</span></div>
-<article class="panel"><div class="pnum">C28</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">C28</span></div>
+<article class="panel"><div class="pnum">C29</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">제복</span><span class="say">곧 괜찮아져.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">C29</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">C30</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">C30</div><div class="pbody">
+<article class="panel"><div class="pnum">C31</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">미르가 그걸 본다.</p>
 </div></article>
-<article class="panel"><div class="pnum">C31</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">미르</span><span class="say">야.</span></p>
-</div></article>
 <article class="panel"><div class="pnum">C32</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">미르</span><span class="say">소리 내도 돼.</span></p>
+<p class="line"><span class="who">미르</span><span class="say">야. 소리 내도 돼.</span></p>
 </div></article>
 <div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">C33</span></div>
 <article class="panel"><div class="pnum">C34</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">세하</span><span class="say">...</span></p>
+<p class="line"><span class="who">세하</span><span class="say">...안 낼래요.</span></p>
 </div></article>
 <article class="panel"><div class="pnum">C35</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">세하</span><span class="say">안 낼래요.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">C36</div><div class="pbody">
-<span class="kind">소형</span>
 <p class="line"><span class="who">미르</span><span class="say">왜.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">C37</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">C38</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">C36</span></div>
+<article class="panel"><div class="pnum">C37</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">세하</span><span class="say">엄마가 백 살까지 살랬어요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">C39</div><div class="pbody">
+<article class="panel"><div class="pnum">C38</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">미르</span><span class="say">그게 뭔 상관인데.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">C40</span></div>
-<article class="panel"><div class="pnum">C41</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">C39</span></div>
+<article class="panel"><div class="pnum">C40</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">세하</span><span class="say">소리 내면 못 살 것 같아서요.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">C42</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">C41</span></div>
 <hr class="beat">
+<article class="panel"><div class="pnum">C42</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="sfx">사악 — 둘.</p>
+</div></article>
 <article class="panel"><div class="pnum">C43</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="sfx">사악</p>
+<p class="sfx">사악 — 셋.</p>
 </div></article>
 <article class="panel"><div class="pnum">C44</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">둘.</p>
+<p class="desc">세하의 손등에 힘줄이 선다.</p>
 </div></article>
 <article class="panel"><div class="pnum">C45</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="sfx">사악</p>
-</div></article>
-<article class="panel"><div class="pnum">C46</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">셋.</p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">C47</span></div>
-<article class="panel"><div class="pnum">C48</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">세하의 손등에 힘줄이 선다.</p>
-</div></article>
-<article class="panel"><div class="pnum">C49</div><div class="pbody">
-<span class="kind">소형</span>
 <p class="desc">아무 소리도 안 낸다.</p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">C50</span></div>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">C46</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">C51</div><div class="pbody">
+<article class="panel"><div class="pnum">C47</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">미르가 자기 의자 팔걸이를 본다.</p>
+<p class="desc">미르가 자기 의자 팔걸이를 쥔다.</p>
 </div></article>
-<article class="panel"><div class="pnum">C52</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">손을 올린다.</p>
-</div></article>
-<article class="panel"><div class="pnum">C53</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">쥔다.</p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">C54</span></div>
-<article class="panel"><div class="pnum">C55</div><div class="pbody">
+<article class="panel"><div class="pnum">C48</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">미르</span><span class="say">...넷.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">C56</div><div class="pbody">
+<article class="panel"><div class="pnum">C49</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">미르</span><span class="say">다섯.</span></p>
+<p class="line"><span class="who">미르</span><span class="say">다섯. 여섯.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">C57</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">미르</span><span class="say">여섯.</span></p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">C58</span></div>
-<article class="panel"><div class="pnum">C59</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">C50</span></div>
+<article class="panel"><div class="pnum">C51</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">미르</span><span class="say">일곱.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">C60</span></div>
-<article class="panel"><div class="pnum">C61</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">C52</span></div>
+<article class="panel"><div class="pnum">C53</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">세하가 미르를 본다.</p>
 </div></article>
-<article class="panel"><div class="pnum">C62</div><div class="pbody">
+<article class="panel"><div class="pnum">C54</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">미르</span><span class="say">세어줬어.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">C63</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">세하</span><span class="say">...</span></p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">C64</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">C55</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">C65</div><div class="pbody">
+<article class="panel"><div class="pnum">C56</div><div class="pbody">
 <span class="kind">전면</span>
-<p class="desc">세하가 일어선다.</p>
+<p class="desc">팔 여섯 개가 다시 천장으로 접혀 올라간다.</p>
 </div></article>
-<article class="panel"><div class="pnum">C66</div><div class="pbody">
+<article class="panel"><div class="pnum">C57</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">등에 붕대. 일곱 군데가 부풀어 있다.</p>
+<p class="desc">세하가 일어선다. 등에 붕대. 일곱 군데가 부풀어 있다.</p>
 </div></article>
-<article class="panel"><div class="pnum">C67</div><div class="pbody">
+<article class="panel"><div class="pnum">C58</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">걷는다.</p>
+<p class="desc">걷는다. 안 절뚝인다.</p>
 </div></article>
-<article class="panel"><div class="pnum">C68</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">안 절뚝인다.</p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">C69</span></div>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">C59</span></div>
 <hr class="beat">
 </section>
 <section class="sec" data-pal="grey">
-<header class="sechead"><span class="seckey" id="s-D">D</span><h2>D. 보고서</h2></header>
+<header class="sechead"><span class="seckey" id="s-D">D</span><h2>D. 서판</h2></header>
 <article class="panel"><div class="pnum">D1</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">벽 안. 다른 복도. 여기는 조금 넓고 조금 밝다.</p>
@@ -1081,8 +971,7 @@ footer .eyebrow{margin-bottom:16px}
 </div></article>
 <article class="panel"><div class="pnum">D3</div><div class="pbody">
 <span class="kind">전면</span>
-<p class="desc">방 안. <b>창이 있다.</b></p>
-<p class="desc">가로로 길고 좁은 창. 밖에 사막이 보인다.</p>
+<p class="desc">방 안. <b>창이 있다.</b> 가로로 길고 좁은 창. 밖에 사막이 보인다.</p>
 </div></article>
 <article class="panel"><div class="pnum">D4</div><div class="pbody">
 <span class="kind">소형</span>
@@ -1092,7 +981,7 @@ footer .eyebrow{margin-bottom:16px}
 <hr class="beat">
 <article class="panel"><div class="pnum">D6</div><div class="pbody">
 <span class="kind">세로</span>
-<p class="desc">창 앞에 사람 하나가 서 있다. 등을 보이고 있다.</p>
+<p class="desc">창 앞에 사람 하나. 등을 보이고 있다.</p>
 <p class="desc">회색 제복인데 재질이 다르다. 매끈하다.</p>
 </div></article>
 <article class="panel"><div class="pnum">D7</div><div class="pbody">
@@ -1101,9 +990,12 @@ footer .eyebrow{margin-bottom:16px}
 </div></article>
 <article class="panel"><div class="pnum">D8</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">손에 서판.</p>
+<p class="desc">왼쪽 손목을 뒤집는다. 거기서 <b>얇은 판이 펴져 나온다.</b></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">D9</span></div>
+<article class="panel"><div class="pnum">D9</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">손목에 붙어 있다. 떼는 물건이 아니다.</p>
+</div></article>
 <hr class="beat">
 <article class="panel"><div class="pnum">D10</div><div class="pbody">
 <span class="kind">전면</span>
@@ -1143,21 +1035,22 @@ footer .eyebrow{margin-bottom:16px}
 <div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">D19</span></div>
 <article class="panel"><div class="pnum">D20</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">대장</span><span class="say">...</span></p>
+<p class="line"><span class="who">대장</span><span class="say">...노인 넷입니다.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">D21</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">대장</span><span class="say">노인 넷입니다.</span></p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D22</span></div>
-<article class="panel"><div class="pnum">D23</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D21</span></div>
+<article class="panel"><div class="pnum">D22</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">40이 처음으로 돌아본다.</p>
 </div></article>
+<article class="panel"><div class="pnum">D23</div><div class="pbody">
+<span class="kind">소형 · 클로즈업</span>
+<p class="desc"><b>왼쪽 눈이 기계다.</b></p>
+<p class="desc">무광 검정 렌즈. 홍채 자리에 아주 가는 고리가 하나 돌아간다.</p>
+<p class="desc">오른쪽 눈은 사람 눈이다.</p>
+</div></article>
 <article class="panel"><div class="pnum">D24</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">얼굴에 아무것도 없다.</p>
-<p class="desc"><b>화내지도 않고 웃지도 않는다.</b></p>
+<p class="desc">얼굴에 아무것도 없다. <b>화내지도 않고 웃지도 않는다.</b></p>
 </div></article>
 <article class="panel"><div class="pnum">D25</div><div class="pbody">
 <span class="kind">소형</span>
@@ -1187,7 +1080,7 @@ footer .eyebrow{margin-bottom:16px}
 <hr class="beat">
 <article class="panel"><div class="pnum">D32</div><div class="pbody">
 <span class="kind">전면</span>
-<p class="desc">40이 서판을 넘긴다.</p>
+<p class="desc">40이 손목의 판을 넘긴다.</p>
 <p class="line"><span class="who">40</span><span class="say">작년 관측 기록.</span></p>
 </div></article>
 <article class="panel"><div class="pnum">D33</div><div class="pbody">
@@ -1215,143 +1108,128 @@ footer .eyebrow{margin-bottom:16px}
 <hr class="beat">
 <article class="panel"><div class="pnum">D40</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">대장</span><span class="say">...</span></p>
+<p class="desc">대장의 손이 조금 떨린다.</p>
 </div></article>
 <article class="panel"><div class="pnum">D41</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">대장의 손이 조금 떨린다.</p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">D42</span></div>
-<article class="panel"><div class="pnum">D43</div><div class="pbody">
-<span class="kind">소형</span>
 <p class="line"><span class="who">대장</span><span class="say">못 봤습니다.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">D44</div><div class="pbody">
+<article class="panel"><div class="pnum">D42</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">40</span><span class="say">그렇지.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">D45</span></div>
-<article class="panel"><div class="pnum">D46</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">D43</span></div>
+<article class="panel"><div class="pnum">D44</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">40이 서판에 적는다.</p>
+<p class="desc">40이 손목의 판에 손가락을 댄다.</p>
 </div></article>
-<article class="panel"><div class="pnum">D47</div><div class="pbody">
-<span class="kind">소형 · 클로즈업</span>
-<p class="desc">잉크.</p>
-</div></article>
-<article class="panel"><div class="pnum">D48</div><div class="pbody">
+<article class="panel"><div class="pnum">D45</div><div class="pbody">
 <span class="kind">전면 · 클로즈업</span>
 <p class="desc"><b>안개</b></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D49</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D46</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">D50</div><div class="pbody">
+<article class="panel"><div class="pnum">D47</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">40</span><span class="say">십이호 진행해.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">D51</div><div class="pbody">
+<article class="panel"><div class="pnum">D48</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">대장</span><span class="say">십이호요?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">D52</div><div class="pbody">
+<article class="panel"><div class="pnum">D49</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">40</span><span class="say">밀폐형. 흡기 없이 사십 분.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">D53</div><div class="pbody">
+<article class="panel"><div class="pnum">D50</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">대장</span><span class="say">...안개에 대비한 겁니까.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">D54</div><div class="pbody">
+<article class="panel"><div class="pnum">D51</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">40</span><span class="say">안개 때문에 졌잖아.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D55</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D52</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">D56</div><div class="pbody">
+<article class="panel"><div class="pnum">D53</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">대장</span><span class="say">사십 번.</span></p>
+<p class="line"><span class="who">대장</span><span class="say">사십 번. 거기 사람이 삽니다.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">D57</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">40</span><span class="say">어.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">D58</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">대장</span><span class="say">거기 사람이 삽니다.</span></p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">D59</span></div>
-<article class="panel"><div class="pnum">D60</div><div class="pbody">
+<article class="panel"><div class="pnum">D54</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">40</span><span class="say">몇.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">D61</div><div class="pbody">
+<article class="panel"><div class="pnum">D55</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">대장</span><span class="say">열한 명입니다.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">D62</span></div>
-<article class="panel"><div class="pnum">D63</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">D56</span></div>
+<article class="panel"><div class="pnum">D57</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">40</span><span class="say">폐기 구역이야.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">D64</span></div>
-<article class="panel"><div class="pnum">D65</div><div class="pbody">
+<article class="panel"><div class="pnum">D58</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">대장</span><span class="say">...예.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">D66</div><div class="pbody">
+<article class="panel"><div class="pnum">D59</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">40</span><span class="say">다음 분기 물량 그대로 내려.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">D67</div><div class="pbody">
+<article class="panel"><div class="pnum">D60</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">대장</span><span class="say">예.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D68</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D61</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">D69</div><div class="pbody">
+<article class="panel"><div class="pnum">D62</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">40이 다시 창을 본다.</p>
 </div></article>
-<article class="panel"><div class="pnum">D70</div><div class="pbody">
+<article class="panel"><div class="pnum">D63</div><div class="pbody">
 <span class="kind">세로</span>
 <p class="desc">창밖. 사막. 아무것도 없다.</p>
 </div></article>
-<article class="panel"><div class="pnum">D71</div><div class="pbody">
+<article class="panel"><div class="pnum">D64</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">40</span><span class="say">자네.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">D72</div><div class="pbody">
+<article class="panel"><div class="pnum">D65</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">대장</span><span class="say">예.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">D73</div><div class="pbody">
+<article class="panel"><div class="pnum">D66</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">40</span><span class="say">왜 살아 왔나.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D74</span></div>
-<article class="panel"><div class="pnum">D75</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D67</span></div>
+<article class="panel"><div class="pnum">D68</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">대장</span><span class="say">...안 죽였습니다.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">D76</span></div>
-<article class="panel"><div class="pnum">D77</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">D69</span></div>
+<article class="panel"><div class="pnum">D70</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">40</span><span class="say">누가.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">D78</div><div class="pbody">
+<article class="panel"><div class="pnum">D71</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">대장</span><span class="say">그쪽이요.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D79</span></div>
-<article class="panel"><div class="pnum">D80</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D72</span></div>
+<article class="panel"><div class="pnum">D73</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">40이 아무 말도 안 한다.</p>
 </div></article>
-<article class="panel"><div class="pnum">D81</div><div class="pbody">
+<article class="panel"><div class="pnum">D74</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">그리고 서판에 아무것도 안 적는다.</p>
+<p class="desc">손목의 판이 접혀 들어간다.</p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D82</span></div>
+<article class="panel"><div class="pnum">D75</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc"><b>아무것도 안 적었다.</b></p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">D76</span></div>
 <hr class="beat">
 </section>
 <section class="sec" data-pal="dust">
@@ -1362,225 +1240,173 @@ footer .eyebrow{margin-bottom:16px}
 </div></article>
 <article class="panel"><div class="pnum">E2</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">평상. 노인 넷.</p>
+<p class="desc">평상. 노인 넷. 단이가 끝에 앉아 있다.</p>
 </div></article>
 <article class="panel"><div class="pnum">E3</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">단이가 끝에 앉아 있다.</p>
-</div></article>
-<article class="panel"><div class="pnum">E4</div><div class="pbody">
-<span class="kind">소형</span>
 <p class="desc">그 옆에 아이가 앉아 있다.</p>
-</div></article>
-<article class="panel"><div class="pnum">E5</div><div class="pbody">
-<span class="kind">소형</span>
 <p class="desc">등이 열린 회색 옷 위에 낡은 천을 하나 둘렀다. 안 맞는다.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">E6</span></div>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">E4</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">E7</div><div class="pbody">
+<article class="panel"><div class="pnum">E5</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">막내가 콩 그릇을 아이 앞에 놓는다.</p>
-<p class="line"><span class="who">막내</span><span class="say">자.</span></p>
+<p class="desc">막내가 콩 그릇을 아이 앞에 놓는다. 막내: 자.</p>
 </div></article>
-<article class="panel"><div class="pnum">E8</div><div class="pbody">
+<article class="panel"><div class="pnum">E6</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">...</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E9</div><div class="pbody">
+<article class="panel"><div class="pnum">E7</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">막내</span><span class="say">까면 돼.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">E10</span></div>
-<article class="panel"><div class="pnum">E11</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">E8</span></div>
+<article class="panel"><div class="pnum">E9</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">왜요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E12</div><div class="pbody">
+<article class="panel"><div class="pnum">E10</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">막내</span><span class="say">어?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E13</div><div class="pbody">
+<article class="panel"><div class="pnum">E11</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">왜 까요.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">E14</span></div>
-<article class="panel"><div class="pnum">E15</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">E12</span></div>
+<article class="panel"><div class="pnum">E13</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">막내</span><span class="say">...먹으려고?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E16</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">아이</span><span class="say">...</span></p>
-</div></article>
-<article class="panel"><div class="pnum">E17</div><div class="pbody">
+<article class="panel"><div class="pnum">E14</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">지시받은 게 없는데요.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">E18</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">E15</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">E19</div><div class="pbody">
+<article class="panel"><div class="pnum">E16</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">덕구</span><span class="say">뭐래.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E20</div><div class="pbody">
+<article class="panel"><div class="pnum">E17</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">선생</span><span class="say">지시가 없대.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E21</div><div class="pbody">
+<article class="panel"><div class="pnum">E18</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">덕구</span><span class="say">지시가 뭐야.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E22</div><div class="pbody">
+<article class="panel"><div class="pnum">E19</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">선생</span><span class="say">시키는 거.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E23</div><div class="pbody">
+<article class="panel"><div class="pnum">E20</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">덕구</span><span class="say">지금 시켰잖아.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E24</div><div class="pbody">
+<article class="panel"><div class="pnum">E21</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">선생</span><span class="say">막내가 시키면 안 되나 보지.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E25</div><div class="pbody">
+<article class="panel"><div class="pnum">E22</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">막내</span><span class="say">아 왜요.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">E26</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">E27</div><div class="pbody">
+<article class="panel"><div class="pnum">E23</div><div class="pbody">
 <span class="kind">전면</span>
-<p class="desc">분이가 지팡이 끝으로 그릇을 툭 민다.</p>
-<p class="line"><span class="who">분이</span><span class="say">까.</span></p>
+<p class="desc">분이가 지팡이 끝으로 그릇을 툭 민다. 분이: 까.</p>
 </div></article>
-<article class="panel"><div class="pnum">E28</div><div class="pbody">
+<article class="panel"><div class="pnum">E24</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">아이가 콩을 집는다.</p>
-</div></article>
-<article class="panel"><div class="pnum">E29</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">깐다.</p>
+<p class="desc">아이가 콩을 집는다. 깐다.</p>
 <p class="sfx">톡.</p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">E30</span></div>
-<article class="panel"><div class="pnum">E31</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">E25</span></div>
+<article class="panel"><div class="pnum">E26</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">아이고.</span></p>
 </div></article>
 <hr class="beat">
-<article class="panel"><div class="pnum">E32</div><div class="pbody">
+<article class="panel"><div class="pnum">E27</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">단이가 그걸 보고 있다.</p>
+<p class="line"><span class="who">단이</span><span class="say">어르신. 저 애 저거 정상이에요?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E33</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">단이</span><span class="say">어르신.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">E34</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">어.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">E35</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">단이</span><span class="say">저 애 저거 정상이에요?</span></p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">E36</span></div>
-<article class="panel"><div class="pnum">E37</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">E28</span></div>
+<article class="panel"><div class="pnum">E29</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">분이</span><span class="say">나도 저랬어.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">E38</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">E30</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">E39</div><div class="pbody">
+<article class="panel"><div class="pnum">E31</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">아이가 콩을 깐다.</p>
-<p class="sfx">톡.</p>
+<p class="sfx">톡. 톡. 톡.</p>
 </div></article>
-<article class="panel"><div class="pnum">E40</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">또 깐다.</p>
-<p class="sfx">톡.</p>
-</div></article>
-<article class="panel"><div class="pnum">E41</div><div class="pbody">
+<article class="panel"><div class="pnum">E32</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">손이 빠르다.</p>
 </div></article>
-<article class="panel"><div class="pnum">E42</div><div class="pbody">
+<article class="panel"><div class="pnum">E33</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">너무 빠르다.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">E43</span></div>
-<article class="panel"><div class="pnum">E44</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">E34</span></div>
+<article class="panel"><div class="pnum">E35</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">막내가 자기 그릇을 본다.</p>
+<p class="desc">막내가 자기 그릇을 본다. 아이의 그릇을 본다.</p>
 </div></article>
-<article class="panel"><div class="pnum">E45</div><div class="pbody">
+<article class="panel"><div class="pnum">E36</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">아이의 그릇을 본다.</p>
+<p class="line"><span class="who">막내</span><span class="say">어. 어르신.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E46</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">막내</span><span class="say">어.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">E47</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">막내</span><span class="say">어르신.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">E48</div><div class="pbody">
+<article class="panel"><div class="pnum">E37</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">어.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E49</div><div class="pbody">
+<article class="panel"><div class="pnum">E38</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">막내</span><span class="say">얘 저보다 빠른데요.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">E50</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">E39</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">E51</div><div class="pbody">
+<article class="panel"><div class="pnum">E40</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">노인 넷이 아이를 본다.</p>
 </div></article>
-<article class="panel"><div class="pnum">E52</div><div class="pbody">
+<article class="panel"><div class="pnum">E41</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">아이는 계속 깐다.</p>
-<p class="sfx">톡. 톡. 톡.</p>
+<p class="desc">아이는 계속 깐다. 자기가 빠른 걸 모른다.</p>
 </div></article>
-<article class="panel"><div class="pnum">E53</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">자기가 빠른 걸 모른다.</p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">E54</span></div>
-<article class="panel"><div class="pnum">E55</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">E42</span></div>
+<article class="panel"><div class="pnum">E43</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">선생</span><span class="say">개통을 안 했다며.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E56</div><div class="pbody">
+<article class="panel"><div class="pnum">E44</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">안 했대.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E57</div><div class="pbody">
+<article class="panel"><div class="pnum">E45</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">선생</span><span class="say">그런데 저래?</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">E58</span></div>
-<article class="panel"><div class="pnum">E59</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">E46</span></div>
+<article class="panel"><div class="pnum">E47</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">...</span></p>
+<p class="line"><span class="who">분이</span><span class="say">...야 여울아.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E60</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">야 여울아.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">E61</div><div class="pbody">
+<article class="panel"><div class="pnum">E48</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">덕구</span><span class="say">뭐?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">E62</div><div class="pbody">
+<article class="panel"><div class="pnum">E49</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">아니야.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">E63</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">E50</span></div>
 <hr class="beat">
 </section>
 <section class="sec" data-pal="dust">
@@ -1591,1181 +1417,1499 @@ footer .eyebrow{margin-bottom:16px}
 </div></article>
 <article class="panel"><div class="pnum">F2</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">단이가 분이 앞에 서 있다.</p>
+<p class="line"><span class="who">단이</span><span class="say">어르신. 어제 그거요. 마음 바뀌셨어요?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F3</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">단이</span><span class="say">어르신.</span></p>
-</div></article>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">F3</span></div>
 <article class="panel"><div class="pnum">F4</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">어.</span></p>
+<p class="line"><span class="who">분이</span><span class="say">아니.</span></p>
 </div></article>
 <article class="panel"><div class="pnum">F5</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">단이</span><span class="say">어제 그거요.</span></p>
+<p class="line"><span class="who">분이</span><span class="say">저 애 가르칠 거야.</span></p>
 </div></article>
 <article class="panel"><div class="pnum">F6</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">단이</span><span class="say">마음 바뀌셨어요?</span></p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">F7</span></div>
-<article class="panel"><div class="pnum">F8</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">아니.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">F9</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">단이</span><span class="say">...</span></p>
-</div></article>
-<article class="panel"><div class="pnum">F10</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">저 애 가르칠 거야.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">F11</div><div class="pbody">
-<span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">그럼 저는요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F12</div><div class="pbody">
+<article class="panel"><div class="pnum">F7</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">분이</span><span class="say">옆에서 봐.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">F13</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">F8</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">F14</div><div class="pbody">
+<article class="panel"><div class="pnum">F9</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">마당 한가운데. 아이가 서 있다.</p>
 </div></article>
-<article class="panel"><div class="pnum">F15</div><div class="pbody">
+<article class="panel"><div class="pnum">F10</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">분이가 물동이를 가리킨다.</p>
-<p class="line"><span class="who">분이</span><span class="say">저거 들어.</span></p>
+<p class="desc">분이가 물동이를 가리킨다. 분이: 저거 들어.</p>
 </div></article>
-<article class="panel"><div class="pnum">F16</div><div class="pbody">
+<article class="panel"><div class="pnum">F11</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">아이가 든다.</p>
 </div></article>
-<article class="panel"><div class="pnum">F17</div><div class="pbody">
+<article class="panel"><div class="pnum">F12</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">우물 가서 채워 와.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F18</div><div class="pbody">
+<article class="panel"><div class="pnum">F13</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">아이</span><span class="say">예.</span></p>
+<p class="line"><span class="who">아이</span><span class="say">예. 간다.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F19</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">간다.</p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">F20</span></div>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">F14</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">F21</div><div class="pbody">
+<article class="panel"><div class="pnum">F15</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">...이게 훈련이에요?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F22</div><div class="pbody">
+<article class="panel"><div class="pnum">F16</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">아니.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F23</div><div class="pbody">
+<article class="panel"><div class="pnum">F17</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">그럼 뭔데요.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">F24</span></div>
-<article class="panel"><div class="pnum">F25</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">F18</span></div>
+<article class="panel"><div class="pnum">F19</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">일이야.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F26</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">단이</span><span class="say">일이요?</span></p>
-</div></article>
-<article class="panel"><div class="pnum">F27</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">어.</span></p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">F28</span></div>
-<article class="panel"><div class="pnum">F29</div><div class="pbody">
+<article class="panel"><div class="pnum">F20</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">얼마나요.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">F30</span></div>
-<article class="panel"><div class="pnum">F31</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">F21</span></div>
+<article class="panel"><div class="pnum">F22</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">분이</span><span class="say">백 년.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">F32</span></div>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">F23</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">F33</div><div class="pbody">
+<article class="panel"><div class="pnum">F24</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">...농담이시죠.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F34</div><div class="pbody">
+<article class="panel"><div class="pnum">F25</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">아니.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">F35</span></div>
-<article class="panel"><div class="pnum">F36</div><div class="pbody">
+<article class="panel"><div class="pnum">F26</div><div class="pbody">
 <span class="kind">전면</span>
-<p class="line"><span class="who">분이</span><span class="say">힘은 배우는 게 아니야.</span></p>
+<p class="line"><span class="who">분이</span><span class="say">힘은 배우는 게 아니야. 남는 거야.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F37</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">F27</span></div>
+<article class="panel"><div class="pnum">F28</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">남는 거야.</span></p>
+<p class="line"><span class="who">분이</span><span class="say">몸이 백 년을 버티면. 버틴 게 남아.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">F38</span></div>
-<article class="panel"><div class="pnum">F39</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">몸이 백 년을 버티면.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">F40</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">버틴 게 남아.</span></p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">F41</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">F29</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">F42</div><div class="pbody">
+<article class="panel"><div class="pnum">F30</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">그럼 어제 그 지팡이는요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F43</div><div class="pbody">
+<article class="panel"><div class="pnum">F31</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">그거?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F44</div><div class="pbody">
+<article class="panel"><div class="pnum">F32</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">구십 년 콩 깐 손이야.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">F45</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">F33</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">F46</div><div class="pbody">
+<article class="panel"><div class="pnum">F34</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">아이가 물동이를 들고 돌아온다.</p>
 </div></article>
-<article class="panel"><div class="pnum">F47</div><div class="pbody">
+<article class="panel"><div class="pnum">F35</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">가득 찼는데 물이 안 흔들린다.</p>
 </div></article>
-<article class="panel"><div class="pnum">F48</div><div class="pbody">
+<article class="panel"><div class="pnum">F36</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">걸음이 똑같다.</p>
 </div></article>
-<article class="panel"><div class="pnum">F49</div><div class="pbody">
+<article class="panel"><div class="pnum">F37</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">단이가 그걸 본다.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">F50</span></div>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">F38</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">F51</div><div class="pbody">
+<article class="panel"><div class="pnum">F39</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">선생이 눈을 감은 채 말한다.</p>
-<p class="line"><span class="who">선생</span><span class="say">야.</span></p>
+<p class="desc">선생이 눈을 감은 채 말한다. 선생: 야.</p>
 </div></article>
-<article class="panel"><div class="pnum">F52</div><div class="pbody">
+<article class="panel"><div class="pnum">F40</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">예?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F53</div><div class="pbody">
+<article class="panel"><div class="pnum">F41</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">선생</span><span class="say">어제 팔백에서 왜 못 맞혔어.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F54</div><div class="pbody">
+<article class="panel"><div class="pnum">F42</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">...바람 때문에요.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">F55</span></div>
-<article class="panel"><div class="pnum">F56</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">F43</span></div>
+<article class="panel"><div class="pnum">F44</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">선생</span><span class="say">아니.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F57</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">단이</span><span class="say">그럼요.</span></p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">F58</span></div>
-<article class="panel"><div class="pnum">F59</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">F45</span></div>
+<article class="panel"><div class="pnum">F46</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">선생</span><span class="say">숨을 참았잖아.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">F60</span></div>
-<article class="panel"><div class="pnum">F61</div><div class="pbody">
+<article class="panel"><div class="pnum">F47</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">단이</span><span class="say">...</span></p>
+<p class="line"><span class="who">선생</span><span class="say">참으면 심장이 커져. 총이 심장 위에 있잖아.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F62</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">선생</span><span class="say">참으면 심장이 커져.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">F63</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">선생</span><span class="say">총이 심장 위에 있잖아.</span></p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">F64</span></div>
-<article class="panel"><div class="pnum">F65</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">F48</span></div>
+<article class="panel"><div class="pnum">F49</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">...그럼 어떻게 해요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F66</div><div class="pbody">
+<article class="panel"><div class="pnum">F50</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">선생</span><span class="say">그냥 쉬어.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F67</div><div class="pbody">
+<article class="panel"><div class="pnum">F51</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">그게 다예요?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">F68</div><div class="pbody">
+<article class="panel"><div class="pnum">F52</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">선생</span><span class="say">어.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">F69</span></div>
-<article class="panel"><div class="pnum">F70</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">F53</span></div>
+<article class="panel"><div class="pnum">F54</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">선생</span><span class="say">사십 년 걸렸어 그거.</span></p>
 </div></article>
 <hr class="beat">
 </section>
-<section class="sec" data-pal="grey">
-<header class="sechead"><span class="seckey" id="s-G">G</span><h2>G. 이이삼</h2></header>
-<article class="panel"><div class="pnum">G1</div><div class="pbody">
-<span class="kind">전면</span>
-<p class="desc">벽 안. 40의 방. 창.</p>
-</div></article>
-<article class="panel"><div class="pnum">G2</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">문이 열린다.</p>
-</div></article>
-<article class="panel"><div class="pnum">G3</div><div class="pbody">
-<span class="kind">세로</span>
-<p class="desc">아이 하나가 들어온다. 열몇. 20기 옷.</p>
-</div></article>
-<article class="panel"><div class="pnum">G4</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">등이 곧다. 눈이 안 흔들린다.</p>
-</div></article>
-<article class="panel"><div class="pnum">G5</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc"><b>223.</b></p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">G6</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">G7</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">40</span><span class="say">뭐야.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G8</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">집행자 지원하겠습니다.</span></p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">G9</span></div>
-<article class="panel"><div class="pnum">G10</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">40</span><span class="say">기수 끝나고.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G11</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">지금요.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G12</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">40</span><span class="say">등급.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G13</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">이십삼입니다.</span></p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">G14</span></div>
-<article class="panel"><div class="pnum">G15</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">40</span><span class="say">낮아.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G16</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">압니다.</span></p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">G17</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">G18</div><div class="pbody">
-<span class="kind">전면</span>
-<p class="line"><span class="who">223</span><span class="say">대신 드릴 게 있습니다.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G19</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">40이 서판을 내려놓는다.</p>
-<p class="aside">(이 화에서 40이 서판을 내려놓는 유일한 컷이다)</p>
-</div></article>
-<article class="panel"><div class="pnum">G20</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">40</span><span class="say">말해.</span></p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">G21</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">G22</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">복도 닦는 여자요.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G23</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say"><b>번호가 없습니다.</b></span></p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">G24</span></div>
-<article class="panel"><div class="pnum">G25</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">목에 뚜껑은 있는데 안 열렸습니다.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G26</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">명부에도 없습니다. 제가 봤습니다.</span></p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">G27</span></div>
-<article class="panel"><div class="pnum">G28</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">외부인이 들어와 있는 겁니다.</span></p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">G29</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">G30</div><div class="pbody">
-<span class="kind">전면</span>
-<p class="line"><span class="who">40</span><span class="say">알아.</span></p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">G31</span></div>
-<article class="panel"><div class="pnum">G32</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">...예?</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G33</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">40</span><span class="say">안다고.</span></p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">G34</span></div>
-<article class="panel"><div class="pnum">G35</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">아신다고요?</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G36</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">40</span><span class="say">어.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G37</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">언제부터요.</span></p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">G38</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">G39</div><div class="pbody">
-<span class="kind">전면</span>
-<p class="line"><span class="who">40</span><span class="say">백구십 년.</span></p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">G40</span></div>
-<article class="panel"><div class="pnum">G41</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">223의 얼굴이 굳는다.</p>
-</div></article>
-<article class="panel"><div class="pnum">G42</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">...그게 무슨.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G43</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">40</span><span class="say">다른 거.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G44</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">예?</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G45</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">40</span><span class="say">다른 거 없냐고.</span></p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">G46</span></div>
-<article class="panel"><div class="pnum">G47</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">...</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G48</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">없습니다.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G49</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">40</span><span class="say">가.</span></p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">G50</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">G51</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">223이 돌아선다.</p>
-</div></article>
-<article class="panel"><div class="pnum">G52</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">문 앞에서 멈춘다.</p>
-</div></article>
-<article class="panel"><div class="pnum">G53</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">사십 번.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G54</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">40</span><span class="say">어.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">G55</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">223</span><span class="say">그 사람 왜 놔둡니까.</span></p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">G56</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">G57</div><div class="pbody">
-<span class="kind">전면</span>
-<p class="desc">40이 창을 본다.</p>
-</div></article>
-<article class="panel"><div class="pnum">G58</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">40</span><span class="say">안 죽으니까.</span></p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">G59</span></div>
-<article class="panel"><div class="pnum">G60</div><div class="pbody">
-<span class="kind">전면</span>
-<p class="desc">검은 화면 한 컷.</p>
-<p class="note"><b>상층은 여울을 이미 알고 있다. 190년째.</b></p>
-<p class="note">그리고 <b>아무것도 안 한다.</b> 이유는 3막까지 안 푼다.</p>
-</div></article>
-<hr class="beat">
-</section>
 <section class="sec" data-pal="dust">
-<header class="sechead"><span class="seckey" id="s-H">H</span><h2>H. 신전</h2></header>
-<article class="panel"><div class="pnum">H1</div><div class="pbody">
+<header class="sechead"><span class="seckey" id="s-G">G</span><h2>G. 신전</h2></header>
+<article class="panel"><div class="pnum">G1</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">새동네. 늦은 오후.</p>
 </div></article>
-<article class="panel"><div class="pnum">H2</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">마을 입구.</p>
-</div></article>
-<article class="panel"><div class="pnum">H3</div><div class="pbody">
+<article class="panel"><div class="pnum">G2</div><div class="pbody">
 <span class="kind">세로</span>
-<p class="desc"><b>사람들이 와 있다.</b></p>
-<p class="desc">가면 쓴 사람들, 그리고 가면 안 쓴 사람들. 스무 명쯤.</p>
-<p class="desc">전부 무릎을 꿇고 있다.</p>
+<p class="desc">마을 입구. <b>사람들이 와 있다.</b></p>
+<p class="desc">가면 쓴 사람들, 그리고 가면 안 쓴 사람들. 스무 명쯤. 전부 무릎을 꿇고 있다.</p>
 </div></article>
-<article class="panel"><div class="pnum">H4</div><div class="pbody">
+<article class="panel"><div class="pnum">G3</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">앞에 놓인 것들 — 마른 곡식, 천, 물그릇, 나무 조각.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">H5</span></div>
+<article class="panel"><div class="pnum">G4</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">낙타 두 마리가 뒤에 매여 있다. 짐에 <b>깃발이 말려 있다.</b></p>
+<p class="aside">(카란의 깃발이다 — 독자는 아직 모른다)</p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">G5</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">H6</div><div class="pbody">
+<article class="panel"><div class="pnum">G6</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">막내가 그걸 보고 온다.</p>
-<p class="line"><span class="who">막내</span><span class="say">어르신.</span></p>
+<p class="line"><span class="who">막내</span><span class="say">어르신. 또 왔어요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H7</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">어.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">H8</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">막내</span><span class="say">또 왔어요.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">H9</div><div class="pbody">
+<article class="panel"><div class="pnum">G7</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">치우라 그래.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H10</div><div class="pbody">
+<article class="panel"><div class="pnum">G8</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">막내</span><span class="say">못 치운대요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H11</div><div class="pbody">
+<article class="panel"><div class="pnum">G9</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">왜.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">H12</span></div>
-<article class="panel"><div class="pnum">H13</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">G10</span></div>
+<article class="panel"><div class="pnum">G11</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">막내</span><span class="say">벌 받는대요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H14</div><div class="pbody">
+<article class="panel"><div class="pnum">G12</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">덕구</span><span class="say">누구한테.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">H15</span></div>
-<article class="panel"><div class="pnum">H16</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">G13</span></div>
+<article class="panel"><div class="pnum">G14</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">막내</span><span class="say">...어르신들한테요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H17</div><div class="pbody">
+<article class="panel"><div class="pnum">G15</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">아이고.</span></p>
 </div></article>
 <hr class="beat">
-<article class="panel"><div class="pnum">H18</div><div class="pbody">
+<article class="panel"><div class="pnum">G16</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">가면 하나가 앞으로 나와 무릎을 꿇는다.</p>
 </div></article>
-<article class="panel"><div class="pnum">H19</div><div class="pbody">
+<article class="panel"><div class="pnum">G17</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">가면</span><span class="say">안개를 막아 주십시오.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">H20</span></div>
-<article class="panel"><div class="pnum">H21</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">G18</span></div>
+<article class="panel"><div class="pnum">G19</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">나 그런 거 못 해.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H22</div><div class="pbody">
+<article class="panel"><div class="pnum">G20</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">가면</span><span class="say">하실 수 있습니다.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H23</div><div class="pbody">
+<article class="panel"><div class="pnum">G21</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">못 한다니까.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H24</div><div class="pbody">
+<article class="panel"><div class="pnum">G22</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">가면</span><span class="say">하실 수 있습니다.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">H25</span></div>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">G23</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">H26</div><div class="pbody">
+<article class="panel"><div class="pnum">G24</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">야 이 사람아.</span></p>
+<p class="line"><span class="who">분이</span><span class="say">야 이 사람아. 나 어제 지팡이 들다가 무릎 나갔어.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H27</div><div class="pbody">
+<article class="panel"><div class="pnum">G25</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">나 어제 지팡이 들다가 무릎 나갔어.</span></p>
+<p class="desc">가면이 더 깊이 절한다.</p>
 </div></article>
-<article class="panel"><div class="pnum">H28</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">가면</span><span class="say">...</span></p>
-</div></article>
-<article class="panel"><div class="pnum">H29</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">가면가 더 깊이 절한다.</p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">H30</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">G26</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">H31</div><div class="pbody">
+<article class="panel"><div class="pnum">G27</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">분이가 돌아선다.</p>
+<p class="desc">분이가 돌아선다. 평상으로 간다. 앉는다.</p>
 </div></article>
-<article class="panel"><div class="pnum">H32</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">평상으로 간다.</p>
-</div></article>
-<article class="panel"><div class="pnum">H33</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">앉는다.</p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">H34</span></div>
-<article class="panel"><div class="pnum">H35</div><div class="pbody">
+<article class="panel"><div class="pnum">G28</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">왜 안 막아 주세요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H36</div><div class="pbody">
+<article class="panel"><div class="pnum">G29</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">못 막으니까.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H37</div><div class="pbody">
+<article class="panel"><div class="pnum">G30</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">그럼 못 막는다고 하시면─</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H38</div><div class="pbody">
+<article class="panel"><div class="pnum">G31</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">했잖아.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">H39</span></div>
-<article class="panel"><div class="pnum">H40</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">G32</span></div>
+<article class="panel"><div class="pnum">G33</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">안 믿는데요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H41</div><div class="pbody">
+<article class="panel"><div class="pnum">G34</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">그러니까.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">H42</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">G35</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">H43</div><div class="pbody">
+<article class="panel"><div class="pnum">G36</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">선생이 눈을 감은 채 말한다.</p>
 <p class="line"><span class="who">선생</span><span class="say">놔둬.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H44</div><div class="pbody">
+<article class="panel"><div class="pnum">G37</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">예?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H45</div><div class="pbody">
+<article class="panel"><div class="pnum">G38</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">선생</span><span class="say">저 사람들 뭐라도 해야 돼.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">H46</span></div>
-<article class="panel"><div class="pnum">H47</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">G39</span></div>
+<article class="panel"><div class="pnum">G40</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">선생</span><span class="say">우리는 할 게 있잖아.</span></p>
+<p class="line"><span class="who">선생</span><span class="say">우리는 할 게 있잖아. 콩도 있고 지붕도 있고.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">H48</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">선생</span><span class="say">콩도 있고 지붕도 있고.</span></p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">H49</span></div>
-<article class="panel"><div class="pnum">H50</div><div class="pbody">
+<article class="panel"><div class="pnum">G41</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">선생</span><span class="say">저 사람들은 굿밖에 없어.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">H51</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">G42</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">H52</div><div class="pbody">
+<article class="panel"><div class="pnum">G43</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">가면들이 일어선다. 낙타를 끌고 돌아간다.</p>
+</div></article>
+<article class="panel"><div class="pnum">G44</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">막내가 그 뒷모습을 본다.</p>
+</div></article>
+<article class="panel"><div class="pnum">G45</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="line"><span class="who">막내</span><span class="say">어르신. 저 사람들 어디서 왔대요.</span></p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">G46</span></div>
+<article class="panel"><div class="pnum">G47</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="line"><span class="who">선생</span><span class="say">서쪽.</span></p>
+</div></article>
+<article class="panel"><div class="pnum">G48</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="line"><span class="who">막내</span><span class="say">서쪽 어디요.</span></p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">G49</span></div>
+<article class="panel"><div class="pnum">G50</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="line"><span class="who">선생</span><span class="say">카란.</span></p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">G51</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">G52</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">지평선.</p>
 </div></article>
-<article class="panel"><div class="pnum">H53</div><div class="pbody">
+<article class="panel"><div class="pnum">G53</div><div class="pbody">
 <span class="kind">세로</span>
-<p class="desc"><b>보라색이 어제보다 조금 두껍다.</b></p>
+<p class="desc"><b>보라색이 어제보다 두껍다.</b></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">H54</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">G54</span></div>
 <hr class="beat">
 </section>
-<section class="sec" data-pal="lamp">
-<header class="sechead"><span class="seckey" id="s-I">I</span><h2>I. 창고 안</h2></header>
+<section class="sec" data-pal="karan">
+<header class="sechead"><span class="seckey" id="s-H">H</span><h2>H. 카란</h2></header>
+<p class="note secnote"><b>여기서부터 새벽까지가 카란이다.</b> 색이 통째로 바뀐다.</p>
+<p class="note secnote">흰 모래 · 청백 8500K · 지평선의 <b>붉은 달 1800K.</b></p>
+<article class="panel"><div class="pnum">H1</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc"><b>검은 화면.</b></p>
+</div></article>
+<article class="panel"><div class="pnum">H2</div><div class="pbody">
+<span class="kind">세로 · 아주 길게</span>
+<p class="desc"><b>부감. 극와이드.</b></p>
+<p class="desc">사구와 사구 사이 분지. <b>천막 수백 동</b>이 동심원으로 앉아 있다.</p>
+<p class="desc">가운데 하나가 제일 크다. 깃대마다 띠가 걸려 있다.</p>
+<p class="desc">낙타 우리, 작게 남은 모닥불 셋.</p>
+<p class="desc">지평선에 <b>거대한 붉은 달</b>이 걸려 있다. 마을 전체보다 넓다.</p>
+<p class="aside">(스크롤로 한참 내려가야 끝이 보이게)</p>
+</div></article>
+<article class="panel"><div class="pnum">H3</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">천막 벽이 바람에 숨 쉰다.</p>
+</div></article>
+<article class="panel"><div class="pnum">H4</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">깃발이 탁, 탁 소리를 낸다.</p>
+</div></article>
+<article class="panel"><div class="pnum">H5</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">낙타가 자리를 옮긴다.</p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">H6</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">H7</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">천막 사이. 여자 하나가 물통을 들고 지나간다. 고개를 안 든다.</p>
+</div></article>
+<article class="panel"><div class="pnum">H8</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">아무 일도 안 일어난다.</p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">H9</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">H10</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">가장 큰 천막 안. 등불 하나.</p>
+</div></article>
+<article class="panel"><div class="pnum">H11</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc"><b>세례.</b> 서른쯤. 검은 머리를 풀었다.</p>
+<p class="desc">겹쳐 입은 크림빛 아마포. 어깨에 가죽 끈.</p>
+</div></article>
+<article class="panel"><div class="pnum">H12</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">포대기를 안고 있다.</p>
+</div></article>
+<article class="panel"><div class="pnum">H13</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">아기가 자고 있다.</p>
+</div></article>
+<article class="panel"><div class="pnum">H14</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">세례가 아기의 이마를 손등으로 만진다.</p>
+</div></article>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">H15</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">H16</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">천막 벽 쪽. 뿔나무 활 하나와 가죽 화살통이 걸려 있다.</p>
+</div></article>
+<article class="panel"><div class="pnum">H17</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">화살통 안. 어둠 속에서 살촉 몇 개가 <b>아주 희미하게 금빛이다.</b></p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">H18</span></div>
+<article class="panel"><div class="pnum">H19</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">세례는 그쪽을 안 본다.</p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">H20</span></div>
+<hr class="beat">
+</section>
+<section class="sec" data-pal="karan">
+<header class="sechead"><span class="seckey" id="s-I">I</span><h2>I. 넘어온다</h2></header>
 <article class="panel"><div class="pnum">I1</div><div class="pbody">
 <span class="kind">전면</span>
-<p class="desc">해가 진다. 마을 끝. 헛간.</p>
+<p class="desc">능선. 하늘. 아무것도 없다.</p>
 </div></article>
-<article class="panel"><div class="pnum">I2</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">선생이 문 앞에 서 있다.</p>
-</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">I2</span></div>
 <article class="panel"><div class="pnum">I3</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">그 뒤에 분이, 덕구, 막내, 단이, 그리고 아이.</p>
+<p class="desc">여전히 아무것도 없다.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">I4</span></div>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">I4</span></div>
+<hr class="beat">
 <article class="panel"><div class="pnum">I5</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">막내</span><span class="say">어르신 저기 뭐 있어요?</span></p>
+<span class="kind">전면</span>
+<p class="desc"><b>능선 전체에서 한꺼번에 올라온다.</b></p>
+<p class="desc">보라색. 능선을 넘어 사구 면을 타고 <b>쏟아진다.</b></p>
 </div></article>
 <article class="panel"><div class="pnum">I6</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">...</span></p>
+<p class="desc">흘러오는 게 아니다. <b>물처럼 쏟아진다.</b></p>
 </div></article>
 <article class="panel"><div class="pnum">I7</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">덕구</span><span class="say">나도 몰라.</span></p>
+<p class="desc">앞머리가 뚜렷하다. 흐려지지 않는다.</p>
 </div></article>
 <article class="panel"><div class="pnum">I8</div><div class="pbody">
 <span class="kind">소형</span>
+<p class="desc">낮은 데를 먼저 채운다. 높은 데를 나중에 넘는다.</p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">I9</span></div>
+<article class="panel"><div class="pnum">I10</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc"><b>소리가 없다.</b></p>
+<p class="sfx"><i>(바람 소리와 천막 소리는 계속 난다)</i></p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">I11</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">I12</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">낙타 우리. 열두 마리가 <b>동시에 고개를 든다.</b></p>
+</div></article>
+<article class="panel"><div class="pnum">I13</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">줄이 팽팽해진다.</p>
+</div></article>
+<article class="panel"><div class="pnum">I14</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">셋이 끊어진다.</p>
+<p class="sfx">투둑</p>
+</div></article>
+<article class="panel"><div class="pnum">I15</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">낙타들이 옆으로 튀어나온다. 울타리가 넘어간다.</p>
+</div></article>
+<article class="panel"><div class="pnum">I16</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">그 사이로 <b>염소 떼가 천막 골목을 뚫고 달린다.</b></p>
+</div></article>
+<article class="panel"><div class="pnum">I17</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">그리고 천막 꼭대기에서 <b>새 떼가 한꺼번에 터져 오른다.</b></p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">I18</span></div>
+<article class="panel"><div class="pnum">I19</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">셋 다 동시에 일어난다. 순서가 없다.</p>
+</div></article>
+<article class="panel"><div class="pnum">I20</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc"><b>사람은 아직 아무도 안 나왔다.</b></p>
+</div></article>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">I21</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">I22</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">천막 옆. 노인 하나가 양탄자를 말고 있다. 등을 지고 있다.</p>
+</div></article>
+<article class="panel"><div class="pnum">I23</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">손이 익숙하다. 머릿수건을 고쳐 쓴다.</p>
+</div></article>
+<article class="panel"><div class="pnum">I24</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">골목 안쪽이 보라색으로 찬다.</p>
+</div></article>
+<article class="panel"><div class="pnum">I25</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">노인은 못 봤다.</p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">I26</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">I27</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">보라색이 화면을 오른쪽에서 왼쪽으로 <b>걷는 속도로</b> 지나간다.</p>
+<p class="desc">빨래 건조대를 먼저. 천막 벽을 다음. 그리고 노인을.</p>
+</div></article>
+<article class="panel"><div class="pnum">I28</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">반응이 없다.</p>
+</div></article>
+<article class="panel"><div class="pnum">I29</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">돌아보지도 않는다.</p>
+</div></article>
+<article class="panel"><div class="pnum">I30</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">소리도 없다.</p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">I31</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">I32</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">보라색이 지나간 자리.</p>
+</div></article>
+<article class="panel"><div class="pnum">I33</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">양탄자가 반쯤 말린 채 그대로 있다.</p>
+</div></article>
+<article class="panel"><div class="pnum">I34</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">그 옆에 <b>짙은 갈색 겉옷과 밧줄 허리띠와 머릿수건이 떨어져 있다.</b></p>
+</div></article>
+<article class="panel"><div class="pnum">I35</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">떨어진 모양 그대로다.</p>
+</div></article>
+<article class="panel"><div class="pnum">I36</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">주변 모래가 <b>하나도 안 흐트러졌다.</b></p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">I37</span></div>
+<hr class="beat">
+</section>
+<section class="sec" data-pal="karan">
+<header class="sechead"><span class="seckey" id="s-J">J</span><h2>J. 가슴</h2></header>
+<article class="panel"><div class="pnum">J1</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">낮은 앵글. 천막 기둥 둘이 화면 양쪽에서 비스듬히 올라간다.</p>
+</div></article>
+<article class="panel"><div class="pnum">J2</div><div class="pbody">
+<span class="kind">세로 · 아주 길게</span>
+<p class="desc">그 사이. 천막 지붕 너머.</p>
+<p class="desc"><b>보라색 안개 속에 창백한 것들이 서 있다.</b></p>
+<p class="desc">셋. 가까운 것, 중간 것, 아주 먼 것.</p>
+<p class="desc">가까운 것은 <b>제일 큰 천막의 다섯 배</b>다.</p>
+<p class="desc">사람 머리가 그것의 정강이 위에 안 닿는다.</p>
+</div></article>
+<article class="panel"><div class="pnum">J3</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">다리가 길다. 너무 길다.</p>
+</div></article>
+<article class="panel"><div class="pnum">J4</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">한 발이 올라간다.</p>
+</div></article>
+<article class="panel"><div class="pnum">J5</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">아주 느리게 앞으로 간다.</p>
+</div></article>
+<article class="panel"><div class="pnum">J6</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">내려온다.</p>
+</div></article>
+<article class="panel"><div class="pnum">J7</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc"><b>땅이 안 흔들린다.</b></p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J8</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">J9</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">안개가 그 앞을 지나간다. 윤곽이 녹았다 다시 잡힌다.</p>
+</div></article>
+<article class="panel"><div class="pnum">J10</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">가슴 언저리가 잠깐 드러난다.</p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">J11</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">J12</div><div class="pbody">
+<span class="kind">전면 · 클로즈업</span>
+<p class="desc"><b>가슴에 구멍이 줄지어 있다.</b></p>
+<p class="desc">동그랗고, 둘레가 매끈하고, 세라믹이다.</p>
+<p class="desc">쇄골에서 배까지 두 줄. 어깨에도 몇 개.</p>
+<p class="desc"><b>전부 열려 있다. 전부 비어 있다.</b></p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J13</span></div>
+<article class="panel"><div class="pnum">J14</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">안개가 다시 덮는다.</p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J15</span></div>
+<hr class="beat">
+</section>
+<section class="sec" data-pal="karan">
+<header class="sechead"><span class="seckey" id="s-K">K</span><h2>K. 보내는 쪽</h2></header>
+<article class="panel"><div class="pnum">K1</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">골목. 세례가 달린다. 맨발이다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K2</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">두 팔로 포대기를 가슴에 안고 있다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K3</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">균형이 안 맞는다. 한 걸음마다 싸운다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K4</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">발이 모래에 발목까지 빠진다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K5</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">뒤. 골목이 보라색으로 차오른다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K6</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc"><b>한 번도 안 돌아본다.</b></p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">K7</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">K8</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">포대기 위로 작은 손이 빠져나온다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K9</div><div class="pbody">
+<span class="kind">전면 · 클로즈업</span>
+<p class="desc"><b>왼 손목 안쪽.</b></p>
+<p class="desc"><b>닫힌 고리 모양 반점.</b> 낡은 금빛. 살짝 도드라져 있다.</p>
+<p class="desc">그린 게 아니라 살이다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K10</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">세례의 손이 아마포를 다시 덮는다.</p>
+</div></article>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">K11</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">K12</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">사구를 오른다. 모래가 무너진다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K13</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">뒤. 안개가 마지막 천막 줄에 닿는다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K14</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">그리고 <b>선다.</b></p>
+</div></article>
+<article class="panel"><div class="pnum">K15</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">앞머리 전체가 한꺼번에 멈춘다. 세로로 선다. <b>벽이 된다.</b></p>
+</div></article>
+<article class="panel"><div class="pnum">K16</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">안 퍼진다. 안 옅어진다. 안 넘어온다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K17</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">그런데 그 앞의 천막 천은 계속 바람에 움직인다.</p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">K18</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">K19</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">사구 너머. 말 한 마리가 매여 있다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K20</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">안장 옆에 깊은 <b>등바구니</b>가 걸려 있다. 가죽 조임끈 둘.</p>
+</div></article>
+<article class="panel"><div class="pnum">K21</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">세례가 아기를 바구니에 내린다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K22</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">아마포를 둘레에 눌러 넣는다. 빠르고 조심스럽다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K23</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">조임끈을 당긴다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K24</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc"><b>손이 떨린다.</b></p>
+</div></article>
+<article class="panel"><div class="pnum">K25</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">매듭이 미끄러진다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K26</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">다시 묶는다.</p>
+</div></article>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">K27</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">K28</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">세례가 바구니 쪽으로 몸을 숙인다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K29</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">숨을 고른다.</p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">K30</span></div>
+<article class="panel"><div class="pnum">K31</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">세례 (속삭이듯, 숨이 부족하다):</p>
+<p class="line"><span class="who">세례</span><span class="say">보지 마.</span></p>
+</div></article>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">K32</span></div>
+<article class="panel"><div class="pnum">K33</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="line"><span class="who">세례</span><span class="say">...아직은, 보지 마.</span></p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">K34</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">K35</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">세례가 몸을 편다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K36</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">안장에서 활을 낚아챈다. 머리와 팔을 시위 사이로 넣는다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K37</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">화살통을 집어 등에 건다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K38</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">화살통이 흔들린다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K39</div><div class="pbody">
+<span class="kind">전면 · 클로즈업</span>
+<p class="desc">안에서 살촉들이 부딪힌다.</p>
+<p class="desc"><b>낡은 금빛. 부딪히는 순간 안쪽이 잠깐 밝아졌다 꺼진다.</b></p>
+</div></article>
+<article class="panel"><div class="pnum">K40</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">가슴의 끈을 조인다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K41</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">말 엉덩이를 손바닥으로 친다.</p>
+<p class="sfx">팍</p>
+</div></article>
+<article class="panel"><div class="pnum">K42</div><div class="pbody">
+<span class="kind">세로</span>
+<p class="desc">말이 간다. 모래가 튄다.</p>
+</div></article>
+<article class="panel"><div class="pnum">K43</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">세례가 남는다.</p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">K44</span></div>
+<hr class="beat">
+</section>
+<section class="sec" data-pal="karan">
+<header class="sechead"><span class="seckey" id="s-L">L</span><h2>L. 고리</h2></header>
+<article class="panel"><div class="pnum">L1</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">세례가 돌아선다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L2</div><div class="pbody">
+<span class="kind">세로</span>
+<p class="desc">눈앞. 서 있던 안개 벽이 <b>다시 움직이기 시작한다.</b></p>
+</div></article>
+<article class="panel"><div class="pnum">L3</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">전체 폭이 한꺼번에 앞으로 온다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L4</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">그리고 그 면에서 <b>셋이 걸어 나온다.</b></p>
+<p class="desc">뒤에서 나오는 게 아니다. <b>벽을 통과해서 나온다.</b> 뒤가 다시 닫힌다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L5</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">땅은 여전히 안 흔들린다.</p>
+</div></article>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">L6</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">L7</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">세례가 한 걸음도 안 물러선다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L8</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">어깨가 내려간다.</p>
+<p class="aside">(겁먹은 자세가 아니다. 일하러 가는 자세다)</p>
+</div></article>
+<article class="panel"><div class="pnum">L9</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">발을 어깨 너비로 놓는다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L10</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">등에서 활을 뽑는다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L11</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">안 보고 화살을 뽑는다.</p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">L12</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">L13</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">시위를 당긴다. 끝까지.</p>
+</div></article>
+<article class="panel"><div class="pnum">L14</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">시위 손이 뺨에 닿는다. 멈춘다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L15</div><div class="pbody">
+<span class="kind">전면 · 클로즈업</span>
+<p class="desc"><b>살촉에 불이 붙는다.</b></p>
+<p class="desc">작고 곧은 불. 번지지 않는다. 자루로 안 내려온다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L16</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">턱 아래가 밝아진다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L17</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">이 화면에서 <b>처음 나오는 따뜻한 색</b>이다.</p>
+</div></article>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">L18</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">L19</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">세례의 얼굴.</p>
+</div></article>
+<article class="panel"><div class="pnum">L20</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">아무것도 안 움직인다. 이를 악물지도, 인상을 쓰지도 않는다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L21</div><div class="pbody">
+<span class="kind">소형 · 클로즈업</span>
+<p class="desc"><b>눈만 차오른다.</b></p>
+</div></article>
+<article class="panel"><div class="pnum">L22</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">떨어지지는 않는다.</p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">L23</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">L24</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">세례가 고개를 든다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L25</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">하늘을 본다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L26</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">활이 눈을 따라 올라간다.</p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">L27</span></div>
+<article class="panel"><div class="pnum">L28</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">숨을 길게 내쉰다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L29</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">놓는다.</p>
+<p class="sfx">팅</p>
+</div></article>
+<hr class="beat">
+<article class="panel"><div class="pnum">L30</div><div class="pbody">
+<span class="kind">세로 · 아주 길게</span>
+<p class="desc">불꼬리가 하늘로 올라간다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L31</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">올라간다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L32</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">느려진다.</p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">L33</span></div>
+<article class="panel"><div class="pnum">L34</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc"><b>터진다.</b></p>
+</div></article>
+<article class="panel"><div class="pnum">L35</div><div class="pbody">
+<span class="kind">세로 · 아주 길게</span>
+<p class="desc"><b>하늘에 붉은 고리가 그려진다.</b></p>
+<p class="desc">닫힌 원 하나. 지평선의 달과 나란히.</p>
+<p class="desc"><b>같은 크기, 같은 색.</b></p>
+<p class="aside">(하늘에 붉은 원이 두 개다)</p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">L36</span></div>
+<article class="panel"><div class="pnum">L37</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">불티가 흰 모래 위로 떨어진다.</p>
+</div></article>
+<hr class="beat">
+<article class="panel"><div class="pnum">L38</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc"><b>컷. 새동네.</b></p>
+</div></article>
+<article class="panel"><div class="pnum">L39</div><div class="pbody">
+<span class="kind">세로</span>
+<p class="desc">마당. 밤. 노인 넷과 단이와 아이가 전부 서쪽 하늘을 보고 있다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L40</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">지평선 위에 <b>붉은 고리</b>가 아주 작게 걸려 있다.</p>
+</div></article>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">L41</span></div>
+<article class="panel"><div class="pnum">L42</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="line"><span class="who">막내</span><span class="say">저게 뭐예요.</span></p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">L43</span></div>
+<article class="panel"><div class="pnum">L44</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="line"><span class="who">선생</span><span class="say">...</span></p>
+</div></article>
+<article class="panel"><div class="pnum">L45</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="line"><span class="who">선생</span><span class="say">카란.</span></p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">L46</span></div>
+<article class="panel"><div class="pnum">L47</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">아무도 아무 말도 안 한다.</p>
+</div></article>
+<article class="panel"><div class="pnum">L48</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">분이가 지팡이를 고쳐 짚는다.</p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">L49</span></div>
+<hr class="beat">
+</section>
+<section class="sec" data-pal="lamp">
+<header class="sechead"><span class="seckey" id="s-M">M</span><h2>M. 창고 안</h2></header>
+<article class="panel"><div class="pnum">M1</div><div class="pbody">
+<span class="kind">전면</span>
+<p class="desc">같은 밤. 마을 끝. 헛간.</p>
+</div></article>
+<article class="panel"><div class="pnum">M2</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">선생이 문 앞에 서 있다.</p>
+</div></article>
+<article class="panel"><div class="pnum">M3</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">뒤에 분이, 덕구, 막내, 단이, 그리고 아이.</p>
+</div></article>
+<article class="panel"><div class="pnum">M4</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="line"><span class="who">막내</span><span class="say">어르신 저기 뭐 있어요?</span></p>
+</div></article>
+<article class="panel"><div class="pnum">M5</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="line"><span class="who">덕구</span><span class="say">나도 몰라.</span></p>
+</div></article>
+<article class="panel"><div class="pnum">M6</div><div class="pbody">
+<span class="kind">소형</span>
 <p class="line"><span class="who">막내</span><span class="say">예? 여기 사신 지 구십 년인데요?</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">I9</span></div>
-<article class="panel"><div class="pnum">I10</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">M7</span></div>
+<article class="panel"><div class="pnum">M8</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">덕구</span><span class="say">그러니까.</span></p>
 </div></article>
 <hr class="beat">
-<article class="panel"><div class="pnum">I11</div><div class="pbody">
+<article class="panel"><div class="pnum">M9</div><div class="pbody">
 <span class="kind">전면</span>
-<p class="desc">문이 열린다.</p>
+<p class="desc">문이 열린다. 막내가 등을 들고 먼저 들어간다.</p>
 </div></article>
-<article class="panel"><div class="pnum">I12</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">막내가 등을 들고 먼저 들어간다.</p>
-</div></article>
-<article class="panel"><div class="pnum">I13</div><div class="pbody">
+<article class="panel"><div class="pnum">M10</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">먼지.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">I14</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">I15</div><div class="pbody">
+<article class="panel"><div class="pnum">M11</div><div class="pbody">
 <span class="kind">세로 · 아주 길게</span>
 <p class="desc"><b>안.</b></p>
 <p class="desc">등불 하나. 그 빛이 닿는 데까지만 보인다.</p>
 <p class="desc"><b>신발이 쌓여 있다.</b> 짝이 안 맞는 채로, 벽 높이까지.</p>
-<p class="aside">(스크롤로 한참 내려가야 끝이 보이게)</p>
 </div></article>
-<article class="panel"><div class="pnum">I16</div><div class="pbody">
+<article class="panel"><div class="pnum">M12</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">막내</span><span class="say">...</span></p>
+<p class="desc">막내가 등을 조금 올린다.</p>
 </div></article>
-<article class="panel"><div class="pnum">I17</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">등을 조금 올린다.</p>
-</div></article>
-<article class="panel"><div class="pnum">I18</div><div class="pbody">
+<article class="panel"><div class="pnum">M13</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">그 옆. <b>회색 옷들이 개켜져 있다.</b></p>
 <p class="desc">전부 등이 열린 옷이다. 전부 크기가 작다.</p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">I19</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">M14</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">I20</div><div class="pbody">
+<article class="panel"><div class="pnum">M15</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">아이가 그걸 본다.</p>
 </div></article>
-<article class="panel"><div class="pnum">I21</div><div class="pbody">
+<article class="panel"><div class="pnum">M16</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">자기 옷을 본다.</p>
 </div></article>
-<article class="panel"><div class="pnum">I22</div><div class="pbody">
+<article class="panel"><div class="pnum">M17</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">같은 옷이다.</p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">I23</span></div>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">M18</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">I24</div><div class="pbody">
+<article class="panel"><div class="pnum">M19</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">막내</span><span class="say">어르신.</span></p>
+<p class="line"><span class="who">막내</span><span class="say">어르신. 이거 다 뭐예요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">I25</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">막내</span><span class="say">이거 다 뭐예요.</span></p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">I26</span></div>
-<article class="panel"><div class="pnum">I27</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">M20</span></div>
+<article class="panel"><div class="pnum">M21</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">분이</span><span class="say">예순셋 떨어졌어.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">I28</span></div>
-<article class="panel"><div class="pnum">I29</div><div class="pbody">
+<article class="panel"><div class="pnum">M22</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">쉰둘이 죽었고.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">I30</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">M23</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">I31</div><div class="pbody">
+<article class="panel"><div class="pnum">M24</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">막내가 등을 들어 안쪽을 비춘다.</p>
 </div></article>
-<article class="panel"><div class="pnum">I32</div><div class="pbody">
+<article class="panel"><div class="pnum">M25</div><div class="pbody">
 <span class="kind">세로</span>
 <p class="desc">벽 선반. <b>나무 조각들이 줄지어 놓여 있다.</b></p>
 <p class="desc">손바닥만 하다. 하나하나에 글자가 새겨져 있다.</p>
 </div></article>
-<article class="panel"><div class="pnum">I33</div><div class="pbody">
+<article class="panel"><div class="pnum">M26</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">막내가 하나를 든다.</p>
 </div></article>
-<article class="panel"><div class="pnum">I34</div><div class="pbody">
+<article class="panel"><div class="pnum">M27</div><div class="pbody">
 <span class="kind">소형 · 클로즈업</span>
 <p class="desc">새겨진 글자.</p>
 </div></article>
-<article class="panel"><div class="pnum">I35</div><div class="pbody">
+<article class="panel"><div class="pnum">M28</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">또 하나.</p>
+<p class="desc">또 하나. 또 하나.</p>
 </div></article>
-<article class="panel"><div class="pnum">I36</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">또 하나.</p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">I37</span></div>
-<article class="panel"><div class="pnum">I38</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">M29</span></div>
+<article class="panel"><div class="pnum">M30</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">막내</span><span class="say">...이거 이름이에요?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">I39</div><div class="pbody">
+<article class="panel"><div class="pnum">M31</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">어.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">I40</span></div>
-<article class="panel"><div class="pnum">I41</div><div class="pbody">
+<article class="panel"><div class="pnum">M32</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">누가 지었어요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">I42</div><div class="pbody">
+<article class="panel"><div class="pnum">M33</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">우리가.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">I43</div><div class="pbody">
+<article class="panel"><div class="pnum">M34</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">언제요.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">I44</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">M35</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">I45</div><div class="pbody">
+<article class="panel"><div class="pnum">M36</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">분이</span><span class="say">죽고 나서.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">I46</span></div>
-<article class="panel"><div class="pnum">I47</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">M37</span></div>
+<article class="panel"><div class="pnum">M38</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">단이</span><span class="say">...왜 죽고 나서요.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">I48</span></div>
-<article class="panel"><div class="pnum">I49</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">M39</span></div>
+<article class="panel"><div class="pnum">M40</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">분이</span><span class="say">살아 있을 땐 번호로 불렀으니까.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">I50</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">M41</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">I51</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">분이가 선반을 본다.</p>
-</div></article>
-<article class="panel"><div class="pnum">I52</div><div class="pbody">
+<article class="panel"><div class="pnum">M42</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">우리도 그게 이름인 줄 알았어.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">I53</span></div>
-<article class="panel"><div class="pnum">I54</div><div class="pbody">
+<article class="panel"><div class="pnum">M43</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">여기 떨어져서.</span></p>
+<p class="line"><span class="who">분이</span><span class="say">여기 떨어져서. 서로 번호로 부르면서 몇 년을 살았어.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">I55</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">서로 번호로 부르면서 몇 년을 살았어.</span></p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">I56</span></div>
-<article class="panel"><div class="pnum">I57</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">M44</span></div>
+<article class="panel"><div class="pnum">M45</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">그러다 하나 죽었는데.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">I58</div><div class="pbody">
+<article class="panel"><div class="pnum">M46</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">뭐라고 불러야 될지 모르겠는 거야.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">I59</span></div>
-<article class="panel"><div class="pnum">I60</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">M47</span></div>
+<article class="panel"><div class="pnum">M48</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">분이</span><span class="say">번호는 저쪽 거잖아.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">I61</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">M49</span></div>
 <hr class="beat">
 </section>
 <section class="sec" data-pal="lamp">
-<header class="sechead"><span class="seckey" id="s-J">J</span><h2>J. 이름</h2></header>
+<header class="sechead"><span class="seckey" id="s-N">N</span><h2>N. 이름</h2></header>
 <p class="note secnote"><b>교차한다.</b> 벽 안과 새동네. 같은 밤이다.</p>
-<article class="panel"><div class="pnum">J1</div><div class="pbody">
+<p class="note secnote">그리고 마지막에 <b>세 번째 곳</b>이 붙는다.</p>
+<article class="panel"><div class="pnum">N1</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">벽 안. 회색 복도. 밤인데 조명은 낮과 같다.</p>
 </div></article>
-<article class="panel"><div class="pnum">J2</div><div class="pbody">
+<article class="panel"><div class="pnum">N2</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">세하가 걸어온다. 등에 붕대.</p>
+<p class="desc">세하가 걸어온다. 등에 붕대. 벽을 짚는다. 선다.</p>
 </div></article>
-<article class="panel"><div class="pnum">J3</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">벽을 짚는다.</p>
-</div></article>
-<article class="panel"><div class="pnum">J4</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">선다.</p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">J5</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">J6</div><div class="pbody">
+<article class="panel"><div class="pnum">N3</div><div class="pbody">
 <span class="kind">세로</span>
 <p class="desc">복도 저쪽. 여울이 바닥을 닦고 있다.</p>
 </div></article>
-<article class="panel"><div class="pnum">J7</div><div class="pbody">
+<article class="panel"><div class="pnum">N4</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">고개를 든다.</p>
+<p class="desc">고개를 든다. 여울: 앉아.</p>
 </div></article>
-<article class="panel"><div class="pnum">J8</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">여울</span><span class="say">앉아.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">J9</div><div class="pbody">
+<article class="panel"><div class="pnum">N5</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">세하</span><span class="say">괜찮은데요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J10</div><div class="pbody">
+<article class="panel"><div class="pnum">N6</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">여울</span><span class="say">안 괜찮아.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J11</div><div class="pbody">
+<article class="panel"><div class="pnum">N7</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">세하가 앉는다.</p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">J12</span></div>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">N8</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">J13</div><div class="pbody">
+<article class="panel"><div class="pnum">N9</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">여울</span><span class="say">몇 개 했어.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J14</div><div class="pbody">
+<article class="panel"><div class="pnum">N10</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">세하</span><span class="say">일곱이요.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">J15</span></div>
-<article class="panel"><div class="pnum">J16</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">N11</span></div>
+<article class="panel"><div class="pnum">N12</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">여울</span><span class="say">하루에 일곱을?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J17</div><div class="pbody">
+<article class="panel"><div class="pnum">N13</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">세하</span><span class="say">예.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J18</span></div>
-<article class="panel"><div class="pnum">J19</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">여울</span><span class="say">...</span></p>
-</div></article>
-<article class="panel"><div class="pnum">J20</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N14</span></div>
+<article class="panel"><div class="pnum">N15</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">여울이 걸레를 내려놓는다.</p>
 </div></article>
 <hr class="beat">
-<article class="panel"><div class="pnum">J21</div><div class="pbody">
+<article class="panel"><div class="pnum">N16</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">여울</span><span class="say">이름이 뭐야.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J22</div><div class="pbody">
+<article class="panel"><div class="pnum">N17</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">세하</span><span class="say">001인데요.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">J23</span></div>
-<article class="panel"><div class="pnum">J24</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">N18</span></div>
+<article class="panel"><div class="pnum">N19</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">여울</span><span class="say">그거 말고.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J25</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">세하</span><span class="say">...</span></p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">J26</span></div>
-<article class="panel"><div class="pnum">J27</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">N20</span></div>
+<article class="panel"><div class="pnum">N21</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">세하</span><span class="say">세하요.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">J28</span></div>
-<article class="panel"><div class="pnum">J29</div><div class="pbody">
+<article class="panel"><div class="pnum">N22</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">여울</span><span class="say">세하.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J30</div><div class="pbody">
+<article class="panel"><div class="pnum">N23</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">세하</span><span class="say">예.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">J31</span></div>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">N24</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">J32</div><div class="pbody">
+<article class="panel"><div class="pnum">N25</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">여울</span><span class="say">누가 지어줬어.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J33</div><div class="pbody">
+<article class="panel"><div class="pnum">N26</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">세하</span><span class="say">엄마요.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J34</span></div>
-<article class="panel"><div class="pnum">J35</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">여울</span><span class="say">...</span></p>
-</div></article>
-<article class="panel"><div class="pnum">J36</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N27</span></div>
+<article class="panel"><div class="pnum">N28</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">여울이 오래 아무 말도 안 한다.</p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J37</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">J38</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N29</span></div>
+<article class="panel"><div class="pnum">N30</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">여울</span><span class="say">그럼 내가 안 지어도 되겠네.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J39</div><div class="pbody">
+<article class="panel"><div class="pnum">N31</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">세하</span><span class="say">네?</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J40</div><div class="pbody">
+<article class="panel"><div class="pnum">N32</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="line"><span class="who">여울</span><span class="say">아니야.</span></p>
+<p class="line"><span class="who">여울</span><span class="say">아니야. 가서 자.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">J41</span></div>
-<article class="panel"><div class="pnum">J42</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">여울이 다시 걸레를 든다.</p>
-</div></article>
-<article class="panel"><div class="pnum">J43</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">여울</span><span class="say">가서 자.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">J44</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">세하</span><span class="say">예.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">J45</div><div class="pbody">
+<article class="panel"><div class="pnum">N33</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">세하가 일어선다. 간다.</p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">J46</span></div>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">N34</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">J47</div><div class="pbody">
+<article class="panel"><div class="pnum">N35</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">여울의 손.</p>
 </div></article>
-<article class="panel"><div class="pnum">J48</div><div class="pbody">
+<article class="panel"><div class="pnum">N36</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">손가락을 하나 접는다.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">J49</span></div>
-<article class="panel"><div class="pnum">J50</div><div class="pbody">
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">N37</span></div>
+<article class="panel"><div class="pnum">N38</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">그리고 안 편다.</p>
+<p class="desc"><b>그리고 안 편다.</b></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J51</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N39</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">J52</div><div class="pbody">
+<article class="panel"><div class="pnum">N40</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc"><b>색이 바뀐다.</b> 회색이 등불색이 된다.</p>
 </div></article>
-<hr class="beat">
-<article class="panel"><div class="pnum">J53</div><div class="pbody">
+<article class="panel"><div class="pnum">N41</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">새동네. 창고 안. 등불 하나.</p>
 </div></article>
-<article class="panel"><div class="pnum">J54</div><div class="pbody">
+<article class="panel"><div class="pnum">N42</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">아이가 선반 앞에 서 있다.</p>
+<p class="desc">아이가 선반 앞에 서 있다. 나무 조각들을 본다.</p>
 </div></article>
-<article class="panel"><div class="pnum">J55</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">N43</span></div>
+<article class="panel"><div class="pnum">N44</div><div class="pbody">
 <span class="kind">소형</span>
-<p class="desc">나무 조각들을 본다.</p>
+<p class="desc">아이가 하나를 집는다. 손바닥에 올린다.</p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">J56</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">J57</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">아이가 하나를 집는다.</p>
-</div></article>
-<article class="panel"><div class="pnum">J58</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">손바닥에 올린다.</p>
-</div></article>
-<article class="panel"><div class="pnum">J59</div><div class="pbody">
-<span class="kind">소형 · 클로즈업</span>
+<article class="panel"><div class="pnum">N45</div><div class="pbody">
+<span class="kind">전면 · 클로즈업</span>
 <p class="desc">새겨진 글자.</p>
 <p class="desc"><b>오래</b></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J60</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N46</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">J61</div><div class="pbody">
+<article class="panel"><div class="pnum">N47</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">이거 누구예요.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J62</div><div class="pbody">
+<article class="panel"><div class="pnum">N48</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">분이가 다가와서 본다.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">J63</span></div>
-<article class="panel"><div class="pnum">J64</div><div class="pbody">
+<article class="panel"><div class="pnum">N49</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">...나보다 먼저 떨어진 애야.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J65</div><div class="pbody">
+<article class="panel"><div class="pnum">N50</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">몇 살이었어요.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">J66</span></div>
-<article class="panel"><div class="pnum">J67</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">N51</span></div>
+<article class="panel"><div class="pnum">N52</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">열셋.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J68</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N53</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">J69</div><div class="pbody">
+<article class="panel"><div class="pnum">N54</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">왜 오래예요.</span></p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">J70</span></div>
-<article class="panel"><div class="pnum">J71</div><div class="pbody">
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">N55</span></div>
+<article class="panel"><div class="pnum">N56</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">분이</span><span class="say">오래 살라고.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J72</span></div>
-<article class="panel"><div class="pnum">J73</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">아이</span><span class="say">...</span></p>
-</div></article>
-<article class="panel"><div class="pnum">J74</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N57</span></div>
+<article class="panel"><div class="pnum">N58</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">아이가 조각을 쥔다.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">J75</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">J76</div><div class="pbody">
+<article class="panel"><div class="pnum">N59</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">이거 제가 써도 돼요?</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J77</span></div>
-<article class="panel"><div class="pnum">J78</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">...</span></p>
-</div></article>
-<article class="panel"><div class="pnum">J79</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N60</span></div>
+<article class="panel"><div class="pnum">N61</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">그건 죽은 애 이름인데.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J80</div><div class="pbody">
+<article class="panel"><div class="pnum">N62</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">압니다.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J81</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">J82</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N63</span></div>
+<article class="panel"><div class="pnum">N64</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">분이</span><span class="say">써.</span></p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">J83</span></div>
-<article class="panel"><div class="pnum">J84</div><div class="pbody">
+<article class="panel"><div class="pnum">N65</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">아이가 조각을 두 손으로 쥔다.</p>
 </div></article>
-<article class="panel"><div class="pnum">J85</div><div class="pbody">
+<article class="panel"><div class="pnum">N66</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="desc">처음으로 표정이 조금 바뀐다.</p>
 <p class="aside">(웃는 건 아니다. 눈이 조금 움직인다)</p>
 </div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">J86</span></div>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">N67</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">J87</div><div class="pbody">
+<article class="panel"><div class="pnum">N68</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">야.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J88</div><div class="pbody">
+<article class="panel"><div class="pnum">N69</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">아이</span><span class="say">예.</span></p>
 </div></article>
-<article class="panel"><div class="pnum">J89</div><div class="pbody">
+<article class="panel"><div class="pnum">N70</div><div class="pbody">
 <span class="kind">소형</span>
 <p class="line"><span class="who">분이</span><span class="say">이름 뭐야.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J90</span></div>
-<article class="panel"><div class="pnum">J91</div><div class="pbody">
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N71</span></div>
+<article class="panel"><div class="pnum">N72</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="line"><span class="who">오래</span><span class="say">오래요.</span></p>
 </div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J92</span></div>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N73</span></div>
 <hr class="beat">
-<article class="panel"><div class="pnum">J93</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="line"><span class="who">분이</span><span class="say">그래.</span></p>
-</div></article>
-<article class="panel"><div class="pnum">J94</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">분이가 돌아선다.</p>
-</div></article>
-<article class="panel"><div class="pnum">J95</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">창고를 나간다.</p>
-</div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">J96</span></div>
-<hr class="beat">
-<article class="panel"><div class="pnum">J97</div><div class="pbody">
-<span class="kind">세로</span>
-<p class="desc">창고 밖. 밤하늘.</p>
-</div></article>
-<article class="panel"><div class="pnum">J98</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">아주 높이, 빛 하나가 천천히 지나간다.</p>
-</div></article>
-<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">J99</span></div>
-<article class="panel"><div class="pnum">J100</div><div class="pbody">
-<span class="kind">소형</span>
-<p class="desc">분이가 그걸 올려다본다.</p>
-</div></article>
-<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">J101</span></div>
-<article class="panel"><div class="pnum">J102</div><div class="pbody">
+<article class="panel"><div class="pnum">N74</div><div class="pbody">
 <span class="kind">전면</span>
-<p class="desc">분이 (아주 작게):</p>
-<p class="line"><span class="who">분이</span><span class="say">하나 더 왔다.</span></p>
+<p class="desc"><b>밖.</b> 새벽이 오고 있다.</p>
 </div></article>
-<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">J103</span></div>
-<article class="panel"><div class="pnum">J104</div><div class="pbody">
+<article class="panel"><div class="pnum">N75</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">마당. 아무도 없다.</p>
+</div></article>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">N76</span></div>
+<article class="panel"><div class="pnum">N77</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="sfx">...저벅.</p>
+</div></article>
+<article class="panel"><div class="pnum">N78</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="sfx">저벅.</p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">N79</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">N80</div><div class="pbody">
+<span class="kind">세로</span>
+<p class="desc">길 저쪽에서 <b>말 한 마리가 걸어 들어온다.</b></p>
+</div></article>
+<article class="panel"><div class="pnum">N81</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">혼자다. 안장이 비어 있다.</p>
+</div></article>
+<article class="panel"><div class="pnum">N82</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">다리가 떨린다. 밤새 달렸다.</p>
+</div></article>
+<article class="panel"><div class="pnum">N83</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">옆구리에 <b>등바구니</b>가 걸려 있다.</p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N84</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">N85</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">헛간 문이 열린다. 오래가 나온다. 손에 나무 조각을 쥔 채로.</p>
+</div></article>
+<article class="panel"><div class="pnum">N86</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">말을 본다.</p>
+</div></article>
+<article class="panel"><div class="pnum">N87</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">다가간다.</p>
+</div></article>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">N88</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">N89</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">바구니 안을 들여다본다.</p>
+</div></article>
+<article class="panel"><div class="pnum">N90</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">아기가 자고 있다.</p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">N91</span></div>
+<article class="panel"><div class="pnum">N92</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">오래가 손을 뻗는다.</p>
+</div></article>
+<article class="panel"><div class="pnum">N93</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">아마포를 조금 걷는다.</p>
+</div></article>
+<div class="rest" style="--h:210px" aria-label="여백"><span class="rest-n">N94</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">N95</div><div class="pbody">
+<span class="kind">전면 · 클로즈업</span>
+<p class="desc"><b>왼 손목 안쪽.</b></p>
+<p class="desc"><b>닫힌 고리 모양 반점.</b> 낡은 금빛.</p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N96</span></div>
+<article class="panel"><div class="pnum">N97</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">오래가 자기 손의 나무 조각을 본다.</p>
+</div></article>
+<article class="panel"><div class="pnum">N98</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="desc">아기의 손목을 본다.</p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N99</span></div>
+<hr class="beat">
+<article class="panel"><div class="pnum">N100</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="line"><span class="who">오래</span><span class="say">...어르신.</span></p>
+</div></article>
+<div class="rest" style="--h:96px" aria-label="여백"><span class="rest-n">N101</span></div>
+<article class="panel"><div class="pnum">N102</div><div class="pbody">
+<span class="kind">소형</span>
+<p class="line"><span class="who">오래</span><span class="say">이건 번호가 아닌데요.</span></p>
+</div></article>
+<div class="rest" style="--h:360px" aria-label="여백"><span class="rest-n">N103</span></div>
+<article class="panel"><div class="pnum">N104</div><div class="pbody">
 <span class="kind">전면</span>
 <p class="desc">검은 화면.</p>
 <p class="note"><b>2화 끝</b></p>
@@ -2775,9 +2919,10 @@ footer .eyebrow{margin-bottom:16px}
 
   <footer>
     <p class="eyebrow">연출 원칙</p>
-    <p>2화에는 액션이 없다. 1화가 4초에 일곱 대를 접었으니 또 하면 반복이다. 대신 2화는 왜 센지를 설명한다 — "힘은 배우는 게 아니라 남는 거야."</p>
-    <p>같은 대사가 90년을 건너 두 번 나온다. "아파요" / "곧 괜찮아져." 1화 F6~F7과 토씨가 같다. 사람만 바뀌었다.</p>
-    <p>위에서는 살아 있는 아이에게 새 이름을 지어주고, 아래에서는 죽은 아이의 이름을 살아 있는 아이가 물려받는다.</p>
+    <p>안개는 소리가 없다. 짐승 소리도 나고 바람 소리도 나고 천 소리도 나는데 다가오는 것만 조용하다. 이 시퀀스의 공포는 전부 거기서 나온다.</p>
+    <p>비명이 없다. 노인은 소리 없이 없어지고 옷만 남는다. 그리고 거인이 그만한 크기로 걷는데 땅이 반응하지 않는다. 그 어긋남이 저것이 무엇인지 말한다.</p>
+    <p>불의 고리는 지평선의 달과 같은 지름이어야 한다. 이 각운이 카란 시퀀스의 끝이다.</p>
+    <p>1화는 하늘에서 아이가 떨어지며 끝났다. 2화는 땅에서 아이가 걸어 들어오며 끝난다.</p>
     <p><b>[여백]</b>은 빈 컷이 아니라 스크롤 시간이다. 위에서 줄일 수 있지만,
     원래 길이가 이 화의 호흡이다.</p>
   </footer>
