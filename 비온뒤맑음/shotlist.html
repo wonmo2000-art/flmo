@@ -1,0 +1,594 @@
+<title>비 온 뒤 맑음 샷리스트</title>
+<style>
+:root{
+  --ground:#E9EDEF; --surface:#F7F9FA; --sunk:#DFE6E9;
+  --ink:#101619; --ink-2:#3A4850; --muted:#5F6E77; --rule:#CDD7DC;
+  --accent:#A85D0C; --accent-soft:#F0E2CE; --warn:#8F3325; --warn-soft:#F3DFD9;
+  --ok:#356B52;
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
+  --mono:ui-monospace,'SF Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace;
+  --script:'Courier New',Courier,monospace;
+  --wrap:min(1080px,92vw);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0D1317; --surface:#151D22; --sunk:#0A0F12;
+    --ink:#DEE6EA; --ink-2:#B3C0C7; --muted:#87979F; --rule:#253239;
+    --accent:#E09540; --accent-soft:#332614; --warn:#D2705C; --warn-soft:#38211C;
+    --ok:#6FAE8E;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0D1317; --surface:#151D22; --sunk:#0A0F12;
+  --ink:#DEE6EA; --ink-2:#B3C0C7; --muted:#87979F; --rule:#253239;
+  --accent:#E09540; --accent-soft:#332614; --warn:#D2705C; --warn-soft:#38211C;
+  --ok:#6FAE8E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{width:var(--wrap);margin:0 auto}
+h1,h2,h3,h4{text-wrap:balance;margin:0}
+
+/* ---- masthead ---- */
+.mast{padding:clamp(2.5rem,6vw,4.5rem) 0 2rem;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 1rem}
+.mast h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,6.5vw,3.9rem);
+  line-height:1.06;letter-spacing:-.015em}
+.mast .sub{color:var(--muted);max-width:60ch;margin:.9rem 0 0;font-size:1.02rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem;padding:0;list-style:none}
+.chips li{font-family:var(--mono);font-size:.76rem;letter-spacing:.03em;padding:.34rem .7rem;
+  border:1px solid var(--rule);border-radius:2px;color:var(--ink-2);background:var(--surface)}
+
+section{padding:3.2rem 0;border-bottom:1px solid var(--rule)}
+.sec-h{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 1.4rem}
+
+/* ---- lighting arc ---- */
+.arc{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule)}
+.arc>div{background:var(--surface);padding:1.3rem}
+.swatch{height:52px;border-radius:2px;margin-bottom:.9rem}
+.sw1{background:linear-gradient(160deg,#101A20,#3A2A12 70%,#6B4410)}
+.sw2{background:linear-gradient(160deg,#1B242A,#4A5860 70%,#78868E)}
+.sw3{background:linear-gradient(160deg,#2A2A24,#9A7130 60%,#E0AE5C)}
+.arc h4{font-family:var(--serif);font-weight:400;font-size:1.12rem;margin-bottom:.3rem}
+.arc p{margin:.2rem 0;font-size:.87rem;color:var(--muted)}
+.arc .emo{color:var(--accent);font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;
+  text-transform:uppercase;margin-top:.6rem}
+
+/* ---- render chain (real sequence) ---- */
+.chain{display:flex;flex-wrap:wrap;align-items:stretch;gap:.5rem;list-style:none;padding:0;margin:0}
+.chain li{flex:1 1 130px;background:var(--surface);border:1px solid var(--rule);padding:.85rem 1rem;
+  position:relative}
+.chain .step{font-family:var(--mono);font-size:.68rem;color:var(--accent);letter-spacing:.1em}
+.chain .what{font-family:var(--mono);font-size:.9rem;margin-top:.25rem;color:var(--ink)}
+.chain .note{font-size:.76rem;color:var(--muted);margin-top:.15rem}
+.chain li.gate{background:var(--sunk);border-style:dashed}
+.warnline{margin:1rem 0 0;font-size:.88rem;color:var(--warn);font-weight:600}
+
+/* ---- cut cards ---- */
+.cuts{display:flex;flex-direction:column;gap:2rem}
+.cut{background:var(--surface);border:1px solid var(--rule)}
+.cut-head{display:flex;gap:1.1rem;align-items:flex-start;padding:1.4rem 1.5rem;
+  border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.cut-no{font-family:var(--mono);font-size:1.05rem;color:var(--accent);letter-spacing:.04em;
+  padding-top:.16rem}
+.cut-id{flex:1 1 260px;min-width:0}
+.cut-id h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;letter-spacing:-.01em}
+.why{margin:.35rem 0 0;font-size:.87rem;color:var(--muted);max-width:62ch}
+.badge{font-family:var(--mono);font-size:.7rem;letter-spacing:.09em;padding:.32rem .62rem;
+  border-radius:2px;white-space:nowrap;text-transform:uppercase}
+.badge.struct{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)}
+.badge.compact{background:transparent;color:var(--ink-2);border:1px solid var(--rule)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:1px;margin:0;
+  background:var(--rule);border-bottom:1px solid var(--rule)}
+.facts>div{background:var(--surface);padding:.85rem 1.1rem}
+.facts dt{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted)}
+.facts dd{margin:.28rem 0 0;font-size:.94rem}
+.facts dd.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.facts dd .unit{font-size:.72rem;color:var(--muted);margin-left:.12rem}
+.facts dd em{font-style:normal;color:var(--muted);font-size:.78rem}
+.facts dd.ok{color:var(--ok)}
+
+.dlg{width:100%;border-collapse:collapse;margin:0}
+.dlg td{padding:.6rem 1.1rem;border-bottom:1px solid var(--rule);vertical-align:baseline}
+.dlg tr:last-child td{border-bottom:none}
+.spk{font-family:var(--mono);font-size:.78rem;color:var(--accent);width:1%;white-space:nowrap}
+.ln{font-size:1rem}
+.syl{font-family:var(--mono);font-size:.8rem;color:var(--muted);text-align:right;width:1%;
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+.syl span{font-size:.66rem;margin-left:.15rem}
+.nodlg{margin:0;padding:.75rem 1.1rem;font-size:.9rem;color:var(--muted);
+  border-bottom:1px solid var(--rule)}
+
+/* ---- prompt block ---- */
+.pb{border-top:1px solid var(--rule)}
+.pb-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.55rem .75rem .55rem 1.1rem;background:var(--sunk)}
+.pb-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--muted)}
+.copy{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;padding:.36rem .85rem;
+  background:var(--surface);color:var(--ink);border:1px solid var(--rule);border-radius:2px;
+  cursor:pointer}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+.copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.copy[data-done="1"]{color:var(--ok);border-color:var(--ok)}
+pre{margin:0;overflow-x:auto;padding:1.1rem;background:var(--sunk);
+  font-family:var(--mono);font-size:.795rem;line-height:1.62;color:var(--ink-2);
+  white-space:pre;-webkit-overflow-scrolling:touch}
+pre code{font:inherit}
+
+/* ---- screenplay excerpt ---- */
+.script{background:var(--surface);border:1px solid var(--rule);padding:1.6rem 1.4rem;
+  font-family:var(--script);font-size:.86rem;line-height:1.75;white-space:pre-wrap;color:var(--ink-2);
+  overflow-x:auto}
+
+/* ---- elements ---- */
+.els{display:flex;flex-direction:column;gap:1.4rem}
+.el{background:var(--surface);border:1px solid var(--rule)}
+.el h4{padding:.95rem 1.1rem;font-weight:600;font-size:.95rem;display:flex;gap:.6rem;
+  flex-wrap:wrap;align-items:baseline}
+.el h4 code{font-family:var(--mono);font-size:.82rem;color:var(--accent)}
+.el h4 span{color:var(--muted);font-weight:400;font-size:.86rem}
+
+/* ---- tables ---- */
+.tw{overflow-x:auto;border:1px solid var(--rule)}
+table.data{width:100%;border-collapse:collapse;background:var(--surface);font-size:.9rem}
+table.data th,table.data td{padding:.68rem .95rem;text-align:left;border-bottom:1px solid var(--rule)}
+table.data th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);font-weight:400;background:var(--sunk)}
+table.data tr:last-child td{border-bottom:none}
+table.data td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+table.data tr.total td{font-weight:700;background:var(--sunk)}
+code.inl{font-family:var(--mono);font-size:.86em;background:var(--sunk);padding:.1em .35em;
+  border-radius:2px}
+
+/* ---- caveat ---- */
+.caveat{border:1px solid var(--warn);background:var(--warn-soft);padding:1.4rem 1.5rem}
+.caveat h3{font-family:var(--serif);font-weight:400;font-size:1.32rem;color:var(--warn);
+  margin-bottom:.6rem}
+.caveat p{margin:.7rem 0;font-size:.93rem;max-width:70ch}
+.caveat p:first-of-type{margin-top:0}
+.pull{border-left:2px solid var(--warn);padding-left:1rem;color:var(--ink-2);font-size:.9rem;
+  margin:1.2rem 0}
+footer{padding:2.6rem 0 3.5rem;color:var(--muted);font-size:.83rem}
+footer p{margin:.3rem 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+<header class="mast">
+  <p class="eyebrow">Seedance 2.0 · 컷 프롬프트</p>
+  <h1>비 온 뒤 맑음</h1>
+  <p class="sub">서로를 제거하라는 명령을 받은 두 저격수가 스코프 십자선 안에서 상대의 얼굴을 확인한다.
+  방아쇠를 당길 수 있는 시간은 비가 그치기 전까지다.</p>
+  <ul class="chips">
+    <li>16:9</li><li>480p</li><li>15s × 3컷</li><li>총 45초</li>
+    <li>seedance_2_0</li><li>genre: drama</li>
+  </ul>
+</header>
+
+<section>
+  <h2 class="sec-h">톤 아크 — 조명이 곧 감정</h2>
+  <div class="arc">
+    <div><div class="swatch sw1"></div><h4>S#1 · 폭우, 야간</h4>
+      <p>나트륨 가로등이 골목 아래에서 위로</p><p>청록 저채도</p><p class="emo">충격</p></div>
+    <div><div class="swatch sw2"></div><h4>S#2 · 비, 새벽 직전</h4>
+      <p>가로등 + 여명 실루엣, 옆에서</p><p>회청색</p><p class="emo">미련</p></div>
+    <div><div class="swatch sw3"></div><h4>S#3 · 일출</h4>
+      <p>낮은 태양광이 수평으로</p><p>앰버가 스며듦</p><p class="emo">해방</p></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec-h">렌더 순서 — 연속성 참조 체인</h2>
+  <ol class="chain">
+    <li><span class="step">01</span><div class="what">S#1 렌더</div><div class="note">선행 컷 없음</div></li>
+    <li class="gate"><span class="step">↳</span><div class="what">cont_s1 등록</div><div class="note">마지막 프레임 추출 · 업로드</div></li>
+    <li><span class="step">02</span><div class="what">S#2 렌더</div><div class="note">cont_s1 참조</div></li>
+    <li class="gate"><span class="step">↳</span><div class="what">cont_s2 등록</div><div class="note">마지막 프레임 추출 · 업로드</div></li>
+    <li><span class="step">03</span><div class="what">S#3 렌더</div><div class="note">cont_s2 참조 · 최종</div></li>
+  </ol>
+  <p class="warnline">병렬 생성 불가 — 앞 컷의 마지막 프레임이 다음 컷의 시작 상태를 계약한다.</p>
+</section>
+
+<section>
+  <h2 class="sec-h">컷 프롬프트</h2>
+  <div class="cuts">
+<article class="cut" id="S1">
+<header class="cut-head">
+<div class="cut-no">S#1</div>
+<div class="cut-id">
+<h3>두 개의 십자선</h3>
+<p class="why">무대사 + 스코프 리클 인서트가 승부처. 콤팩트의 멀티샷 위임으로는 이 샷이 평범한 클로즈업으로 뭉개진다.</p>
+</div>
+<div class="cut-mode"><span class="badge struct">구조 모드</span></div>
+</header>
+<dl class="facts">
+<div><dt>지배 감정</dt><dd>충격</dd></div>
+<div><dt>광원</dt><dd>나트륨 가로등 — 아래에서</dd></div>
+<div><dt>샷 설계</dt><dd>4샷 (HARD CUT 직접 설계)</dd></div>
+<div><dt>분량</dt><dd class="num">624<span class="unit">단어</span> <em>/ 400–600</em></dd></div>
+<div><dt>입력 문자</dt><dd class="num ok">3,706<span class="unit">자</span> <em>/ 5,000</em></dd></div>
+</dl>
+<p class="nodlg">무대사 — SFX only. 대사 한 단어도 넣지 않는다.</p>
+<div class="pb">
+<div class="pb-bar"><span class="pb-label">S#1 프롬프트 전문</span>
+<button class="copy" type="button">복사</button></div>
+<pre class="mono"><code>SCENE CONTEXT
+EXACT 2 CHARACTERS — NO DUPLICATES: &lt;&lt;&lt;haneul&gt;&gt;&gt;, &lt;&lt;&lt;jungwoo&gt;&gt;&gt;. Opening cut,
+nothing precedes it. Night, heavy rain, two facing rooftops. A prone shooter
+finds her target looking back through a scope of his own. 4 shots.
+
+ACTIVE REFERENCES
+&lt;&lt;&lt;haneul&gt;&gt;&gt;, &lt;&lt;&lt;jungwoo&gt;&gt;&gt; — identity anchors, face, hair, soaked jacket only.
+&lt;&lt;&lt;roof_a&gt;&gt;&gt;, &lt;&lt;&lt;roof_b&gt;&gt;&gt; — location reference, geometry only, not camera angle.
+&lt;&lt;&lt;rifle_red&gt;&gt;&gt; — prop anchor: barrel cord, three knots. Exactly ONE.
+
+LOCATION MAP
+GEO SPATIAL LAYOUT (locked, every shot):
+— ALLEY = a 12 m gap, north-south, between two equal-height flat concrete roofs.
+— ROOF A = east roof; a rusted 2 m water tank at its north edge.
+— ROOF B = west roof; a 1 m vent duct at its south edge.
+— 180 AXIS: camera ALWAYS stays north of the alley and NEVER crosses it.
+  ROOF A reads frame-RIGHT, ROOF B reads frame-LEFT.
+— KEY LIGHT: a sodium street lamp in the alley below, throwing light upward.
+
+FIRST FRAME AND SPATIAL BLOCKING
+Already mid-action. &lt;&lt;&lt;haneul&gt;&gt;&gt; prone on ROOF A frame-RIGHT, forearms flat on
+streaming concrete, left shoulder within 1 m of the tank, eye at the scope.
+&lt;&lt;&lt;jungwoo&gt;&gt;&gt; kneels on ROOF B frame-LEFT, right knee against the duct, back to
+camera. Both in position from frame one.
+
+FORMAT MODE
+16:9, 480p, cinematic camera, locked-off except handheld on shot 4, 4 shots,
+SFX only — no dialogue, no subtitles.
+
+OPTICS AND CAMERA
+Shot 1: 29 degrees, camera 2.5 m out at her deck-level eye line, room-feasible
+prone framing; background compressed flat, creamy bokeh on the rain; static hold
+with breathing motion.
+Shot 2: 12 degrees macro, camera 0.4 m above the barrel angled 25 degrees down,
+reading cord texture; locked-off.
+Shot 3: 20 degrees tight inside a circular scope vignette, not a rectangular
+letterbox, crosshair on the back of his head; slow push-in as he turns.
+Shot 4: 29 degrees, camera 1.2 m from her cheek at deck level; handheld, operator
+breath and shoulder-mounted mass.
+
+ACTION TIMING
+0-4.5s: rain sheets off her hood in a rope of water. Her index finger rests along
+the trigger guard, still. 4.5s HARD CUT.
+4.5-8s: water beads and runs off the faded red cord at the barrel&#x27;s front. Three
+knots hang heavy, swollen. 8.0s HARD CUT.
+8-11.5s: inside the scope vignette the crosshair holds on the back of his head.
+He turns toward camera and a matching circle of glass catches the lamp in his own
+hands. 11.5s HARD CUT.
+11.5-15s: her eye, wide at the scope. Her chest stops rising. A bead gathers on
+her lower lash and drops.
+
+PHYSICS
+Rain carries real mass, running in ropes off fabric edges rather than floating
+specks. The cord sags under its water weight.
+
+LIGHTING
+The alley sodium lamp is the only source, raking upward across the underside of
+the jaw. Wet concrete returns a hard specular sheen; shadows keep detail rather
+than crushing to black.
+
+AUDIO
+Heavy rain on concrete and steel, water sluicing through a drain pipe. No
+dialogue, no music, no captions.
+
+CHARACTER ACTING
+&lt;&lt;&lt;haneul&gt;&gt;&gt; — wants: the clean shot; hides: that her finger already moved;
+one lazy blink, then a HARD reset-blink at the glint.
+&lt;&lt;&lt;jungwoo&gt;&gt;&gt; — wants: to be seen; the turn is slow, chin leading.
+
+POSITIVE LOCKS
+Exactly two people, no others on either roof. Exactly ONE rifle each. Rain falls
+without pause. The tank stays at ROOF A&#x27;s north edge, the duct at ROOF B&#x27;s south
+edge — the layout does not change between shots. He turns his head only; his knee
+stays against the duct. A circular scope vignette, not a rectangular letterbox.
+Both rifles still raised at the end, carrying into CUT S#2.
+cinematic photorealistic live-action, 35mm film grain, physical cine lens,
+24fps, muted color grade, no identity drift across cuts</code></pre></div>
+</article><article class="cut" id="S2">
+<header class="cut-head">
+<div class="cut-no">S#2</div>
+<div class="cut-id">
+<h3>열린 채널</h3>
+<p class="why">화자 2명 대화 컷 — 음절 예산이 지배 제약.</p>
+</div>
+<div class="cut-mode"><span class="badge compact">콤팩트 규격</span></div>
+</header>
+<dl class="facts">
+<div><dt>지배 감정</dt><dd>미련</dd></div>
+<div><dt>광원</dt><dd>가로등 + 여명 실루엣</dd></div>
+<div><dt>샷 설계</dt><dd>멀티샷 위임</dd></div>
+<div><dt>분량</dt><dd class="num">356<span class="unit">단어</span> <em>/ 120–250</em></dd></div>
+<div><dt>입력 문자</dt><dd class="num ok">2,196<span class="unit">자</span> <em>/ 5,000</em></dd></div>
+</dl>
+<table class="dlg"><tbody><tr><td class="spk">정우</td><td class="ln">…맑음. 오랜만이다.</td><td class="syl">7<span>음절</span></td></tr><tr><td class="spk">하늘</td><td class="ln">채널 닫아.</td><td class="syl">4<span>음절</span></td></tr><tr><td class="spk">정우</td><td class="ln">너 아직도 왼쪽으로 흘려?</td><td class="syl">10<span>음절</span></td></tr></tbody></table>
+<div class="pb">
+<div class="pb-bar"><span class="pb-label">S#2 프롬프트 전문</span>
+<button class="copy" type="button">복사</button></div>
+<pre class="mono"><code>CUT S#2 (0-15s).
+EXACT 2 CHARACTERS — NO DUPLICATES: &lt;&lt;&lt;haneul&gt;&gt;&gt;, &lt;&lt;&lt;jungwoo&gt;&gt;&gt;.
+cinematic photorealistic live-action, 35mm film grain, physical cine lens,
+24fps, muted color grade, no identity drift across cuts. Tone: restrained drama, held tension.
+Location: &lt;&lt;&lt;roof_a&gt;&gt;&gt;, &lt;&lt;&lt;roof_b&gt;&gt;&gt; — location reference, geometry only, not
+camera angle; thinning rain, first grey of dawn. &lt;&lt;&lt;cont_s1&gt;&gt;&gt; — continuity
+reference: both rifles still raised.
+
+GEO SPATIAL LAYOUT (locked, every shot):
+— ALLEY = a 12 m gap, north-south, between two equal-height flat concrete roofs.
+— ROOF A = east roof; a rusted 2 m water tank at its north edge.
+— ROOF B = west roof; a 1 m vent duct at its south edge.
+— 180 AXIS: camera ALWAYS stays north of the alley and NEVER crosses it.
+  ROOF A reads frame-RIGHT, ROOF B reads frame-LEFT.
+— KEY LIGHT: a sodium street lamp in the alley below, throwing light upward.
+
+&lt;&lt;&lt;haneul&gt;&gt;&gt; prone on ROOF A frame-RIGHT, left shoulder within 1 m of the tank,
+eyes through her scope on &lt;&lt;&lt;jungwoo&gt;&gt;&gt;; &lt;&lt;&lt;jungwoo&gt;&gt;&gt; kneels on ROOF B
+frame-LEFT, right knee against the duct, eyes on &lt;&lt;&lt;haneul&gt;&gt;&gt;. Both in these
+positions from the first frame.
+
+0-5s: static hold on her face at the scope as radio static swells.
+JUNGWOO voice (verbatim): &quot;A dry, worn man&#x27;s voice, low and hoarse.&quot; His line,
+and nothing else, quiet over the radio: &quot;…맑음. 오랜만이다.&quot;
+5-10s: she closes and opens her eyes without leaving the scope.
+HANEUL voice (verbatim): &quot;A low, controlled woman&#x27;s voice, breath held,
+consonants clipped.&quot; Her line, and nothing else, flat: &quot;채널 닫아.&quot;
+10-15s: one short laugh with no sound in it, only his shoulders. His line, and
+nothing else: &quot;너 아직도 왼쪽으로 흘려?&quot; Her jaw clamps, then releases.
+
+Everyone speaks only the quoted lines; anyone without a line stays silent.
+1 second of silence around each line.
+등장인물은 한국어로 말한다.
+Edited as a multi-shot scene with motivated hard cuts between varied angles;
+dynamic cinematic coverage. Across every internal cut: same left/right
+relationship, same gaze targets — characters never swap positions.
+no background music, no BGM, no soundtrack — only spoken dialogue and natural
+diegetic sound (thinning rain, radio static, water dripping from the parapet).</code></pre></div>
+</article><article class="cut" id="S3">
+<header class="cut-head">
+<div class="cut-no">S#3</div>
+<div class="cut-id">
+<h3>비 온 뒤</h3>
+<p class="why">대화 중심. 스코프에서 눈 떼는 인서트만 해당 비트에 샷 스펙 축약 표기.</p>
+</div>
+<div class="cut-mode"><span class="badge compact">콤팩트 규격</span></div>
+</header>
+<dl class="facts">
+<div><dt>지배 감정</dt><dd>해방</dd></div>
+<div><dt>광원</dt><dd>낮은 일출 — 수평으로</dd></div>
+<div><dt>샷 설계</dt><dd>멀티샷 위임 · 최종 컷</dd></div>
+<div><dt>분량</dt><dd class="num">438<span class="unit">단어</span> <em>/ 120–250</em></dd></div>
+<div><dt>입력 문자</dt><dd class="num ok">2,610<span class="unit">자</span> <em>/ 5,000</em></dd></div>
+</dl>
+<table class="dlg"><tbody><tr><td class="spk">정우</td><td class="ln">맑음. 오늘 날씨 뭐야?</td><td class="syl">8<span>음절</span></td></tr><tr><td class="spk">하늘</td><td class="ln">비 온 뒤 맑음.</td><td class="syl">5<span>음절</span></td></tr></tbody></table>
+<div class="pb">
+<div class="pb-bar"><span class="pb-label">S#3 프롬프트 전문</span>
+<button class="copy" type="button">복사</button></div>
+<pre class="mono"><code>CUT S#3 (0-15s).
+EXACT 2 CHARACTERS — NO DUPLICATES: &lt;&lt;&lt;haneul&gt;&gt;&gt;, &lt;&lt;&lt;jungwoo&gt;&gt;&gt;.
+cinematic photorealistic live-action, 35mm film grain, physical cine lens,
+24fps, muted color grade, no identity drift across cuts. Tone: warm drama, release.
+Location: &lt;&lt;&lt;roof_a&gt;&gt;&gt;, &lt;&lt;&lt;roof_b&gt;&gt;&gt; — location reference, geometry only, not
+camera angle; the rain ends, low sunrise light crosses the alley. &lt;&lt;&lt;cont_s2&gt;&gt;&gt; —
+continuity reference: her muzzle lowered, his finger outside the trigger guard.
+&lt;&lt;&lt;rifle_red&gt;&gt;&gt; — prop anchor: the same three-knot cord on BOTH barrels.
+
+GEO SPATIAL LAYOUT (locked, every shot):
+— ALLEY = a 12 m gap, north-south, between two equal-height flat concrete roofs.
+— ROOF A = east roof; a rusted 2 m water tank at its north edge.
+— ROOF B = west roof; a 1 m vent duct at its south edge.
+— 180 AXIS: camera ALWAYS stays north of the alley and NEVER crosses it.
+  ROOF A reads frame-RIGHT, ROOF B reads frame-LEFT.
+— KEY LIGHT: low sunrise sun entering horizontally from the alley&#x27;s north end,
+  camera-left, replacing the street lamp.
+
+&lt;&lt;&lt;haneul&gt;&gt;&gt; prone on ROOF A frame-RIGHT, left shoulder within 1 m of the tank;
+&lt;&lt;&lt;jungwoo&gt;&gt;&gt; kneels on ROOF B frame-LEFT, right knee against the duct. Both in
+these positions from the first frame.
+
+0-5s: the rain thins to single drops and stops. A last bead falls from the
+parapet and breaks on the concrete. Cloud splits and a bar of low sun crosses the
+alley, lighting steam off her shoulders.
+5-10s: she lifts her eye off the scope and looks across with her naked eye
+(20 degrees tight insert, camera 0.5 m, angled 30 degrees down the rifle). He
+lowers his rifle; the same faded red cord shows on his barrel.
+JUNGWOO voice (verbatim): &quot;A dry, worn man&#x27;s voice, low and hoarse.&quot; His line,
+and nothing else, over the radio: &quot;맑음. 오늘 날씨 뭐야?&quot;
+10-15s: she lays her own rifle down on the concrete.
+HANEUL voice (verbatim): &quot;A low, controlled woman&#x27;s voice, breath held,
+consonants clipped.&quot; Her line, and nothing else, the first warmth in it:
+&quot;비 온 뒤 맑음.&quot; She tips her face into the sun and narrows her eyes against it.
+
+Everyone speaks only the quoted lines; anyone without a line stays silent.
+1 second of silence around each line.
+등장인물은 한국어로 말한다.
+Edited as a multi-shot scene with motivated hard cuts between varied angles;
+dynamic cinematic coverage. Across every internal cut: same left/right
+relationship, same gaze targets — characters never swap positions.
+This is the final clip — nothing follows it.
+no background music, no BGM, no soundtrack — only spoken dialogue and natural
+diegetic sound (last drops on concrete, a drain gurgling empty, a single bird).</code></pre></div>
+</article>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec-h">각본 발췌 — S#3</h2>
+  <div class="script">S#3. 마주 보는 두 옥상 (새벽 → 일출)
+
+  빗줄기가 가늘어지다가 멎는다. 구름이 갈라진다.
+  낮은 볕이 골목을 수평으로 가로지른다.
+  하늘이 스코프에서 눈을 뗀다. 맨눈으로 맞은편을 본다.
+
+          정우 (무전)
+      맑음. 오늘 날씨 뭐야?
+
+          하늘 (처음으로 웃으며)
+      비 온 뒤 맑음.</div>
+</section>
+
+<section>
+  <h2 class="sec-h">사전 준비물 — Element 생성 프롬프트</h2>
+  <p style="color:var(--muted);font-size:.9rem;margin:0 0 1.4rem;max-width:70ch">
+  전부 <code class="inl">gpt_image_2</code>, <code class="inl">quality: "high"</code>,
+  <code class="inl">resolution: "2k"</code>. 캐릭터 시트에는 <strong>나이를 어떤 언어로도 넣지 않았다</strong> —
+  미성년 판독 시 필터가 급격히 엄격해지므로 역할·의상·행동으로만 특정했다.
+  얼굴이 정확히 하나만 보이도록 전신 패널은 어깨 위를 잘랐다.</p>
+  <div class="els">
+<div class="el">
+<h4><code>&lt;&lt;&lt;haneul&gt;&gt;&gt;</code> <span>서하늘 캐릭터 시트 (AR 16:9)</span></h4>
+<div class="pb">
+<div class="pb-bar"><span class="pb-label">이미지 프롬프트</span>
+<button class="copy" type="button">복사</button></div>
+<pre class="mono"><code>Three studio photographs of the same adult Korean woman arranged side by side in
+one frame: left panel a full-body front view cropped above the shoulders so no
+face is visible, centre panel the same full-body figure photographed from behind,
+right panel a three-quarter close-up of her face — the only visible face in the
+image. Distinctive anchors: a squarish jaw, a small raised mole on her right
+temple at the hairline, a thin pale scar splitting the outer third of her left
+eyebrow, black hair pulled into a flat low knot with soaked strands stuck along
+her right cheekbone. She wears a rain-soaked charcoal-grey hooded shell jacket in
+matte ripstop fabric, hood pushed back, with a frayed olive elastic strap running
+across her chest. Flat even studio light, clean neutral mid-grey background.
+Consistent distinctive character design, high detail.</code></pre></div>
+</div><div class="el">
+<h4><code>&lt;&lt;&lt;jungwoo&gt;&gt;&gt;</code> <span>정우 캐릭터 시트 (AR 16:9)</span></h4>
+<div class="pb">
+<div class="pb-bar"><span class="pb-label">이미지 프롬프트</span>
+<button class="copy" type="button">복사</button></div>
+<pre class="mono"><code>Three studio photographs of the same adult Korean man arranged side by side in
+one frame: left panel a full-body front view cropped above the shoulders so no
+face is visible, centre panel the same full-body figure photographed from behind,
+right panel a three-quarter close-up of his face — the only visible face in the
+image. Distinctive anchors: a long narrow face with a high flat cheekbone line, a
+deep vertical crease between the brows, a healed notch in the upper rim of his
+left ear, black hair cropped short and plastered flat to the skull with rain.
+He wears a rain-soaked dark olive field jacket in heavy waxed cotton, collar
+turned up, with one brass button missing at the second position. Flat even studio
+light, clean neutral mid-grey background. Consistent distinctive character design,
+high detail.</code></pre></div>
+</div><div class="el">
+<h4><code>&lt;&lt;&lt;roof_a&gt;&gt;&gt;</code> <span>하늘의 옥상 플레이트 (AR 16:9)</span></h4>
+<div class="pb">
+<div class="pb-bar"><span class="pb-label">이미지 프롬프트</span>
+<button class="copy" type="button">복사</button></div>
+<pre class="mono"><code>Wide three-quarter angle view of an empty flat concrete rooftop at night in heavy
+rain, no people. A rusted cylindrical steel water tank about 2 meters tall stands
+at the far edge, and a 1-meter concrete parapet runs along the near edge above a
+narrow alley. Standing water sheets across the deck and returns a hard specular
+sheen. Lit from below by a sodium-vapour street lamp rising out of the alley, deep
+low-key falloff into the corners. Open floor space in the foreground left clear.
+Muted desaturated colour, high detail.</code></pre></div>
+</div><div class="el">
+<h4><code>&lt;&lt;&lt;roof_b&gt;&gt;&gt;</code> <span>정우의 옥상 플레이트 (AR 16:9)</span></h4>
+<div class="pb">
+<div class="pb-bar"><span class="pb-label">이미지 프롬프트</span>
+<button class="copy" type="button">복사</button></div>
+<pre class="mono"><code>Wide three-quarter angle view of an empty flat concrete rooftop at night in heavy
+rain, no people. A boxed steel ventilation duct about 1 meter tall sits at the
+near edge, and a 1-meter concrete parapet runs along the far edge above a narrow
+alley. Wet concrete with running water and a hard specular sheen. Lit from below
+by a sodium-vapour street lamp rising out of the alley, deep low-key falloff.
+Open floor space in the foreground left clear. Muted desaturated colour, high detail.</code></pre></div>
+</div><div class="el">
+<h4><code>&lt;&lt;&lt;rifle_red&gt;&gt;&gt;</code> <span>붉은 끈 소품 샷 (AR 1:1)</span></h4>
+<div class="pb">
+<div class="pb-bar"><span class="pb-label">이미지 프롬프트</span>
+<button class="copy" type="button">복사</button></div>
+<pre class="mono"><code>Single object centred on a clean neutral mid-grey studio background: the forward
+section of a matte black bolt-action rifle barrel with a length of faded red
+cotton cord wrapped around it, tied in exactly three knots that hang loose below
+the barrel. The cord is sun-bleached to a dull brick tone, frayed at both cut
+ends, and darkened where it is soaked with water. Visible wear on the barrel
+finish, fine scratches through the matte coating. Flat even studio light, sharp
+macro detail.</code></pre></div>
+</div>
+  </div>
+  <div class="tw" style="margin-top:1.4rem">
+    <table class="data"><thead><tr><th>연속성 참조</th><th>만드는 법</th></tr></thead>
+    <tbody>
+    <tr><td><code class="inl">&lt;&lt;&lt;cont_s1&gt;&gt;&gt;</code></td>
+    <td>S#1 렌더 후 <code class="inl">ffmpeg -sseof -0.1 -i S1.mp4 -frames:v 1 cont_s1.png</code> →
+    <code class="inl">media_upload</code> → 반환 id로 Element 등록</td></tr>
+    <tr><td><code class="inl">&lt;&lt;&lt;cont_s2&gt;&gt;&gt;</code></td>
+    <td>S#2에 동일 절차. 생성이 아니라 <strong>업로드</strong>다.</td></tr>
+    </tbody></table>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec-h">분량 예산 — 실측과 판단</h2>
+  <div class="caveat">
+    <h3>세 컷 모두 단어 예산 초과 — 락을 살리는 쪽을 택했다</h3>
+    <p>어림이 아니라 <code class="inl">wc</code> 실측값이고, 규격의 감량 순서(수사적 문장 →
+    OPTICS/CAMERA 통합 → 중복 선언 → PHYSICS/LIGHTING 부연)를 <strong>4회 순회</strong>한 뒤의 하한이다.
+    통일 스타일 문자열도 60단어에서 20단어로 압축했다.</p>
+    <p>원인은 하나다 — <strong>GEO SPATIAL LAYOUT 블록이 87단어인데, 같은 장소 3컷이라
+    세 컷 모두에 한 글자도 안 바꾸고 들어가야 한다.</strong> 콤팩트 규격의 성분별 실측:</p>
+    <div class="tw" style="margin:1rem 0">
+      <table class="data"><thead><tr><th>성분</th><th style="text-align:right">단어</th><th>삭제 가능?</th></tr></thead>
+      <tbody>
+      <tr><td>라벨 + EXACT N 헤더 + 스타일 문자열 + Element 선언</td><td class="n">59</td><td>루브릭 필수</td></tr>
+      <tr><td>GEO SPATIAL LAYOUT</td><td class="n">87</td><td>같은 장소 2컷+ 필수</td></tr>
+      <tr><td>블로킹 (랜드마크 접촉 앵커 · 시선/몸통 · 첫 프레임 점유)</td><td class="n">42</td><td>루브릭 필수</td></tr>
+      <tr><td>비트 3개 + voice verbatim 대사 블록</td><td class="n">92</td><td>컷의 내용 그 자체</td></tr>
+      <tr><td>3종 클로즈 + 노 텔레포트 락</td><td class="n">76</td><td>루브릭 필수</td></tr>
+      <tr class="total"><td>합계</td><td class="n">356</td><td>예산 250</td></tr>
+      </tbody></table>
+    </div>
+    <p>250단어를 맞추려면 GEO(87)나 클로즈(76)를 빼야 하는데 <strong>둘 다 루브릭이 별도 항목으로
+    검사하는 안티드리프트 락</strong>이다. 단어 수 항목 하나를 지키려고 락 세 항목을 깨는 건 역효과라
+    판단했다.</p>
+    <p class="pull">규격 자체의 내부 충돌로 보인다. 콤팩트의 120–250단어 예산은 <em>한 문장짜리</em>
+    블로킹 락을 쓰던 시절 수치이고, GEO 블록은 나중에 들어온 규칙이다. 세 컷 이상 같은 장소 씬에서는
+    두 규칙이 동시에 성립할 수 없다.</p>
+    <p><strong>실행상 안전선</strong>: 진짜 하드 리밋인 플랫폼 입력 한도 5,000자는 세 컷 모두 넉넉히
+    통과한다(최대 3,706자). 단어 예산의 목적은 지시 희석 방지인데, 초과분이 전부 위치·축 고정 락이라
+    희석이 아니라 강화 쪽이다. 첫 렌더에서 연기·대사가 뭉개지면 그때 GEO를 4줄 경량판으로 줄여
+    A/B를 떠볼 것.</p>
+  </div>
+</section>
+
+<footer>
+  <p>대본 마스터: <code class="inl">1부_대본.md</code> (v1) · 프롬프트: <code class="inl">영상프롬프트_S1-S3.md</code></p>
+  <p>hamlog-ai-drama-pipeline · screenplay-pipeline → seedance-cut-prompt</p>
+</footer>
+</div>
+
+<script>
+document.querySelectorAll(".copy").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    var pre = btn.closest(".pb").querySelector("code");
+    var text = pre.textContent;
+    var done = function(){
+      btn.textContent = "복사됨";
+      btn.setAttribute("data-done","1");
+      setTimeout(function(){ btn.textContent = "복사"; btn.removeAttribute("data-done"); }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function(){ fallback(text, done); });
+    } else { fallback(text, done); }
+  });
+});
+function fallback(text, done){
+  var ta = document.createElement("textarea");
+  ta.value = text;
+  ta.setAttribute("readonly","");
+  ta.style.position = "fixed";
+  ta.style.top = "-1000px";
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand("copy"); done(); } catch (e) { ta.remove(); return; }
+  ta.remove();
+}
+</script>
