@@ -75,8 +75,32 @@ button{cursor:pointer}
 .bar.st{border-top-left-radius:4px;border-bottom-left-radius:4px;margin-right:-6px;padding-right:6px}
 .bar.en{border-top-right-radius:4px;border-bottom-right-radius:4px;margin-left:-6px;padding-left:6px}
 .mark{font-size:11px;line-height:1.35;padding:2px 5px;border-radius:4px;border:1px solid var(--c,var(--line));
-  color:var(--c,var(--fg));white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600;background:var(--card)}
-.mark.dl{--c:var(--warn)}
+  color:var(--c,var(--fg));white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600;
+  background:color-mix(in srgb,var(--c) 12%,var(--card))}
+.mark .edot{width:6px;height:6px;border-radius:999px;display:inline-block;margin-right:3px;vertical-align:middle}
+@media (prefers-color-scheme:dark){ .mark{filter:saturate(1.05) brightness(1.35)} }
+.legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:10px 14px;border-top:1px solid var(--line);
+  font-size:11.5px;color:var(--muted)}
+.legend .lg{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.legend .sw{width:10px;height:10px;border-radius:3px;display:inline-block;flex:none}
+.legend .sw.pill-sw{border-radius:999px}
+.legend .sep{width:1px;height:12px;background:var(--line)}
+.legend button.lg{background:none;border:0;padding:0;color:inherit;font:inherit}
+.legend button.lg:hover{color:var(--fg);text-decoration:underline}
+.swatches{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.sw-btn{width:26px;height:26px;border-radius:8px;border:2px solid transparent;cursor:pointer}
+.sw-btn.on{border-color:var(--fg);box-shadow:0 0 0 2px var(--card) inset}
+.steps{counter-reset:st;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:st;position:relative;padding:0 0 14px 34px;font-size:13.5px;line-height:1.65}
+.steps li:before{content:counter(st);position:absolute;left:0;top:0;width:22px;height:22px;border-radius:999px;
+  background:var(--accent);color:var(--accent-fg);font-size:12px;font-weight:800;display:grid;place-items:center}
+.steps li b{font-weight:700}
+.steps li .k{display:block;font-size:12px;margin-top:3px}
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.statgrid .box{border:1px solid var(--line);border-radius:10px;padding:9px 11px}
+.statgrid .box .k{font-size:11px}
+.statgrid .box .v{font-size:13.5px;font-weight:700;margin-top:2px}
+.warnbox{border:1px solid var(--warn);color:var(--warn);border-radius:10px;padding:10px 12px;font-size:12.5px;line-height:1.6;margin-bottom:14px}
 .more{font-size:10.5px;color:var(--muted);padding-left:4px}
 /* side */
 .row{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}
@@ -111,7 +135,8 @@ label.f{display:block;font-size:11.5px;font-weight:700;color:var(--muted);margin
 textarea.in{min-height:120px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.6}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media (max-width:560px){.fgrid{grid-template-columns:1fr}}
-.mrow{display:grid;grid-template-columns:1fr 180px auto;gap:8px;align-items:center;margin-bottom:8px}
+.mrow{display:grid;grid-template-columns:1fr 116px 190px auto;gap:8px;align-items:center;margin-bottom:8px}
+.mrow .msdot{width:10px;height:10px;border-radius:999px;display:inline-block;flex:none}
 @media (max-width:560px){.mrow{grid-template-columns:1fr}}
 .sec{margin-top:18px}
 .sec h4{margin:0 0 8px;font-size:12.5px;font-weight:800;letter-spacing:-.2px}
@@ -138,6 +163,7 @@ footer.note{padding:8px 18px 28px;max-width:1440px;margin:0 auto;color:var(--mut
       <small id="permLine">공지 텍스트를 붙여넣으면 마감일까지 알림이 울립니다</small>
     </div>
   </div>
+  <button class="btn" id="btnHelp">❓ 알림 켜는 법</button>
   <button class="btn" id="btnPerm">🔔 알림 권한</button>
   <button class="btn" id="btnTest">테스트 알림</button>
   <button class="btn" id="btnIcs">📅 ICS 내보내기</button>
@@ -157,6 +183,7 @@ footer.note{padding:8px 18px 28px;max-width:1440px;margin:0 auto;color:var(--mut
       </div>
       <div class="dow"><div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div></div>
       <div class="grid" id="grid"></div>
+      <div class="legend" id="legend"></div>
     </section>
 
     <section class="card">
@@ -237,6 +264,16 @@ footer.note{padding:8px 18px 28px;max-width:1440px;margin:0 auto;color:var(--mut
   </footer>
 </dialog>
 
+<dialog id="helpDlg">
+  <header><h3>알림 팝업 켜는 법</h3><span class="sp"></span><button class="btn sm ghost" data-close>닫기</button></header>
+  <div class="body" id="helpBody"></div>
+  <footer>
+    <button class="btn" id="helpTest3">3초 뒤 테스트 알림</button>
+    <span class="sp"></span>
+    <button class="btn primary" id="helpPerm">🔔 알림 권한 요청</button>
+  </footer>
+</dialog>
+
 <dialog id="evDlg">
   <header>
     <h3 id="evDlgTitle">프로모션 수정</h3><span class="sp"></span>
@@ -289,6 +326,32 @@ function countdown(ms) {
 /* ------------------------------------------------------------ constants */
 const KEY = "flmo.musinsa.calendar.v1";
 const PALETTE = ["#101114", "#1d4ed8", "#b45309", "#047857", "#7c3aed", "#be123c", "#0e7490"];
+/** 일정 종류별 색상 — 달력·목록·범례에서 동일하게 쓴다 */
+const TONES = {
+  start:  { c: "#059669", icon: "▶", name: "행사 시작" },
+  end:    { c: "#475569", icon: "■", name: "행사 종료" },
+  d1:     { c: "#e11d48", icon: "🔔", name: "1차 마감" },
+  d2:     { c: "#ea580c", icon: "🔔", name: "2차 마감" },
+  d3:     { c: "#a21caf", icon: "🔔", name: "3차·최종 마감" },
+  dl:     { c: "#e11d48", icon: "🔔", name: "신청 마감" },
+  apply:  { c: "#2563eb", icon: "📝", name: "신청 일정" },
+  custom: { c: "#7c3aed", icon: "⏰", name: "직접 추가" }
+};
+function toneKey(ms) {
+  if (!ms) return "custom";
+  if (ms.kind === "start") return "start";
+  if (ms.kind === "end") return "end";
+  if (ms.kind === "deadline") {
+    if (/1\s*차|일차|1차/.test(ms.label)) return "d1";
+    if (/2\s*차/.test(ms.label)) return "d2";
+    if (/3\s*차|4\s*차|최종/.test(ms.label)) return "d3";
+    return "dl";
+  }
+  if (ms.kind === "apply") return "apply";
+  return "custom";
+}
+const tone = ms => TONES[toneKey(ms)] || TONES.custom;
+
 const DEFAULT_RULES = {
   deadline: [
     { id: "d3", label: "3일 전 09:00", type: "dayBefore", days: 3, time: "09:00", on: true },
@@ -591,14 +654,30 @@ function renderCalendar() {
       chips.push(`<div class="bar ${shape}" style="--c:${sp.c}" title="${esc(sp.ev.title)}">${show ? esc(sp.ev.title) : "&nbsp;"}</div>`);
     }
     for (const mk of cell.marks) {
-      const dl = mk.ms.kind === "deadline";
-      chips.push(`<div class="mark ${dl ? "dl" : ""}" style="${dl ? "" : `--c:${mk.c}`}" title="${esc(mk.ev.title)} · ${esc(mk.ms.label)}">${dl ? "🔔" : "•"} ${esc(mk.ms.label)}</div>`);
+      const tn = tone(mk.ms);
+      const dot = state.events.length > 1 ? `<i class="edot" style="background:${mk.c}"></i>` : "";
+      chips.push(`<div class="mark" style="--c:${tn.c}" title="${esc(mk.ev.title)} · ${esc(mk.ms.label)} (${tn.name})">${dot}${tn.icon} ${esc(mk.ms.label)}</div>`);
     }
     const shown = chips.slice(0, 3).join("");
     const more = chips.length > 3 ? `<div class="more">+${chips.length - 3}</div>` : "";
     html += `<button class="${cls.join(" ")}" data-day="${k}"><div class="dnum">${d.getDate()}</div>${shown}${more}</button>`;
   }
   $("#grid").innerHTML = html;
+  renderLegend();
+}
+
+function renderLegend() {
+  const used = new Set();
+  for (const ev of state.events) for (const ms of ev.milestones || []) used.add(toneKey(ms));
+  const types = Object.keys(TONES).filter(k => used.has(k));
+  let html = `<span class="lg"><b style="color:var(--fg)">일정 색상</b></span>`;
+  html += types.map(k => `<span class="lg"><i class="sw" style="background:${TONES[k].c}"></i>${TONES[k].name}</span>`).join("");
+  if (state.events.length) {
+    html += `<span class="sep"></span><span class="lg"><b style="color:var(--fg)">프로모션</b></span>`;
+    html += state.events.map(ev =>
+      `<button class="lg" data-ev="${ev.id}" title="클릭해서 색상 변경"><i class="sw pill-sw" style="background:${ev.color}"></i>${esc(ev.title)}</button>`).join("");
+  }
+  $("#legend").innerHTML = html;
 }
 
 function renderDay() {
@@ -617,9 +696,11 @@ function renderDay() {
       <span class="sp"></span><span class="pill ${st.cls}">${esc(st.text)}</span></div>`;
   }
   for (const mk of cell.marks) {
-    html += `<div class="row" data-ev="${mk.ev.id}" style="cursor:pointer"><span class="dot" style="--c:${mk.ms.kind === "deadline" ? "var(--warn)" : mk.c}"></span>
-      <div><div class="t">${mk.ms.kind === "deadline" ? "🔔 " : ""}${esc(mk.ms.label)}</div>
-      <div class="s">${esc(mk.ev.title)} · ${human(mk.ms.at)}</div></div></div>`;
+    const tn = tone(mk.ms);
+    html += `<div class="row" data-ev="${mk.ev.id}" style="cursor:pointer"><span class="dot" style="--c:${tn.c}"></span>
+      <div><div class="t">${tn.icon} ${esc(mk.ms.label)}</div>
+      <div class="s">${esc(mk.ev.title)} · ${human(mk.ms.at)} <span class="k">· ${tn.name}</span></div></div>
+      <span class="sp"></span><i class="sw" style="width:10px;height:10px;border-radius:999px;display:inline-block;background:${mk.c}" title="${esc(mk.ev.title)}"></i></div>`;
   }
   if (alarms.length) {
     html += `<div class="sec"><h4>이 날의 알림 ${alarms.length}건</h4>` + alarms.map(x =>
@@ -638,7 +719,7 @@ function renderUpcoming() {
   if (!list.length) { box.innerHTML = `<div class="empty">예정된 알림이 없습니다</div>`; return; }
   box.innerHTML = list.slice(0, 7).map(x => {
     const left = x.t - now, soon = left < 86400000;
-    return `<div class="row" data-ev="${x.ev.id}" style="cursor:pointer"><span class="dot" style="--c:${x.ev.color}"></span>
+    return `<div class="row" data-ev="${x.ev.id}" style="cursor:pointer"><span class="dot" style="--c:${tone(msOf(x.ev, x.a.msId)).c}"></span>
       <div style="min-width:0"><div class="t">${esc(alarmTitle(x.ev, x.a))}</div>
       <div class="s">${esc(x.ev.title)} · ${human(x.a.at)}</div></div>
       <span class="sp"></span><span class="cd ${soon ? "soon" : ""}">${countdown(left)}</span></div>`;
@@ -828,6 +909,8 @@ function syncDraft() {
     const ms = draft.milestones.find(m => m.id === row.dataset.ms); if (!ms) return;
     ms.label = $(".ms-label", row).value.trim() || ms.label;
     ms.at = $(".ms-at", row).value || ms.at;
+    const kindSel = $(".ms-kind", row);
+    if (kindSel) ms.kind = kindSel.value;
   });
   // 행사 시작/종료 마일스톤을 기간과 동기화
   for (const ms of draft.milestones) {
@@ -840,16 +923,24 @@ function syncDraft() {
 function renderEditor() {
   rebuildAlarms(draft);
   const now = new Date();
-  const msRows = draft.milestones.map(ms => `
+  const KINDS = ["deadline", "apply", "start", "end", "custom"];
+  const msRows = draft.milestones.map(ms => {
+    const tn = tone(ms);
+    return `
     <div class="mrow" data-ms="${ms.id}">
-      <input class="in ms-label" value="${esc(ms.label)}" placeholder="예: 1차 마감일">
+      <div style="display:flex;align-items:center;gap:8px">
+        <i class="msdot" style="background:${tn.c}" title="${tn.name}"></i>
+        <input class="in ms-label" value="${esc(ms.label)}" placeholder="예: 1차 마감일">
+      </div>
+      <select class="in ms-kind">${KINDS.map(k => `<option value="${k}" ${k === ms.kind ? "selected" : ""}>${KIND_LABEL[k]}</option>`).join("")}</select>
       <input class="in ms-at" type="datetime-local" value="${esc(ms.at)}">
       <button class="btn sm danger" data-msdel="${ms.id}">삭제</button>
-    </div>`).join("") || `<div class="hint">마일스톤이 없습니다.</div>`;
+    </div>`;
+  }).join("") || `<div class="hint">마일스톤이 없습니다.</div>`;
 
   const alRows = draft.alarms.map(a => {
     const t = parseLocal(a.at), past = t && t <= now;
-    return `<div class="row"><span class="dot" style="--c:${past ? "var(--muted)" : "var(--warn)"}"></span>
+    return `<div class="row"><span class="dot" style="--c:${past ? "var(--muted)" : tone(msOf(draft, a.msId)).c}"></span>
       <div style="min-width:0"><div class="t">${human(a.at)}</div><div class="s">${esc(alarmTitle(draft, a))}</div></div>
       <span class="sp"></span>
       <span class="pill">${a.fired ? "완료" : past ? "대기" : countdown(t - now)}</span>
@@ -883,8 +974,9 @@ function renderEditor() {
         <div><span class="k">참여조건</span> ${conds || "-"}</div>
         <div style="margin-top:6px"><span class="k">지역</span> ${esc(draft.region || "-")}</div>
         <div style="margin-top:6px"><span class="k">신청 경로</span> ${esc(draft.applyPath || "-")}</div>
-        <div style="margin-top:10px"><label class="f">색상</label>
-          <select class="in" id="f_color">${PALETTE.map(c => `<option value="${c}" ${c === draft.color ? "selected" : ""}>${c}</option>`).join("")}</select></div>
+        <div style="margin-top:10px"><label class="f">프로모션 색상 (달력의 행사 기간 막대 색)</label>
+          <div class="swatches">${PALETTE.map(c => `<button type="button" class="sw-btn ${c === draft.color ? "on" : ""}" data-color="${c}" style="background:${c}" title="${c}"></button>`).join("")}</div>
+          <input type="hidden" id="f_color" value="${esc(draft.color)}"></div>
       </div>
     </div>
     <div class="sec"><h4>원문 / 메모</h4>
@@ -922,6 +1014,52 @@ function previewPaste() {
   return ev;
 }
 
+/* ------------------------------------------------------------ 알림 도움말 */
+const isFile = location.protocol === "file:";
+function permState() {
+  if (!("Notification" in window)) return { key: "none", text: "미지원", desc: "이 브라우저는 데스크톱 알림을 지원하지 않습니다" };
+  return { granted: { key: "granted", text: "허용됨 ✅", desc: "알림 시각에 팝업이 뜹니다" },
+           denied:  { key: "denied",  text: "차단됨 ⛔", desc: "아래 2번 방법으로 다시 허용해 주세요" },
+           default: { key: "default", text: "미설정", desc: "아래 1번을 눌러 허용해 주세요" } }[Notification.permission];
+}
+function renderHelp() {
+  const p = permState();
+  const now = new Date();
+  const nextA = allAlarms().filter(x => !x.a.fired && x.t > now)[0];
+  const waiting = allAlarms().filter(x => !x.a.fired && x.t > now).length;
+  $("#helpBody").innerHTML = `
+    ${isFile ? `<div class="warnbox"><b>지금은 파일(file://)로 열려 있습니다.</b><br>
+      화면 알림·알림음·탭 제목 깜빡임은 그대로 동작하지만, 크롬 계열은 file:// 에서 <b>데스크톱 팝업 알림을 차단</b>합니다.<br>
+      팝업까지 원하시면 아래 5번(로컬 서버 또는 GitHub Pages)을 보세요. 폰 알림은 6번 ICS 방법이 가장 확실합니다.</div>` : ""}
+    <div class="statgrid">
+      <div class="box"><div class="k">브라우저 알림 권한</div><div class="v">${p.text}</div></div>
+      <div class="box"><div class="k">알림음</div><div class="v">${state.settings.sound ? "켜짐 🔊" : "꺼짐 🔇"}</div></div>
+      <div class="box"><div class="k">대기 중인 알림</div><div class="v">${waiting}건</div></div>
+      <div class="box"><div class="k">다음 알림</div><div class="v">${nextA ? human(nextA.a.at) : "없음"}</div></div>
+    </div>
+    <div class="sec"><h4>알림이 울리게 하는 순서</h4>
+    <ol class="steps">
+      <li><b>알림 권한 켜기</b> — 상단 <b>🔔 알림 권한</b>(또는 아래 버튼) 클릭 → 브라우저가 묻는 창에서 <b>허용</b>.
+        <span class="k">현재 상태: ${p.desc}</span></li>
+      <li><b>이미 차단했다면</b> — 주소창 왼쪽 자물쇠/⚙ 아이콘 → <b>사이트 설정 → 알림 → 허용</b> → 새로고침.
+        <span class="k">크롬·엣지: 주소창에 <b>chrome://settings/content/notifications</b> · 사파리(맥): Safari &gt; 설정 &gt; 웹사이트 &gt; 알림</span></li>
+      <li><b>운영체제 알림도 켜기</b> — 브라우저는 허용했는데 안 뜨면 OS가 막고 있는 경우입니다.
+        <span class="k">윈도우: 설정 &gt; 시스템 &gt; 알림 에서 브라우저 켜기 + <b>집중 지원/방해 금지 끄기</b><br>
+        맥: 시스템 설정 &gt; 알림 에서 브라우저 허용 + <b>집중 모드 끄기</b></span></li>
+      <li><b>탭은 열어두기</b> — 이 페이지가 열려 있어야 시간을 감시합니다. 다른 탭을 보고 있어도 되고 창이 가려져도 되지만,
+        브라우저를 완전히 끄면 울리지 않습니다. <span class="k">탭에서 마우스 오른쪽 → <b>탭 고정</b> 해두면 실수로 닫지 않습니다.</span></li>
+      <li><b>팝업까지 확실히 받으려면 http 로 열기</b>
+        <span class="k">폴더에서 <b>npx http-server .</b> 실행 후 <b>http://localhost:8080</b> 접속<br>
+        또는 GitHub 저장소 Settings &gt; Pages &gt; Branch 를 이 브랜치로 지정하면 https 주소로 열 수 있습니다.</span></li>
+      <li><b>폰에서도 받기</b> — 상단 <b>📅 ICS 내보내기</b> → 구글 캘린더 &gt; 설정 &gt; 가져오기 로 업로드.
+        <span class="k">여기서 예약된 알림 시각이 캘린더 알림으로 그대로 등록되어, 이 페이지를 닫아도 휴대폰에서 울립니다.</span></li>
+    </ol></div>
+    <div class="sec"><h4>알림은 이렇게 울립니다</h4>
+      <div class="preview">① 화면 오른쪽 아래 <b>토스트 카드</b> · ② <b>알림음</b> 3회 · ③ <b>탭 제목이 🔔 로 깜빡임</b> · ④ 권한 허용 시 <b>데스크톱 팝업</b><br>
+      <span class="k">놓친 알림도 사라지지 않습니다. 페이지를 다시 열면 지난 알림을 모아서 알려주고, 달력의 해당 날짜에 기록으로 남습니다.</span></div>
+    </div>`;
+}
+
 /* ------------------------------------------------------------- 이벤트 배선 */
 function moveMonth(delta) {
   const d = new Date(state.view.y, state.view.m + delta, 1);
@@ -946,7 +1084,7 @@ function wire() {
     renderCalendar(); renderDay();
   });
   document.addEventListener("click", e => {
-    const row = e.target.closest("#evList [data-ev], #dayBody [data-ev], #upcoming [data-ev]");
+    const row = e.target.closest("#evList [data-ev], #dayBody [data-ev], #upcoming [data-ev], #legend [data-ev]");
     if (row) openEvent(row.dataset.ev);
   });
 
@@ -996,6 +1134,8 @@ function wire() {
       if (a) { draft.skips = (draft.skips || []).concat(a.msId + "|" + a.at); draft.alarms = draft.alarms.filter(x => x.id !== a.id); }
       renderEditor(); return;
     }
+    const sw = e.target.closest("[data-color]");
+    if (sw) { syncDraft(); draft.color = sw.dataset.color; renderEditor(); return; }
     if (e.target.id === "msAdd") {
       syncDraft();
       draft.milestones.push({ id: uid(), label: "새 마감일", at: fmt(new Date(Date.now() + 86400000)), kind: "deadline" });
@@ -1008,6 +1148,9 @@ function wire() {
       draft.alarms.push({ id: uid(), at, label: $("#al_label").value.trim() || "직접 알림", custom: true, fired: parseLocal(at) <= new Date() });
       renderEditor();
     }
+  });
+  $("#evDlgBody").addEventListener("change", e => {
+    if (e.target.classList.contains("ms-kind")) { syncDraft(); renderEditor(); }
   });
   $("#evSave").onclick = () => {
     syncDraft(); rebuildAlarms(draft);
@@ -1029,10 +1172,22 @@ function wire() {
     download("musinsa-promotions.ics", buildIcs(state.events));
     toast("ICS 저장", "구글/애플 캘린더에 가져오면 알림 시각까지 그대로 등록됩니다.");
   };
+  $("#btnHelp").onclick = () => { renderHelp(); $("#helpDlg").showModal(); };
+  $("#helpPerm").onclick = () => $("#btnPerm").click();
+  $("#helpTest3").onclick = () => {
+    toast("3초 뒤 테스트 알림", "다른 탭으로 옮겨서 팝업이 뜨는지 확인해 보세요.");
+    beep();
+    setTimeout(() => {
+      const ev = state.events[0] || { title: "테스트 프로모션", milestones: [] };
+      fireAlarm(ev, { at: fmt(new Date()), label: "테스트 알림", msId: null });
+      renderHelp();
+    }, 3000);
+  };
   $("#btnPerm").onclick = async () => {
     if (!("Notification" in window)) { alert("이 브라우저는 데스크톱 알림을 지원하지 않습니다. 화면 알림과 소리는 정상 동작합니다."); return; }
     const p = await Notification.requestPermission();
     updatePermLine();
+    if ($("#helpDlg").open) renderHelp();
     if (p !== "granted") alert("알림이 차단되어 있습니다. 주소창 자물쇠 아이콘 > 알림 허용으로 바꿔주세요.");
   };
   $("#btnTest").onclick = () => {
@@ -1069,6 +1224,7 @@ function updatePermLine() {
   const el = $("#permLine");
   if (!("Notification" in window)) { el.textContent = "브라우저 알림 미지원 · 화면 알림과 소리로 동작합니다"; return; }
   const p = Notification.permission;
+  if (isFile && p !== "granted") { el.textContent = "file:// 로 열림 · 화면 알림·소리는 동작, 팝업은 ‘알림 켜는 법’ 참고"; return; }
   el.textContent = p === "granted" ? "브라우저 알림 허용됨 · 탭이 열려 있으면 알림이 울립니다"
     : p === "denied" ? "브라우저 알림 차단됨 · 화면 알림과 소리만 울립니다"
     : "‘알림 권한’을 눌러 브라우저 알림을 켜주세요";
