@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>무신사 프로모션 알림 달력</title>
+<style>
+:root{
+  --bg:#f4f4f6; --card:#fff; --fg:#101114; --muted:#6b7280; --line:#e6e7eb;
+  --accent:#101114; --accent-fg:#fff; --warn:#e11d48; --ok:#047857;
+  --shadow:0 1px 2px rgba(16,17,20,.06),0 8px 24px rgba(16,17,20,.06);
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#0d0e11; --card:#16181d; --fg:#f2f3f5; --muted:#9aa1ad; --line:#262a31;
+         --accent:#f2f3f5; --accent-fg:#101114; --warn:#fb7185; --ok:#34d399;
+         --shadow:0 1px 2px rgba(0,0,0,.5),0 8px 24px rgba(0,0,0,.35); }
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--fg); font:15px/1.5 -apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer}
+.topbar{
+  position:sticky;top:0;z-index:30;background:var(--card);border-bottom:1px solid var(--line);
+  display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:12px 18px;
+}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto}
+.brand .logo{width:30px;height:30px;border-radius:9px;background:var(--accent);color:var(--accent-fg);
+  display:grid;place-items:center;font-weight:800;font-size:15px;letter-spacing:-.5px}
+.brand h1{margin:0;font-size:16px;font-weight:700;letter-spacing:-.3px}
+.brand small{display:block;color:var(--muted);font-size:11.5px;font-weight:500}
+.btn{background:transparent;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:13px;font-weight:600;
+  display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.btn:hover{border-color:var(--fg)}
+.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.btn.ghost{border-color:transparent;color:var(--muted)}
+.btn.sm{padding:5px 9px;font-size:12px;border-radius:8px}
+.btn.danger{color:var(--warn);border-color:transparent}
+.btn.danger:hover{border-color:var(--warn)}
+.pill{font-size:11.5px;padding:3px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.pill.live{border-color:var(--ok);color:var(--ok)}
+.pill.warn{border-color:var(--warn);color:var(--warn)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 372px;gap:16px;padding:16px;align-items:start;max-width:1440px;margin:0 auto}
+@media (max-width:1000px){.layout{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.card + .card{margin-top:16px}
+.card > header{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.card > header h2{margin:0;font-size:14px;font-weight:700;letter-spacing:-.2px}
+.card > header .sp{margin-left:auto}
+.card .body{padding:14px 16px}
+/* calendar */
+.calnav{display:flex;align-items:center;gap:8px;padding:14px 16px}
+.calnav h2{margin:0;font-size:19px;font-weight:800;letter-spacing:-.4px;min-width:150px}
+.calnav .sp{margin-left:auto}
+.dow{display:grid;grid-template-columns:repeat(7,1fr);border-top:1px solid var(--line);background:var(--card)}
+.dow div{padding:8px 6px;text-align:center;font-size:11.5px;font-weight:700;color:var(--muted)}
+.dow div:first-child{color:var(--warn)}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);border-top:1px solid var(--line)}
+.cell{min-height:104px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px;
+  display:flex;flex-direction:column;gap:3px;background:transparent;text-align:left;border-left:0;border-top:0;position:relative}
+.cell:nth-child(7n){border-right:0}
+.cell.out{opacity:.36}
+.cell.sel{background:color-mix(in srgb,var(--fg) 7%,transparent)}
+.cell:hover{background:color-mix(in srgb,var(--fg) 4%,transparent)}
+.dnum{font-size:12px;font-weight:700;width:22px;height:22px;display:grid;place-items:center;border-radius:999px}
+.cell.sun .dnum{color:var(--warn)}
+.cell.today .dnum{background:var(--accent);color:var(--accent-fg)}
+.bar{--c:var(--fg);font-size:11px;line-height:1.35;padding:2px 6px;color:#fff;background:var(--c);
+  border-radius:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.bar.mid{border-radius:0;margin-left:-6px;margin-right:-6px;padding-left:6px;padding-right:6px}
+.bar.st{border-top-left-radius:4px;border-bottom-left-radius:4px;margin-right:-6px;padding-right:6px}
+.bar.en{border-top-right-radius:4px;border-bottom-right-radius:4px;margin-left:-6px;padding-left:6px}
+.mark{font-size:11px;line-height:1.35;padding:2px 5px;border-radius:4px;border:1px solid var(--c,var(--line));
+  color:var(--c,var(--fg));white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600;background:var(--card)}
+.mark.dl{--c:var(--warn)}
+.more{font-size:10.5px;color:var(--muted);padding-left:4px}
+/* side */
+.row{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row .dot{width:8px;height:8px;border-radius:999px;background:var(--c,var(--fg));margin-top:6px;flex:none}
+.row .t{font-weight:700;font-size:13.5px}
+.row .s{font-size:12px;color:var(--muted);margin-top:2px}
+.row .sp{margin-left:auto}
+.cd{font-variant-numeric:tabular-nums;font-weight:700;font-size:12.5px;white-space:nowrap}
+.cd.soon{color:var(--warn)}
+.cd.done{color:var(--muted);font-weight:500}
+.empty{color:var(--muted);font-size:13px;padding:14px 0;text-align:center}
+.evrow{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.evrow:last-child{border-bottom:0}
+.evrow:hover .t{text-decoration:underline}
+.hint{font-size:11.5px;color:var(--muted);line-height:1.55}
+.switch{display:flex;align-items:center;gap:8px;font-size:12.5px;padding:5px 0}
+.switch input{width:16px;height:16px;accent-color:var(--fg)}
+/* dialogs */
+dialog{border:1px solid var(--line);border-radius:16px;padding:0;background:var(--card);color:var(--fg);
+  width:min(720px,94vw);box-shadow:0 24px 64px rgba(0,0,0,.28)}
+dialog::backdrop{background:rgba(8,9,11,.55)}
+dialog header{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+dialog header h3{margin:0;font-size:15px;font-weight:700}
+dialog header .sp{margin-left:auto}
+dialog .body{padding:16px;max-height:min(70vh,720px);overflow:auto}
+dialog footer{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--line);background:var(--card)}
+dialog footer .sp{margin-left:auto}
+label.f{display:block;font-size:11.5px;font-weight:700;color:var(--muted);margin:0 0 5px}
+.in{width:100%;background:transparent;border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:13.5px}
+.in:focus{outline:none;border-color:var(--fg)}
+textarea.in{min-height:120px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.6}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.fgrid{grid-template-columns:1fr}}
+.mrow{display:grid;grid-template-columns:1fr 180px auto;gap:8px;align-items:center;margin-bottom:8px}
+@media (max-width:560px){.mrow{grid-template-columns:1fr}}
+.sec{margin-top:18px}
+.sec h4{margin:0 0 8px;font-size:12.5px;font-weight:800;letter-spacing:-.2px}
+.preview{border:1px dashed var(--line);border-radius:12px;padding:12px;font-size:12.5px;line-height:1.7}
+.preview b{font-weight:700}
+.k{color:var(--muted)}
+/* toasts */
+#toasts{position:fixed;right:16px;bottom:16px;z-index:80;display:flex;flex-direction:column;gap:10px;width:min(360px,92vw)}
+.toast{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:12px;
+  padding:12px 14px;box-shadow:0 12px 32px rgba(0,0,0,.22);animation:pop .22s ease}
+@keyframes pop{from{transform:translateY(8px);opacity:0}to{transform:none;opacity:1}}
+.toast .tt{font-weight:800;font-size:13.5px;margin-bottom:3px}
+.toast .tb{font-size:12.5px;color:var(--muted);white-space:pre-line}
+.toast .tc{position:absolute;top:6px;right:8px}
+footer.note{padding:8px 18px 28px;max-width:1440px;margin:0 auto;color:var(--muted);font-size:11.5px;line-height:1.7}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">M</div>
+    <div>
+      <h1>무신사 프로모션 알림 달력</h1>
+      <small id="permLine">공지 텍스트를 붙여넣으면 마감일까지 알림이 울립니다</small>
+    </div>
+  </div>
+  <button class="btn" id="btnPerm">🔔 알림 권한</button>
+  <button class="btn" id="btnTest">테스트 알림</button>
+  <button class="btn" id="btnIcs">📅 ICS 내보내기</button>
+  <button class="btn primary" id="btnPaste">＋ 공지 붙여넣기</button>
+</header>
+
+<main class="layout">
+  <div>
+    <section class="card">
+      <div class="calnav">
+        <h2 id="calTitle">2026년 9월</h2>
+        <button class="btn sm" id="btnPrev">‹</button>
+        <button class="btn sm" id="btnToday">오늘</button>
+        <button class="btn sm" id="btnNext">›</button>
+        <span class="sp"></span>
+        <span class="pill" id="statPill">-</span>
+      </div>
+      <div class="dow"><div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="card">
+      <header>
+        <h2>등록된 프로모션</h2>
+        <span class="sp"></span>
+        <button class="btn sm" id="btnBlank">＋ 직접 추가</button>
+      </header>
+      <div class="body" id="evList"></div>
+    </section>
+  </div>
+
+  <aside>
+    <section class="card">
+      <header><h2 id="dayTitle">선택한 날짜</h2></header>
+      <div class="body" id="dayBody"></div>
+    </section>
+
+    <section class="card">
+      <header>
+        <h2>다가오는 알림</h2>
+        <span class="sp"></span>
+        <span class="pill" id="alarmCount">0</span>
+      </header>
+      <div class="body" id="upcoming"></div>
+    </section>
+
+    <section class="card">
+      <header><h2>알림 설정</h2></header>
+      <div class="body">
+        <div class="sec" style="margin-top:0">
+          <h4>마감일 알림 (신청 마감)</h4>
+          <div id="rulesDeadline"></div>
+        </div>
+        <div class="sec">
+          <h4>행사 일정 알림 (시작·종료)</h4>
+          <div id="rulesEvent"></div>
+        </div>
+        <div class="sec">
+          <h4>기타</h4>
+          <label class="switch"><input type="checkbox" id="optSound"> 알림음 재생</label>
+          <label class="switch"><input type="checkbox" id="optDesktop"> 브라우저 데스크톱 알림</label>
+        </div>
+        <p class="hint" style="margin:14px 0 0">
+          이 탭이 열려 있는 동안 알림이 울립니다. 탭을 닫아도 받으려면
+          <b>ICS 내보내기</b>로 구글·애플 캘린더에 등록하세요 (알림 시각까지 그대로 들어갑니다).
+        </p>
+      </div>
+    </section>
+  </aside>
+</main>
+
+<footer class="note">
+  데이터는 이 브라우저에만 저장됩니다(localStorage). 시간은 한국시간(KST) 기준으로 다룹니다.
+</footer>
+
+<div id="toasts"></div>
+
+<dialog id="pasteDlg">
+  <header>
+    <h3>무신사 공지 붙여넣기</h3><span class="sp"></span>
+    <button class="btn sm" id="pasteSample">예시 채우기</button>
+    <button class="btn sm ghost" data-close>닫기</button>
+  </header>
+  <div class="body">
+    <label class="f">프로모션 명 / 참여조건 / 진행기간 / 설명이 포함된 원문을 그대로 붙여넣으세요</label>
+    <textarea class="in" id="pasteText" placeholder="프로모션 명&#10;경량패딩 페스티벌 - 일반세일&#10;참여조건&#10;* 최소 5% 이상 할인&#10;진행기간&#10;2026-09-09 11:00 ~ 2026-09-19 11:00 (총 10일)&#10;..."></textarea>
+    <div class="sec">
+      <h4>인식 결과</h4>
+      <div class="preview" id="pastePreview">붙여넣으면 자동으로 분석합니다.</div>
+    </div>
+  </div>
+  <footer>
+    <span class="hint">일정·마감일·알림이 자동 생성되며, 저장 후 수정할 수 있습니다.</span>
+    <span class="sp"></span>
+    <button class="btn" data-close>취소</button>
+    <button class="btn primary" id="pasteSave">달력에 추가</button>
+  </footer>
+</dialog>
+
+<dialog id="evDlg">
+  <header>
+    <h3 id="evDlgTitle">프로모션 수정</h3><span class="sp"></span>
+    <button class="btn sm ghost" data-close>닫기</button>
+  </header>
+  <div class="body" id="evDlgBody"></div>
+  <footer>
+    <button class="btn danger" id="evDelete">삭제</button>
+    <span class="sp"></span>
+    <button class="btn" id="evIcs">ICS</button>
+    <button class="btn" id="evGcal">구글 캘린더</button>
+    <button class="btn primary" id="evSave">저장</button>
+  </footer>
+</dialog>
+<script>
+"use strict";
+/* ---------------------------------------------------------------- utils */
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const pad = n => String(n).padStart(2, "0");
+const uid = () => Math.random().toString(36).slice(2, 10);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+const fmt = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+const parseLocal = s => {
+  const m = /^(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2})/.exec(String(s || ""));
+  return m ? new Date(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]) : null;
+};
+const dayKey = s => String(s || "").slice(0, 10);
+const keyOf = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const DOW = ["일", "월", "화", "수", "목", "금", "토"];
+const human = s => {
+  const d = parseLocal(s); if (!d) return "-";
+  return `${d.getMonth() + 1}월 ${d.getDate()}일(${DOW[d.getDay()]}) ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+};
+const humanFull = s => {
+  const d = parseLocal(s); if (!d) return "-";
+  return `${d.getFullYear()}.${pad(d.getMonth() + 1)}.${pad(d.getDate())}(${DOW[d.getDay()]}) ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+};
+const startOfDay = d => { const x = new Date(d); x.setHours(0, 0, 0, 0); return x; };
+function countdown(ms) {
+  if (ms <= 0) return "지남";
+  const s = Math.floor(ms / 1000), d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600),
+        mi = Math.floor(s % 3600 / 60), se = s % 60;
+  if (d > 0) return `${d}일 ${h}시간`;
+  if (h > 0) return `${h}시간 ${mi}분`;
+  return `${mi}분 ${se}초`;
+}
+
+/* ------------------------------------------------------------ constants */
+const KEY = "flmo.musinsa.calendar.v1";
+const PALETTE = ["#101114", "#1d4ed8", "#b45309", "#047857", "#7c3aed", "#be123c", "#0e7490"];
+const DEFAULT_RULES = {
+  deadline: [
+    { id: "d3", label: "3일 전 09:00", type: "dayBefore", days: 3, time: "09:00", on: true },
+    { id: "d1", label: "1일 전 09:00", type: "dayBefore", days: 1, time: "09:00", on: true },
+    { id: "d0", label: "당일 09:00",   type: "dayBefore", days: 0, time: "09:00", on: true },
+    { id: "h2", label: "마감 2시간 전", type: "before",    minutes: 120,          on: true }
+  ],
+  event: [
+    { id: "e1",  label: "1일 전 09:00", type: "dayBefore", days: 1, time: "09:00", on: true },
+    { id: "eh1", label: "1시간 전",     type: "before",    minutes: 60,            on: true },
+    { id: "e0",  label: "정각",         type: "before",    minutes: 0,             on: true }
+  ]
+};
+const SAMPLE = `프로모션 명
+경량패딩 페스티벌 - 일반세일
+참여조건
+
+* 최소 5% 이상 할인
+
+진행기간
+2026-09-09 11:00 ~ 2026-09-19 11:00 (총 10일)
+
+* 모집 기간 동안 자유롭게 신청하고 적용 상품을 설정할 수 있습니다.
+
+참여 가능 지역
+South Korea (총 1개 지역)
+설명
+안녕하세요, 무신사입니다.
+
+9월 9일부터 10일간 진행되는 [경량패딩 페스티벌] 캠페인 세일 참여 안내드립니다.
+이번 캠페인은 무신사 내에서 집중적으로 노출될 예정이며, 세일 참여 브랜드와 상품의 노출이 대폭 확대될 계획입니다.
+경량패딩 상품 판매 발판이 될 이번 캠페인에 많은 참여 부탁드립니다.
+자세한 참여 방법 및 조건은 아래 내용을 확인해 주시기 바랍니다.
+
+1. 행사 및 세일 기간
+- 행사 기간: 2026.9.9(수) 11:00 ~ 2026.9.19(토) 11:00
+
+2. 세일 신청 기간
+- 시작일 : 2026.09.09 (수)
+- 1차 마감일 : 2026.08.24 (월) 오전
+- 2차 마감일 : 2026.09.03 (목)
+※ 08.24(월) 오전 1차 마감일까지 모집된 상품에 한해 캠페인 페이지 내 주요 지면과 내외부배너에 노출이 가능합니다.
+
+3. 신청 방법
+- 경로: 파트너 어드민 > 성장 솔루션 > 할인 설정 관리 > 프로모션 할인 > 클리어런스 위크 > 일반 세일
+※ 자세한 신청 방법은 [파트너 어드민 공지사항] 또는 [파트너 매뉴얼] 참고
+
+4. 세일 참여 조건
+- 대상 상품 : 속성값 우모량체크, 경량패딩으로 등록된 경량패딩 상품
+- 총 할인율 5% 이상 필수`;
+
+/* ---------------------------------------------------------------- state */
+let state = {
+  events: [],
+  settings: { sound: true, desktop: true, rules: structuredClone(DEFAULT_RULES) },
+  view: null,          // {y,m}
+  selected: null       // 'YYYY-MM-DD'
+};
+
+function save() { try { localStorage.setItem(KEY, JSON.stringify({ events: state.events, settings: state.settings })); } catch (e) {} }
+function load() {
+  let raw = null;
+  try { raw = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) {}
+  if (raw && Array.isArray(raw.events)) {
+    state.events = raw.events;
+    const s = raw.settings || {};
+    state.settings.sound = s.sound !== false;
+    state.settings.desktop = s.desktop !== false;
+    // merge rules by id so newly added presets still appear
+    for (const set of ["deadline", "event"]) {
+      const stored = (s.rules && s.rules[set]) || [];
+      state.settings.rules[set] = DEFAULT_RULES[set].map(def => {
+        const hit = stored.find(r => r.id === def.id);
+        return Object.assign(structuredClone(def), hit ? { on: hit.on !== false } : {});
+      });
+    }
+  } else {
+    const ev = parsePromotion(SAMPLE);
+    if (ev) state.events = [ev];
+    save();
+  }
+}
+
+/* --------------------------------------------------------------- parser */
+const LABELS = [
+  ["프로모션 명", "name"], ["프로모션명", "name"],
+  ["참여조건", "cond"], ["참여 조건", "cond"],
+  ["진행기간", "period"], ["진행 기간", "period"],
+  ["참여 가능 지역", "region"], ["참여가능 지역", "region"], ["참여가능지역", "region"],
+  ["설명", "desc"]
+];
+
+function toDateParts(str) {
+  const m = /(\d{4})\s*[.\-\/]\s*(\d{1,2})\s*[.\-\/]\s*(\d{1,2})/.exec(str);
+  return m ? { y: +m[1], mo: +m[2], d: +m[3] } : null;
+}
+/** 날짜 + (선택)시각 문자열을 'YYYY-MM-DDTHH:mm' 으로. 시각이 없으면 fallback 사용 */
+function toStamp(str, fallbackTime) {
+  const p = toDateParts(str); if (!p) return null;
+  let time = fallbackTime || "18:00";
+  const t = /(\d{1,2})\s*:\s*(\d{2})/.exec(str.replace(/\d{4}\s*[.\-\/]\s*\d{1,2}\s*[.\-\/]\s*\d{1,2}/, ""));
+  if (t) time = `${pad(+t[1])}:${t[2]}`;
+  else if (/오전/.test(str)) time = "11:00";
+  else if (/오후/.test(str)) time = "17:00";
+  return `${p.y}-${pad(p.mo)}-${pad(p.d)}T${time}`;
+}
+function splitRange(text) {
+  const parts = String(text).split(/~|∼|—|–/);
+  if (parts.length < 2) return null;
+  const a = toStamp(parts[0], "00:00"), b = toStamp(parts[1], "23:59");
+  return a && b ? { start: a, end: b } : null;
+}
+
+function parsePromotion(text) {
+  const lines = String(text || "").replace(/\r/g, "").split("\n");
+  const sec = {}; let cur = null;
+  for (const raw of lines) {
+    const t = raw.trim();
+    const hit = LABELS.find(([l]) => t === l || t === l + ":" || t === l + " :");
+    if (hit) { cur = hit[1]; sec[cur] = sec[cur] || []; continue; }
+    if (cur) sec[cur].push(raw);
+  }
+  const first = k => (sec[k] || []).map(s => s.trim()).find(Boolean) || "";
+  const joined = k => (sec[k] || []).join("\n").trim();
+
+  let title = first("name");
+  if (!title) {                                   // 라벨이 없어도 첫 줄을 제목으로
+    title = lines.map(s => s.trim()).find(Boolean) || "새 프로모션";
+  }
+  let saleType = "";
+  const dash = title.split(/\s+-\s+/);
+  if (dash.length > 1) { saleType = dash.pop().trim(); title = dash.join(" - ").trim(); }
+
+  const descText = joined("desc") || text;
+  let range = splitRange(joined("period") || "");
+  if (!range) {
+    const m = /행사\s*기간\s*[:：]?\s*([^\n]+)/.exec(descText);
+    if (m) range = splitRange(m[1]);
+  }
+  if (!range) {                                    // 최후 수단: 본문에서 첫 범위
+    const m = /(\d{4}\s*[.\-\/]\s*\d{1,2}\s*[.\-\/]\s*\d{1,2}[^\n~]*~[^\n]*)/.exec(text);
+    if (m) range = splitRange(m[1]);
+  }
+
+  const conditions = (sec.cond || []).map(s => s.trim())
+    .filter(s => s && /^[*\-•·]/.test(s)).map(s => s.replace(/^[*\-•·]\s*/, ""));
+
+  const milestones = [];
+  const pushMs = (label, at, kind) => {
+    if (!at) return;
+    if (milestones.some(x => x.label === label && x.at === at)) return;
+    milestones.push({ id: uid(), label, at, kind });
+  };
+  if (range) {
+    pushMs("행사 시작", range.start, "start");
+    pushMs("행사 종료", range.end, "end");
+  }
+  for (const raw of descText.split("\n")) {
+    const line = raw.trim();
+    const m = /^[-•·]\s*([^:：]{1,30})\s*[:：]\s*(.+)$/.exec(line);
+    if (!m) continue;
+    const label = m[1].trim(), val = m[2].trim();
+    if (/기간/.test(label)) continue;                       // 범위는 위에서 처리
+    if (!toDateParts(val)) continue;                        // 날짜 없는 항목 제외
+    const isDeadline = /마감/.test(label);
+    const at = toStamp(val, isDeadline ? "18:00" : "10:00");
+    pushMs(label, at, isDeadline ? "deadline" : "apply");
+  }
+  // 신청 시작일이 행사 시작일과 같은 날이면 중복이므로 합친다
+  const startDays = milestones.filter(m => m.kind === "start" || m.kind === "end").map(m => dayKey(m.at));
+  for (let i = milestones.length - 1; i >= 0; i--) {
+    const m = milestones[i];
+    if (m.kind === "apply" && /시작/.test(m.label) && startDays.includes(dayKey(m.at))) milestones.splice(i, 1);
+  }
+  milestones.sort((a, b) => a.at.localeCompare(b.at));
+
+  const pathM = /경로\s*[:：]\s*([^\n]+)/.exec(descText);
+
+  const ev = {
+    id: uid(),
+    title: title || "새 프로모션",
+    saleType,
+    channel: /무신사/.test(text) ? "무신사" : "",
+    start: range ? range.start : null,
+    end: range ? range.end : null,
+    region: first("region"),
+    conditions,
+    applyPath: pathM ? pathM[1].trim() : "",
+    description: descText,
+    milestones,
+    alarms: [],
+    color: PALETTE[0]
+  };
+  rebuildAlarms(ev);
+  return ev;
+}
+
+/* --------------------------------------------------------------- alarms */
+function ruleTime(base, r) {
+  if (r.type === "before") return new Date(base.getTime() - (r.minutes || 0) * 60000);
+  const d = new Date(base);
+  d.setDate(d.getDate() - (r.days || 0));
+  const [h, mi] = String(r.time || "09:00").split(":").map(Number);
+  d.setHours(h, mi, 0, 0);
+  return d;
+}
+function rebuildAlarms(ev) {
+  const now = new Date();
+  const prev = new Map((ev.alarms || []).map(a => [a.msId + "|" + a.at, a]));
+  const kept = (ev.alarms || []).filter(a => a.custom);
+  const skips = new Set(ev.skips || []);
+  const out = [];
+  for (const ms of ev.milestones || []) {
+    if (ms.off) continue;
+    const base = parseLocal(ms.at); if (!base) continue;
+    const rules = (state.settings.rules[ms.kind === "deadline" ? "deadline" : "event"] || []).filter(r => r.on !== false);
+    for (const r of rules) {
+      const t = ruleTime(base, r);
+      if (t > base) continue;                       // 마일스톤보다 늦은 알림은 무의미
+      const at = fmt(t);
+      if (skips.has(ms.id + "|" + at)) continue;
+      if (out.some(a => a.msId === ms.id && a.at === at)) continue;
+      const old = prev.get(ms.id + "|" + at);
+      out.push({
+        id: old ? old.id : uid(), at, msId: ms.id, ruleId: r.id, label: r.label,
+        fired: old ? !!old.fired : t <= now
+      });
+    }
+  }
+  for (const a of kept) if (!out.some(x => x.at === a.at && x.label === a.label)) out.push(a);
+  out.sort((a, b) => a.at.localeCompare(b.at));
+  ev.alarms = out;
+  return ev;
+}
+const msOf = (ev, id) => (ev.milestones || []).find(m => m.id === id);
+function alarmTitle(ev, a) {
+  const ms = msOf(ev, a.msId);
+  return ms ? `${ms.label} · ${a.label}` : (a.label || "알림");
+}
+function allAlarms() {
+  const list = [];
+  for (const ev of state.events) for (const a of ev.alarms || []) list.push({ ev, a, t: parseLocal(a.at) });
+  return list.filter(x => x.t).sort((p, q) => p.t - q.t);
+}
+function nextMilestone(ev) {
+  const now = new Date();
+  return (ev.milestones || []).map(m => ({ m, t: parseLocal(m.at) })).filter(x => x.t && x.t > now).sort((a, b) => a.t - b.t)[0] || null;
+}
+function evStatus(ev) {
+  const now = new Date(), s = parseLocal(ev.start), e = parseLocal(ev.end);
+  if (s && e && now >= s && now <= e) return { text: "진행중", cls: "live" };
+  if (e && now > e) return { text: "종료", cls: "" };
+  const nm = nextMilestone(ev);
+  if (nm) {
+    const days = Math.ceil((startOfDay(nm.t) - startOfDay(now)) / 86400000);
+    return { text: `${nm.m.label} D-${days}`, cls: days <= 3 ? "warn" : "" };
+  }
+  return { text: "예정", cls: "" };
+}
+
+/* --------------------------------------------------------------- render */
+function buildDayMap() {
+  const map = new Map();
+  const touch = k => { if (!map.has(k)) map.set(k, { spans: [], marks: [] }); return map.get(k); };
+  state.events.forEach((ev, i) => {
+    const c = ev.color || PALETTE[i % PALETTE.length];
+    const s = parseLocal(ev.start), e = parseLocal(ev.end);
+    if (s && e && e >= s) {
+      let d = startOfDay(s); const last = startOfDay(e); let guard = 0;
+      while (d <= last && guard++ < 400) {
+        touch(keyOf(d)).spans.push({ ev, c, first: +d === +startOfDay(s), last: +d === +last });
+        d = new Date(d.getTime() + 86400000);
+      }
+    }
+    for (const ms of ev.milestones || []) touch(dayKey(ms.at)).marks.push({ ev, ms, c });
+  });
+  return map;
+}
+
+function renderCalendar() {
+  const { y, m } = state.view;
+  $("#calTitle").textContent = `${y}년 ${m + 1}월`;
+  const map = buildDayMap();
+  const first = new Date(y, m, 1);
+  const start = new Date(y, m, 1 - first.getDay());
+  const todayKey = keyOf(new Date());
+  let html = "";
+  for (let i = 0; i < 42; i++) {
+    const d = new Date(start.getFullYear(), start.getMonth(), start.getDate() + i);
+    const k = keyOf(d), cell = map.get(k) || { spans: [], marks: [] };
+    const cls = ["cell"];
+    if (d.getMonth() !== m) cls.push("out");
+    if (d.getDay() === 0) cls.push("sun");
+    if (k === todayKey) cls.push("today");
+    if (k === state.selected) cls.push("sel");
+    const chips = [];
+    for (const sp of cell.spans) {
+      const shape = sp.first ? (sp.last ? "" : "st") : (sp.last ? "en" : "mid");
+      const show = sp.first || d.getDay() === 0;
+      chips.push(`<div class="bar ${shape}" style="--c:${sp.c}" title="${esc(sp.ev.title)}">${show ? esc(sp.ev.title) : "&nbsp;"}</div>`);
+    }
+    for (const mk of cell.marks) {
+      const dl = mk.ms.kind === "deadline";
+      chips.push(`<div class="mark ${dl ? "dl" : ""}" style="${dl ? "" : `--c:${mk.c}`}" title="${esc(mk.ev.title)} · ${esc(mk.ms.label)}">${dl ? "🔔" : "•"} ${esc(mk.ms.label)}</div>`);
+    }
+    const shown = chips.slice(0, 3).join("");
+    const more = chips.length > 3 ? `<div class="more">+${chips.length - 3}</div>` : "";
+    html += `<button class="${cls.join(" ")}" data-day="${k}"><div class="dnum">${d.getDate()}</div>${shown}${more}</button>`;
+  }
+  $("#grid").innerHTML = html;
+}
+
+function renderDay() {
+  const k = state.selected;
+  const box = $("#dayBody");
+  if (!k) { $("#dayTitle").textContent = "선택한 날짜"; box.innerHTML = `<div class="empty">달력에서 날짜를 선택하세요</div>`; return; }
+  const d = parseLocal(k + "T00:00");
+  $("#dayTitle").textContent = `${d.getMonth() + 1}월 ${d.getDate()}일 (${DOW[d.getDay()]})`;
+  const map = buildDayMap(), cell = map.get(k) || { spans: [], marks: [] };
+  const alarms = allAlarms().filter(x => dayKey(x.a.at) === k);
+  let html = "";
+  for (const sp of cell.spans) {
+    const st = evStatus(sp.ev);
+    html += `<div class="row" data-ev="${sp.ev.id}" style="cursor:pointer"><span class="dot" style="--c:${sp.c}"></span>
+      <div><div class="t">${esc(sp.ev.title)}</div><div class="s">행사 기간 · ${human(sp.ev.start)} ~ ${human(sp.ev.end)}</div></div>
+      <span class="sp"></span><span class="pill ${st.cls}">${esc(st.text)}</span></div>`;
+  }
+  for (const mk of cell.marks) {
+    html += `<div class="row" data-ev="${mk.ev.id}" style="cursor:pointer"><span class="dot" style="--c:${mk.ms.kind === "deadline" ? "var(--warn)" : mk.c}"></span>
+      <div><div class="t">${mk.ms.kind === "deadline" ? "🔔 " : ""}${esc(mk.ms.label)}</div>
+      <div class="s">${esc(mk.ev.title)} · ${human(mk.ms.at)}</div></div></div>`;
+  }
+  if (alarms.length) {
+    html += `<div class="sec"><h4>이 날의 알림 ${alarms.length}건</h4>` + alarms.map(x =>
+      `<div class="row"><span class="dot" style="--c:${x.a.fired ? "var(--muted)" : "var(--warn)"}"></span>
+       <div><div class="t">${human(x.a.at)}</div><div class="s">${esc(x.ev.title)} · ${esc(alarmTitle(x.ev, x.a))}</div></div>
+       <span class="sp"></span><span class="pill">${x.a.fired ? "완료" : "대기"}</span></div>`).join("") + `</div>`;
+  }
+  box.innerHTML = html || `<div class="empty">일정이 없습니다</div>`;
+}
+
+function renderUpcoming() {
+  const now = new Date();
+  const list = allAlarms().filter(x => !x.a.fired && x.t > now);
+  $("#alarmCount").textContent = `${list.length}건 대기`;
+  const box = $("#upcoming");
+  if (!list.length) { box.innerHTML = `<div class="empty">예정된 알림이 없습니다</div>`; return; }
+  box.innerHTML = list.slice(0, 7).map(x => {
+    const left = x.t - now, soon = left < 86400000;
+    return `<div class="row" data-ev="${x.ev.id}" style="cursor:pointer"><span class="dot" style="--c:${x.ev.color}"></span>
+      <div style="min-width:0"><div class="t">${esc(alarmTitle(x.ev, x.a))}</div>
+      <div class="s">${esc(x.ev.title)} · ${human(x.a.at)}</div></div>
+      <span class="sp"></span><span class="cd ${soon ? "soon" : ""}">${countdown(left)}</span></div>`;
+  }).join("");
+}
+
+function renderEvents() {
+  const box = $("#evList");
+  if (!state.events.length) { box.innerHTML = `<div class="empty">등록된 프로모션이 없습니다. ‘공지 붙여넣기’로 추가하세요.</div>`; return; }
+  box.innerHTML = state.events.slice().sort((a, b) => String(a.start).localeCompare(String(b.start))).map(ev => {
+    const st = evStatus(ev), waiting = (ev.alarms || []).filter(a => !a.fired).length;
+    return `<div class="evrow" data-ev="${ev.id}"><span class="dot" style="--c:${ev.color}"></span>
+      <div style="min-width:0"><div class="t">${esc(ev.title)}${ev.saleType ? ` <span class="k">· ${esc(ev.saleType)}</span>` : ""}</div>
+      <div class="s">${ev.start ? `${humanFull(ev.start)} ~ ${humanFull(ev.end)}` : "기간 미설정"} · 마일스톤 ${(ev.milestones || []).length}개 · 알림 ${waiting}건 대기</div></div>
+      <span class="sp"></span><span class="pill ${st.cls}">${esc(st.text)}</span></div>`;
+  }).join("");
+}
+
+function renderStat() {
+  const now = new Date();
+  const live = state.events.filter(ev => { const s = parseLocal(ev.start), e = parseLocal(ev.end); return s && e && now >= s && now <= e; }).length;
+  const waiting = allAlarms().filter(x => !x.a.fired && x.t > now).length;
+  $("#statPill").textContent = `프로모션 ${state.events.length} · 진행중 ${live} · 알림 ${waiting}`;
+}
+
+function renderRules() {
+  const mk = (setName, host) => {
+    host.innerHTML = state.settings.rules[setName].map(r =>
+      `<label class="switch"><input type="checkbox" data-rule="${setName}:${r.id}" ${r.on !== false ? "checked" : ""}> ${esc(r.label)}</label>`).join("");
+  };
+  mk("deadline", $("#rulesDeadline"));
+  mk("event", $("#rulesEvent"));
+  $("#optSound").checked = state.settings.sound;
+  $("#optDesktop").checked = state.settings.desktop;
+}
+
+function renderAll() { renderCalendar(); renderDay(); renderUpcoming(); renderEvents(); renderStat(); }
+
+/* -------------------------------------------------------- notifications */
+let audioCtx = null;
+function beep() {
+  if (!state.settings.sound) return;
+  try {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === "suspended") audioCtx.resume();
+    const t0 = audioCtx.currentTime;
+    [0, 0.3, 0.6].forEach((off, i) => {
+      const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+      o.type = "sine"; o.frequency.value = i === 2 ? 1046.5 : 880;
+      g.gain.setValueAtTime(0.0001, t0 + off);
+      g.gain.exponentialRampToValueAtTime(0.3, t0 + off + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, t0 + off + 0.26);
+      o.connect(g); g.connect(audioCtx.destination);
+      o.start(t0 + off); o.stop(t0 + off + 0.28);
+    });
+  } catch (e) {}
+}
+let flashTimer = null;
+function flashTitle(text) {
+  const base = "무신사 프로모션 알림 달력";
+  clearInterval(flashTimer); let on = false;
+  flashTimer = setInterval(() => { document.title = (on = !on) ? "🔔 " + text : base; }, 900);
+  const stop = () => { clearInterval(flashTimer); document.title = base; window.removeEventListener("focus", stop); document.removeEventListener("click", stop); };
+  window.addEventListener("focus", stop); document.addEventListener("click", stop);
+}
+function toast(title, body) {
+  const el = document.createElement("div");
+  el.className = "toast";
+  el.innerHTML = `<div class="tt">${esc(title)}</div><div class="tb">${esc(body)}</div>`;
+  el.addEventListener("click", () => el.remove());
+  $("#toasts").prepend(el);
+  setTimeout(() => el.remove(), 60000);
+}
+function desktopNotify(title, body) {
+  if (!state.settings.desktop) return;
+  if (!("Notification" in window) || Notification.permission !== "granted") return;
+  try { new Notification(title, { body, tag: title + body, requireInteraction: true }); } catch (e) {}
+}
+function fireAlarm(ev, a) {
+  const ms = msOf(ev, a.msId);
+  const title = `[무신사] ${ev.title}`;
+  const body = `${alarmTitle(ev, a)}\n${ms ? ms.label + " " + humanFull(ms.at) : humanFull(a.at)}`;
+  toast(title, body); desktopNotify(title, body); beep(); flashTitle(ev.title);
+}
+function tick() {
+  const now = new Date(), due = [];
+  for (const ev of state.events) for (const a of ev.alarms || []) {
+    const t = parseLocal(a.at);
+    if (!a.fired && t && t <= now) due.push({ ev, a });
+  }
+  if (!due.length) return;
+  due.sort((x, y) => x.a.at.localeCompare(y.a.at));
+  due.forEach(x => { x.a.fired = true; });
+  save();
+  const show = due.slice(-3);
+  show.forEach(x => fireAlarm(x.ev, x.a));
+  if (due.length > show.length) toast("지난 알림", `${due.length - show.length}건의 알림이 더 있었습니다 (달력에서 확인)`);
+  renderAll();
+}
+
+/* ------------------------------------------------------------- ICS/기타 */
+const icsEsc = s => String(s == null ? "" : s).replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n");
+function fold(line) { let out = "", s = line; while (s.length > 73) { out += s.slice(0, 73) + "\r\n "; s = s.slice(73); } return out + s; }
+function localStamp(s) { return String(s).replace(/[-:]/g, "") + "00"; }
+function utcStamp(s) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(s); if (!m) return null;
+  const d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]) - 9 * 3600000);
+  return `${d.getUTCFullYear()}${pad(d.getUTCMonth() + 1)}${pad(d.getUTCDate())}T${pad(d.getUTCHours())}${pad(d.getUTCMinutes())}00Z`;
+}
+function evDescription(ev) {
+  const p = [];
+  if (ev.saleType) p.push(`세일 유형: ${ev.saleType}`);
+  if (ev.conditions && ev.conditions.length) p.push(`참여조건: ${ev.conditions.join(" / ")}`);
+  if (ev.region) p.push(`지역: ${ev.region}`);
+  if (ev.applyPath) p.push(`신청 경로: ${ev.applyPath}`);
+  if (ev.start) p.push(`행사 기간: ${humanFull(ev.start)} ~ ${humanFull(ev.end)}`);
+  const dls = (ev.milestones || []).filter(m => m.kind === "deadline");
+  if (dls.length) p.push("마감: " + dls.map(m => `${m.label} ${humanFull(m.at)}`).join(" / "));
+  return p.join("\n");
+}
+function buildIcs(events) {
+  const L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//flmo//musinsa-alarm-calendar//KO", "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
+    "BEGIN:VTIMEZONE", "TZID:Asia/Seoul", "BEGIN:STANDARD", "DTSTART:19700101T000000",
+    "TZOFFSETFROM:+0900", "TZOFFSETTO:+0900", "TZNAME:KST", "END:STANDARD", "END:VTIMEZONE"];
+  const stamp = utcStamp(fmt(new Date())) || "19700101T000000Z";
+  const alarmBlock = (ev, list) => list.flatMap(a => {
+    const trig = utcStamp(a.at); if (!trig) return [];
+    return ["BEGIN:VALARM", "ACTION:DISPLAY", `DESCRIPTION:${icsEsc(ev.title + " · " + alarmTitle(ev, a))}`,
+      `TRIGGER;VALUE=DATE-TIME:${trig}`, "END:VALARM"];
+  });
+  for (const ev of events) {
+    const desc = evDescription(ev);
+    if (ev.start && ev.end) {
+      const spanAlarms = (ev.alarms || []).filter(a => { const m = msOf(ev, a.msId); return !m || m.kind !== "deadline"; });
+      L.push("BEGIN:VEVENT", `UID:${ev.id}-main@flmo`, `DTSTAMP:${stamp}`,
+        `DTSTART;TZID=Asia/Seoul:${localStamp(ev.start)}`, `DTEND;TZID=Asia/Seoul:${localStamp(ev.end)}`,
+        `SUMMARY:${icsEsc(`[무신사] ${ev.title}${ev.saleType ? " · " + ev.saleType : ""}`)}`,
+        `DESCRIPTION:${icsEsc(desc)}`, ...alarmBlock(ev, spanAlarms), "END:VEVENT");
+    }
+    for (const ms of ev.milestones || []) {
+      if (ms.kind === "start" || ms.kind === "end") continue;
+      const s = parseLocal(ms.at); if (!s) continue;
+      const e = new Date(s.getTime() + 30 * 60000);
+      const mine = (ev.alarms || []).filter(a => a.msId === ms.id);
+      L.push("BEGIN:VEVENT", `UID:${ev.id}-${ms.id}@flmo`, `DTSTAMP:${stamp}`,
+        `DTSTART;TZID=Asia/Seoul:${localStamp(ms.at)}`, `DTEND;TZID=Asia/Seoul:${localStamp(fmt(e))}`,
+        `SUMMARY:${icsEsc(`${ms.kind === "deadline" ? "🔔 " : ""}${ev.title} · ${ms.label}`)}`,
+        `DESCRIPTION:${icsEsc(desc)}`, ...alarmBlock(ev, mine), "END:VEVENT");
+    }
+  }
+  L.push("END:VCALENDAR");
+  return L.map(fold).join("\r\n") + "\r\n";
+}
+function download(name, text) {
+  const url = URL.createObjectURL(new Blob([text], { type: "text/calendar;charset=utf-8" }));
+  const a = document.createElement("a");
+  a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 3000);
+}
+function gcalUrl(ev) {
+  const s = utcStamp(ev.start), e = utcStamp(ev.end);
+  const q = new URLSearchParams({
+    action: "TEMPLATE",
+    text: `[무신사] ${ev.title}${ev.saleType ? " · " + ev.saleType : ""}`,
+    details: evDescription(ev),
+    ctz: "Asia/Seoul"
+  });
+  let url = "https://calendar.google.com/calendar/render?" + q.toString();
+  if (s && e) url += `&dates=${s.replace(/[-:]/g, "")}/${e.replace(/[-:]/g, "")}`;
+  return url;
+}
+
+/* ------------------------------------------------------- 편집 다이얼로그 */
+let draft = null;
+const KIND_LABEL = { start: "행사 시작", end: "행사 종료", deadline: "신청 마감", apply: "신청 일정", custom: "기타" };
+
+function syncDraft() {
+  if (!draft) return;
+  const v = id => { const el = $("#" + id); return el ? el.value : ""; };
+  draft.title = v("f_title").trim() || draft.title;
+  draft.saleType = v("f_type").trim();
+  draft.start = v("f_start") || null;
+  draft.end = v("f_end") || null;
+  draft.color = v("f_color") || draft.color;
+  draft.description = v("f_desc");
+  $$("#msRows [data-ms]").forEach(row => {
+    const ms = draft.milestones.find(m => m.id === row.dataset.ms); if (!ms) return;
+    ms.label = $(".ms-label", row).value.trim() || ms.label;
+    ms.at = $(".ms-at", row).value || ms.at;
+  });
+  // 행사 시작/종료 마일스톤을 기간과 동기화
+  for (const ms of draft.milestones) {
+    if (ms.kind === "start" && draft.start) ms.at = draft.start;
+    if (ms.kind === "end" && draft.end) ms.at = draft.end;
+  }
+  draft.milestones.sort((a, b) => String(a.at).localeCompare(String(b.at)));
+}
+
+function renderEditor() {
+  rebuildAlarms(draft);
+  const now = new Date();
+  const msRows = draft.milestones.map(ms => `
+    <div class="mrow" data-ms="${ms.id}">
+      <input class="in ms-label" value="${esc(ms.label)}" placeholder="예: 1차 마감일">
+      <input class="in ms-at" type="datetime-local" value="${esc(ms.at)}">
+      <button class="btn sm danger" data-msdel="${ms.id}">삭제</button>
+    </div>`).join("") || `<div class="hint">마일스톤이 없습니다.</div>`;
+
+  const alRows = draft.alarms.map(a => {
+    const t = parseLocal(a.at), past = t && t <= now;
+    return `<div class="row"><span class="dot" style="--c:${past ? "var(--muted)" : "var(--warn)"}"></span>
+      <div style="min-width:0"><div class="t">${human(a.at)}</div><div class="s">${esc(alarmTitle(draft, a))}</div></div>
+      <span class="sp"></span>
+      <span class="pill">${a.fired ? "완료" : past ? "대기" : countdown(t - now)}</span>
+      <button class="btn sm danger" data-aldel="${a.id}">×</button></div>`;
+  }).join("") || `<div class="hint">알림이 없습니다.</div>`;
+
+  const conds = (draft.conditions || []).length
+    ? `<ul style="margin:6px 0 0 18px;padding:0">${draft.conditions.map(c => `<li>${esc(c)}</li>`).join("")}</ul>` : "";
+
+  $("#evDlgBody").innerHTML = `
+    <div class="fgrid">
+      <div><label class="f">프로모션 명</label><input class="in" id="f_title" value="${esc(draft.title)}"></div>
+      <div><label class="f">세일 유형</label><input class="in" id="f_type" value="${esc(draft.saleType || "")}" placeholder="예: 일반세일"></div>
+      <div><label class="f">행사 시작</label><input class="in" id="f_start" type="datetime-local" value="${esc(draft.start || "")}"></div>
+      <div><label class="f">행사 종료</label><input class="in" id="f_end" type="datetime-local" value="${esc(draft.end || "")}"></div>
+    </div>
+    <div class="sec"><h4>마일스톤 (이 시각을 기준으로 알림이 만들어집니다)</h4>
+      <div id="msRows">${msRows}</div>
+      <button class="btn sm" id="msAdd">＋ 마일스톤 추가</button>
+    </div>
+    <div class="sec"><h4>알림 ${draft.alarms.length}건</h4>
+      ${alRows}
+      <div class="mrow" style="margin-top:10px">
+        <input class="in" id="al_label" placeholder="직접 알림 메모 (예: 상품 등록 확인)">
+        <input class="in" id="al_at" type="datetime-local">
+        <button class="btn sm" id="alAdd">＋ 추가</button>
+      </div>
+    </div>
+    <div class="sec"><h4>기본 정보</h4>
+      <div class="preview">
+        <div><span class="k">참여조건</span> ${conds || "-"}</div>
+        <div style="margin-top:6px"><span class="k">지역</span> ${esc(draft.region || "-")}</div>
+        <div style="margin-top:6px"><span class="k">신청 경로</span> ${esc(draft.applyPath || "-")}</div>
+        <div style="margin-top:10px"><label class="f">색상</label>
+          <select class="in" id="f_color">${PALETTE.map(c => `<option value="${c}" ${c === draft.color ? "selected" : ""}>${c}</option>`).join("")}</select></div>
+      </div>
+    </div>
+    <div class="sec"><h4>원문 / 메모</h4>
+      <textarea class="in" id="f_desc">${esc(draft.description || "")}</textarea>
+    </div>`;
+}
+
+function openEvent(id) {
+  const ev = state.events.find(e => e.id === id); if (!ev) return;
+  draft = structuredClone(ev);
+  draft.milestones = draft.milestones || [];
+  draft.alarms = draft.alarms || [];
+  $("#evDlgTitle").textContent = ev.title;
+  renderEditor();
+  $("#evDlg").showModal();
+}
+
+/* ----------------------------------------------------------- 붙여넣기 UI */
+function previewPaste() {
+  const text = $("#pasteText").value.trim();
+  const box = $("#pastePreview");
+  if (!text) { box.innerHTML = "붙여넣으면 자동으로 분석합니다."; return null; }
+  const ev = parsePromotion(text);
+  if (!ev) { box.innerHTML = "인식하지 못했습니다."; return null; }
+  box.innerHTML = `
+    <div><b>${esc(ev.title)}</b>${ev.saleType ? ` <span class="k">· ${esc(ev.saleType)}</span>` : ""}</div>
+    <div style="margin-top:6px"><span class="k">행사 기간</span> ${ev.start ? `${humanFull(ev.start)} ~ ${humanFull(ev.end)}` : "<b>인식 실패 — 저장 후 직접 입력하세요</b>"}</div>
+    <div><span class="k">참여조건</span> ${ev.conditions.length ? esc(ev.conditions.join(" / ")) : "-"}</div>
+    <div><span class="k">지역</span> ${esc(ev.region || "-")}</div>
+    <div style="margin-top:6px"><span class="k">마일스톤 ${ev.milestones.length}개</span></div>
+    <ul style="margin:4px 0 0 18px;padding:0">${ev.milestones.map(m =>
+      `<li>${m.kind === "deadline" ? "🔔 " : ""}${esc(m.label)} — ${humanFull(m.at)} <span class="k">(${KIND_LABEL[m.kind] || m.kind})</span></li>`).join("")}</ul>
+    <div style="margin-top:8px"><span class="k">자동 생성 알림</span> <b>${ev.alarms.length}건</b>
+      ${ev.alarms.filter(a => !a.fired).length ? ` (앞으로 울릴 알림 ${ev.alarms.filter(a => !a.fired).length}건)` : " (모두 지난 시각)"}</div>`;
+  return ev;
+}
+
+/* ------------------------------------------------------------- 이벤트 배선 */
+function moveMonth(delta) {
+  const d = new Date(state.view.y, state.view.m + delta, 1);
+  state.view = { y: d.getFullYear(), m: d.getMonth() };
+  renderCalendar();
+}
+function upsertAndRender(fn) { fn(); save(); renderAll(); }
+
+function wire() {
+  $("#btnPrev").onclick = () => moveMonth(-1);
+  $("#btnNext").onclick = () => moveMonth(1);
+  $("#btnToday").onclick = () => {
+    const n = new Date();
+    state.view = { y: n.getFullYear(), m: n.getMonth() };
+    state.selected = keyOf(n); renderAll();
+  };
+  $("#grid").addEventListener("click", e => {
+    const cell = e.target.closest("[data-day]"); if (!cell) return;
+    state.selected = cell.dataset.day;
+    const d = parseLocal(state.selected + "T00:00");
+    if (d.getMonth() !== state.view.m || d.getFullYear() !== state.view.y) state.view = { y: d.getFullYear(), m: d.getMonth() };
+    renderCalendar(); renderDay();
+  });
+  document.addEventListener("click", e => {
+    const row = e.target.closest("#evList [data-ev], #dayBody [data-ev], #upcoming [data-ev]");
+    if (row) openEvent(row.dataset.ev);
+  });
+
+  /* 붙여넣기 */
+  $("#btnPaste").onclick = () => { $("#pasteText").value = ""; previewPaste(); $("#pasteDlg").showModal(); $("#pasteText").focus(); };
+  $("#pasteSample").onclick = () => { $("#pasteText").value = SAMPLE; previewPaste(); };
+  $("#pasteText").addEventListener("input", previewPaste);
+  $("#pasteSave").onclick = () => {
+    const ev = previewPaste();
+    if (!ev) { alert("공지 텍스트를 붙여넣어 주세요."); return; }
+    ev.color = PALETTE[state.events.length % PALETTE.length];
+    upsertAndRender(() => state.events.push(ev));
+    const d = parseLocal(ev.start || (ev.milestones[0] && ev.milestones[0].at));
+    if (d) { state.view = { y: d.getFullYear(), m: d.getMonth() }; state.selected = keyOf(d); renderAll(); }
+    $("#pasteDlg").close();
+    toast("등록 완료", `${ev.title}\n알림 ${ev.alarms.filter(a => !a.fired).length}건이 예약되었습니다.`);
+  };
+  $$("dialog [data-close]").forEach(b => b.onclick = () => b.closest("dialog").close());
+
+  /* 빈 프로모션 */
+  $("#btnBlank").onclick = () => {
+    const base = new Date(); base.setHours(11, 0, 0, 0);
+    const start = fmt(base), end = fmt(new Date(base.getTime() + 7 * 86400000));
+    const ev = {
+      id: uid(), title: "새 프로모션", saleType: "", channel: "무신사", start, end,
+      region: "", conditions: [], applyPath: "", description: "",
+      milestones: [
+        { id: uid(), label: "행사 시작", at: start, kind: "start" },
+        { id: uid(), label: "행사 종료", at: end, kind: "end" },
+        { id: uid(), label: "신청 마감일", at: fmt(new Date(base.getTime() - 3 * 86400000)), kind: "deadline" }
+      ],
+      alarms: [], skips: [], color: PALETTE[state.events.length % PALETTE.length]
+    };
+    rebuildAlarms(ev);
+    upsertAndRender(() => state.events.push(ev));
+    openEvent(ev.id);
+  };
+
+  /* 편집 다이얼로그 */
+  $("#evDlgBody").addEventListener("click", e => {
+    const del = e.target.closest("[data-msdel]");
+    if (del) { syncDraft(); draft.milestones = draft.milestones.filter(m => m.id !== del.dataset.msdel); renderEditor(); return; }
+    const adel = e.target.closest("[data-aldel]");
+    if (adel) {
+      syncDraft();
+      const a = draft.alarms.find(x => x.id === adel.dataset.aldel);
+      if (a) { draft.skips = (draft.skips || []).concat(a.msId + "|" + a.at); draft.alarms = draft.alarms.filter(x => x.id !== a.id); }
+      renderEditor(); return;
+    }
+    if (e.target.id === "msAdd") {
+      syncDraft();
+      draft.milestones.push({ id: uid(), label: "새 마감일", at: fmt(new Date(Date.now() + 86400000)), kind: "deadline" });
+      renderEditor(); return;
+    }
+    if (e.target.id === "alAdd") {
+      const at = $("#al_at").value;
+      if (!at) { alert("알림 시각을 선택하세요."); return; }
+      syncDraft();
+      draft.alarms.push({ id: uid(), at, label: $("#al_label").value.trim() || "직접 알림", custom: true, fired: parseLocal(at) <= new Date() });
+      renderEditor();
+    }
+  });
+  $("#evSave").onclick = () => {
+    syncDraft(); rebuildAlarms(draft);
+    const i = state.events.findIndex(e => e.id === draft.id);
+    upsertAndRender(() => { if (i >= 0) state.events[i] = structuredClone(draft); else state.events.push(structuredClone(draft)); });
+    $("#evDlg").close();
+  };
+  $("#evDelete").onclick = () => {
+    if (!confirm(`'${draft.title}' 프로모션을 삭제할까요?`)) return;
+    upsertAndRender(() => { state.events = state.events.filter(e => e.id !== draft.id); });
+    $("#evDlg").close();
+  };
+  $("#evIcs").onclick = () => { syncDraft(); rebuildAlarms(draft); download(`${draft.title.replace(/[^\w가-힣.-]+/g, "_")}.ics`, buildIcs([draft])); };
+  $("#evGcal").onclick = () => { syncDraft(); window.open(gcalUrl(draft), "_blank", "noopener"); };
+
+  /* 상단 버튼 */
+  $("#btnIcs").onclick = () => {
+    if (!state.events.length) { alert("등록된 프로모션이 없습니다."); return; }
+    download("musinsa-promotions.ics", buildIcs(state.events));
+    toast("ICS 저장", "구글/애플 캘린더에 가져오면 알림 시각까지 그대로 등록됩니다.");
+  };
+  $("#btnPerm").onclick = async () => {
+    if (!("Notification" in window)) { alert("이 브라우저는 데스크톱 알림을 지원하지 않습니다. 화면 알림과 소리는 정상 동작합니다."); return; }
+    const p = await Notification.requestPermission();
+    updatePermLine();
+    if (p !== "granted") alert("알림이 차단되어 있습니다. 주소창 자물쇠 아이콘 > 알림 허용으로 바꿔주세요.");
+  };
+  $("#btnTest").onclick = () => {
+    const ev = state.events[0];
+    toast("테스트 알림", ev ? `${ev.title}\n알림이 이렇게 표시됩니다.` : "알림이 이렇게 표시됩니다.");
+    desktopNotify("[무신사] 테스트 알림", "알림이 정상 동작합니다.");
+    beep();
+  };
+
+  /* 설정 */
+  document.addEventListener("change", e => {
+    const t = e.target;
+    if (t.dataset && t.dataset.rule) {
+      const [set, id] = t.dataset.rule.split(":");
+      const r = state.settings.rules[set].find(x => x.id === id);
+      if (r) r.on = t.checked;
+      state.events.forEach(rebuildAlarms);
+      save(); renderAll();
+    }
+    if (t.id === "optSound") { state.settings.sound = t.checked; save(); }
+    if (t.id === "optDesktop") {
+      state.settings.desktop = t.checked; save();
+      if (t.checked && "Notification" in window && Notification.permission === "default") $("#btnPerm").click();
+    }
+  });
+
+  document.addEventListener("click", () => { // 첫 클릭에 오디오 잠금 해제
+    if (!audioCtx) { try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} }
+    if (audioCtx && audioCtx.state === "suspended") audioCtx.resume();
+  }, { once: true });
+}
+
+function updatePermLine() {
+  const el = $("#permLine");
+  if (!("Notification" in window)) { el.textContent = "브라우저 알림 미지원 · 화면 알림과 소리로 동작합니다"; return; }
+  const p = Notification.permission;
+  el.textContent = p === "granted" ? "브라우저 알림 허용됨 · 탭이 열려 있으면 알림이 울립니다"
+    : p === "denied" ? "브라우저 알림 차단됨 · 화면 알림과 소리만 울립니다"
+    : "‘알림 권한’을 눌러 브라우저 알림을 켜주세요";
+}
+
+/* ------------------------------------------------------------------ init */
+load();
+const now0 = new Date();
+state.view = { y: now0.getFullYear(), m: now0.getMonth() };
+state.selected = keyOf(now0);
+wire(); renderRules(); renderAll(); updatePermLine(); tick();
+
+let lastDay = keyOf(new Date());
+setInterval(tick, 15000);
+setInterval(() => {
+  renderUpcoming(); renderStat();
+  const k = keyOf(new Date());
+  if (k !== lastDay) { lastDay = k; renderCalendar(); renderDay(); }
+}, 1000);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) tick(); });
+window.addEventListener("focus", tick);
+</script>
+</body>
+</html>
