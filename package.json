@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "start": "node bin/flmo.mjs",
+    "dev": "node bin/flmo.mjs dev",
+    "report": "node bin/flmo.mjs report",
+    "doctor": "node bin/flmo.mjs doctor",
     "build": "next build",
-    "start": "next start",
+    "start:server": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
   },
@@ -23,5 +26,19 @@
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "typescript": "^5.8.3"
-  }
+  },
+  "bin": {
+    "flmo": "bin/flmo.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "bin",
+    "scripts",
+    "src",
+    "public",
+    "next.config.ts",
+    "tsconfig.json"
+  ]
 }

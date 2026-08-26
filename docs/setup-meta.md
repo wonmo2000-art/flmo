@@ -80,18 +80,21 @@
 
 ## 7. 앱에 입력
 
-```bash
-npm run dev
-```
+앱을 실행하고 (더블클릭 또는 `npm start`) **설정 → 메타 광고** 탭에서 계정 ID 와
+토큰을 넣은 뒤 **검증하고 저장**을 누르세요.
 
-`http://localhost:3000/settings` 의 **메타 광고** 탭에서 계정 ID 와 토큰을 넣고 **검증하고 저장**.
+연결이 잘 됐는지는 터미널에서도 확인할 수 있습니다.
+
+```bash
+flmo doctor
+```
 
 저장 전에 실제 Graph API 를 한 번 호출해 확인하므로, 저장에 성공하면 조회도 됩니다.
 
 ## 토큰이 어디에 저장되나
 
 - `.data/settings.json` 에 **AES-256-GCM 으로 암호화**되어 저장됩니다 (파일 권한 `0600`).
-- 암호화 키는 `.env.local` 의 `FLMO_ENCRYPTION_KEY` 입니다.
+- 암호화 키는 `.env.local` 의 `FLMO_ENCRYPTION_KEY` 입니다. 첫 실행에 자동 생성됩니다.
 - `.data/` 와 `.env.local` 둘 다 `.gitignore` 에 들어 있습니다.
 - 토큰 원문은 브라우저로 내려가지 않습니다. UI 에는 `EAAg****oken` 형태로만 보입니다.
 

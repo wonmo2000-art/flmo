@@ -6,19 +6,89 @@
 UTM 을 붙여 → 메타에 캠페인·광고세트·광고를 **일시중지 상태로** 만들어 둡니다.
 검토 후 광고 관리자에서 켜면 됩니다.
 
-## 빠른 시작
+## 실행하기
+
+[Node.js](https://nodejs.org) LTS 버전만 설치되어 있으면 됩니다. 나머지는 알아서 합니다.
+
+**더블클릭으로 실행**
+
+| 운영체제 | 파일 |
+|---|---|
+| macOS | `flmo 실행 (Mac).command` |
+| Windows | `flmo 실행 (Windows).bat` |
+| Linux | `flmo-실행-Linux.sh` |
+
+**터미널에서 실행**
 
 ```bash
-npm install
-
-cp .env.example .env.local
-node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
-# 출력값을 .env.local 의 FLMO_ENCRYPTION_KEY 에 넣으세요
-
-npm run dev
+npm start
 ```
 
-`http://localhost:3000` → 설정이 없으면 `/settings` 로 갑니다.
+처음 실행하면 의존성 설치와 빌드 때문에 1~2분 걸립니다. 그 다음부터는 몇 초입니다.
+설정 암호화 키도 첫 실행에 자동으로 만들어 `.env.local` 에 저장하므로 손댈 게 없습니다.
+
+준비가 끝나면 브라우저가 열리고 `http://localhost:3000` 으로 들어갑니다.
+포트가 사용 중이면 다음 빈 포트를 알아서 찾습니다. 종료는 그 창에서 `Ctrl+C`.
+
+> `.env.local` 의 `FLMO_ENCRYPTION_KEY` 는 지우지 마세요. 이 값이 바뀌면 저장해 둔
+> 계정 연결 정보를 읽을 수 없습니다.
+
+## 명령어
+
+```bash
+flmo                 앱 실행 + 브라우저 열기 (기본)
+flmo report          성과를 터미널에 출력
+flmo doctor          연결 상태 점검
+flmo dev             개발 서버
+flmo --help          전체 옵션
+```
+
+`npm start`, `npm run report`, `npm run doctor` 로도 같습니다.
+전역으로 쓰려면 저장소에서 `npm link` 한 번 하면 `flmo` 명령을 어디서나 씁니다.
+
+### 브라우저 없이 성과 보기
+
+```bash
+flmo report                                # 최근 7일, 캠페인별
+flmo report --level ad --period last_30d   # 최근 30일, 광고별
+flmo report --csv 8월성과.csv               # CSV 로 저장 (엑셀에서 한글 정상)
+flmo report --json                         # 원본 JSON
+```
+
+```
+  원모스튜디오 · 최근 7일
+  2026-08-19 ~ 2026-08-25
+
+  광고비 1,250,000원   노출 482,310   클릭 9,124   CTR 1.89%
+  전환 163   매출 5,410,000원   ROAS 4.33x
+
+이름                   광고비     노출   클릭    CTR  전환   ROAS
+-----------------------------------------------------------------
+여름 신상 리타겟팅  1,250,000  482,310  9,124  1.89%   163  4.33x
+```
+
+크론에 걸어 매일 CSV 를 뽑는 식으로 쓸 수 있습니다.
+
+```bash
+0 9 * * * cd /경로/flmo && node bin/flmo.mjs report --csv "성과-$(date +\%F).csv"
+```
+
+### 연결 상태 점검
+
+```bash
+flmo doctor
+```
+
+```
+  ✓ Node.js — 22.22.2
+  ✓ 암호화 키 — .env.local
+  ✓ 메타 광고 계정 — 원모스튜디오
+  ✓ 페이스북 페이지 ID — 555000111
+  · Claude API — 카피 자동 생성에만 필요합니다 (선택)
+  · MCP 커넥터 — 등록된 서버 없음 (선택)
+
+  광고를 만들 준비가 됐습니다.
+```
 
 ## 화면
 
@@ -99,6 +169,9 @@ npm run dev
 ## 구성
 
 ```
+bin/flmo.mjs          실행기 · CLI (start · report · doctor · dev)
+scripts/setup.mjs     첫 실행 준비 (키 생성 · 설치 · 빌드)
+
 src/
 ├── app/
 │   ├── settings/         연동 설정 (탭 4개)
@@ -131,20 +204,19 @@ src/
 
 | 이름 | 필수 | 설명 |
 |---|---|---|
-| `FLMO_ENCRYPTION_KEY` | ✅ | 설정 암호화 키 (base64 32바이트) |
+| `FLMO_ENCRYPTION_KEY` | ✅ | 설정 암호화 키. **첫 실행에 자동 생성**되므로 직접 넣을 일은 없습니다 |
 | `META_API_VERSION` | | Marketing API 버전. 기본 `v25.0` |
 | `META_AD_ACCOUNT_ID` | | UI 대신 환경변수로 주입할 때. 파일보다 우선 |
 | `META_ACCESS_TOKEN` | | 위와 동일 |
 | `META_GRAPH_BASE` | | 테스트용 모의 서버 주소. 운영에서 쓰지 마세요 |
 | `MUSINSA_BASE` | | 테스트용 모의 서버 주소. 운영에서 쓰지 마세요 |
 
-## 명령어
+## 개발자용
 
 ```bash
-npm run dev        # 개발 서버
-npm run build      # 프로덕션 빌드
-npm run start      # 프로덕션 서버
-npm run typecheck  # 타입 검사
+npm run build        # 프로덕션 빌드
+npm run start:server # 빌드된 서버만 실행 (준비 단계 없이)
+npm run typecheck    # 타입 검사
 ```
 
 ## 다음에 붙일 것
