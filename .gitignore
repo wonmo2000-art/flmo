@@ -1,0 +1,18 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# 자격증명 · 로컬 상태 (절대 커밋 금지)
+/.data/
+.env
+.env.local
+.env*.local
+
+# 기타
+.DS_Store
+*.log
+*.tsbuildinfo
