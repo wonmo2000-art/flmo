@@ -1,6 +1,6 @@
 import "server-only";
 
-import type { Credentials } from "../credentials";
+import type { MetaSettings } from "../settings/types";
 import { graphGet, graphGetAll } from "./client";
 import { DATE_PRESETS, PURCHASE_ACTION_TYPES, insightsFields } from "./fields";
 import type {
@@ -165,7 +165,7 @@ export async function verifyAccount(
 }
 
 export async function fetchReport(
-  credentials: Credentials,
+  credentials: MetaSettings,
   query: ReportQuery,
 ): Promise<Report> {
   const { adAccountId, accessToken } = credentials;

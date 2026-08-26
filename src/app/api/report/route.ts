@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-import { loadCredentials } from "@/lib/credentials";
+import { getSettings } from "@/lib/settings/store";
 import { MetaApiError } from "@/lib/meta/client";
 import { fetchReport } from "@/lib/meta/insights";
 
@@ -35,10 +35,10 @@ export async function GET(request: Request) {
     );
   }
 
-  const credentials = await loadCredentials();
-  if (!credentials) {
+  const settings = await getSettings();
+  if (!settings.meta?.adAccountId || !settings.meta.accessToken) {
     return NextResponse.json(
-      { error: "자격증명이 설정되지 않았습니다.", needsSetup: true },
+      { error: "메타 광고 계정이 연결되지 않았습니다.", needsSetup: true },
       { status: 428 },
     );
   }
@@ -48,7 +48,7 @@ export async function GET(request: Request) {
   const range = since && until ? { since, until } : undefined;
 
   try {
-    const report = await fetchReport(credentials, { level, datePreset, range });
+    const report = await fetchReport(settings.meta, { level, datePreset, range });
     return NextResponse.json(report);
   } catch (error) {
     if (error instanceof MetaApiError) {

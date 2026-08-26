@@ -133,3 +133,59 @@ export async function graphGetAll<T>(
 
   return collected;
 }
+
+interface GraphPostOptions {
+  path: string;
+  accessToken: string;
+  /** 폼 필드. 객체·배열은 Graph API 규칙대로 JSON 문자열로 직렬화한다. */
+  body: Record<string, unknown>;
+  signal?: AbortSignal;
+}
+
+/**
+ * Graph API POST 호출.
+ * Graph API 는 중첩 구조를 JSON 문자열로 담은 form-urlencoded 를 받는다.
+ */
+export async function graphPost<T>({
+  path,
+  accessToken,
+  body,
+  signal,
+}: GraphPostOptions): Promise<T> {
+  const form = new URLSearchParams();
+  for (const [key, value] of Object.entries(body)) {
+    if (value === undefined || value === null || value === "") continue;
+    form.set(key, typeof value === "object" ? JSON.stringify(value) : String(value));
+  }
+
+  let response: Response;
+  try {
+    response = await fetch(`${graphBase()}/${apiVersion()}/${path}`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: form,
+      signal,
+      cache: "no-store",
+    });
+  } catch (cause) {
+    throw new MetaApiError(
+      { message: `Graph API 에 연결하지 못했습니다: ${(cause as Error).message}` },
+      0,
+    );
+  }
+
+  const payload: unknown = await response.json().catch(() => null);
+
+  if (!response.ok || (payload && typeof payload === "object" && "error" in payload)) {
+    const error =
+      payload && typeof payload === "object" && "error" in payload
+        ? (payload as { error: MetaApiErrorPayload }).error
+        : { message: `Graph API 요청이 실패했습니다 (HTTP ${response.status})` };
+    throw new MetaApiError(error, response.status);
+  }
+
+  return payload as T;
+}
